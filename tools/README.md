@@ -13,3 +13,11 @@ List of tools used for W3C works
 * [Process transition request](https://github.com/w3c/transitions/)
   * links on readme will make skelton per each type of requests
 
+## Working repositories
+
+Like drafts or 
+
+* [Draft charters for public review (charter-drafts)](https://github.com/w3c/charter-drafts)
+  * drafts to be checked and reviewed in public
+  * need to be in w3.org date-space for AC review etc. (as in [note](https://github.com/w3c/charter-drafts#notes-for-w3c-team))
+
