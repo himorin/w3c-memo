@@ -3,6 +3,7 @@ List of tools used for W3C works
 ## Daily use tools
 
 * [github-notify-ml-config](https://github.com/w3c/github-notify-ml-config) : configuration repository for [github-notify-ml](https://github.com/dontcallmedom/github-notify-ml/)
+* [pr-preview](https://github.com/tobie/pr-preview): preview tool for non merged gh-pages PR branch
 
 ## Strategic documents
 
