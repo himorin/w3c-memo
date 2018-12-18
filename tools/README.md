@@ -13,10 +13,13 @@ List of tools used for W3C works
 
 * [Process transition request](https://github.com/w3c/transitions/)
   * links on readme will make skelton per each type of requests
+* [Repository manager for IPR (Ash-Nazg)](https://github.com/w3c/ash-nazg/)
+  * create new repository with a set of required files, or import to tool
+  * check PR is made by github account which has proper IPR statement (via W3C user repository)
+  * [Live site at labs.w3.org](https://labs.w3.org/hatchery/repo-manager/)
+  * [overview note](https://w3c.github.io/repo-management.html)
 
 ## Working repositories
-
-Like drafts or 
 
 * [Draft charters for public review (charter-drafts)](https://github.com/w3c/charter-drafts)
   * drafts to be checked and reviewed in public
