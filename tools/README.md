@@ -18,6 +18,8 @@ List of tools used for W3C works
   * check PR is made by github account which has proper IPR statement (via W3C user repository)
   * [Live site at labs.w3.org](https://labs.w3.org/hatchery/repo-manager/)
   * [overview note](https://w3c.github.io/repo-management.html)
+  * run `ulimit -n 2560` (bash) or `limit descriptors 2560` (tcsh) before `npm install -d`
+    * once failed `node_modules` created, seems need to delete whole...
 
 ## Working repositories
 
