@@ -27,3 +27,10 @@ List of tools used for W3C works
   * drafts to be checked and reviewed in public
   * need to be in w3.org date-space for AC review etc. (as in [note](https://github.com/w3c/charter-drafts#notes-for-w3c-team))
 
+## Documentating
+
+* [ReSpec](https://github.com/w3c/respec) JS library to be included in any published documents online
+  * [very basic guide](https://github.com/w3c/respec/wiki/ReSpec-Editor's-Guide)
+
+* [tr-design](https://github.com/w3c/tr-design) CSS improvement project on ones used for TR
+
