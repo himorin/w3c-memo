@@ -1,4 +1,5 @@
-Random memo on W3C works
+Random memo on W3C works.
+Refer [gh-pages](https://himorin.github.io/w3c-memo/) for test files.
 
 * [Tools and scripts](tools/)
 * [GitHub](github/)
