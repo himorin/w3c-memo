@@ -29,6 +29,9 @@ class ITCConfig(object):
         return self.config[name]
 
 
+    def GetGHKey(self):
+        return self.GetConfig('github_key')
+
 '''
     List all issues in condition, calling API multiple times
     Wrapper and handling multiple calls to _getAPIIssues
@@ -39,7 +42,7 @@ class ITCConfig(object):
 
     return: array of issues
 '''
-def GetListIssues(repo, apikey, label):
+def GetListIssues(repo, apikey, label = None):
     id_last = 0
     list_all = []
     # simple first call
@@ -68,7 +71,7 @@ def GetListIssues(repo, apikey, label):
         note, if no multipage results, no data in pages
         for now, list all status both close and open
 '''
-def _getAPIIssues(repo, apikey, page, label):
+def _getAPIIssues(repo, apikey, page, label = None):
     ghurl = "{}{}/issues?per_page=100&state=all&".format(GHAPI_HEAD, repo)
     if page is not None:
         ghurl = "{}page={}&".format(ghurl, page)
