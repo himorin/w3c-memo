@@ -15,3 +15,12 @@ main code and three modules (TBC)
   * target repository issue list generator
   * helper module with github access and config loader
 
+### utils.py
+  
+This module is helper module with github access and config loader.
+
+* Load 'config.json' for system wide configuration
+  * refer 'config.json.skel' for skelton
+  * class ITCConfig, Load() and GetConfig(name)
+* Provide GetListIssues(repo, apikey, label) function to list existing issues
+
