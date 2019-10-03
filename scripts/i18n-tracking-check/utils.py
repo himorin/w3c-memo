@@ -80,7 +80,7 @@ def _getAPIIssues(repo, apikey, page, label = None):
 
     try:
         req = urllib.request.Request(ghurl)
-        req.add_header('token', apikey)
+        req.add_header('Authorization', "token {}".format(apikey))
     except Exception as e:
         raise Exception("urllib request build error: {}".format(e))
     try:

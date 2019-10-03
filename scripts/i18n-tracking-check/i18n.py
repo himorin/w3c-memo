@@ -28,6 +28,7 @@ class ListI18n(object):
         for val in self.listRaw:
             track = self._getTrackTarget(val['body'])
             if track is not None:
+                track = track.strip()
                 self.list_tracker[track] = val['number']
                 val['track'] = track
             self.list_status[val['number']] = val['state']
@@ -59,6 +60,9 @@ class ListI18n(object):
 
     def GetAllTrackState(self):
         return self.list_status
+
+    def GetAllTrackerIssues(self):
+        return self.list_issues
 
 def selftest():
     objLI18n = ListI18n()
