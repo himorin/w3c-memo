@@ -5,6 +5,7 @@ import re
 
 I18N_TRACKER = 'w3c/i18n-activity'
 I18N_TARGET = '§ '
+TRACK_CLOSE = 'close?'
 
 class ListI18n(object):
 
@@ -13,6 +14,7 @@ class ListI18n(object):
         self.list_tracker = {}  # track url to ID
         self.list_issues = {}   # ID to issue detail
         self.list_labels = {}   # label to list of ID
+        self.list_status = {}   # ID to tracker status
 
     def LoadList(self):
         self.config = utils.ITCConfig()
@@ -28,11 +30,15 @@ class ListI18n(object):
             if track is not None:
                 self.list_tracker[track] = val['number']
                 val['track'] = track
+            self.list_status[val['number']] = val['state']
             for clbl in val['labels']:
+                if clbl['name'] == TRACK_CLOSE and val['state'] == 'open':
+                    self.list_status[val['number']] = TRACK_CLOSE
                 if clbl['name'] in self.list_labels:
                     self.list_labels[clbl['name']].append(val['number'])
                 else:
                     self.list_labels[clbl['name']] = [val['number']]
+            val['track_status'] = self.list_status[val['number']]
             self.list_issues[val['number']] = val
 
     def _getTrackTarget(self, comment):
@@ -51,12 +57,16 @@ class ListI18n(object):
             return self.list_issues[self.list_tracker[url]]
         return None
 
+    def GetAllTrackState(self):
+        return self.list_status
+
 def selftest():
     objLI18n = ListI18n()
     objLI18n.LoadList()
     trackers = objLI18n.GetAllTrackers()
+    track_state = objLI18n.GetAllTrackState()
     for val in trackers:
-        print("ID {} to {}".format(trackers[val], val))
+        print("ID {} ({}) to {}".format(trackers[val], track_state[trackers[val]], val))
 
 if __name__ == "__main__":
     selftest()

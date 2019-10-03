@@ -24,3 +24,27 @@ This module is helper module with github access and config loader.
   * class ITCConfig, Load() and GetConfig(name)
 * Provide GetListIssues(repo, apikey, label) function to list existing issues
 
+self test routine will print
+
+* github api key loaded from configuration
+* if repository name is handed as option, 
+  number of issues with i18n-tracking label (total of open/closed)
+
+### i18n.py
+
+This module is to list tracker issues in i18n-activity repository, with 
+some analysis like making list of tracker targets. 
+
+* Retrieve all (open/closed) issues from i18n-activity repository
+* Build following hash internally
+  * `list_tracker`: key 'track target URL', value 'issue ID'
+  * `list_issues`: key 'issue ID', value 'ghapi issue hash (modified)'
+    * `track` key has value of tracker target URL
+    * `track_status` key has value of tracker status
+  * `list_labels`: key 'label name', value list of 'issue ID'
+  * `list_status`: key 'isuse ID', value 'tracker status' ('open', 'close?', 'closed')
+
+self test routine will print
+
+* issue ID with tracker status and target link of tracking
+
