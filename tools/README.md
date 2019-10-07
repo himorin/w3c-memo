@@ -25,6 +25,7 @@ List of tools used for W3C works
   * [echidna token](https://www.w3.org/Web/publications/register), can check existing token (as error message for dup)
   * pubrules validate: `https://www.w3.org/pubrules/api/validate?url=<url>&profile=WD`
     * [Error messages](https://github.com/w3c/specberus/blob/master/lib/l10n-en_GB.js#L45)
+  * [link checker](http://validator.w3.org/checklink)
 
 ## Working repositories
 
