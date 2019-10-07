@@ -20,6 +20,11 @@ List of tools used for W3C works
   * [overview note](https://w3c.github.io/repo-management.html)
   * run `ulimit -n 2560` (bash) or `limit descriptors 2560` (tcsh) before `npm install -d`
     * once failed `node_modules` created, seems need to delete whole...
+* [echidna](https://github.com/w3c/echidna/wiki)
+  * dry run: `curl 'https://labs.w3.org/echidna/api/request' --data 'url=<W3CTRMANIFEST>&decision=<decision>&token=<token>' -d 'dry-run=true'`
+  * [echidna token](https://www.w3.org/Web/publications/register), can check existing token (as error message for dup)
+  * pubrules validate: `https://www.w3.org/pubrules/api/validate?url=<url>&profile=WD`
+    * [Error messages](https://github.com/w3c/specberus/blob/master/lib/l10n-en_GB.js#L45)
 
 ## Working repositories
 
@@ -31,6 +36,5 @@ List of tools used for W3C works
 
 * [ReSpec](https://github.com/w3c/respec) JS library to be included in any published documents online
   * [very basic guide](https://github.com/w3c/respec/wiki/ReSpec-Editor's-Guide)
-
 * [tr-design](https://github.com/w3c/tr-design) CSS improvement project on ones used for TR
 
