@@ -82,9 +82,9 @@
           <ul class="contents" id="toc_list">
             <li><a href="#intro">概要</a> </li>
             <li><a href="#funnel">将来のウェブ標準に向けて</a> </li>
-            <li><a href="#industry">Meeting Industry Needs</a>
+            <li><a href="#industry">技術ニーズへの追随</a>
               <ul>
-                <li><a href="#payments">Web Payments</a></li>
+                <li><a href="#payments">ウェブペイメント</a></li>
                 <li><a href="#publishing">Digital Publishing</a></li>
                 <li><a href="#entertainment">Media and Entertainment</a></li>
                 <li><a href="#telco">Web &amp; Telecommunications</a>
@@ -262,79 +262,52 @@
             <li><a href="https://lists.w3.org/Archives/Public/public-i18n-its-ig/2019Jun/0000.html">Internationalization Tag Set IG</a></li></ul>
     </div>
     
-    <h2 id="industry">Meeting Industry Needs</h2>
+    <h2 id="industry">技術ニーズへの追随</h2>
     
-    <h3 id="payments">Web Payments</h3>
+    <h3 id="payments">ウェブペイメント</h3>
     
-    <a href="/2018/10/prapi-ux.png"><img src="/2018/10/prapi-ux.png"
+    <a href="https://www.w3.org/2018/10/prapi-ux.png"><img src="https://www.w3.org/2018/10/prapi-ux.png"
             alt="several implementations of the Web Payments specs"></a>
 
-        <p><a href="https://www.w3.org/TR/?title=payment&amp;version=latest">All
-            Web Payments specifications</a></p>
+        <p><a href="https://www.w3.org/TR/?title=payment&amp;version=latest">全ての仕様の一覧</a></p>
     
-        <p>W3C's payments standards enable <strong>a streamlined
-            checkout experience, enabling a consistent user experience
-            across the Web with lower front end development costs for
-            merchants</strong>. Users can store and reuse information and
-          more quickly and accurately complete online transactions.</p>
+        <p>W3C のウェブペイメント標準により<strong>事業者にとってフロント・開発共に低コストな
+          ウェブどこでも同じである、統合された決済のユーザ体験</strong>を実現します。
+          ユーザは情報を保存・再利用可能になり、オンライン決済をより速く正確に完了できるようになります。</p>
     
-        <p>The <a href="https://www.w3.org/Payments/WG/">Web Payments
-            Working Group</a> has
-            republished <a href="https://www.w3.org/TR/2019/CR-payment-request-20190416/">Payment
-            Request API as a Candidate Recommendation</a>, aiming to
-            publish a Proposed Recommendation in the Fall 2019, and is
-            discussing <a href="https://github.com/w3c/payment-request/wiki">use
-            cases and features</a> for Payment Request after
-            publication of the 1.0 Recommendation. Browser vendors have
-          been finalizing implementation of features added in the past
-      year (view
-            the <a href="https://w3c.github.io/test-results/payment-request/all.html">implementation
-            report</a>). </p>
+        <p><a href="https://www.w3.org/Payments/WG/">Web Payments ワーキンググループ</a>は、
+          <a href="https://www.w3.org/TR/2019/CR-payment-request-20190416/">Payment Request API の勧告候補を更新</a>し、
+          勧告案を2019年秋に公開予定にしており、また、1.0 の勧告後に向けた Payment Request の
+          <a href="https://github.com/w3c/payment-request/wiki">ユースケースと機能</a>について議論中です。
+          ブラウザベンダーもこれまでに追加された新機能の実装を終えようとしています。
+          (<a href="https://w3c.github.io/test-results/payment-request/all.html">実装状況報告を参照</a>)</p>
     
-        <p>As work continues on
-          the <a href="https://www.w3.org/TR/payment-handler/">Payment
-            Handler API</a> and its implementation (currently in
-          Chrome and Edge Canary), one focus in 2019 is to increase adoption in other
-          browsers. Recently, <a href="https://www.w3.org/blog/wpwg/2019/04/15/april-2019-face-to-face-meeting-recap/#secure-card-payments">Mastercard
-            demonstrated the use of Payment Request API</a> to carry out
-          EMVCo's Secure Remote Commerce (SRC) protocol
-          whose <a href="https://github.com/w3c/src/wiki">payment
-            method definition</a> is being developed with active
-          participation by Visa, Mastercard, American Express, and
-          Discover. Payment method availability is a key factor in
-          merchant considerations about adopting Payment Request
-          API. The ability to get uniform adoption of a new payment
-          method such as Secure Remote Commerce (SRC) also depends on
-          the availability of the Payment Handler API in browsers, or
-          of proprietary alternatives.</p>
+        <p><a href="https://www.w3.org/TR/payment-handler/">Payment Handler API</a> とその実装(現時点では
+          Chrome と Edge Canary)についても作業が継続しており、2019年はほかのブラウザでの実装に焦点を当てています。
+          最近、EMVCo のセキュアリモートコマース (Secure Remote Commerce; SRC) プロトコルに対応した
+          <a href="https://www.w3.org/blog/wpwg/2019/04/15/april-2019-face-to-face-meeting-recap/#secure-card-payments">
+          Mastercard による Payment Request API のデモ</a> が公開されており、この
+          <a href="https://github.com/w3c/src/wiki">決済方式定義</a>はVisa、Mastercard,、American Express、Discover
+          の活発な参加のもとに行われています。決済方式の利用可能性は事業者が Payment Request API 
+          を利用するかどうかを検討する有力な材料でもあります。また、SRC といった新しい決済形式に統一的な形で
+          対応すできるかはブラウザやプロプライアタリーな代替サービスでの Payment Handler API が実装されるかが鍵となります。</p>
     
-    <p><a href="https://interledger.org/rfcs/0028-web-monetization/">Web
-        Monetization</a>, which the Web Payments Working Group
-        will discuss again at its face-to-face meeting in
-        September, can be used to enable micropayments as an
-        alternative revenue stream to advertising. </p>
+    <p>Web Payments WGが9月の対面会議にて再度議論する
+      <a href="https://interledger.org/rfcs/0028-web-monetization/">Web マネタイゼーション</a> 
+      は、広告に代わる収益手段としてのマイクロペイメントの実現に向けたものです。</p>
     
-        <p>Since the beginning of 2019, Amazon, Brave Software, 
-          JCB, Certus Cybersecurity Solutions and Netflix have joined
-          the Web Payments Working Group.</p>
+        <p>2019年より、Amazon、Brave Software、JCB、Certus Cybersecurity Solutions、と Netflix が
+          Web Payments WG に加入しました。</p>
     
-    <p>In April,
-      W3C <a href="https://www.w3.org/2019/04/pressrelease-wps.html.en">launched
-      the Web Payment Security Group</a> to enable W3C, EMVCo, and
-      the FIDO Alliance to collaborate on a vision for Web payment
-      security and interoperability. Participants will define
-      areas of collaboration and identify gaps between existing
-      technical specifications in order to increase compatibility
-      among different technologies, such as:</p>
+    <p>4月に<a href="https://www.w3.org/2019/04/pressrelease-wps.html.en">Web Payment セキュリティーグループ</a>
+      を W3C において設立し、W3C、EMVCo、と FIDO アライアンスが Web Payment のセキュリティーと相互可用性について
+      協業していくことになりました。参加者は以下のような協業範囲の策定、既存技術間の相互運用性の確保において
+      問題となる部分の抽出について議論します:</p>
     <ul>
-      <li>How do SRC, FIDO, and Payment Request relate?</li>
-      <li>The Payment Services Directive 2 (PSD2) regulations in
-        Europe are scheduled to take effect in September 2019. What
-        is the role of EMVCo, W3C, and FIDO technologies, and what
-        is the current state of readiness for the deadline?</li>
-      <li>How can we improve privacy on the Web at the same time
-        as we meet industry requirements regarding user
-        identity?</li>
+      <li>SRC、FIDO、Payment Request の間の関係性</li>
+      <li>ヨーロッパにおける Payment Services Directive 2 (PSD2) 指令が2019年9月に有効化されることについて、
+        EMVCo、W3C、FIDO の果たすべき役割、また有効化期限に向けた現状についての整理</li>
+      <li>ウェブ上のプライバシーの改善とともに、利用者同定の面での市場要求を満たす方策の検討</li>
     </ul>
 
         <h3 id="publishing">Digital Publishing</h3>
@@ -638,7 +611,7 @@
     <p><a href="https://www.w3.org/TR/?tag=wot#w3c_all">All Web of
             Things specifications</a></p>
 
-        <p>W3C's <a href="/WoT/">Web of Things</a> work is designed
+        <p>W3C's <a href="https://www.w3.org/WoT/">Web of Things</a> work is designed
             to <strong>bridge disparate technology stacks to allow
             devices to work together and achieve scale</strong>, thus
             enabling the potential of the Internet of Things by
@@ -793,7 +766,7 @@
             Community Group</a>.</p>
     
         <h3 id="perf">Performance</h3>
-    <img style="max-width:8%" src="/comm/assets/stock/noun_project-performance_1722481.svg" alt="pictogram illustrating performance">
+    <img style="max-width:8%" src="https://www.w3.org/comm/assets/stock/noun_project-performance_1722481.svg" alt="pictogram illustrating performance">
 
     <div class="left text-col">
         <h4 id="webperf">Web Performance</h4>
@@ -870,7 +843,7 @@
         the browser.</p>
         
         <h4 id="wpt">WebPlatform Tests</h4>
-        <img style="max-width:8%" src="/comm/assets/stock/noun_project-testing_1396787.svg"
+        <img style="max-width:8%" src="https://www.w3.org/comm/assets/stock/noun_project-testing_1396787.svg"
           alt="pictogram illustrating testing">
     <p>The <a href="https://github.com/web-platform-tests/wpt">WebPlatform
             Tests project</a> now provides a mechanism which allows to
@@ -888,7 +861,7 @@
           adopted.</p>
     
         <h3 id="data" class="clear">Web of Data</h3>
-        <a href="/TR/2017/REC-dwbp-20170131/images/context"><img src="https://www.w3.org/TR/2017/REC-dwbp-20170131/images/context.svg"
+        <a href="https://www.w3.org/TR/2017/REC-dwbp-20170131/images/context"><img src="https://www.w3.org/TR/2017/REC-dwbp-20170131/images/context.svg"
             alt="Context diagram from DWBP doc"></a>
         <p><a href="https://www.w3.org/TR/?tag=data">All Data specifications</a></p>
 
@@ -1278,7 +1251,7 @@
             Research Consortium for Informatics and
             Mathematics">ERCIM</abbr></a>,
             <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>)
-            <a href="/Consortium/Legal/ipr-notice">Usage policies apply</a>. </address>
+            <a href="https://www.w3.org/Consortium/Legal/ipr-notice">Usage policies apply</a>. </address>
         </div>
         <!-- footer end -->
         <script>
