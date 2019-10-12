@@ -625,172 +625,111 @@
         <h3 id="perf">パフォーマンス</h3>
     <img style="max-width:8%" src="https://www.w3.org/comm/assets/stock/noun_project-performance_1722481.svg" alt="pictogram illustrating performance">
 
-    <div class="left text-col">
         <h4 id="webperf">Web Performance</h4>
         <p><a href="https://www.w3.org/TR/?tag=performance">全ての仕様の一覧</a></p>
-        <p>There are currently 18 specifications in development in
-            the <a href="http://www.w3.org/2010/webperf/">Web
-            Performance Working Group</a> aiming to <b>provide methods
-            to observe and improve aspects of application
-            performance</b> of user agent features and APIs. The W3C
-            team is looking at related work incubated in
-            the <a href="https://www.w3.org/community/gpu/">W3C GPU
-            for the Web (WebGPU) Community Group</a> which is poised
-            to transition to a W3C Working Group. A
-            preliminary <a href="https://cdn.staticaly.com/gh/gpuweb/admin/0913e23/wg-charter.html">draft
-            charter</a> is available.</p>
-    </div>
+        <p><a href="http://www.w3.org/2010/webperf/">Web Performance ワーキンググループ</a>では現在合計18個の仕様が
+          開発中で、<b>アプリケーションのパフォーマンスの観点で測定・改善するための方法を提供する</b>
+          ためのユーザエージェントの機能と API を目標としています。
+          W3C ではワーキンググループ化を検討している<a href="https://www.w3.org/community/gpu/">W3C GPU
+          for the Web (WebGPU) コミュニティーグループ</a>で行われている活動との連携も模索中です。
+          これについては準備中の
+          <a href="https://cdn.staticaly.com/gh/gpuweb/admin/0913e23/wg-charter.html">趣意書案</a>があります。</p>
     
         <h4 id="wasm">WebAssembly</h4>
         <p> <a href="https://www.w3.org/TR/?title=webassembly">全ての仕様の一覧</a> </p>
-        <p>WebAssembly improves Web performance and power by being
-            a <b>virtual machine and execution environment</b>
-            enabling loaded pages to run native (compiled) code. It is
-            deployed in Firefox, Edge, Safari and Chrome. The
-            specification will soon reach Candidate
-            Recommendation.</p>
-        <p>WebAssembly enables near-native performance, optimized load
-          time, and perhaps most importantly, a compilation target for
-          existing code bases. While it has a small number of native
-          types, much of the performance increase relative to
-          Javascript derives from its use of consistent
-          typing. WebAssembly leverages decades of optimization for
-          compiled languages and the byte code is optimized for
-          compactness and streaming (the web page starts executing
-          while the rest of the code downloads). Network and API
-          access all occurs through accompanying Javascript
-          libraries -- the security model is identical to that of
-          Javascript.</p>
-        <p>Requirements gathering and language development occur in
-          the <a href="https://www.w3.org/community/webassembly/">Community
-            Group</a> while
-          the <a href="https://www.w3.org/wasm/">Working Group</a>
-          manages test development, community review and
-          progression of specifications on the
-          <a href="https://www.w3.org/Consortium/Process/#rec-publication">Recommendation
-            Track</a>.</p>
+        <p>WebAssembly は読み込まれたページをネイティブ (コンパイル済み) コードとして実行可能にすることで、
+          <b>仮想マシンと実行環境</b>として振る舞いウェブのパフォーマンスと消費電力の改善を可能にします。
+          Firefox、Edge、Safari と Chrome で利用可能です。仕様はまもなく勧告候補となる予定です。</p>
+        <p>WebAssembly によりネイティブに近いパフォーマンス、最適化された読み込み時間、そして最も重要かもしれない
+          既存のコードベースからコンパイルして実装可能という機能が提供されます。ネイティブの型は少数ですが、
+          型付きにより JavaScript よりも高速なパフォーマンスを示します。WebAssembly は何十年にもわたるコンパイル言語
+          の知識を活用でき、バイトコードは (ウェブページがすべてダウンロード完了する前に実行開始できるような) 
+          コンパクトさとストリーミングに最適化された仕様になっています。
+          ネットワークと API へのアクセスは常に併用される JavaScript ライブラリ経由で行われ、JavaScript 
+          のセキュリティーモデルで動作することになります。</p>
+        <p>仕様への要求抽出や言語自体の開発は<a href="https://www.w3.org/community/webassembly/">コミュニティーグループ</a>
+          で行われており、<a href="https://www.w3.org/wasm/">ワーキンググループ</a>はテスト開発、
+          コミュニティーによるレビュー、仕様を<a href="https://www.w3.org/Consortium/Process/#rec-publication">勧告化する</a> 
+          ための活動を行っています。</p>
     
         <h3 class="clear" id="testing">テスト</h3>
 
-        <p>Browser testing plays a critical role in the growth of the Web by:</p>
+        <p>ブラウザでのテストはウェブの発展のために重要です:</p>
         <ul>
-          <li>Improving the reliability of Web technology definitions;</li>
-          <li>Improving the quality of implementations of these technologies by
-            helping vendors to detect bugs in their products;</li>
-          <li>Improving the data available to Web developers on known bugs and
-            deficiencies of Web technologies by publishing results of these
-            tests.</li>
+          <li>ウェブ技術の定義の安定性を改善する</li>
+          <li>ベンダー自身が製品の問題を検出する手助けをすることで技術の実装のクォリティーを担保する</li>
+          <li>テスト結果を公表することで、ウェブ開発者がウェブ技術に関する既知のバグや未実装について認知できるようにする</li>
         </ul>
 
         <h4 id="btt">ブラウザでのテストとツール</h4>
 
-    <p>The <a href="https://www.w3.org/testing/browser/">Browser
-        Testing and Tools Working Group</a> is
-        developing <a href="https://w3c.github.io/webdriver/">WebDriver
-        version 2</a>, having published last year the W3C
-        Recommendation
-        of <a href="https://www.w3.org/blog/2018/06/webdriver-recommendation/">WebDriver</a>. WebDriver
-        acts as a remote control interface that enables
-        introspection and control of user agents, provides a
-        platform- and language-neutral wire protocol as a way for
-        out-of-process programs to remotely instruct the behavior
-        of Web, and emulates the actions of a real person using
-        the browser.</p>
+    <p><a href="https://www.w3.org/testing/browser/">Browser Testing and Tools ワーキンググループ</a>は
+       <a href="https://w3c.github.io/webdriver/">WebDriver バージョン2</a>を開発中で、
+       <a href="https://www.w3.org/blog/2018/06/webdriver-recommendation/">WebDriver</a> は昨年 W3C 勧告となりました。
+       WebDriver はユーザエージェントの内部観察や制御を可能にするリモート制御機構として働き、
+       プラットフォームや言語に依存しない形で外部プロセスからウェブの動作をリモートで操作する手法を提供し、
+       ブラウザを実際のユーザが操作しているような状況を作り出すことができます。</p>
         
         <h4 id="wpt">WebPlatform Tests</h4>
         <img style="max-width:8%" src="https://www.w3.org/comm/assets/stock/noun_project-testing_1396787.svg"
           alt="pictogram illustrating testing">
-    <p>The <a href="https://github.com/web-platform-tests/wpt">WebPlatform
-            Tests project</a> now provides a mechanism which allows to
-            fully automate tests that previously needed to be run
-            manually: TestDriver.</p>
+    <p><a href="https://github.com/web-platform-tests/wpt">WebPlatform Tests プロジェクト</a>は以前の
+      TestDriver では手動で操作しなくてはならなかったテストを完全に自動化して実行することができる機構を提供します。</p>
 
-    <p>TestDriver enables sending trusted key and mouse events,
-      sending complex series of trusted pointer and key interactions
-      for things like in-content drag-and-drop or pinch zoom, and
-      even file upload.</p>
+    <p>このシステムでは安全なキーとマウスイベントを送信可能で、ドラッグ・ドロップ、ピンチズームやファイルアップロード
+      などといった様々な複雑なポインタとキーによる操作を実行させることができます。</p>
 
-        <p>Since 2014 W3C began work on this coordinated open-source
-          effort to build a cross-browser test suite for the Web
-          Platform, which WHATWG, and <em>all</em> major browsers
-          adopted.</p>
+        <p>2014年から W3C ではウェブプラットフォームに対する、WHATWG やすべての主要ブラウザに適用可能な、
+          クロスブラウザのテスト環境を構築するオープンソースでの開発を行ってきました。</p>
     
         <h3 id="data" class="clear">データのウェブ</h3>
         <a href="https://www.w3.org/TR/2017/REC-dwbp-20170131/images/context"><img src="https://www.w3.org/TR/2017/REC-dwbp-20170131/images/context.svg"
             alt="Context diagram from DWBP doc"></a>
         <p><a href="https://www.w3.org/TR/?tag=data">全ての仕様の一覧</a></p>
 
-    <p>There have been several great success stories around the standardization of data on the web over the past year.</p>
-    <p>Verifiable Claims seems to have significant uptake. It is
-    also significant that the Distributed Identifier WG charter
-    has received numerous favorable reviews, and was just
-    recently <a href="https://lists.w3.org/Archives/Public/public-new-work/2019Sep/0002.html">launched</a>. JSON-LD
-    has been a major success with the large deployment on Web
-    sites via <a href="https://schema.org/">schema.org</a>.</p>
+    <p>ウェブにおけるデータの標準化について昨年いくつかの大きな進展がありました。</p>
+    <p>Verifiable Claims は大きな進展を見せました。また、Distributed Identifier WG の趣意書に対しても
+      たくさんの好意的な意見が寄せられ、<a href="https://lists.w3.org/Archives/Public/public-new-work/2019Sep/0002.html">開始</a>
+      しました。JSON-LD においても <a href="https://schema.org/">schema.org</a> において多数のサイトで利用されるという成功を見ました。</p>
 
     <ul>
-      <li><a href="https://www.w3.org/TR/json-ld11/">JSON-LD
-          1.1</a> completed technical work, about to transition to
-        CR</li>
-      <li><a href="https://w3techs.com/technologies/details/da-jsonld/all/all">More
-          than 25% of websites</a> today include schema.org data in
-        JSON-LD</li>
-      <li>The <a href="https://www.w3.org/TR/wot-thing-description/">Web
-          of Things description</a> is in CR since May, making use of
-        JSON-LD </li>
-      <li><a href="https://www.w3.org/TR/vc-data-model/">Verifiable
-          Credentials data model</a> is in CR since July, also making
-        use of JSON-LD</li>
-      <li>Continued strong interest
-        in <a href="https://w3c-ccg.github.io/did-spec/">decentralized
-          identifiers</a></li>
-      <li>Engagement from the TAG with reframing core documents,
-        such
-        as <a href="https://github.com/w3ctag/ethical-web-principles/issues/4#issuecomment-504081937">Ethical
-          Web Principles, to include data on the web within their
-          scope</a></li>
+      <li><a href="https://www.w3.org/TR/json-ld11/">JSON-LD 1.1</a> の技術作業が完了し、勧告候補化しました</li>
+      <li><a href="https://w3techs.com/technologies/details/da-jsonld/all/all">25% 以上のウェブサイトが</a> 
+        JSON-LD 形式の schema.org 形式データを利用するようになっています</li>
+      <li><a href="https://www.w3.org/TR/wot-thing-description/">Web of Things Description</a> が5月から勧告候補になっており、
+        JSON-LD を利用しています</li>
+      <li><a href="https://www.w3.org/TR/vc-data-model/">Verifiable Credentials データモデル</a>は7月から勧告候補になっており、
+        JSON-LD を利用しています</li>
+      <li><a href="https://w3c-ccg.github.io/did-spec/">decentralized identifiers</a> への強い興味が継続しています</li>
+      <li>TAG の協力の元でコアドキュメントの再構成が行われており、
+        <a href="https://github.com/w3ctag/ethical-web-principles/issues/4#issuecomment-504081937">倫理的ウェブ原則、
+        ウェブ上のデータをスコープに入れるには</a>などがあります</li>
     </ul>
     
-        <p>Data is increasingly important for all organizations,
-          especially with the rise of IoT and Big Data. W3C has a
-          mature and extensive suite of standards relating to data
-          that were developed over two decades of experience, with
-          plans for further work on making it easier for developers to
-          work with graph data and knowledge graphs.</p>
+        <p>データは、特にIoTやビックデータの隆盛を受けて、すべての組織にとって重要性が増しています。
+          W3C は20年にわたり開発が続けられたデータに関連する成熟し広い範囲の標準を持っており、
+          将来目標として開発者にグラフデータやナレッジグラフについて扱いやすいものを提供する予定です。</p>
 
-    <p>Linked Data is about the use of URIs as names for things,
-    the ability to dereference these URIs to get further
-    information and to include links to other data. There are
-    ever-increasing sources of open Linked Data on the Web, as
-    well as data services that are restricted to the suppliers and
-    consumers of those services.</p>
+    <p>Linked Data は対象についての名前のように URI を利用するためのもので、それらの URI を詳細情報取得や
+      他のデータにリンクとして格納するためのデリファレンスとして利用可能です。
+      ウェブ上では減ることがない公開の Linked Data が増えており、データを利用・提供するデータサービスも同様です。</p>
 
-    <p>The digital transformation of industry is seeking to
-    exploit advanced digital technologies. This will facilitate
-    businesses to integrate horizontally along the supply and
-    value chains, and vertically from the factory floor to the
-    office floor. W3C is seeking to make it easier to support
-    enterprise-wide data management and governance, reflecting the
-    strategic importance of data to modern businesses.</p>
+    <p>産業界のデジタル化に伴いより高度なデジタル技術が求められています。これにより、サプライとバリューチェーンを水平統合し、
+      工場からオフィスまで垂直統合するような産業が生まれています。W3C では新しい産業形態の中でのデータの戦略的重要性を元に、
+      事業向けデータ管理と統治をより簡単に行える方法を追求します。</p>
 
-    <p>Traditional approaches to data have focused on tabular
-    databases (SQL/RDBMS), Comma Separated Value (CSV) files, and
-    data embedded in PDF documents and spreadsheets. We're now in
-    midst of a major shift to graph data with nodes and labeled
-    directed links between them. Graph data is:</p>
+    <p>古典的なデータアクセスは、表形式データベース (SQL/RDBMS)、カンマ区切りデータ (CSV) ファイル、
+      PDFや表計算形式に埋め込まれたデータなどに注力していました。現在、ノードとそれらの間のラベル付き直接リンクで構成
+      されるグラフデータへの移行が起こっています。グラフデータは:</p>
     <ul>
-      <li>Faster than using SQL and associated JOIN operations</li>
-      <li>More favorable to integrating data from heterogeneous sources</li>
-      <li>Better suited to situations where the data model is evolving</li>
+      <li>JOIN操作を伴うSQLよりも高速です</li>
+      <li>異種データソースからのデータの統合に適しています</li>
+      <li>進化し続けるデータモデルに対してより適しています</li>
     </ul>
 
-        <p>In the wake of the
-            recent <a href="https://www.w3.org/Data/events/data-ws-2019/">W3C
-            Workshop on Graph Data</a> we are in the process of
-            launching a Graph Standardization Business Group to
-            provide a business perspective with use cases and
-            requirements, to coordinate technical standards work and
-            liaisons with external organizations.</p>
+        <p>最近の <a href="https://www.w3.org/Data/events/data-ws-2019/">グラフデータに関する W3C ワークショップ</a>
+          を受け、ユースケースや要求の側面からのビジネス要件の提供や、外部組織との標準化におけるリエゾン関係を構築する
+          ことを目標として、グラフ標準化ビジネスグループを立ち上げ中です。</p>
 
         <h2 id="web-for-all">全ての人の為に</h2>
 
