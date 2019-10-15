@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TTWG Specs Timeline 2019/10</title>
+  <style>
+    table {
+      border: 1px solid;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+<h2>TTML WG specification timeline - 2019/10; FPWD, CR</h2>
+<p>Links and targets
+  <ul>
+    <li><a href="https://www.w3.org/2019/09/18-tt-minutes.html#x31">discussion at TPAC 2019</a></li>
+    <li><a href="https://www.w3.org/wiki/TimedText/Publications">Current publications</a></li>
+    <li><a href="https://w3c.github.io/spec-releases/milestones/">Milestones calculator</a></li>
+  </ul>
+</p>
+<p>Status summary and links
+  <ul>
+    <li>FPWD
+      <ul>
+        <li>IMSC 1.2</li>
+        <li>TTML Live Extension Module</li>
+        <li>TTML Karaoke Extension Module</li>
+        <li>TTML Live WebSocket Carriage Mechanism</li>
+      </ul></li>
+    <li>CR
+      <ul>
+        <li>TTML2 2nd Ed</li>
+        <li>CR update for webvtt</li>
+      </ul></li>
+    <li>Errata (REC)
+      <ul>
+        <li>TTML1 3rd Ed errata</li>
+      </ul></li>
+  </ul>
+</p>
+
+<table>
+<thead>
+  <tr>
+    <th colspan="2">Specifications</th>
+    <th colspan="2"><a href="https://w3c.github.io/imsc/imsc1/spec/ttml-ww-profiles.html">IMSC 1.2</a></th>
+    <th colspan="2"><a href="https://w3c.github.io/tt-module-live/tt-live-1/spec/tt-live.html">TTML Live Extension Module</a></th>
+    <th colspan="2"><a href="https://w3c.github.io/tt-module-karaoke/">TTML Karaoke Extension Module</a></th>
+    <th colspan="2"><a href="https://w3c.github.io/tt-module-live/tt-live-1/spec/carriage/WebSocket/tt-live-carriage-WebSocket.html">TTML Live WebSocket Carriage Mechanism</a></th>
+    <th colspan="2"><a href="https://w3c.github.io/ttml2/index.html">TTML2 2nd Ed</a></th>
+    <th colspan="2"><a href="https://w3c.github.io/webvtt/">WebVTT</a></th>
+    <th colspan="2"><a href="https://w3c.github.io/ttml1/">TTML1 3rd Ed</a></th>
+  </tr>
+  <tr>
+    <th colspan="2">Target</th>
+    <th colspan="2">FPWD</th>
+    <th colspan="2">FPWD</th>
+    <th colspan="2">FPWD</th>
+    <th colspan="2">FPWD</th>
+    <th colspan="2">CR</th>
+    <th colspan="2">CR update</th>
+    <th colspan="2">Errata</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td colspan="16">FPWD Timeline</td>
+  <tr>
+    <td colspan="2">Author sends editor's draft for review</td>
+  <tr>
+    <td>Chair sends CfC</td><td><a href="https://www.w3.org/2018/05/timed-text-charter.html#decisions">10wd</a></td>
+  <tr>
+    <td>End of CfC</td><td></td>
+  <tr>
+    <td colspan="2">Chair sends WG resolution - FPWD transition</td>
+  <tr>
+    <td colspan="2">Author sends final FPWD document</td>
+  <tr>
+    <td colspan="2">Staff checks and prepare final for /TR/</td>
+  <tr>
+    <td>Staff sends <a href="https://github.com/w3c/transitions/issues/new?assignees=plehegar&labels=Awaiting+Director%2C+Entering+FPWD&template=fpwd.md&title=FPWD+Request+for+%3Ctitle%3E">Transition request</a></td><td>~1w</td>
+  <tr>
+    <td>Staff sends <a href="https://www.w3.org/Guide/transitions?profile=FPWD#schedule-pubreq">FPWD publication request</a></td><td>~2d</td>
+  <tr>
+    <td colspan="2">Staff sends announcement draft to comm team</td>
+  <tr>
+    <td colspan="2">FPWD publication</td>
+  <tr>
+    <td>Start of 60days IPP exclusion opprtunity</td><td>60d</td>
+</tbody>
+</table>
+
+<hr>
+
+    <table style="width: 1137px; height: 1156px;" cellspacing="0" border="0">
+      <colgroup width="815"></colgroup> <colgroup width="291"></colgroup> <colgroup
+        width="97"></colgroup> <colgroup width="291"></colgroup> <colgroup width="74"></colgroup>
+      <colgroup width="360"></colgroup> <colgroup width="76"></colgroup> <colgroup
+        width="100" span="3"></colgroup>
+      <tbody>
+        <tr>
+          <td bgcolor="#993366" align="left" height="40"><b><font color="#FFFFFF"
+                face="Arial" size="3">TTML WG specifications Timeline with PR
+                CfC (tight timeline)</font></b></td>
+          <td align="center"><font color="#000000"><br>
+            </font></td>
+          <td align="center"><font color="#000000">status</font></td>
+          <td align="center"><font color="#000000"><br>
+            </font></td>
+          <td align="center"><font color="#000000">status</font></td>
+          <td align="left"><font color="#000000"><br>
+            </font></td>
+          <td align="center"><font color="#000000">status</font></td>
+          <td align="left"><font color="#000000"><br>
+            </font></td>
+          <td align="left"><font color="#000000"><br>
+            </font></td>
+          <td align="center"><font color="#000000">status</font></td>
+        </tr>
+        <tr>
+          <td align="left" height="29"><b><font face="Arial">Specifications</font></b></td>
+          <td colspan="2" bgcolor="#FFFF00" align="center" valign="middle"><b><font
+                face="Arial">TTML2</font></b></td>
+          <td colspan="2" bgcolor="#FFCC00" align="center" valign="middle"><b><font
+                face="Arial">TTML1 3rd Ed.<br>
+              </font></b></td>
+          <td colspan="2" bgcolor="#99CC00" align="center" valign="middle"><b><font
+                face="Arial">IMSC1.1</font></b></td>
+          <td colspan="2" bgcolor="#99CCFF" align="center" valign="middle"><b><font
+                face="Arial">WebVTT</font></b></td>
+          <td align="left"><b><font face="Arial"><br>
+              </font></b></td>
+        </tr>
+        <tr>
+          <td align="left" height="29"><b><font face="Arial">URL</font></b></td>
+          <td align="center"><a href="https://www.w3.org/TR/ttml2/"><b><font face="Arial">https://www.w3.org/TR/ttml2/</font></b></a></td>
+          <td align="left"><b><font face="Arial"><br>
+              </font></b></td>
+          <td align="center"><a href="https://www.w3.org/TR/ttml1/"><b><font face="Arial">https://www.w3.org/TR/ttml1/</font></b></a></td>
+          <td align="left"><b><font face="Arial"><br>
+              </font></b></td>
+          <td align="left"><a href="https://www.w3.org/TR/ttml-imsc1.1/"><b><font
+                  face="Arial">https://www.w3.org/TR/ttml-imsc1.1/</font></b></a></td>
+          <td style="margin-left: 16px;" align="left"><b><font face="Arial"><br>
+              </font></b></td>
+          <td align="left"><a href="https://www.w3.org/TR/ttml-imsc1.1/"><b><font
+                  face="Arial">http://www.w3.org/TR/webvtt1/</font></b></a></td>
+          <td align="left"><b><font face="Arial"><br>
+              </font></b></td>
+          <td align="left"><b><font face="Arial"><br>
+              </font></b></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF00" align="center" height="29"><b><font face="Arial">CR
+                Timeline</font></b></td>
+          <td bgcolor="#FFFF00" align="center"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF00" align="center"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF00" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Author
+              sends editor's draft for review</font></td>
+          <td sdval="43304" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#339966" face="Arial">lun. 23 juil. 18</font></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43298" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                color="#339966" face="Arial">mar. 17 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43284" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                color="#000000" face="Arial">mar. 3 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Chair
+              sends CfC (14 days period)</font></td>
+          <td sdval="43305" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#339966" face="Arial">mar. 24 juil. 18</font></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43298" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                color="#339966" face="Arial">mar. 17 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43284" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                color="#000000" face="Arial">mar. 3 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><font color="#000000">end
+              of CfC</font></td>
+          <td sdval="43319" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#000000" face="Arial">mar. 7 août 18</font></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43312" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#339966" face="Arial">mar. 31 juil. 18</font></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43298" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                color="#000000" face="Arial">mar. 17 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Chair
+              sends the WG Resolution - CR Transition</font></td>
+          <td sdval="43319" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#000000" face="Arial">mar. 7 août 18</font></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43313" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#339966" face="Arial">mer. 1 août 18</font></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43299" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                color="#000000" face="Arial">mer. 18 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Author
+              sends final CR document</font></td>
+          <td sdval="43319" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#000000" face="Arial">mar. 7 août 18</font></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43313" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#339966" face="Arial">mer. 1 août 18</font></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43299" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                color="#000000" face="Arial">mer. 18 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Staff
+              checks and upload spec to final destination on TR</font></td>
+          <td sdval="43319" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#000000" face="Arial">mar. 7 août 18</font></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43313" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#339966" face="Arial">mer. 1 août 18</font></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43300" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                color="#000000" face="Arial">jeu. 19 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><b><font face="Arial">Staff
+                sends Transition request to director (needs about a week for
+                approval)</font></b></td>
+          <td sdval="43319" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><b><font
+                color="#993300" face="Arial">mar. 7 août 18</font></b></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43314" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><b><font
+                color="#993300" face="Arial">jeu. 2 août 18</font></b></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43300" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><b><i><font
+                  color="#993300" face="Arial">jeu. 19 juil. 18</font></i></b></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Staff
+              sends CR Publication request to webmaster (needs 1 or 2 days ahead
+              of publication)</font></td>
+          <td sdval="43325" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#000000">lun. 13 août 18</font></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43319" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#000000">mar. 7 août 18</font></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43305" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                face="Arial">mar. 24 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Staff
+              sends announcement draft to com team</font></td>
+          <td sdval="43325" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#000000">lun. 13 août 18</font></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43319" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><font
+              color="#000000">mar. 7 août 18</font></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43305" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><i><font
+                face="Arial">mar. 24 juil. 18</font></i></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><b><font face="Arial">CR
+                publication</font></b></td>
+          <td sdval="43326" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><a
+              href="https://www.w3.org/TR/2018/CR-ttml2-20180814/"><b><font color="#993300"
+                  face="Arial">mar. 14 août 18</font></b></a></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43321" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><a
+              href="https://www.w3.org/TR/2018/CR-ttml1-20180809/"><b><font color="#993300"
+                  face="Arial">jeu. 9 août 18</font></b></a></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43307" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><a
+              href="https://www.w3.org/TR/2018/CR-ttml-imsc1.1-20180726/"><b><i><font
+                    color="#993300" face="Arial">jeu. 26 juil. 18</font></i></b></a></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFF99" align="left" height="29"><b><font face="Arial">start
+                of a 60 days exclusion opportunity</font></b></td>
+          <td sdval="43326" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><b><font
+                color="#993300" face="Arial">mar. 14 août 18</font></b></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43321" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><b><font
+                color="#993300" face="Arial">jeu. 9 août 18</font></b></td>
+          <td style="text-align: center;" bgcolor="#FFFF99"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43307" sdnum="1036;0;JJJ J MMM AA" bgcolor="#FFFF99" align="center"><b><i><font
+                  color="#993300" face="Arial">jeu. 26 juil. 18</font></i></b></td>
+          <td bgcolor="#FFFF99" align="center"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#99CCFF" align="center" height="29"><b><font face="Arial">PR
+                Timeline</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#99CCFF" align="center"><b><font
+                face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#99CCFF" align="center"><b><font face="Arial"><br>
+              </font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#99CCFF" align="center"><b><font
+                face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#99CCFF" align="center"><b><font face="Arial"><br>
+              </font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#99CCFF" align="center"><b><font
+                face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#99CCFF" align="center"><b><font face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#99CCFF" align="center"><b><font face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#99CCFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#99CCFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><b><font face="Arial">Dealine
+                for comments</font></b></td>
+          <td sdval="43354" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">mar. 11 sept. 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43349" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993366" face="Arial">jeu. 6 sept. 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43335" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">jeu. 23 août 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><font color="#000000">Author
+              sends editor's draft for review</font></td>
+          <td sdval="43355" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">mer. 12 sept. 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43350" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">ven. 7 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43336" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">ven. 24 août 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><b><font color="#333399"
+                face="Arial">Chair sends CfC (14 days period)</font></b></td>
+          <td sdval="43355" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#333399" face="Arial">mer. 12 sept. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43350" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#333399" face="Arial">ven. 7 sept. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43336" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#333399" face="Arial">ven. 24 août 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#333399" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><b><font color="#333399" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><b><font color="#333399" face="Arial"><br>
+              </font></b></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><b><font color="#333399"
+                face="Arial">end of CfC</font></b></td>
+          <td sdval="43369" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#333399" face="Arial">mer. 26 sept. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43364" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#333399" face="Arial">ven. 21 sept. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43350" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#333399" face="Arial">ven. 7 sept. 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#333399" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><b><font color="#333399" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><b><font color="#333399" face="Arial"><br>
+              </font></b></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><font color="#000000">Chair
+              sends the WG Resolution - PR Transition<br>
+            </font></td>
+          <td sdval="43370" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">jeu. 27 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><i><font
+                color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43367" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 24 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43353" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 10 sept. 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><font color="#000000">Author
+              sends PR final document</font></td>
+          <td sdval="43370" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">jeu. 27 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><i><font
+                color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43367" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 24 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43353" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 10 sept. 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><font color="#000000">Testsuite
+              and Implementation report finalysed</font></td>
+          <td sdval="43370" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">jeu. 27 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><i><font
+                color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43367" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 24 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43353" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 10 sept. 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><font color="#000000">Staff
+              checks and upload spec to final destination on TR</font></td>
+          <td sdval="43371" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">ven. 28 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><i><font
+                color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43368" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">mar. 25 sept. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43354" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">mar. 11 sept. 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><b><font face="Arial">Staff
+                sends PR Transition request to director (needs about a week for
+                approval)</font></b></td>
+          <td sdval="43371" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">ven. 28 sept. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43368" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">mar. 25 sept. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43354" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">mar. 11 sept. 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><font color="#000000">Staff
+              prepares Questionnaire</font></td>
+          <td sdval="43374" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 1 oct. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43374" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 1 oct. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43360" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 17 sept. 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><font color="#000000">Staff
+              sends PR Publication request to webmaster (needs 1 or 2 days ahead
+              of publication)</font></td>
+          <td sdval="43376" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">mer. 3 oct. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43374" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 1 oct. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43360" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 17 sept. 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><font color="#000000">Staff
+              sends PR announcement draft to com team</font></td>
+          <td sdval="43376" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">mer. 3 oct. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43374" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 1 oct. 18</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43360" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000">lun. 17 sept. 18</font></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><b><font face="Arial">PR
+                publication</font></b></td>
+          <td sdval="43377" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><a
+              href="https://www.w3.org/TR/2018/PR-ttml2-20181004/"><b><font color="#993300"
+                  face="Arial">jeu. 4 oct. 18</font></b></a></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43375" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><a
+              href="https://www.w3.org/TR/2018/PR-ttml1-20181004/"><b><font color="#993300"
+                  face="Arial">jeu. 4 oct. 18</font></b></a></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdval="43361" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><a
+              href="https://www.w3.org/TR/2018/PR-ttml-imsc1.1-20181004/"><b><font
+                  color="#993300" face="Arial">jeu. 4 oct. 18</font></b></a></td>
+          <td bgcolor="#CCFFFF" align="left"><br>
+            <i><font color="#339966" face="Arial">done</font></i></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><b><font face="Arial">Last
+                day of the 150 days exclusion opportunity</font></b></td>
+          <td sdval="43380" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">dim. 7 oct. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td sdval="43380" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">dim. 7 oct. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td sdval="43366" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">dim. 23 sept. 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><b><font face="Arial">Last
+                day of the 60 days exclusion opportunity</font></b></td>
+          <td sdval="43386" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">sam. 13 oct. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td sdval="43381" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">lun. 8 oct. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td sdval="43367" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">lun. 24 sept. 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#CCFFFF" align="left" height="29"><b><font face="Arial">Last
+                day of the AC Review</font></b></td>
+          <td sdval="43405" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">jeu. 1 nov. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td sdval="43403" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">mar. 30 oct. 18</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td sdval="43389" sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial">mar. 16 oct. 18</font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#CCFFFF" align="center"><b><font
+                color="#993300" face="Arial"><br>
+              </font></b></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#CCFFFF" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td bgcolor="#99CC00" align="center" height="29"><b><font face="Arial">REC
+                Timeline</font></b></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#99CC00" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#99CC00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#99CC00" align="center"><font
+              color="#000000"><br>
+            </font></td>
+          <td bgcolor="#99CC00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" bgcolor="#99CC00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#99CC00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#99CC00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#99CC00" align="left"><font color="#000000"><br>
+            </font></td>
+          <td bgcolor="#99CC00" align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Chair
+              sends CfC (14 days period)</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">jeud oct 15th<br>
+            </font></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">jeud oct 15th</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">jeud oct 15th</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><br>
+            <font color="#000000">(25 oct is moratoria on publications)</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><font color="#000000">end
+              of CfC</font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">jeud 1 nov 18<br>
+            </font></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">jeud 1 nov 18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">jeud 1 nov 18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Chair
+              sends the WG Resolution - REC Transition</font></td>
+          <td sdval="43409" sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">vend. 2 nov.
+              18</font></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43404" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">vend. 2 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43390" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">vend. 2 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3; margin-left: 38px;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Author
+              sends final REC document&nbsp; </font></td>
+          <td sdval="43409" sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 5 nov.
+              18</font></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43404" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 5 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43390" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 5 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><br>
+            <font color="#000000">Staff checks and upload spec to final
+              destination on TR</font></td>
+          <td sdval="43409" sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 5 nov.
+              18</font></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43404" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 5 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43390" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 5 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><b><font face="Arial">Staff
+                sends REC Transition request to director (needs about a week for
+                approval)</font></b></td>
+          <td sdval="43409" sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><b><font color="#993300" face="Arial">lun.
+                5 nov. 18</font></b></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43405" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><b><font color="#993300" face="Arial">lun.
+                5 nov. 18</font></b></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43391" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><b><font color="#993300" face="Arial">lun.
+                5 nov. 18</font></b></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Staff
+              sends Publication request to webmaster (needs 1 or 2 days ahead of
+              publication)</font></td>
+          <td sdval="43416" sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 12 nov.
+              18</font></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43411" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 12 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43397" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 12 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><font color="#000000">Staff
+              sends announcement draft to com team</font></td>
+          <td sdval="43416" sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 12 nov.
+              18</font></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43411" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 12 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43397" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><font color="#000000">lun. 12 nov.
+              18</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+        <tr>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left" height="29"><b><font face="Arial">REC
+                publication</font></b></td>
+          <td sdval="43417" sdnum="1036;0;JJJ J MMM AA" style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><b><font color="#993300" face="Arial">mar.
+                13 nov. 18</font></b></td>
+          <td style="height: 29px; text-align: left; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43412" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><b><font color="#993300" face="Arial">mar.
+                13 nov. 18</font></b></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td sdval="43403" sdnum="1036;0;JJJ J MMM AA" style="text-align: center; background-color: #e0ffd3;"
+            bgcolor="#FFFF99" align="center"><b><font color="#993300" face="Arial">mar.
+                13 nov. 18</font></b></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000">(25 oct is moratoria on
+              publications)</font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+          <td style="text-align: center; background-color: #e0ffd3;" bgcolor="#FFFF99"
+            align="left"><font color="#000000"><br>
+            </font></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
