@@ -11,4 +11,9 @@
 
 ## Generic sensor
 
+- No handling of natural language or user input
+- This defines framework, mock sensors does not define return value syntax (nor unit)
+- time related values are in Hz or DOMHighResTimeStamp, no dependency to TZ or cultural text
+
+
 
