@@ -12,8 +12,22 @@
 ## Generic sensor
 
 - No handling of natural language or user input
-- This defines framework, mock sensors does not define return value syntax (nor unit)
+- This defines framework, mock sensors does not define return value syntax (nor unit), data formats are defined by each sensor specification
+  - and each specification only defines its specific data format
 - time related values are in Hz or DOMHighResTimeStamp, no dependency to TZ or cultural text
 
+## Accelerometer
 
+- Just a definition of data dictionaly
+- Defines one dictionary (and two extensions) which has values with well defined SI unit
+
+## Gyroscope
+
+- Just a definition of data dictionaly
+- Defines one dictionary which has values with well defined SI unit
+
+## Orientation sensor
+
+- Just a definition of data dictionaly
+- Defines one dictionary (and one extention) which has quaternion of rotation matrix (normalized)
 
