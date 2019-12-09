@@ -40,15 +40,18 @@
     /* 甲 乙 丙 丁 戊 己 庚 辛 壬 癸 */
     suffix: "、";
   }
-  li.skip10 {
+  li.skip {
     list-style-type: none;
-    counter-increment: list-item 10;
+    /* not using "counter-increment: list-item 10;", not working well on Chrome */
   }
   </style>
 </head>
 <body>
 <h1>Sample page for CSS Counter Styles Lv3 - CJK counters</h1>
-<div>CSS '@counter-style' has 'system' descriptor for specifying counter 
+<div>CSS '@counter-style' 
+(works <a href="https://caniuse.com/#search=%40counter-style">only on Firefox
+as for 2019/Dec</a>)
+has 'system' descriptor for specifying counter 
 algorithms, to select a next after the end of list.</div>
 
 <h2>cjk-earthly-breanch</h2>
@@ -58,26 +61,26 @@ algorithms, to select a next after the end of list.</div>
 </div>
 
 <h3>fixed</h3>
-<ol style="list-style-type: cjk-earthly-branch-fixed">
+<ol style="list-style: cjk-earthly-branch-fixed">
   <li>One</li>
-  <li class="skip10">::</li>
-  <li>Last</li>
+  <li class="skip">::</li>
+  <li value=12>Last</li>
   <li>Rotated</li>
 </ol>
 
 <h3>alphabetic</h3>
 <ol style="list-style-type: cjk-earthly-branch-alphabetic">
   <li>One</li>
-  <li class="skip10">::</li>
-  <li>Last</li>
+  <li class="skip">::</li>
+  <li value=12>Last</li>
   <li>Rotated</li>
 </ol>
 
 <h3>cyclic</h3>
 <ol style="list-style-type: cjk-earthly-branch-cyclic">
   <li>One</li>
-  <li class="skip10">::</li>
-  <li>Last</li>
+  <li class="skip">::</li>
+  <li value=12>Last</li>
   <li>Rotated</li>
 </ol>
 
