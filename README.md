@@ -1,8 +1,9 @@
 Random memo on W3C works.
-Refer [gh-pages](https://himorin.github.io/w3c-memo/) for test files.
+Check [github.io](https://himorin.github.io/w3c-memo/) for test file outputs.
 
 * general memo
   * [Tools and scripts](tools/)
+    * [samples](tools/samples/)
   * [GitHub](github/)
 * projects
   * [i18n](i18n/)
