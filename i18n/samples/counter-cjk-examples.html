@@ -2,12 +2,85 @@
 <html lang="ja">
 <head>
   <title>i18n samples - counter in CJK examples</title>
+  <style type="text/css">
+  @counter-style cjk-earthly-branch-fixed {
+    system: fixed;
+    symbols: "\5B50" "\4E11" "\5BC5" "\536F" "\8FB0" "\5DF3" "\5348" "\672A" "\7533" "\9149" "\620C" "\4EA5";
+    /* 子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥 */
+    suffix: "、";
+  }
+  @counter-style cjk-earthly-branch-alphabetic {
+    system: alphabetic;
+    symbols: "\5B50" "\4E11" "\5BC5" "\536F" "\8FB0" "\5DF3" "\5348" "\672A" "\7533" "\9149" "\620C" "\4EA5";
+    /* 子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥 */
+    suffix: "、";
+  }
+  @counter-style cjk-earthly-branch-cyclic {
+    system: cyclic;
+    symbols: "\5B50" "\4E11" "\5BC5" "\536F" "\8FB0" "\5DF3" "\5348" "\672A" "\7533" "\9149" "\620C" "\4EA5";
+    /* 子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥 */
+    suffix: "、";
+  }
+  @counter-style cjk-heavenly-stem-fixed {
+    system: fixed;
+    symbols: "\7532" "\4E59" "\4E19" "\4E01" "\620A" "\5DF1" "\5E9A" "\8F9B" "\58EC" "\7678";
+    /* 甲 乙 丙 丁 戊 己 庚 辛 壬 癸 */
+    suffix: "、";
+  }
+  @counter-style cjk-heavenly-stem-alphabetic {
+    system: alphabetic:
+    symbols: "\7532" "\4E59" "\4E19" "\4E01" "\620A" "\5DF1" "\5E9A" "\8F9B" "\58EC" "\7678";
+    /* 甲 乙 丙 丁 戊 己 庚 辛 壬 癸 */
+    suffix: "、";
+  }
+  @counter-style cjk-heavenly-stem-cyclic {
+    system: cyclic;
+    symbols: "\7532" "\4E59" "\4E19" "\4E01" "\620A" "\5DF1" "\5E9A" "\8F9B" "\58EC" "\7678";
+    /* 甲 乙 丙 丁 戊 己 庚 辛 壬 癸 */
+    suffix: "、";
+  }
+  li.skip10 {
+    list-style-type: none;
+    counter-increment: list-item 10;
+  }
+  </style>
 </head>
 <body>
+<h1>Sample page for CSS Counter Styles Lv3 - CJK counters</h1>
+<div>CSS '@counter-style' has 'system' descriptor for specifying counter 
+algorithms, to select a next after the end of list.</div>
 
+<h2>cjk-earthly-breanch</h2>
+<div>Counter style as: 
+"&#x5B50;" "&#x4E11;" "&#x5BC5;" "&#x536F;" "&#x8FB0;" "&#x5DF3;"
+"&#x5348;" "&#x672A;" "&#x7533;" "&#x9149;" "&#x620C;" "&#x4EA5;"
+</div>
+
+<h3>fixed</h3>
+<ol style="list-style-type: cjk-earthly-branch-fixed">
+  <li>One</li>
+  <li class="skip10">::</li>
+  <li>Last</li>
+  <li>Rotated</li>
+</ol>
+
+<h3>alphabetic</h3>
+<ol style="list-style-type: cjk-earthly-branch-alphabetic">
+  <li>One</li>
+  <li class="skip10">::</li>
+  <li>Last</li>
+  <li>Rotated</li>
+</ol>
+
+<h3>cyclic</h3>
+<ol style="list-style-type: cjk-earthly-branch-cyclic">
+  <li>One</li>
+  <li class="skip10">::</li>
+  <li>Last</li>
+  <li>Rotated</li>
+</ol>
 
 
 
 </body>
-</head>
-
+</title>
