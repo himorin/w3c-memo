@@ -5,6 +5,7 @@
 <title>Basic samples using ReSpec</title>
 <link rel="stylesheet" href="samples.css" />
 <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+<script class="remove" src="respec-basic-postprocess.js"></script>
 <script defer src="samples.js"></script>
 <script class="remove">
 var respecConfig = {
@@ -32,10 +33,11 @@ var respecConfig = {
   // wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/0/status",
   // edDraftURI: "https://himorin.github.io/w3c-memo/", 
   // github: "himorin/w3c-memo",
+  postProcess: [ addSelfLinks ],
 };
 </script>
 </head>
-<body onload="setFrontMatterIds(); /*addLangAttrs();*/ initialiseLang()">
+<body>
 <h1 class="title p-name" id="title">Basic samples using ReSpec</h1>
 
 <div id="abstract">
@@ -53,8 +55,9 @@ SotD - Status of this Document.
 <h3>First subsection</h2>
 <p>Some text</p>
 <ol>
-  <li>List items</li>
-  <li>Second item</li>
+  <li id="l0001">List items</li>
+  <li id="l0002">Second item</li>
+  <li>Third without id</li>
 </ol>
 <p>Second paragraph</p>
 <div class="note">
