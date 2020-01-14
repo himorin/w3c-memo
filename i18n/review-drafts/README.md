@@ -19,5 +19,6 @@
 
 # memos
 
+- [2020 CR Screen Capture](2020-screen-capture.md)
 - [2019 CR Devices and Sensors](2019-devices-sensors.md)
 
