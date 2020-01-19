@@ -22,7 +22,8 @@ List of tools used for W3C works
     * once failed `node_modules` created, seems need to delete whole...
 * [echidna](https://github.com/w3c/echidna/wiki)
   * dry run: `curl 'https://labs.w3.org/echidna/api/request' --data 'url=<W3CTRMANIFEST>&decision=<decision>&token=<token>' -d 'dry-run=true'`
-  + from tar archive: `curl 'https://labs.w3.org/echidna/api/request' --user '<username>:<password>' -F "tar=@/some/path/spec.tar" -F "decision=<decisionUrl>"`
+  + from tar archive: `curl 'https://labs.w3.org/echidna/api/request' --user '<username>:<password>' -F 'dry-run=true' -F "tar=@/some/path/spec.tar" -F "decision=<decisionUrl>"`
+  * check echidna result: `https://labs.w3.org/echidna/api/status?id=<uuid>`
   * [echidna token](https://www.w3.org/Web/publications/register), can check existing token (as error message for dup)
   * pubrules validate: `https://www.w3.org/pubrules/api/validate?url=<url>&profile=WD`
     * [Error messages](https://github.com/w3c/specberus/blob/master/lib/l10n-en_GB.js#L45)
