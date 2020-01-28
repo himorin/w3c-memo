@@ -21,9 +21,9 @@ Unicodeへの参照以外にも、いくつかのカテゴリが定義されて�
 空白関係で利用される文字参照のリスト、展開先のコードポイントとCSSプロパティーによる置換などをコメントで含めて。全リストは[Named character references](https://html.spec.whatwg.org/multipage/named-characters.html#entity-nbsp)にある。
 
 * 1byte系
-  * [nbsp](https://html.spec.whatwg.org/multipage/named-characters.html#entity-nbsp) (U+00A0)
-  * [NonBreakingSpace](https://html.spec.whatwg.org/multipage/named-characters.html#entity-NonBreakingSpace) (U+00A0)
   * [NewLine](https://html.spec.whatwg.org/multipage/named-characters.html#entity-NewLine) (U+000A)
+  * [nbsp](https://html.spec.whatwg.org/multipage/named-characters.html#entity-nbsp) (U+00A0)
+    * [NonBreakingSpace](https://html.spec.whatwg.org/multipage/named-characters.html#entity-NonBreakingSpace)
 * U+20XX系
   * [ensp](https://html.spec.whatwg.org/multipage/named-characters.html#entity-ensp) (U+2002)
   * [emsp](https://html.spec.whatwg.org/multipage/named-characters.html#entity-emsp) (U+2003)
