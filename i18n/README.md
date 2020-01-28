@@ -3,4 +3,5 @@
 * [wpt - web-platform-test](wpt.md)
 * [References](refs.md)
 * [Samples directory](samples/)
+* [Notes on internationalization related items](notes/)
 
