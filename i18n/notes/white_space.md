@@ -12,6 +12,7 @@
 ### Unicodeの仕様
 
 * [UAX #11](https://www.unicode.org/reports/tr11/tr11-36.html): East Asian Width (Fullwidth/F, Halfwidth/H, Wide/W, Narrow/Na, Ambiguous/A, Neutral) の定義
+* [UAX #14](https://www.unicode.org/reports/tr14/tr14-43.html): 改行位置・可能性に関する定義
 * [UAX #29](http://www.unicode.org/reports/tr29/) : Grapheme cluster (Vowelや合字などのひとまとまりとして表示される組)、単語、文章の区切りを判別するためのUnicode属性の規定
 * [UAX #44](https://www.unicode.org/reports/tr44/tr44-24.html) : Unicode character database (UCD)の定義で文字に付随する属性(たとえば[General_Category](https://www.unicode.org/reports/tr44/tr44-24.html#GC_Values_Table))を規定
 
@@ -126,5 +127,56 @@ U+0009, U+000A, `segment break`の表現に当てはまらない[Control charact
 
 #### [改行と単語区切り section 5](https://drafts.csswg.org/css-text-3/#line-breaking)
 
+検討点
 
+* `forced line break`: `preserved newline character`などの明示的改行指示や、ブロックの先頭・最後
+* `soft wrap break`: 表示幅に合わせて表示上で改行する場所、`soft wrap opportunity`である許可された場所でのみ可能
+  * ハイフネーション可能位置や空白で示される言語が多い
+  * Thai, Lao, Khmerでは単語区切りがなく、改行可能位置の明確な定義はない。U+200Bで示すのは可能。
+  * Javanese, Balineseも同様に単語区切りでなく、`orthographic syllable boundary`での改行になる
+  * 中国語、日本語、Yi、に加えて韓国語の一部では、特定のペア以外のどこでも改行可能
+* これらを制御するために以下の属性がある
+  * `line-break`: 改行規則の厳密さの選択
+  * `word-break`: 改行不可な単語として扱う文字種の定義
+  * `hyphens`: ハイフンを利用する言語でのハイフン規則の制御
+  * `overflow-wrap`: 改行不可な文字列以外のどこでも改行可能で、不可なものは行送りする
+
+概要
+
+* `preserved forced break`で改行する、UAX #14のBK, NLも考慮する
+* プロパティーでの指定がない限り、UAX #14のWJ, ZW, GL, ZWJを考慮する
+* 単語区切りでない約物で改行可能な言語ではそれを優先する。CSSではブロック幅・言語・`line-break`の値などによる改行可能優先度は定義しないが、`word-break: break-all`では単語区切りの優先扱いは想定されておらず、`line-break: anywhere`の場合は優先扱いは禁止される。
+* out-of-flowエレメントやインラインエレメントの境界は`forced line break`や`soft wrap opportunity`としては扱わない
+* 置換された文字やインライン要素の改行可能性はUAX #14の定義に従うが、後方互換性から、それらとU+00A0の間には`soft wrap opportunity`を置く
+* U+0020などの改行時に消える文字による`soft wrap opportunity`はその文字を含む要素の属性による。連続する2文字間については最下位の共通要素の`white-space`属性により、`line-break`, `word-break`, `overflow-wrap`属性に関してはLevel 3では未定義
+* ボックス内の先頭の前・最後の後にある`soft wrap opportunity`はボックスの端と中身の間でなく、直前・直後(margin edge)で行う
+* Ruby周りはcss-ruby参照
+* 文字列解析が要求される言語で不可能な場合、全ての表示の塊(UAX #44)の間に`soft wrap opportunity`を置く
+
+定義されている属性
+
+* [word-break](https://drafts.csswg.org/css-text-3/#word-break-property)
+  * 特にUAX #14でNU, AL, AI, IDの文字や表示の塊の間での`soft wrap opportunity`の制御であり、`white space`や約物によるものには影響しない
+  * `normal`: 前出の言語による一般規則に従う
+  * `break-all` 基本的にはどこでも改行可能にする。UAX #14 NU, AL, SAをIDとして扱う。約物には影響しない
+  * `kepp-all`: 単語中での改行を禁止する。辞書ベースの改行位置以外の、NU, AL, AI, IDや表示の塊の間の`soft wrap opportunity`は無視される。
+  * 改行を強制した前後においてもshapingは維持する
+* [line-break](https://drafts.csswg.org/css-text-3/#line-break-property)
+  * `auto`: UAによる判断、行長などに依存して選択される
+  * それ以外には`loose`, `normal`, `strict`, `anywhere`が選べる
+  * `anywhere`ではUAX #14のGL, WJ, ZWJなどを含めた禁止規則が無視され、ハイフネーションも行わない。また`white-space`による行末の空白処理も変更される。
+  * 文字種ごとの扱いについて (ここは変更が検討されている)
+    * 拗音・長音(UAX #14 CJ)の前での改行は、`strict`で禁止、`normal`, `loose`で許可
+    * ‐ U+2010, – U+2013, 〜 U+301C, ゠ U+30A0の前での改行は、中国語・日本語の場合について`normal`, `loose`で許可され、それ以外では禁止
+    * 繰り返し記号(々とか)の前やUAX #14 IN (2/3点ダーシ)などの分割不可文字の並びの間での改行は`loose`の場合のみ許可
+    * 中央寄せ約物(中黒など)の直前、UAX #14 POかつ`East Asian Width`が`Ambiguous`, `Fullwidth`, `Wide`の後置文字の前、UAX #14 PRかつ`East Asian Width`が`Ambiguous`, `Fullwidth`, `Wide`の前置文字の後での改行は、中国語・日本語で`loose`の場合のみ許可
+* [hyphens](https://drafts.csswg.org/css-text-3/#hyphenation)
+  * U+002D (HYPHEN-MINUS), U+2010 (HYPHEN)で指定される場所でない、U+00ADや`shy`のハイフネーション可能点の制御
+  * `none` (行わない), `manual` (事前定義のみ), `auto` (単語解析で挿入可能)がある
+  * ハイフネーションを行ってもshapingは分割前の状態を維持する
+* [overflow-wrap, word-wrap](https://drafts.csswg.org/css-text-3/#overflow-wrap-property)
+  * オーバーフローがおこる際に禁止された点で改行可能かどうかを指定する
+  * `normal`: 許可された点でのみ可能だが、`word-break: kepp-all`の場合は`normal`に読み替え可能
+  * `anywhere`: どこでも改行挿入可能
+  * `break-word`: `anywhere`と同等だが、`break-word`で追加される`soft wrap opportunity`は表示幅を計算する際には考慮しない
 
