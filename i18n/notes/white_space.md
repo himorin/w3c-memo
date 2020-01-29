@@ -45,7 +45,7 @@ Unicodeへの参照以外にも、いくつかのカテゴリが定義されて�
   * [zwsp](https://html.spec.whatwg.org/multipage/named-characters.html#entity-ZeroWidthSpace) ([U+200B](https://unicode.org/cldr/utility/character.jsp?a=200B))
   * [zwnj](https://html.spec.whatwg.org/multipage/named-characters.html#entity-zwnj) ([U+200C](https://unicode.org/cldr/utility/character.jsp?a=200C))
   * [zwj](https://html.spec.whatwg.org/multipage/named-characters.html#entity-zwj) ([U+200D](https://unicode.org/cldr/utility/character.jsp?a=200D))
-  * [MediumSpace](https://html.spec.whatwg.org/multipage/named-characters.html#entity-MediumSpace) ([U+205F]https://unicode.org/cldr/utility/character.jsp?a=205F)
+  * [MediumSpace](https://html.spec.whatwg.org/multipage/named-characters.html#entity-MediumSpace) ([U+205F](https://unicode.org/cldr/utility/character.jsp?a=205F)
   * [NoBreak](https://html.spec.whatwg.org/multipage/named-characters.html#entity-NoBreak) ([U+2060](https://unicode.org/cldr/utility/character.jsp?a=2060))
   * [it](https://html.spec.whatwg.org/multipage/named-characters.html#entity-it) ([U+2062](https://unicode.org/cldr/utility/character.jsp?a=2062))
     * [InvisibleTimes](https://html.spec.whatwg.org/multipage/named-characters.html#entity-InvisibleTimes)
@@ -61,7 +61,9 @@ Unicodeへの参照以外にも、いくつかのカテゴリが定義されて�
 
 ### CSS Text (Level 3)
 
-CSSの空白処理で影響する対象は、各仕様で明記がない限り[document white space characters](https://www.w3.org/TR/css-text-3/#white-space-rules) (css-text-3 4.1)となる U+0020, U+0009, U+000A の文字。UCD [General_Category=Zs](https://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B%3AGeneral_Category%3DZs%3A%5D&g=&i=)のU+0020, U+00A0以外の15文字は"other space separators"とされる。
+CSSの空白処理で影響する対象は、各仕様で明記がない限り[document white space characters](https://www.w3.org/TR/css-text-3/#white-space-rules) (css-text-3 4.1)となる U+0020, U+0009, U+000A の文字。UCD [General_Category=Zs](https://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B%3AGeneral_Category%3DZs%3A%5D&g=&i=)のU+0020, U+00A0以外の15文字は`other space separators`とされる。
+またこのセクションの定義により、U+000Aや言語ごとにunicodeで定義された改行文字は`segment break`となり、プロパティーの設定によっては表示に反映される。
+U+0009, U+000A, `segment break`の表現に当てはまらない[Control characters, General_Category=Cc](https://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B%3AGeneral_Category%3DCc%3A%5D&g=&i=)の文字は、フォント上で不可視の場合でも何らかの形で可視表示せねばならず、`Other Symbols' (General_Category=So)として扱う。
 
 推奨される(結果が同じであれば必須ではない)文字列処理の順序は[Appendix A](https://www.w3.org/TR/css-text-3/#order)にあり、以下の順になる。
 
@@ -79,4 +81,20 @@ CSSの空白処理で影響する対象は、各仕様で明記がない限り[d
     * [約物禁則処理](https://www.w3.org/TR/css-text-3/#hanging-punctuation-property)
 * [行そろえ](https://www.w3.org/TR/css-text-3/#justification) : 行末そろえや、そろえた際の空きの入れ方
 * [text-align適用](https://www.w3.org/TR/css-text-3/#text-align-property)
+
+#### [white-space](https://drafts.csswg.org/css-text-3/#white-space-property) 空白の畳み込みを行うかの制御
+
+ざっくりいうと、preエレメント的な扱いの拡張の設定。
+
+* `normal`: infra specの畳み込みに準拠、soft wrap opportunitiesも適用
+* `pre`: 空白の畳み込みを一切行わず、`segment break`は強制改行位置として扱い、soft wrapは適用しない (htmlのpreエレメントの扱い)
+* `norwap`: 空白の畳み込みを行うが、soft wrapは適用しない
+* `pre-wrap`: 空白の畳み込みは一切行わないが、soft wrapは適用する
+* `break-spaces`: 以下の2点以外は`pre-wrap`と同じ。行末を含め空白や`other space separators`による空白のサイズを維持する、それらの空白の間を含めすべての空白文字の直後に`soft wrap`を許可する (その分行末に余計なサイズが付く)
+* `pre-line`: 空白の畳み込みもsoft wrapも行うが、`segment break`を強制改行位置として扱う (強制改行以外は`normal`と同じ)
+
+これらの処理で保持された(畳み込まれなかった)空白は`preserved white space`と呼ぶ。
+
+#### [空白文字処理 section 4.1](https://drafts.csswg.org/css-text-3/#white-space-rules)
+
 
