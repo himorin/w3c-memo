@@ -11,6 +11,7 @@
 
 ### Unicodeの仕様
 
+* [UAX #11](https://www.unicode.org/reports/tr11/tr11-36.html): East Asian Width (Fullwidth/F, Halfwidth/H, Wide/W, Narrow/Na, Ambiguous/A, Neutral) の定義
 * [UAX #29](http://www.unicode.org/reports/tr29/) : Grapheme cluster (Vowelや合字などのひとまとまりとして表示される組)、単語、文章の区切りを判別するためのUnicode属性の規定
 * [UAX #44](https://www.unicode.org/reports/tr44/tr44-24.html) : Unicode character database (UCD)の定義で文字に付随する属性(たとえば[General_Category](https://www.unicode.org/reports/tr44/tr44-24.html#GC_Values_Table))を規定
 
@@ -84,7 +85,7 @@ U+0009, U+000A, `segment break`の表現に当てはまらない[Control charact
 
 #### [white-space](https://drafts.csswg.org/css-text-3/#white-space-property) 空白の畳み込みを行うかの制御
 
-ざっくりいうと、preエレメント的な扱いの拡張の設定。
+ざっくりいうと、preエレメント的な扱いの拡張の設定と、畳み込み規則の詳細定義
 
 * `normal`: infra specの畳み込みに準拠、soft wrap opportunitiesも適用
 * `pre`: 空白の畳み込みを一切行わず、`segment break`は強制改行位置として扱い、soft wrapは適用しない (htmlのpreエレメントの扱い)
@@ -96,5 +97,34 @@ U+0009, U+000A, `segment break`の表現に当てはまらない[Control charact
 これらの処理で保持された(畳み込まれなかった)空白は`preserved white space`と呼ぶ。
 
 #### [空白文字処理 section 4.1](https://drafts.csswg.org/css-text-3/#white-space-rules)
+
+* Phase I: 畳み込みと置換 (このPhase I処理は表示用改行処理やbidiの考慮の適用前に行う)
+  * `white-space`が`normal`, `nowrap`, `pre-line`の場合、空白の畳み込みを行う
+    * 改行文字直前直後の`space`, `tab`の並びは削除する
+    * 以下の`segment break`の変換規則により、畳み込み可能な`segment break`を変換する
+    * 畳み込み可能な`tab`はU+0020 (`space`)に置換する
+    * 連続する畳み込み可能な`space`の2つ目以降をゼロ幅に置換する (`soft wrap`可能な不可視文字)
+  * `white-space`が`pre`, `pre-wrap`, `break-spaces`の場合、すべての`space`をU+00A0と扱う
+    * `soft wrap`の位置について、`pre-wrap`の場合は空白の連続の最後のみに、`break-spaces`の場合はすべての空白の直後に許される
+  * bidiの処理の前なので畳み込みはバイト列順の並びで処理される (表示の際の順序ではない)
+* Phase II: トリミングと表示位置 (表示の際に文字列から表示用データへの変換で行われる処理)
+  * 行頭の全ての空白の並びを除去する
+  * `tab-size`が0に設定されていれば保持されたタブは表示されない、それ以外の場合は通常のタブの表示の処理で空白をあける
+  * 行末の全ての空白の並びを除去する (bidiの場合は方向制御前の行末にあるものも除去)
+  * bidi処理後に`space`や`other space separators`が行末にある場合は以下の処理を行う (ぶら下げ処理を行われた空白は文字選択時に選択可能になる)
+    * `white-space`が`normal`, `norwap`, `pre-line`の場合、ぶら下げ処理を行う (領域外に出られる)
+    * `white-space`が`pre-wrap`の場合、`forced line break`が続いていない場合に限りぶら下げ処理を行い、続く場合は`conditional hang` (文字揃えを行う前に収まらない場合のみぶら下げる)を行う
+    * `white-space`が`break-spaces`の場合、行末でのぶら下げ・畳み込みは禁止され、行送りされる
+* `segment break`変換処理
+  * `white-space`が`pre`, `pre-wrap`, `break-spaces`, `pre-line`の場合、`segment break`は畳みこまれず、すべて`preserved line feed`として扱う
+  * それ以外の場合、`segment break`は畳み込み可能になる。2つ目以降は除去され、残ったものはU+0020に置換されるか前後の状況により除去される
+    * 前後に`zero width space character` (U+200B)がある場合は除去し、U+200Bのみ残す
+    * 前後両方の文字の`East Asian Width`が`Fullwidth`, `Wide`, `Halfwidth`で`Ambiguous`でない場合、かつ、ハングルでなければ`segment break`は除去する
+    * `segment break`に適用される`lang`が中国語、日本語、Yiの場合、かつ、前後のどちらかが約物か記号([Unicode General Category P*かS*](https://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B%3AGeneral_Category%3DPd%3A%5D%0D%0A%5B%3AGeneral_Category%3DPs%3A%5D%0D%0A%5B%3AGeneral_Category%3DPe%3A%5D%0D%0A%5B%3AGeneral_Category%3DPc%3A%5D%0D%0A%5B%3AGeneral_Category%3DPo%3A%5D%0D%0A%5B%3AGeneral_Category%3DSm%3A%5D%0D%0A%5B%3AGeneral_Category%3DSc%3A%5D%0D%0A%5B%3AGeneral_Category%3DSk%3A%5D%0D%0A%5B%3AGeneral_Category%3DSo%3A%5D%0D%0A%5B%3AGeneral_Category%3DPi%3A%5D%0D%0A%5B%3AGeneral_Category%3DPf%3A%5D&g=&i=))で`East Asian Width`が`Ambiguous`であり、もう一方の`East Asian Width`が`Fullwidth`, `Wide`, `Halfwidth`でハングルでない場合、`segment break`は除去する
+    * これまでに当てはまらない場合、U+0020に置換する
+  * なお、[Unicode Emoji](https://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B%3AEmoji%3A%5D&g=&i=)で、`East Asian Width`が`Wide`か`Neutral`の文字は`Ambiguous`として扱う
+
+#### [改行と単語区切り section 5](https://drafts.csswg.org/css-text-3/#line-breaking)
+
 
 
