@@ -1,0 +1,27 @@
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Text stretch samples</title>
+<style>
+.stretch {
+    transform: scale(1, 2);
+}
+</style>
+</head>
+<body>
+<h2>Background and state in specs</h2>
+<p><a href="https://drafts.csswg.org/css-transforms/#transform-property">'transform' CSS property</a> enables transformation of box, like scaling one axis of character. This property is applicable to <a href="https://drafts.csswg.org/css-transforms/#transformable-element">transformable elements</a>, which is defined as all elements in CSS box model except for <a href="https://html.spec.whatwg.org/multipage/rendering.html#non-replaced-elements">non-replaced</a> and <a href="https://drafts.csswg.org/css-display/#inline-box">inline boxes</a> etc.</p>
+<p>'ruby' elements has <a href="https://drafts.csswg.org/css-display/#inner-model">'ruby' inner display layout</a> and <a href="https://drafts.csswg.org/css-display/#layout-specific-display">'ryby-base' and 'ruby-text' have 'flow' inner display type</a>.</p>
+<p>Therefore, 'transform' will not be applicable to 'rt' element per current spec.</p>
+
+<hr>
+
+<h2>Simple test</h2>
+<h3>'p' element is applicable</h3>
+<p class="stretch">ルビに入れられない</p>
+<h3>'span' element is not applicable</h3>
+<p><span class="stretch">ルビに入れられない</span></p>
+
+<h2>Test with 'ruby'</h2>
+<p><ruby><rb>読み<rb>上げ<rt class="stretch">よみ<rt>あげ</ruby>に<span class="stretch">利用可能な</span>データをルビに入れられないか</p>
+</body>
