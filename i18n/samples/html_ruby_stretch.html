@@ -6,6 +6,12 @@
 .stretch {
     transform: scale(1, 2);
 }
+.fontstretch {
+    font-stretch: 50%;
+}
+.largeruby {
+    font-size: 1rem;
+}
 </style>
 </head>
 <body>
@@ -14,14 +20,24 @@
 <p>'ruby' elements has <a href="https://drafts.csswg.org/css-display/#inner-model">'ruby' inner display layout</a> and <a href="https://drafts.csswg.org/css-display/#layout-specific-display">'ryby-base' and 'ruby-text' have 'flow' inner display type</a>.</p>
 <p>Therefore, 'transform' will not be applicable to 'rt' element per current spec.</p>
 
+<p>Alternatively, <a href="https://himorin.github.io/w3c-memo/i18n/samples/html_ruby_stretch.html">font-stretch</a> could be used.</p>
+
 <hr>
 
-<h2>Simple test</h2>
+<h2>Simple test for 'transform'</h2>
 <h3>'p' element is applicable</h3>
 <p class="stretch">ルビに入れられない</p>
 <h3>'span' element is not applicable</h3>
 <p><span class="stretch">ルビに入れられない</span></p>
 
-<h2>Test with 'ruby'</h2>
+<h2>Test of 'transform' with 'ruby'</h2>
 <p><ruby><rb>読み<rb>上げ<rt class="stretch">よみ<rt>あげ</ruby>に<span class="stretch">利用可能な</span>データをルビに入れられないか</p>
+
+<h2>Simple test for 'font-stretch'</h2>
+<p class="fontstretch">ルビに入れられない</p>
+<p><span class="fontstretch">ルビに入れられない</span></p>
+<p><ruby><rb>読み<rb>上げ<rt class="fontstretch largeruby">よみ<rt>あげ</ruby>に<span class="fontstretch">利用可能な</span>データをルビに入れられないか</p>
+
+
+
 </body>
