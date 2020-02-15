@@ -1,3 +1,7 @@
+<style type="text/css">
+.anchorjs-link { opacity: 1; }
+</style>
+
 # HTMLにおける空白の扱いについて
 
 ## 関連項目
