@@ -4,7 +4,7 @@ import utils
 import i18n
 import sys
 
-LABEL_TRACK = 'i18n-tracking'
+LABEL_TRACK = 'i18n-tracker'
 
 def printIssues(label, issues):
     print("\n{}".format(label))
