@@ -9,6 +9,7 @@ Check [github.io](https://himorin.github.io/w3c-memo/) for test file outputs.
   * [i18n](i18n/)
   * [TTWG](tt/)
 * [日本語翻訳置き場](translations/): 非公式訳の作業場です
+* [月間サマリー](monthly-summary/)
 
 
 ## Useful Links
