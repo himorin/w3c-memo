@@ -1,5 +1,6 @@
 Random memo on W3C works.
 Check [github.io](https://himorin.github.io/w3c-memo/) for test file outputs.
+Check [github repository](https://github.com/himorin/w3c-memo) for issues or PRs.
 
 * general memo
   * [Tools and scripts](tools/)
