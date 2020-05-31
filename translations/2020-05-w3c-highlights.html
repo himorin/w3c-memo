@@ -475,37 +475,12 @@
 	  
 	  <h4 id="device-interop">デバイス間相互運用</h4>
 	  
-	  <p>There are complementing ways to reduce device
-	    fragmentation. One of them is to make sure that devices
-	    converge on a common definition of technologies that compose
-	    the Web platform at a point in time. Through the Web Media
-	    APIs Community Group, the CTA WAVE Project publishes annual
-	    snapshots of Web APIs that are supported across main browser
-	    codebases at the time of publication.</p>
+	  <p>デバイス間の相違を減らすための補完的な活動があります。一つは、デバイスがある時点でのウェブプラットフォームといった共通の技術標準に基づくようにすることです。Web Media APIs コミュニティーグループでは、CTA WAVE プロジェクトが作成時点での主要ブラウザで実装されている Web API の年次スナップショットを出しています。</p>
 	  
-	  <p>The <a href="http://www.w3.org/2011/webtv/">Media &amp;
-	      Entertainment Interest Group</a> has also started to gather
-	    practical constraints on consumer electronic devices related
-	    to the integration of Web media APIs, such as playback
-	    behavior when hardware can only decode one video at a
-	    time.</p>
+	  <p><a href="http://www.w3.org/2011/webtv/">Media &amp;
+		  Entertainment インタレストグループ</a>では、ハードウェアが一度に一つのビデオしかデコードできないような状況下でのプレイバックといった、Web メディア API を採用する民生用電子機器における実際の制約についての情報収集を始めました。</p>
 	  
-	  <p>Another approach to improving cross-device support in
-	    applications is to document and expose differences in
-	    capabilities. Media Capabilities and CSS Media Queries are
-	    good examples of specifications that expose practical device
-	    support for media related features such as codec support,
-	    video resolutions, and color
-	    spaces. The <a href="https://www.w3.org/webperf/">Web
-	      Performance Working Group</a> also
-	    develops <a href="#webperf">specifications that expose
-	      timing hooks to Web applications</a>, to analyze the time
-	    spent doing various tasks. Although not specifically
-	    targeted at media scenarios, these specifications (such as
-	    Navigation Timing, Resource Timing, User Timing, Server
-	    Timing) make it possible to monitor the performance of
-	    running applications on actual devices, and thus to measure
-	    the quality of experience.</p>
+	  <p>アプリケーションのデバイス間での利用可能性の改善の他の方策として、性能の差異について状況を公開するというものがあります。Media Capabilities と CSS Media Queries は、利用可能コーデック、ビデオ解像度、色空間といったメディア関係の機能のデバイスにおける実装状況を利用可能にする仕様の良い例です。<a href="https://www.w3.org/webperf/">Web Performance ワーキンググループ</a>では、<a href="#webperf">ウェブアプリケーションにタイミングデータの取得を可能にする仕様</a>を開発しており、各種の動作間で消費された時間を解析する機能を提供します。メディア環境を特に目標とはしていませんが、(Navigation Timing、Resource Timing、User Timing、Server Timing といった)仕様により、実際のデバイスで動作しているアプリケーション上でのパフォーマンスが監視可能になり、ユーザ体験の品質を測定することができます。</p>
 	  
 	  <h4 id="immersive">仮想環境</h4>
 	  
@@ -519,45 +494,16 @@
 	  <p>W3C では VR とアクセシビリティーの境界領域における要求とその恩恵についてのワークショップ (Inclusive XR) を2019年11月にシアトルで開催し、既存・将来の VR/AR 体験をよりアクセシブルにする可能性について追及しました。ワークショップでの主要議論は
 	    (詳細は<A href="https://www.w3.org/2019/08/inclusive-xr-workshop/report.html">完全な報告書</a>をご覧ください):</p>
 	  <ul>
-	    <li>For visual interactions, the need to standardize
-	      semantics for scene and models (e.g. for the glTF format)
-	      was identified as a low-hanging fruit, while browsers and 3D
-	      engines could provide support for accommodation for
-	      low-vision impairments (e.g. high contrast,
-	      magnification).</li>
-	    <li>For motricity considerations, ensuring the WebXR input
-	      mechanism can be applied to accessible controllers and
-	      enable accessible re-mappings of default controllers would
-	      provide a first level of improvement, while making
-	      real-world movement detection accessible is likely to
-	      require more substantive standardization work (interaction
-	      semantics, users' capabilities and preferences, and
-	      development best practices).</li>
-	    <li>For auditory aspects, workshop participants reviewed
-	      existing research in how to integrate and position
-	      accessible accommodations in 3D environments (e.g. sign
-	      language interpretation, captions).</li>
-	    <li>Participants also reviewed the landscape of Assistive
-	      Technologies to understand how current tools can provide
-	      support for XR, and agreed that new tools and approaches
-	      (e.g. AI) would be needed to bring full XR support,
-	      including using Web and XR technologies themselves as the
-	      basis for building assistive technologies.</li>
+	    <li>表示のために、シーンやモデルのセマンティックの標準化 (glTF 形式向けなど) が低レイヤーで必要とされており、ブラウザや 3D エンジンが弱視環境向けに (ハイコントラストや拡大など) 機能を提供するために有用となります。</li>
+	    <li>機能障害対応として、WebXR 入力方法について、アクセシブルな制御機器や既定の制御をよりアクセシブルに再定義可能にすることが第一歩となります。それに加えて、実世界の動作検出をアクセシブルにするには、運動に関するセマンティクス、ユーザの状況や設定、開発者向け最良慣行の策定といった、より多くの標準化活動が必要となるでしょう。</li>
+	    <li>音声について、ワークショップの参加者は、手話やキャプションなどについての、3D 環境でのアクセシブル表現の統合や表示の既存の研究を概覧しました。</li>
+	    <li>アクセシブルのための技術の現状を、XR サポート状況の理解のために概覧し、ウェブと XR 技術をアクセシブルな技術を構築する基礎として利用することを含めて、XR に完全に対応するには新しいツールや方策 (AI など) が必要であることについて合意しました。</li>
 	  </ul>
 	  
-	  <p>Work on underlying technologies spans various
-	    standardization groups and incubation activities in W3C and in
-	    the Khronos Group, such as the Immersive Web Working Group,
-	    the Timed Text Working Group, or the Khronos glTF Working
-	    Group.</p>
+	  <p>下敷きになる技術は W3C と Khronos グループといったいくつかの標準化団体にわたって議論され、育成されています。これには、Immersive Web ワーキンググループ、Timed Text ワーキンググループ、Khronos glTF ワーキンググループなどが含まれます。</p>
 	  
-	  <p>3D is at the core of any immersive
-	    experience. The <a href="https://www.w3.org/community/gpu/">GPU
-	      for the Web Community Group</a> incubates the WebGPU
-	    specification, a more modern API compared to WebGL that
-	    exposes the capabilities of GPU hardware for the Web, and
-	    efficiently abstracts away common native GPU APIs (Vulkan,
-	    Direct3D 12, and Metal).</p>
+	  <p>3D は仮想体験の基盤です。<a href="https://www.w3.org/community/gpu/">GPU
+		  for the Web コミュニティーグループ</a>では、WebGPU 仕様について議論しており、これはウェブにおいて GPU ハードウェアの機能を利用するための WebGL より現代的な API を提供し、ネイティブの (Vulkan、Direct3D 12、Metal といった) GPU API の共通領域を効率的に提供します。</p>
 	  
 	  <h4 id="media-distribution">メディア配信</h4>
 	  
