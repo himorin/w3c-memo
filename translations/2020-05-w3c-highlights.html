@@ -458,58 +458,20 @@
 	  
 	  <h4 id="media-rendering">メディア表示</h4>
 	  
-	  <p>The <a href="https://www.w3.org/media-wg/">Media Working
-	      Group</a> was created mid-2019 to develop and improve
-	    client-side media processing and playback features on the
-	    Web. This includes standardization of the following
-	    APIs:</p>
+	  <p><a href="https://www.w3.org/media-wg/">Media ワーキンググループ</a>はクライアントサイドのメディア処理とウェブでのプレイバック機能の開発と改良を目的に 2019 年中ごろに開始しました。これには次のような API の標準化が含まれます:</p>
 	  <ul>
-	    <li>Media Capabilities to expose information about the
-	      decoding and encoding capabilities for a given format but
-	      also output capabilities to find the best match based on the
-	      device's display. One capability example is the ability to
-	      decode and render 4K videos, even when the rest of page may
-	      be rendered at a lower resolution (as TV and cast devices
-	      often have different planes for rendering video and
-	      graphics).</li>
-	    <li>Picture-in-Picture to allow websites to create a
-	      floating video window always on top of other windows so that
-	      users may continue consuming media while they interact with
-	      other content sites, or applications on their device.</li>
-	    <li>Media Session to show customized media metadata on the
-	      platform user interface, customize available platform media
-	      controls, and access platform media keys (such as hardware
-	      keys found on keyboards, headsets, remote ntrols, and
-	      software keys found in notification areas and on lock
-	      screens of mobile devices).</li>
+	    <li>特定の形式のデコード・エンコード機能に関する情報に加え、デバイスの画面に合わせた最適な出力形式の情報を得る方策。一つの例として、ページのそれ以外が低解像度での表示となる場合でも、(TV やキャストするデバイスではビデオや画像の表示の別画面を持つように) 4K 動画をデコード・描画できるかどうかです。</li>
+	    <li>ウェブサイトが他のウィンドウ上に浮かぶビデオウィンドウを作成し、他のサイトやデバイス上のアプリケーションを操作しながらユーザがメディアを閲覧しつづけられるような表示機能。</li>
+	    <li>プラットフォームのユーザインターフェースにカスタマイズされたメディアの情報を表示したり、メディア制御方法のカスタマイズ、(キーボード、ヘッドセット、リモート制御、モバイルデバイスの通知エリアやロック画面上のソフトウェアキーなど) プラットフォーム特有のメディア操作キーへのアクセス方法。</li>
 	  </ul>
 	  
-	  <p>The Media Working Group also develops a revision of the
-	    Media Source Extensions specification, notably to add a codec
-	    switching feature to improve support for ad insertion
-	    scenarios, and of the Encrypted Media Extensions
-	    specification, e.g. to add persistent usage record
-	    sessions.</p>
+	  <p>Media ワーキンググループは、広告挿入の実装の改善に向けたコーデック変更機能などを含む Media Source Extensions (MSE) 仕様の改訂版や、セッションの録画機能の追加などの Encrypted Media Extensions (EME) 仕様の改訂版に取り組んでいます。</p>
 	  
-	  <P>Following work on use cases and requirements for Media
-	    Timed Events, incubation of a DataCue
-	    proposal <a href="https://github.com/WICG/datacue/">datacue</a>
-	    has started to bring support for timed metadata to the web
-	    platform, in particular for MPEG-DASH emsg in-band events.</p>
+	  <P>メディア時系列イベントのユースケースと要求項目の取りまとめを受けて、特に MPEG-DASH emsg in-band イベント向けに、DataCue プロポーザル (<a href="https://github.com/WICG/datacue/">datacue</a>) がウェブプラットフォームに時系列メタデータを実装するために開始しました。</p>
 	  
 	  <h4 id="second-screen">マルチ画面</h4>
 	  
-	  <p>The <a href="https://www.w3.org/2014/secondscreen/">Second
-	      Screen Working Group</a> started standardization work on the
-	    <a href="https://webscreens.github.io/openscreenprotocol/">Open
-	      Screen Protocol</a>, a suite of network protocols based on
-	    QUIC that allows web browsers and devices to implement the
-	    Presentation API and the Remote Playback API in an
-	    interoperable fashion. The Open Screen Protocol specifically
-	    supports browsers and displays that are connected via the
-	    same local area network. It allows a browser to present a
-	    URL, initiate remote playback of an HTML media element, and
-	    stream media data to another device.</p>
+	  <p><a href="https://www.w3.org/2014/secondscreen/">Second Screen ワーキンググループ</a>では <a href="https://webscreens.github.io/openscreenprotocol/">Open Screen Protocol</a> 標準化作業に着手しました。これは、QUIC ベースのネットワークプロトコルで、ブラウザとデバイス間で表示 API とリモートプレーバック API を相互運用可能な形で実現するためのものです。Open Screen Protocol は同じローカルネットワーク経由でつながっているブラウザとデバイス間をつなぎます。HTML media エレメントについてのリモートプレーバックや、他のデバイスへのメディアデータを送出を開始するための URL をブラウザが表示することを可能にします。</p>
 	  
 	  <h4 id="device-interop">デバイス間相互運用</h4>
 	  
@@ -547,33 +509,15 @@
 	  
 	  <h4 id="immersive">仮想環境</h4>
 	  
-	  <p>Hardware that enables Virtual Reality (VR) and Augmented
-	    Reality (AR) applications are now broadly available to
-	    consumers, offering an immersive computing platform with
-	    both new opportunities and challenges. The ability to
-	    interact directly with immersive hardware is critical to
-	    ensuring that the web is well equipped to operate as a
-	    first-class citizen in this environment.</p>
+	  <p>仮想現実 (VR) や拡張現実 (AR) アプリケーションを実現するハードウェアが近年一般向けに利用可能になり、 新しい機会や挑戦が可能になる没入型コンピューティング環境が提供されるようになりました。 没入型ハードウェアと直接やり取りができる機能は、ウェブがこの環境で市民権を得るために重要です。</p>
 	  
-	  <p>The <a href="https://www.w3.org/immersive-web/">Immersive
-	      Web Working Group</a> has been stabilizing
-	    the <a href="https://www.w3.org/TR/webxr/">WebXR Device
-	      API</a>. The group split the specification into separately
-	    managed modules (core API, AR module, gamepad module)
-	    based on the different speed of progress expected for
-	    different features. The
-	    companion <a href="https://www.w3.org/community/immersive-web/">Immersive
-	      Web Community Group</a> incubates
-	    the <a href="https://github.com/search?q=topic%3Aincubation+org%3Aimmersive-web&type=Repositories">next
-	      series of features</a> identified as key for the future of
-	    the Immersive Web.</p>
+	  <p><a href="https://www.w3.org/immersive-web/">Immersive
+	      Web ワーキンググループ</a>は <a href="https://www.w3.org/TR/webxr/">WebXR Device
+		  API</a>の策定のために活動しています。グループでは、機能ごとの開発速度が異なることから、仕様を独立して管理されるモジュール (core API、AR モジュール、ゲームパッドモジュール) に分離しました。並行して <a href="https://www.w3.org/community/immersive-web/">Immersive
+	      Web コミュニティーグループ</a>は Immersive Web の将来において重要となるであろう<a href="https://github.com/search?q=topic%3Aincubation+org%3Aimmersive-web&type=Repositories">次世代機能</a>について活動しています。</p>
 	  
-	  <p>W3C held a workshop on Inclusive Design for Immersive Web
-	    standards in November 2019 to learn from existing approaches
-	    in making XR experiences accessible. The workshop
-	    highlighted the following aspects
-	    (see <A href="https://www.w3.org/2019/08/inclusive-xr-workshop/report.html">full
-	      report</a> for details):</p>
+	  <p>W3C では VR とアクセシビリティーの境界領域における要求とその恩恵についてのワークショップ (Inclusive XR) を2019年11月にシアトルで開催し、既存・将来の VR/AR 体験をよりアクセシブルにする可能性について追及しました。ワークショップでの主要議論は
+	    (詳細は<A href="https://www.w3.org/2019/08/inclusive-xr-workshop/report.html">完全な報告書</a>をご覧ください):</p>
 	  <ul>
 	    <li>For visual interactions, the need to standardize
 	      semantics for scene and models (e.g. for the glTF format)
