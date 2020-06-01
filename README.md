@@ -11,6 +11,7 @@ Check [github repository](https://github.com/himorin/w3c-memo) for issues or PRs
   * [TTWG](tt/)
 * [日本語翻訳置き場](translations/): 非公式訳の作業場です
 * [月間サマリー](monthly-summary/)
+* [公開ファイル](files/): 共有資料置き場です
 
 
 ## Useful Links
