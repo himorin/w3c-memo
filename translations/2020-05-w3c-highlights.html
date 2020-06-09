@@ -593,9 +593,9 @@
 					    src="https://www.w3.org/html/logo/downloads/HTML5_Logo.svg"
 					    alt="HTML logo"></a>
 
-	  <p><a href="https://www.w3.org/2019/html/">HTML ワーキンググループ</a>は <a href="https://www.w3.org/blog/news/archives/8398">DOM 仕様の2019年6月のスナップショットを勧告候補</a>としました。これは、<strong>WHATWG との<a href="https://www.w3.org/blog/news/archives/8398">コラボレーション</a>における初めての成果</strong>となります。また、DOM 仕様が進捗するまで、HTML 仕様について2019年8月の<a href="https://lists.w3.org/Archives/Public/public-review-announce/2019Sep/0000.html">レビュー</a>について待機となります。</p>
-	  
-	  <p>このグループでは、年1度の DOM (6月のスナップショット基準)と HTML (12月のスナップショット基準)についての活動を目標としています。</p>
+	  <p><a href="https://www.w3.org/2019/html/">HTML ワーキンググループ</a>は <a href="https://www.w3.org/blog/news/archives/8398">DOM 仕様の2019年6月のスナップショットを勧告候補</a>としました。これは、<strong>WHATWG との<a href="https://www.w3.org/blog/news/archives/8398">コラボレーション</a>における初めての成果</strong>となります。また、DOM 仕様の勧告化作業が完了するまで、HTML 仕様について2019年8月版についての<a href="https://lists.w3.org/Archives/Public/public-review-announce/2019Sep/0000.html">レビュー</a>を延期します。</p>
+
+	  <p>このグループでは、年1度の DOM (6月のスナップショット基準)と HTML (12月のスナップショット基準)についての活動を目標としています。(訳注: HTML WG では HTML 仕様と DOM 仕様についての勧告化作業を並行して行わない、つまり片方の完了まで他方については停止する、こととしています。)</p>
 	  
 	  <h3 id="css">CSS</h3>
 	  <a href="https://www.w3.org/TR/?title=css">すべての仕様の一覧</a>
@@ -661,129 +661,76 @@
 	  
           <img src="https://www.w3.org/comm/assets/icons/timer.png" alt="">
 
-          <p>Browser testing plays a critical role in the growth of the Web by:</p>
+          <p>ブラウザでのテストはウェブの発展のために重要です:</p>
           <ul>
-            <li>Improving the reliability of Web technology definitions;</li>
-            <li>Improving the quality of implementations of these technologies by
-              helping vendors to detect bugs in their products;</li>
-            <li>Improving the data available to Web developers on known bugs and
-              deficiencies of Web technologies by publishing results of these
-              tests.</li>
-          </ul>
+            <li>ウェブ技術の定義の安定性を改善する</li>
+			<li>ベンダー自身が製品の問題を検出する手助けをすることで技術の実装のクォリティーを担保する</li>
+			<li>テスト結果を公表することで、ウェブ開発者がウェブ技術に関する既知のバグや未実装について認知できるようにする</li>
+		  </ul>
 	  
           <h4 id="btt">ブラウザでのテストとツール</h4>
 	  
-	  <p>The <a href="https://www.w3.org/testing/browser/">Browser
-	      Testing and Tools Working Group</a> published a First
-	    Public Working Draft
-	    of <a href="https://w3c.github.io/webdriver/">WebDriver
-	      version 2</a>, a remote control interface that enables
-	    introspection and control of user agents that provides
-	    a platform- and language-neutral wire protocol as a way
-	    for out-of-process programs to remotely instruct the
-	    behavior of web browsers.</p>
+	  <p><a href="https://www.w3.org/testing/browser/">Browser
+	      Testing and Tools ワーキンググループ</a>では <a href="https://w3c.github.io/webdriver/">WebDriver
+		  version 2</a> の最初の作業草案を公開しました。
+		  この機構はユーザエージェントの内部観察や制御を可能にするリモート制御機構として働き、プラットフォームや言語に依存しない形で外部プロセスからウェブの動作をリモートで操作する手法を提供します。</p>
 
-	  <p>The group is working on specifying a standard
-	    bi-directional protocol for WebDriver; that protocol will
-	    share some characteristics with similar existing protocols,
-	    such as Chrome Devtools Protocol (aka CDP, aka Chrome
-	    Debugging Protocol).</p>
+	  <p>
+	    このグループでは、WebDriver の双方向プロトコルの標準化にも取り組んでおり、Chrome Devtools Protocol (CDP; Chrome Debugging Protocol とも呼ばれる)などの既存の仕様と似た機能を提供できる予定です。</p>
 	  
           <h4 id="wpt">WebPlatform Tests</h4>
 	  
-          <p>Since 2014 W3C began work on this coordinated open-source
-            effort to build a cross-browser test suite for the Web
-            Platform, which WHATWG, and <em>all</em> major browsers
-            adopted. Recent progress includes:</p>
+          <p>
+			2014年から W3C は WHATWG や<em>全ての</em>主要ブラウザも参画する、ウェブプラットフォームに関するクロスブラウザのテストスイートを構築するための協調したオープンソースプロジェクトを行っています。直近の進捗は: 
+		</p>
 	  <ul>
-	    <li>The <a href="https://web-platform-tests.org/">WebPlatform
-		Tests project</a> was revamped and launched with
-              improved documentation and full-text search.</li>
-	    <li>Enabled HTTP/2 support for tests.</li>
-	    <li>Created
-	      a <a href="https://github.com/web-platform-tests/wpt-metadata">repository</a>
-	      holding links between test results and browser bugs, with
-	      query ability.</li>
-	    <li>Launched <a href="https://wpt.live">https://wpt.live</a>
-	      as a replacement for https://w3c-test.org.</li>
-	    <li>Adopted
-	      an <a href="https://github.com/web-platform-tests/rfcs">RFC
-		process</a> for proposing changes and collating
-	      feedback.</li>
+	    <li><a href="https://web-platform-tests.org/">WebPlatform
+		Tests プロジェクト</a>が改良され、より良い説明と全文検索機能を加えて公開されました。</li>
+	    <li>テストに HTTP/2 が利用可能になりました。</li>
+	    <li>テスト結果とブラウザでのバグをリンクする<a href="https://github.com/web-platform-tests/wpt-metadata">レポジトリ</a>を開始し、検索も可能です。</li>
+	    <li>https://w3c-test.org の代替として <a href="https://wpt.live">https://wpt.live</a>
+	      を設置しました。</li>
+	    <li><a href="https://github.com/web-platform-tests/rfcs">RFC プロセス</a>を改良提案と意見投稿に導入しました。</li>
 	  </ul>
 	  
           <h3 id="data" class="clear">データのウェブ</h3>
 
           <img src="https://www.w3.org/comm/assets/icons/share.png" alt=""></a>
 
-          <p><a href="https://www.w3.org/TR/?tag=data">All Data specifications</a></p>
+          <p><a href="https://www.w3.org/TR/?tag=data">すべての仕様の一覧/a></p>
 	  
-	  <p>There have been several great success stories around the
-	    standardization of data on the web over the past year:</p>
+	  <p>
+	    この1年でウェブにおけるデータの標準化においていくつかの重要な成功を達成しました:</p>
 	  <ul>
 	    <li><a href="https://www.w3.org/TR/json-ld11/">JSON-LD
-		1.1</a> - JSON-based Serialization for Linked Data</li>
+		1.1</a> - JSON を基本としたリンクドデータの記述</li>
 	    <li><a href="https://www.w3.org/blog/2020/02/data-catalog-vocabulary-dcat-version-2-published-today/">Data
 		Catalog (DCAT) Vocabulary Version 2</a></li>
-	    <li><a href="https://w3techs.com/technologies/details/da-jsonld">30%
-		of websites</a> today include schema.org data in
-	      JSON-LD</li>
+	    <li><a href="https://w3techs.com/technologies/details/da-jsonld">ウェブサイトの 30%</a> に JSON-LD で記述された schema.org 形式データが含まれるようになりました。/li>
 	    <li><a href="https://www.w3.org/TR/wot-thing-description/">Web
-		of Things Description</a> uses JSON-LD</li>
-	    <li>Engagement from the <abbr title="Technical
-	    Architecture Group">TAG</abbr> with reframing core
-	      documents, such as Ethical Web
-	      Principles, <a href="https://github.com/w3ctag/ethical-web-principles/issues/4#issuecomment-504081937">to
-		include data on the web within their scope</a></li>
+		of Things Description</a> は JSON-LD を利用しています。</li>
+	    <li><abbr title="Technical Architecture Group">TAG</abbr> による Ethical Web Principles などのコア文書の再構成により、<a href="https://github.com/w3ctag/ethical-web-principles/issues/4#issuecomment-504081937">ウェブにおけるデータについても記載されるようになり</a>ました。</li>
 	  </ul>
 	  
-          <p>Data is increasingly important to society, especially
-            with the rise of IoT and Big Data. W3C has a mature and
-            extensive suite of standards relating to data that were
-            developed over two decades of experience, with plans for
-            further work on making it easier for developers to work
-            with graph data and knowledge graphs, and for the industry
-            to exploit advanced digital technologies and facilitate
-            business by integrating horizontally along the supply and
-            value chains, and vertically from the factory floor to the
-            office floor.</p>
+          <p>データは、特にIoTやビックデータの隆盛を受けて、すべての組織にとって重要性が増しています。W3C は20年にわたり開発が続けられたデータに関連する成熟し広い範囲の標準を持っており、 将来目標として開発者にグラフデータやナレッジグラフについて扱いやすいものを提供し、産業向けに供給とバリューチェーンとの水平統合と工場からオフィスまでの垂直統合の両方に提供していく予定です。</p>
 	  
-	  <p>Linked Data is about the use of URIs as names for things,
-	    the ability to dereference these URIs to get further
-	    information and to include links to other data. There are
-	    ever-increasing sources of open Linked Data on the Web, as
-	    well as data services that are restricted to the suppliers
-	    and consumers of those services. <strong>W3C is seeking
-	    Member input on priorities for future work on data-related
-	    standards and emerging opportunities
-	    for <abbr title="Artificial Intelligence">AI</abbr> and
-	    machine learning.</strong> An
-	    upcoming <a href="https://www.w3.org/2020/01/machine-learning-workshop/">W3C
-	      Workshop on the Web and Machine Learning</a> will focus on
-	    enriching the Open Web Platform with better foundations
-	    for machine learning.</p>
+	  <p>Linked Data は対象についての名前のように URI を利用するためのもので、それらの URI を詳細情報取得や 他のデータにリンクとして格納するためのデリファレンスとして利用可能です。 ウェブ上では減ることがない公開の Linked Data が増えており、データを利用・提供するデータサービスも同様です。<strong>W3C では、<abbr title="Artificial Intelligence">AI</abbr> と機械学習の分野についてデータ関連の標準化と利用機会の拡大に向けて会員からの情報収集に力を入れています。</strong>
+		開催予定の <a href="https://www.w3.org/2020/01/machine-learning-workshop/">W3C
+	      Workshop on the Web and Machine Learning</a> (<a href="https://www.w3.org/2020/01/machine-learning-workshop/index_ja.html">Web と機械学習に関する W3C ワークショップ</a>)では、機械学習をよりよく利用可能にするオープンウェブプラットフォームの拡充に注目しています。</p>
 	  
-	  <p>Traditional approaches to data have focused on tabular
-	    databases (SQL/RDBMS), Comma Separated Value (CSV) files, and
-	    data embedded in PDF documents and spreadsheets. We're now in
-	    midst of a major shift to graph data with nodes and labeled
-	    directed links between them. Graph data is:</p>
-	  <ul>
-	    <li>Faster than using SQL and associated JOIN operations</li>
-	    <li>More favorable to integrating data from heterogeneous sources</li>
-	    <li>Better suited to situations where the data model is evolving</li>
-	  </ul>
+		  <p>古典的なデータアクセスは、表形式データベース (SQL/RDBMS)、カンマ区切りデータ (CSV) ファイル、
+			PDFや表計算形式に埋め込まれたデータなどに注力していました。現在、ノードとそれらの間のラベル付き直接リンクで構成
+			されるグラフデータへの移行が起こっています。グラフデータは:</p>
+		  <ul>
+			<li>JOIN操作を伴うSQLよりも高速です</li>
+			<li>異種データソースからのデータの統合に適しています</li>
+			<li>進化し続けるデータモデルに対してより適しています</li>
+		  </ul>
 	  
 	  <p>W3C's approach is based upon RDF and there is extensive
 	    work at W3C and elsewhere on vocabularies for a wide
-	    variety of application domains. In the wake of the W3C
-	    Workshop on Graph Data
-	    (<a href="https://www.w3.org/Data/events/data-ws-2019/report.html">read
-	    the report</a>), we are <strong>looking for support for
-	    launching a Graph Standardization Business Group to
-	    provide a business perspective with use cases and
-	    requirements, to coordinate technical standards work and
-	      liaisons with external organizations</strong>.</p>
+		variety of application domains. 
+		W3C では RDF を基盤として、幅広い領域におけるボキャブラリーを構築する作業を W3C を含めた場所で行っています。Graph Data に関するワークショップ(<a href="https://www.w3.org/Data/events/data-ws-2019/report.html">レポート</a>)に続き、<strong>ユースケースや要求項目を含めたビジネス要求を収集し、また標準化作業を調整し他の組織とのリエゾン関係を構築するための、Graph Standardization ビジネスグループの設立に向けての支持を募集しています。</strong></p>
 	  
 	  <h3 id="decentralized">分権的ウェブ</h3>
 
@@ -864,9 +811,7 @@
 
 	  <img src="https://www.w3.org/comm/assets/icons/lock.png" alt="">
 	  
-          <p><a href="https://www.w3.org/TR/?tag=security">All Security
-              specifications</a> &#8226; <a href="https://www.w3.org/TR/?tag=privacy">all
-              Privacy specifications</a> </p>
+          <p><a href="https://www.w3.org/TR/?tag=security">すべてのセキュリティーに関する仕様の一覧</a> &#8226; <a href="https://www.w3.org/TR/?tag=privacy">すべてのプライバシーに関する仕様の一覧</a> </p>
 
 	  <p>This has been an active period for Privacy and Security activities, with the establishment of a Privacy Community Group and vital new activity in the Privacy Interest Group (PING) and Improving Web Advertising Business Group.</p>
 	  <p>  
@@ -919,16 +864,11 @@
           <a href="https://www.w3.org/2014/10/w3c-highlights/images/i18n.png"><img src="https://www.w3.org/2014/10/w3c-highlights/images/i18n.png"
             alt="indic script example"></a>
 
-          <p><a href="https://www.w3.org/TR/?tag=i18n">All
-              Internationalization specifications</a>
-              &#8226; <a href="https://www.w3.org/International/articlelist">educational
-              articles related to Internationalization</a>
-              &#8226; <a href="https://www.w3.org/International/techniques/developing-specs">spec
-              developers checklist</a>
-              &#8226; <a href="https://www.w3.org/International/layout">overview
-              of language enablement work in progress</a>
-              &#8226; <a href="https://www.w3.org/International/sponsorship/">Internationalization
-              Initiative</a></p>
+          <p><a href="https://www.w3.org/TR/?tag=i18n">すべての仕様の一覧</a>
+              &#8226; <a href="https://www.w3.org/International/articlelist">国際化に関する教育コンテンツ一覧</a>
+              &#8226; <a href="https://www.w3.org/International/techniques/developing-specs">仕様開発者向けチェックリスト</a>
+              &#8226; <a href="https://www.w3.org/International/layout">多様な言語を利用可能にする活動の一覧</a>
+              &#8226; <a href="https://www.w3.org/International/sponsorship/">国際化イニシアティブ</a></p>
 
 	  <p>Only a fraction of the world's population of almost 8
             billion speaks English, and yet over 50% of online content
@@ -960,7 +900,7 @@
 
 	  <h4 id="i18n-initiative">Internationalization Initiative</h4>
 	  
-	  <p>The <a href="https://www.w3.org/International/sponsorship/">Internationalization
+	  <p><a href="https://www.w3.org/International/sponsorship/">Internationalization
 	    initiative</a> aims to increase participants and motivate
 	    sponsors to fund extra resources in i18n, beyond what is
 	    covered by the core membership funding. We are targeting
@@ -1084,14 +1024,10 @@
 
           <img src="https://www.w3.org/Icons/wai" alt="logo of the Web Accessibility Initiative">
 
-	  <p><a href="https://www.w3.org/TR/?tag=accessibility">All
-              Accessibility specifications</a>
-              &#8226; <a href="https://www.w3.org/WAI/translations/">WAI
-              translationss</a>
-              &#8226; <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Accessibility
-              fundamentals</a>
-              &#8226; <a href="https://www.w3.org/WAI/business-case/">Business
-              case for digital accessibility</a></p>
+	  <p><a href="https://www.w3.org/TR/?tag=accessibility">すべての仕様の一覧</a>
+              &#8226; <a href="https://www.w3.org/WAI/translations/">WAI の翻訳版</a>
+              &#8226; <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">アクセシビリティーの基礎</a>
+              &#8226; <a href="https://www.w3.org/WAI/business-case/">デジタルアクセシビリティーのビジネスケース</a></p>
 	  
 	  <p>In 2006, the United Nations adopted the Convention on the
 	    Rights of Persons with Disabilities (CRPD) which reaffirmed
