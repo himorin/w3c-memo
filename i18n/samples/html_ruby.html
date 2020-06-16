@@ -3,6 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Ruby samples</title>
+  <style type="text/css">
+    .large {
+      font-size: 16pt;
+    }
+    .ruby-weight rt {
+      font-weight: 900;
+    }
+  </style>
 </head>
 <body>
 <h1>HTMLのルビに関するサンプル・試験集</h1>
@@ -24,5 +32,26 @@
   <img width="1em" height="1em" src="character_biang.png"> <rp>(</rp><rt>Biang</rt><rp>)</rp>
 </ruby>
 </div>
+
+<h2>Font weight</h2>
+
+<h3>With font-weight (class ruby-weight)</h3>
+
+<div class="ruby-weight large">
+<ruby>
+  漢 <rp>(</rp><rt>かん</rt><rp>)</rp>
+  字 <rp>(</rp><rt>じ</rt><rp>)</rp>
+</ruby>
+</div>
+
+<h3>With-out font-weight</h3>
+
+<div class="large">
+<ruby>
+  漢 <rp>(</rp><rt>かん</rt><rp>)</rp>
+  字 <rp>(</rp><rt>じ</rt><rp>)</rp>
+</ruby>
+</div>
+
 
 </body>
