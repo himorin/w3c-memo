@@ -16,13 +16,11 @@
       /*section box styling*/    
       section {border: 1px solid #3f9aea; padding: 3%; margin:2em 0;}
       /*use .box for the parent container, add children as a div or section*/
-      .box{
-      display: flex;
-      justify-content: space-between;
-      flex-flow: wrap;
+      @media (min-width: 38em) {
+         .box {display: flex}
+         .box > section + section {margin-left: 2em}
       }
       .box > div{padding-right: 3.5em; width:300px;} 
-      .box > section{width: 500px;} 
       img {
       float: right;
       max-width: 150px;
@@ -34,7 +32,7 @@
       h1 {padding: 10px 10px 10px 10px;}
       h2 {
       padding: 1em;
-      white-space: nowrap;
+      /* white-space: nowrap; */
       background: #005A9C;
       color: white;
       font-weight: 600;
@@ -88,7 +86,7 @@
       <h1>2020/10<br>W3C活動概要</h1>
       <div class="section">
         <div class="status">
-          <p>このレポートは、2020/10に行われた <a href="https://www.w3.org/2020/10/TPAC/ac-agenda.html">W3C 諮問委員会オンライン総会</a> (W3C 会員限定ページ)向けに用意されました。同時に公開された<a href="factsheet.html">2020/10 W3C 現状</a>(翻訳はありません) も参照ください。前回のバージョンは<a href="https://www.w3.org/2020/05/w3c-highlights/">2020/05 版活動概要 (英語版)</a>になります。このレポートの更新版は<a href="https://www.w3.org/Consortium/highlights/">最新版</a>をご参照ください。 (訳注: 一般向けに原版にはない説明のリンクや追記を入れている部分があります。)</p>
+          <p>この2020年10月5日版レポートは、2020/10に行われた <a href="https://www.w3.org/2020/10/TPAC/ac-agenda.html">W3C 諮問委員会オンライン総会</a> (W3C 会員限定ページ)向けに用意されました。同時に公開された<a href="factsheet.html">2020/10 W3C 現状</a>(翻訳はありません) も参照ください。前回のバージョンは<a href="https://www.w3.org/2020/05/w3c-highlights/">2020/05 版活動概要 (英語版)</a>になります。このレポートの更新版は<a href="https://www.w3.org/Consortium/highlights/">最新版</a>をご参照ください。 (訳注: 一般向けに原版にはない説明のリンクや追記を入れている部分があります。)</p>
 		  <p><a href="./" hreflang="en">オリジナルの英語版</a>に加え、<a href="./Overview.html.zh-hans.html" hreflang="zh-hans">簡体字中国語</a>翻訳も提供されています。</p>
         </div>
         <div id="toc">
@@ -189,21 +187,18 @@
 						その中でたくさんのよいアイデアが出ています。W3C戦略チームでは将来の標準化に向けた領域の探索や、参加者の募集を行っています。
 					</p>
 		<p><a href="/2003/08/Workshops/archive">ワークショップ</a>の開催により、新領域についてのプレゼンテーション・パネル・分科会、そして仮想的な"廊下"会合を行いコミュニティー形成に繋がります。<a href="https://www.w3.org/Guide/meetings/continuity.html#workshops">バーチャル移行</a>に伴い活動形態の変更や予定変更が発生しましたが、分散会合によりよりアクセシブルかつ全世界から参加しやすくなっています。</p>
-	  <p>直近で開催されたワークショップと<a href="https://github.com/w3c/strategy/milestone/2">準備中のワークショップ</a>は以下の通りです:</p>
-	  <dl>
-	    <dt><a href="https://www.w3.org/2020/maps/">W3C/OGC 合同オンラインワークショップ - ウェブでの地図</a> (2020年9月21日～10月2日)</dt>
-	    <dd>
-				地理に関する標準とウェブ上の地図データサービス、ウェブ上の地図クライアントツール・アプリケーション、ウェブ標準とブラウザ開発に関する専門家を集め、ウェブ上での地図の可能性を探る。
-			</dd>
-	    <dt><a href="https://www.w3.org/2020/06/machine-learning-workshop/">Webと機械学習</a> (2020年9月16～29日)</dt>
-	    <dd>
-				機械学習のツールキットやフレームワーク開発者とウェブ標準関係者を集め、機械学習をよりよく取り込んだオープンなウェブ標準を検討。
-			</dd>
-	    <dt><a href="https://github.com/w3c/strategy/issues/221">ウェブでの音声対話</a></dt>
-	    <dt><a href="https://github.com/w3c/strategy/issues/209">ウェブ上での相互やり取りのためのコンテンツの扱い</a></dt>
-	  </dl>
-	  <p>開催済のワークショップ:</p>
+		<p><a href="https://github.com/w3c/strategy/milestone/2">準備中のワークショップ:</a></p>
+		<ul>
+	    <li><a href="https://github.com/w3c/strategy/issues/221">ウェブでの音声対話</a></li>
+	    <li><a href="https://github.com/w3c/strategy/issues/209">ウェブ上での相互やり取りのためのコンテンツの扱い</a></li>
+		</ul>
+	  <p>直近で開催されたワークショップ:</p>
 	  <ul>
+	    <li><a href="https://www.w3.org/2020/maps/">W3C/OGC 合同オンラインワークショップ - ウェブでの地図</a> (2020年9月21日～10月2日)
+				地理に関する標準とウェブ上の地図データサービス、ウェブ上の地図クライアントツール・アプリケーション、ウェブ標準とブラウザ開発に関する専門家を集め、ウェブ上での地図の可能性を探る。
+			</li>
+	    <li><a href="https://www.w3.org/2020/06/machine-learning-workshop/">Webと機械学習</a> (2020年9月16～29日)
+				機械学習のツールキットやフレームワーク開発者とウェブ標準関係者を集め、機械学習をよりよく取り込んだオープンなウェブ標準を検討。
 	    <li>仮想環境についてのウェブ標準でのインクルーシブ環境についてのW3Cワークショップ (2019年11月5～6日; <a href="https://www.w3.org/2019/08/inclusive-xr-workshop/report.html">報告を見る</a>)</li>
 	  </ul>
 	  
@@ -239,6 +234,7 @@
               <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0001.html">JSON-LD</a></li>
               <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Jun/0016.html">Accessibility Education and Outreach</a></li>
               <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0008.html">Distributed Tracing</a></li>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0005.html">Web Real-Time Communications</a> (WebRTC)</li>
             </ul>
             <h5>期間延長</h5>
             <ul>
@@ -250,11 +246,36 @@
             <h5>提案中・予告</h5>
             <ul>
               <li>更新: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0006.html">Chinese Web</a></li>
-              <li>更新: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0005.html">Web Real-Time Communications</a></li>
-              <li>予告: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Sep/0006.html">Decentralized Web</a></li>
-	    </ul>
+							<li>新規: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Oct/0000.html">Audiobooks</a></li>
+							<li>予告: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Sep/0006.html">Decentralized Web</a></li>
+							<li>予告: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Oct/0001.html">Web Machine Learning</a></li>
+						</ul>
 	  </div>
-	</section>
+        <h4 id="decent">Decentralized Web Interest Group</h4>
+         <p>The W3C Team has sent
+               an <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Sep/0006.html">advance
+               notice</a> for the draft charter being prepared for a
+               new Decentralized Web Interest Group, with a mission
+               "to evolve recommendations to further the W3C’s One
+               Web purpose by identifying, balancing and mitigating
+               the unintended impacts of proposals early in the
+               process, encouraging uniform change, and promoting
+               OpenStand principles." The proposed Interest Group
+               anticipates beginning its work by taking up two draft
+               documents that have been produced by participants in
+               the <a href="/community/web-adv/">Improving Web
+               Advertising Business Group</a>.</p>
+
+         <h4 id="wml">Web Machine Learning Working Group</h4>
+         <p>The participants in the 16-29 September 2020 <a href="https://www.w3.org/2020/06/machine-learning-workshop/">W3C
+               Workshop on Web &amp; Machine Learning</a> recommended
+               the creation of a new Web Machine Learning Working
+               Group to build a standard based on the
+             <a href="https://webmachinelearning.github.io/webnn/">Web
+               Neural Network API</a>. The W3C Team has sent
+               an <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Oct/0001.html">advance
+               notice</a> for the draft charter being prepared.</p>
+			</section>
 
 	  <h2 id="industry">技術ニーズへの追随</h2>
 	
@@ -264,63 +285,30 @@
 	  
 	  <img src="https://www.w3.org/comm/assets/icons/creditc.png" alt="">
 	  
-	  <p><a href="https://www.w3.org/TR/?title=payment&amp;version=latest">All
-              Web Payments specifications</a></p>
+	  <p><a href="https://www.w3.org/TR/?title=payment&amp;version=latest">全ての仕様の一覧</a></p>
 	  
-          <p class="desc">W3C's payments standards enable a streamlined
-              checkout process, giving a consistent user experience
-              across the Web with lower front-end development costs
-              for merchants. Users can store and reuse
-            information and more quickly and accurately complete
-            online transactions.</p>
+          <p class="desc">W3Cのウェブペイメント標準により事業者にとってフロント・開発共に低コストかつウェブ上どこでも同じとなる、統合された決済のユーザ体験を実現します。ユーザは情報を保存・再利用可能になり、オンライン決済をより速く正確に完了できるようになります。
+					</p>
 	  
-	  <p>Two trends are currently shaping the work:</p>
+	  <p>この領域では2つの動きがあります:</p>
 	  <ul>
-	    <li>broad deployment of <b>Web Authentication</b> in
-	      browsers, and of authenticators built into mobile
-	      devices; and thus growing interest in Web Authentication
-	      for strong customer authentication</li>
-	    <li>changes to browsers to <b>reduce fingerprinting</b>
-	      capabilities and limit third-party storage access; and
-	      significant interest in finding alternatives to
-	      fingerprinting</li>
+	    <li><b>Web Authentication</b> が多くのブラウザで実装され、モバイルデバイスへの認証器の実装が進んだことで、Web Authentication をより強力な利用者認証に使うことへの興味が増大しています</li>
+	    <li>ブラウザ実装での<b>フィンガープリンティングの可能性の削減</b>と、第三者のストレージアクセスへの制限により、フィンガープリンティングにも利用可能な機構についての代替策の探索に興味が集まっています</li>
 	  </ul>
 	  
-	  <p>These changes have a direct impact on the payments
-	  industry as regulatory bodies around the world
-	  (e.g., <abbr title="Payment Services Directive">PSD</abbr>2
-	  in Europe) increasingly require strong (multi-factor)
-	  customer authentication, and transaction risk assessment on
-	  the Web often relies on fingerprinting while current
-	  approaches are expected to break as browswer behavior
-	  evolves.</p>
+	  <p>
+			これらの変化により世界の決済関係の標準化団体(例えば、ヨーロッパでの<abbr title="Payment Services Directive">PSD</abbr>2)においても影響が出ており、強力な(多要素の)ユーザ認証の要求が増大し、また、現在のウェブにおける決済リスク評価方法はフィンガープリンティングとされる機能に依存することが多いためブラウザ実装の変化に影響される可能性もあります。
+	</p>
 
-	  <p>FIDO and EMVCo are discussing how Web Authentication data
-	    may be provided as input to an EMV 3-D Secure
-	    flow. The <a href="https://www.w3.org/Payments/WG/">Web
-	    Payments Working Group</a>, the joint task force with
-	    WebAuthn, and
-	    the <a href="https://www.w3.org/securepay/">Web Payment
-	    Security Interest Group</a> are discussing multiple
-	    proposals to streamline checkout by smoothly integrating
-	    Web Authentication along with payment instrument
-	    selection. <a href="https://github.com/rsolomakhin/secure-payment-confirmation">Secure
-	    Payment Confirmation</a> is one such proposal that has
-	    drawn the interest of multiple stakeholders. The group's
-	    expectation is that Stripe and Google will conduct
-	    experiments in Q3 and Q4 2020 to test the hypothesis that
-	    users appreciate a streamlined low-friction flow where Web
-	    Authentication is used as the "Step-Up" during a 3-D
-	    Secure authentication flow, rather than the usual one-time
-	    password approach.</p>
+	  <p>
+			FIDO と EMVCo では Web Authentication のデータをどのように EMV 3-D Secure の処理に取り込めるかについての議論を行っています。<a href="https://www.w3.org/Payments/WG/">Web Payments WG</a>、WebAuthn との合同タスクフォース、<a href="https://www.w3.org/securepay/">Web Payment Security IG</a> において、Web Authentication を決済方式選択に円滑に統合した決済方式についての複数の案を議論しています。
+			<a href="https://github.com/rsolomakhin/secure-payment-confirmation">Secure Payment Confirmation</a> は複数の関係者が関心を寄せている一つの案です。このグループでは、これまでのワンタイムパスワードでなく Web Authentication を 3-D Secure の認証フローの中で "Step-Up" としてユーザの負担なく利用する方式について、Stripe と Google により2020年Q3とQ4の間に試験が完了することを想定しています。
+			また、Web Payments WG では Secure Payment Confirmation が EMV® Secure Remote Commerce、銀行決済、即時決済などのユースケースでどのように利用可能かについても調査を行っています。
+		</p>
 
-	  <p>W3C is launching a Merchant Business Group [@@ link to
-	    press release] to address challenges for customer
-	    experiences and business needs using Web technologies,
-	    where merchants, integrators, platform providers, and
-	    others will discuss how emerging Web technologies could
-	    help address customer experience challenges, and what
-	    additional Web capabilities may be necessary.</p>
+	  <p>
+			また、W3C では <a href="https://www.w3.org/blog/2020/09/new-w3c-merchant-business-group/">Merchant BG</a> を設立し、商業、システム構築者、プラットフォーム提供者などの間で進化するウェブ技術がユーザ体験をどのように改善するかや、追加で必要とされるウェブ技術についての議論を行っています。
+		</p>
 
 	</section>
 	<section>
@@ -348,7 +336,7 @@
             library scientists or browser developers.</p>
 	  
 	  <p>W3C launched
-	    the <a href="https://www.w3.org/publishing/groups/epub3-wg">EPUB&nbsp;3
+	    the <a href="https://www.w3.org/publishing/groups/epub-wg">EPUB&nbsp;3
 	      Working Group</a> in August 2020 to maintain, develop and
 	    clarify the EPUB&nbsp;3 family of specifications, to
 	    represent the EPUB community in W3C, and to support
@@ -371,7 +359,7 @@
 	    <li><a href="https://www.w3.org/TR/audiobooks/">Audiobook
 		profile for Web Publications</a></li>
 	    <li><a href="https://w3c.github.io/lpf/">Lightweight
-		Packaging Format</a> (Group Note)
+		Packaging Format</a> (Group Note)</li>
 	  </ul>
 	  
 	  <p>The <a href="https://www.w3.org/publishing/groups/publ-bg">Publishing
@@ -389,7 +377,7 @@
           <img src="https://www.w3.org/comm/assets/icons/media.png" alt="">
 	  
           <p><a href="https://www.w3.org/TR/?tag=media">All Media
-          specifications</a> &#8226; <a href="http://w3c.github.io/web-roadmaps/media/">Roadmap:
+          specifications</a> &#8226; <a href="https://w3c.github.io/web-roadmaps/media/">Roadmap:
           Overview of Media Technologies for the Web</a></p>
 
 	  <div class="desc">
@@ -488,7 +476,7 @@
 	      on <a href="https://w3c.github.io/me-media-production/">Requirements
 		for Media Production</a>.</li>
 	    <li>What about games on the Web?
-	      The <a href="https://www.w3.org/community/games">Games
+	      The <a href="https://www.w3.org/community/games/">Games
 		Community Group</a> collects needs and gaps.</li>
 	    <li>What new technologies may be needed to create rich
 	      media experiences in the future?  A
@@ -523,8 +511,7 @@
             propose new and innovative services.</p>
 	  
 	  <h4 id="rtc">Real-Time Communications (WebRTC)</h4>
-          <img src="https://www.w3.org/comm/assets/logos/webrtc-logo-vert-retro-255x305.png"
-             alt="WebRTC logo">
+          <img src="https://www.w3.org/comm/assets/logos/webrtc-logo-vert-retro-255x305.png" alt="WebRTC logo">
 	  
           <p> <a href="https://www.w3.org/TR/?title=webrtc">All
               Real-Time Communications specifications</a> </p>
@@ -544,8 +531,9 @@
             can be brought to the technology to cater to new usages
             that have emerged.</p>
 
-          <p>The <a href="http://www.w3.org/2011/04/webrtc/">WebRTC
-              Working Group</a> continues its intense efforts toward publishing
+          <p>The <a href="https://www.w3.org/groups/wg/webrtc">WebRTC
+              Working Group</a>, whose charter was renewed for two
+              years, continues its intense efforts toward publishing
             <a href="https://www.w3.org/TR/webrtc/">WebRTC&nbsp;1.0</a>
             (and companion specification Media Capture and Streams) to
             Recommendation, aiming for year-end.</p>
@@ -603,8 +591,7 @@
 	  <h4 id="autobg">W3C Automotive and Web Platform Business
 	  Group</h4>
 
-          <img src="https://www.w3.org/comm/assets/icons/car.png"
-               alt="">
+          <img src="https://www.w3.org/comm/assets/icons/car.png" alt="">
 	  
 	  <p>The newly
             renamed <a href="https://www.w3.org/community/autowebplatform/">Automotive
@@ -719,15 +706,13 @@
 	  standardization on Smart Cities during the
 	  2019 <a href="https://www.w3.org/WoT/ws-2019/schedule.html#day2">Second
 	  W3C Workshop on the Web of Things</a> and then submitted as
-	  possible next-gen Web of Things use
-	  cases <a href="https://github.com/w3c/wot-usecases/blob/master/USE-CASES/smartcity-geolocation.md">Smart
-	  City Geolocation</a>
-	  and <a href="https://github.com/w3c/wot-usecases/blob/master/USE-CASES/smartcity-health-monitoring.md">Public
-	  Health Monitoring</a> which the Web of Things Interest Group
-	  is considering in a Proof-of-concepts task force.</p>
+	  possible next-gen Web of Things use cases Smart City
+	  Geolocation and Public Health Monitoring which the Web of
+	  Things Interest Group is considering in a Proof-of-concepts
+	  task force.</p>
 
 	  <p>We believe now is a good time to form a W3C Interest
-	    Group for Smart Cities and are in the process of drafing a
+	    Group for Smart Cities and are in the process of drafting a
 	    charter for such a group:</p>
 	  <ul>
 	    <li>to provide a better-fitting forum for technical
@@ -750,7 +735,7 @@
           <img src="https://www.w3.org/comm/assets/icons/share.png" alt="">
 
           <p><a href="https://www.w3.org/TR/?tag=data">All Data
-          specifications</a> &#8226; <a href="https://www.w3.org/TR/dwbp/">Data
+          specifications</a> • <a href="https://www.w3.org/TR/dwbp/">Data
           on the Web Best Practices</a></p>
 	  
           <p class="desc">Data is increasingly important to society,
@@ -764,7 +749,7 @@
 	  
 	  <p class="desc">W3C has a mature and extensive suite of
             standards relating to data that were developed over two
-            decades of experience; and plans further work to makie it
+            decades of experience; and plans further work to make it
             even easier for developers to work with graph data and
             knowledge graphs, and for the industry to exploit advanced
             digital technologies and facilitate business by
@@ -841,7 +826,7 @@
 
 	<!-- Using box to display 2 section blocks -->
 	<div class="box">
-	<section>
+	<section class="left">
 
 	  	  <h3 id="css">CSS</h3>
 	  <p><a href="https://www.w3.org/TR/?title=css">All CSS
@@ -876,7 +861,7 @@
 	  <a href="https://www.w3.org/TR/css-grid-1/">Grid</a>.</p>
 	</section>
 	
-	<section>
+	<section class="right">
 	  <h3 id="fonts">Fonts</h3>
 	  
           <p><a href="https://www.w3.org/TR/?title=woff">All Fonts
@@ -906,7 +891,7 @@
 
 	<!-- Using box to display 2 section blocks -->
 	<div class="box">	
-	<section>
+	<section class="left">
 	  
 	  <h3 id="html">HTML</h3>
 
@@ -920,7 +905,7 @@
 	  Draft has been going through wide reviews.</p>
 	</section>
 
-	<section>
+	<section class="right">
 	  
           <h3 id="webperf">Web Performance</h3>
 
@@ -943,13 +928,13 @@
 
 	<!-- Using box to display 2 section blocks -->
 	<div class="box">
-	  <section>
+	  <section class="left">
 	    <h3 id="audio">Audio</h3>
 
 	  <p><a href="https://www.w3.org/TR/?title=audio">All Audio
 	      specifications</a>
 	    
-          <p>The <a href="https://www.w3.org/2011/audio/">Web Audio
+          </p><p>The <a href="https://www.w3.org/2011/audio/">Web Audio
               Working Group</a> finished its work on
               the <a href="https://www.w3.org/TR/webaudio/">Web&nbsp;Audio&nbsp;API&nbsp;1.0</a>
               and is concentrating on the
@@ -972,7 +957,7 @@
 	  developers.</p>
 	  </section>
 
-	<section>
+	<section class="right">
           <h3 id="wasm">WebAssembly</h3>
 	  
           <p><a href="https://www.w3.org/TR/?title=webassembly">All
@@ -1009,8 +994,38 @@
 
 	<!-- Using box to display 2 section blocks -->
 	<div class="box">
-	  <section>
-          <h3 class="clear" id="testing">Testing</h3>
+	  <section class="left">
+	    <h3 id="miniapps">MiniApps</h3>
+
+	    <p>The
+	    <a href="https://www.w3.org/community/miniapps/">MiniApps
+	    Ecosystem Community Group</a> is looking into the basic architecture of
+	    MiniApps to determine if a workable standard is possible. The group
+	    released  a few proposals including:</p>
+	    <ul>
+	      <li><a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp
+		  URI Scheme</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp
+		  Manifest</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/lifecycle/">Lifecycle</a>, 
+		and</li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp
+		  Packaging</a></li>
+	    </ul>
+	    
+	    <p>After a few
+	      <a href="https://github.com/w3ctag/design-reviews/blob/master/reviews/miniapps_feedback.md">discussions
+		with the TAG</a> and the
+	      <a href="https://www.w3.org/2020/07/30-miniapp-minutes.html">
+		Web Platform community</a>, members in the CG agreed that
+	      vendors, developers and users will benefit if we are able
+	      to reach interoperability across the different MiniApp
+	      platforms while working together under the goal of
+	      <a href="https://github.com/w3ctag/design-reviews/blob/master/reviews/miniapps_feedback.md#the-goal-of-one-web">One
+	    Web</a>.
+          </p></section>
+	  <section class="right">
+	    <h3 id="testing">Testing</h3>
 	  	  
           <p>Since 2014 W3C began work on this coordinated open-source
             effort to build a cross-browser test suite for the Web
@@ -1047,7 +1062,7 @@
 	  <img src="https://www.w3.org/comm/assets/icons/lock.png" alt="">
 	  
           <p><a href="https://www.w3.org/TR/?tag=security">All Security
-              specifications</a> &#8226; <a href="https://www.w3.org/TR/?tag=privacy">all
+              specifications</a> • <a href="https://www.w3.org/TR/?tag=privacy">all
               Privacy specifications</a> </p>
 
 	  <p class="desc">Privacy and security – integral to human rights and
@@ -1129,7 +1144,7 @@
 	  specification to improve adoption of its interoperable
 	  security.</p>
 
-	  <p>The <a href="https://www.w3.org/webauthn/">Web
+	  <p>The <a href="https://www.w3.org/Webauthn/">Web
 	  Authentication Working Group</a> is working on WebAuthen
 	  Level&nbsp;2 this year.</p>
 	      
@@ -1158,18 +1173,17 @@
 	<section>
           <h3 id="i18n">Internationalization (i18n)</h3>
 
-          <a href="https://www.w3.org/2014/10/w3c-highlights/images/i18n.png"><img src="https://www.w3.org/2014/10/w3c-highlights/images/i18n.png"
-            alt="indic script example"></a>
+          <a href="https://www.w3.org/2014/10/w3c-highlights/images/i18n.png"><img src="https://www.w3.org/2014/10/w3c-highlights/images/i18n.png" alt="indic script example"></a>
 
           <p><a href="https://www.w3.org/TR/?tag=i18n">All
               Internationalization specifications</a>
-              &#8226; <a href="https://www.w3.org/International/articlelist">educational
+              • <a href="https://www.w3.org/International/articlelist">educational
               articles related to Internationalization</a>
-              &#8226; <a href="https://www.w3.org/International/techniques/developing-specs">spec
+              • <a href="https://www.w3.org/International/techniques/developing-specs">spec
               developers checklist</a>
-              &#8226; <a href="https://www.w3.org/International/layout">overview
+              • <a href="https://www.w3.org/International/layout">overview
               of language enablement work in progress</a>
-              &#8226; <a href="https://www.w3.org/International/sponsorship/">Internationalization
+              • <a href="https://www.w3.org/International/sponsorship/">Internationalization
               Initiative</a></p>
 
 	  <p class="desc">Only a quarter of the world's population of
@@ -1208,7 +1222,7 @@
 	    initiative</a> sponsors may fund extra resources in i18n
 	    beyond what is covered by the core membership funding,
 	    with a goal to increase participants and expertise in this
-	    crucial empowereing work.</p>
+	    crucial empowering work.</p>
 
 	  <p>In the last year, we have been making your contributions
 	  even more easier:</p>
@@ -1299,7 +1313,7 @@
 	    JSON or other data
 	    formats. <a href="https://w3c.github.io/i18n-drafts/articles/lang-bidi-use-cases/index.en">Use
 	    cases for bidi and language metadata on the Web</a> now
-	    subsumes somd of the specification's material.</li>
+	    subsumes some of the specification's material.</li>
 	    <li>New: <a href="https://www.w3.org/TR/2015/WD-ltli-20150423/">Language
 	    Tags and Locale Identifiers for the World Wide Web</a>
 	    lays out best practices for identifying or selecting the
@@ -1323,13 +1337,13 @@
 
 	  <p><a href="https://www.w3.org/TR/?tag=accessibility">All
               Accessibility specifications</a>
-              &#8226; <a href="https://www.w3.org/WAI/translations/">WAI
+              • <a href="https://www.w3.org/WAI/translations/">WAI
               translations</a>
-              &#8226; <a href="https://www.w3.org/WAI/news/">WAI
+              • <a href="https://www.w3.org/WAI/news/">WAI
               news</a>
-              &#8226; <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Accessibility
+              • <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Accessibility
               fundamentals</a>
-              &#8226; <a href="https://www.w3.org/WAI/business-case/">Business
+              • <a href="https://www.w3.org/WAI/business-case/">Business
               case for digital accessibility</a></p>
 	  
 	  <p class="desc">In 2006, the United Nations adopted the
@@ -1380,8 +1394,8 @@
 	      more accessibility requirements for people with
 	      cognitive and learning disabilities, people with low
 	      vision, and mobile accessibility</li>
-	    <li>Imminent First Public Working Draft of the W3C
-	      Accessibility Guidelines (WCAG)&nbsp;3.0.</li>
+	    <li>First Public Working Draft of the W3C
+	      Accessibility Guidelines (WCAG)&nbsp;3.0 currently targeted for later this quarter</li>
 	    <li>Newly
 	    published: <a href="https://www.w3.org/TR/coga-usable/">Making
 	    Content Usable for Cognitive and Learning
@@ -1422,7 +1436,7 @@
 	  <ul>
 	    <li>Web accessibility reviews of all W3C specifications
 	    under development is done by
-	    the <a href="https://www.w3.org/WAI/apa">Accessible
+	    the <a href="https://www.w3.org/WAI/APA/">Accessible
 	    Platform Architectures (APA) Working
 	    Group</a>. The <a href="https://w3c.github.io/apa/fast/">Framework
 	    for Accessible Specification of Technology (FAST)</a> is a
@@ -1483,8 +1497,7 @@
 	<section>
           <h3 id="training">W3C Training</h3>
 
-          <img style="max-width:10%" src="https://www.w3.org/2015/03/w3cx-logo.png"
-               alt="w3cx logo">
+          <img style="max-width:10%" src="https://www.w3.org/2015/03/w3cx-logo.png" alt="w3cx logo">
 
 	  <p class="desc">Since 2015, W3C started W3Cx in partnership
 	  with edX and has been developing MOOCs (Massive Open Online
@@ -1494,7 +1507,7 @@
 	  <ul>
 	    <li>6 courses are available
 	    from <a href="https://w3cx.org/">W3Cx</a>.</li>
-            <li>The <a href="https://www.edx.org/professional-certificate/front-end-web-developer-9">W3Cx
+            <li>The <a href="https://www.edx.org/professional-certificate/w3cx-front-end-web-developer">W3Cx
 		"Front-End Web Developer" (FEWD) program</a> is still
 		very popular. We are approaching the 1 Million
 		enrollment mark.</li>
@@ -1506,8 +1519,7 @@
 	<section>
 	  <h3 id="translations">Translations</h3>
 
-	  <img src="https://www.w3.org/comm/assets/graphics/world_map_w3c-blue.png"
-               alt="">
+	  <img src="https://www.w3.org/comm/assets/graphics/world_map_w3c-blue.png" alt="">
 	  
 	  <p class="desc">Many Web users rely
 	    on <a href="https://www.w3.org/Translations/">translations</a>
@@ -1562,7 +1574,7 @@
           <address> <a href="https://www.w3.org/People#coralie">Coralie
               Mercier</a>, Editor, W3C Marketing &amp;
               Communications<br>
-            <small>$Id: Overview.html,v 1.39 2020/09/25 15:52:45 coralie Exp $</small><br> Copyright © 2020
+            <small>$Id: Overview.html,v 1.55 2020/10/22 09:34:17 xueyuan Exp $</small><br> Copyright © 2020
             W3C <sup>®</sup>
             (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts
             Institute of
@@ -1584,5 +1596,6 @@
 	      elem.className = /expanded/.test(classes) ? originalNavClasses : originalNavClasses + ' expanded';
       }      </script> </div>
     </div>
-  </body>
-</html>
+  
+
+</body></html>
