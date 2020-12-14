@@ -107,15 +107,15 @@
 		<li><a href="#data">データのウェブ</a></li>
               </ul>
             </li>
-            <li><a href="#core">Strengthening the Core of the Web</a>
+            <li><a href="#core">ウェブコア技術の強化</a>
               <ul>
                 <li><a href="#html">HTML</a></li>
                 <li><a href="#css">CSS</a></li>
-                <li><a href="#fonts">Fonts</a></li>
-                <li><a href="#audio">Audio</a></li>
-                <li><a href="#webperf">Web performance</a></li>
+                <li><a href="#fonts">フォント</a></li>
+                <li><a href="#audio">オーディオ</a></li>
+                <li><a href="#webperf">パフォーマンス</a></li>
 		<li><a href="#wasm">WebAssembly</a></li>
-                <li><a href="#testing">Testing</a></li>
+                <li><a href="#testing">テスト</a></li>
               </ul>
             </li>
             <li><a href="#web-for-all">Web for All</a>
@@ -536,70 +536,38 @@
 	    
 	</section>
 
-	<h2 id="core">Strengthening the Core of the Web</h2>
+	<h2 id="core">ウェブコア技術の強化</h2>
 
 	<!-- Using box to display 2 section blocks -->
 	<div class="box">
 	<section class="left">
 
 	  	  <h3 id="css">CSS</h3>
-	  <p><a href="https://www.w3.org/TR/?title=css">All CSS
-	  specifications</a></p>
+	  <p><a href="https://www.w3.org/TR/?title=css">すべての仕様の一覧</a></p>
 
-	  <p><abbr title="Cascading Style Sheets">CSS</abbr> is a
-	    critical part of the Open Web
-	    Platform. The <a href="https://www.w3.org/Style/CSS/">CSS
-	    Working Group</a> gathers requirements from two large
-	    groups of CSS users: the publishing industry and
-	    application developers. The former requires better
-	    pagination support and advanced font handling, the latter
-	    needs intelligent (and fast!) scrolling and
-	    animations.</p>
+	  <p>
+			<abbr title="Cascading Style Sheets">CSS</abbr> は開かれたウェブプラットフォームの重要な要素です。<a href="https://www.w3.org/Style/CSS/">CSS WG</a> は大きく二つの CSS ユーザから要求を取りまとめています: 出版業界とアプリケーション開発者です。前者はページ組のサポートと高度なフォントの取り扱い、後者は高度 (かつ高速な!) スクロールとアニメーションに関する要求が大きいです。
+		</p>
 	  
-	  <p>What we know as CSS is actually
-	    a <a href="https://drafts.csswg.org/">collection</a> of
-	    over a hundred specifications, referred to
-	    as <b>‘modules’</b>. The current state of CSS is defined
-	    by a <a href="https://www.w3.org/TR/CSS/">snapshot</a>,
-	    updated once a year. The group also publishes
-	    an <a href="https://drafts.csswg.org/indexes/">index</a>
-	    defining every term defined by CSS specifications.</p>
+	  <p>
+			CSS は現実には 100 近くの仕様の<a href="https://drafts.csswg.org/">集大成</a>となっており、<b>モジュール</b>として認識されています。CSS の現状は年1回更新される<a href="https://www.w3.org/TR/CSS/">スナップショット</a>として提供されます。このグループでは CSS 仕様のすべての定義についての<a href="https://drafts.csswg.org/indexes/">索引</a>も提供しています。
+		</p>
 
-	  <p>Since the previous highlights document, the CSS Working
-	  Group published 23 documents, including Candidate
-	  Recommendations
-	  for <a href="https://www.w3.org/TR/mediaqueries-4/">CSS
-	  Media
-	  Queries&nbsp;4</a>, <a href="https://www.w3.org/TR/css-display-3/">Display&nbsp;3</a>
-	  and
-	  <a href="https://www.w3.org/TR/css-grid-1/">Grid</a>.</p>
+	  <p>
+		  前回のこの文書以降、<a href="https://www.w3.org/Style/CSS/">CSS ワーキンググループ</a>は 23 の文書 (作業草案、勧告候補) を提示し、この中には<a href="https://www.w3.org/TR/mediaqueries-4/">CSS	Media	Queries&nbsp;4</a>、<a href="https://www.w3.org/TR/css-display-3/">Display&nbsp;3</a>、<a href="https://www.w3.org/TR/css-grid-1/">Grid</a> (Level 1)等があります。
+	</p>
 	</section>
 	
 	<section class="right">
-	  <h3 id="fonts">Fonts</h3>
+	  <h3 id="fonts">フォント</h3>
 	  
-          <p><a href="https://www.w3.org/TR/?title=woff">All Fonts
-          specifications</a></p>
+          <p><a href="https://www.w3.org/TR/?title=woff">すべての仕様の一覧</a></p>
 	  
-          <p>Web Fonts are used for languages such as Chinese,
-          Japanese and Korean, where downloading entire fonts is too
-          costly; and Arabic and Indic languages, where subsetted Web
-          Fonts often do not work
-          correctly. The <a href="https://www.w3.org/Fonts/WG/">Web
-          Fonts Working Group</a> develops specifications that allow
-          the interoperable deployment of downloadable fonts on the
-          Web, with a focus on Progressive Font Enrichment (PFE) as
-          well as maintenance of WOFF Recommendations. Having
-          developed
-          a <a href="https://github.com/w3c/PFE-analysis">PFE testing
-          and analysis framework</a>, the group rigorously evaluating
-          the proposed solutions before starting standards-track
-          work.</p>
+          <p>
+					  ウェブフォントは、中国語・日本語・韓国語といったフォント全体をダウンロードすることが重い言語や、アラビア語・インド諸語などのサブセット化されたウェブフォントでは頻繁に正しく表示されないような言語においても利用されます。<a href="https://www.w3.org/Fonts/WG/">Web Fonts WG</a>ではウェブでの相互運用性のあるダウンロード可能なフォントの仕様を開発しており、Progressive Font Enrichment (PFE) に注力するとともに WOFF 仕様のメンテナンスを行っています。<a href="https://github.com/w3c/PFE-analysis">PFE テストと解析フレームワーク</a>の開発により、標準化作業の開始前に提案仕様の厳密な評価を行っています。
+				</p>
 
-	  <p><b>Note:</b> 27 July 2020 marked
-	  the <a href="https://www.w3.org/blog/2020/07/happy-birthday-web-fonts/">10th
-	  anniversary</a> of the publication of the First Public
-	  Working Draft of Web Open Font Format.</p>
+		<p><b>メモ:</b> 2020/7/27に Web Open Font Format の FPWD 公開から<a href="https://www.w3.org/blog/2020/07/happy-birthday-web-fonts/">10周年</a>となりました。</p>
 	</section>
 	</div>
 
@@ -609,33 +577,18 @@
 	  
 	  <h3 id="html">HTML</h3>
 
-	  <p>The WHATWG snapshot of
-	  the <a href="https://dom.spec.whatwg.org/review-drafts/2019-06/">June
-	  2019 DOM Specification</a> is being endorsed as a W3C
-	  Recommendations. This is the first WHATWG snapshot being
-	  adopted as such.</p>
+	  <p>WHATWG の <a href="https://dom.spec.whatwg.org/review-drafts/2019-06/">DOM 仕様の2019/6スナップショット</a>が W3C 勧告となりました。これが初めての WHATWG のスナップショットの勧告化になります。</p>
 
-	  <p>The <abbr title="HyperText Markup Language">HTML</abbr>
-	  Draft has been going through wide reviews.</p>
+	  <p><abbr title="HyperText Markup Language">HTML</abbr> のスナップショットについては現在 Wide Review 中です。</p>
 	</section>
 
 	<section class="right">
 	  
-          <h3 id="webperf">Web Performance</h3>
+          <h3 id="webperf">パフォーマンス</h3>
 
-          <p><a href="https://www.w3.org/TR/?tag=performance">All Web
-	      Performance specifications</a></p>
+          <p><a href="https://www.w3.org/TR/?tag=performance">すべての仕様の一覧</a></p>
 	  
-          <p>The <a href="http://www.w3.org/2010/webperf/">Web
-	      Performance Working Group</a> discusses new ways to
-	      improve the performance of Web applications and how some
-	      of the proposals are affecting performance
-	      (<a href="https://docs.google.com/document/d/1xALH9W7rWmX0FpjudhDeS2TNTEOXuPn4Tlc9VmuPdHA/edit#heading=h.7nki9mck5t64">Third-Party
-	      Origin
-	      Trials</a>, <a href="https://lists.webkit.org/pipermail/webkit-dev/2020-August/031329.html">Event
-	      Timing</a>, <a href="https://docs.google.com/presentation/d/1xYpHsK6LDhEZZPRkKChn3wKjmHwN3ecCpdAdks6j_QU/edit#slide=id.p">Interactions,
-	      Normalization, &amp; <abbr title="single-page
-	      application">SPA</abbr> Navs</a>).</p>
+          <p><a href="http://www.w3.org/2010/webperf/">Web Performance WG</a> ではウェブアプリケーションのパフォーマンス改善の新しい手段についてと、提案中の機構 (<a href="https://docs.google.com/document/d/1xALH9W7rWmX0FpjudhDeS2TNTEOXuPn4Tlc9VmuPdHA/edit#heading=h.7nki9mck5t64">Third-Party Origin Trials</a>、<a href="https://lists.webkit.org/pipermail/webkit-dev/2020-August/031329.html">Event Timing</a>、<a href="https://docs.google.com/presentation/d/1xYpHsK6LDhEZZPRkKChn3wKjmHwN3ecCpdAdks6j_QU/edit#slide=id.p">Interactions, Normalization, &amp; <abbr title="single-page application">SPA</abbr> Navs</a>) がどのようにパフォーマンスに影響しているかについて議論しています。</p>
 	  
 	</section>	
 	</div>
@@ -643,65 +596,39 @@
 	<!-- Using box to display 2 section blocks -->
 	<div class="box">
 	  <section class="left">
-	    <h3 id="audio">Audio</h3>
+	    <h3 id="audio">オーディオ</h3>
 
-	  <p><a href="https://www.w3.org/TR/?title=audio">All Audio
-	      specifications</a>
+	  <p><a href="https://www.w3.org/TR/?title=audio">すべての仕様の一覧</a>
 	    
-          </p><p>The <a href="https://www.w3.org/2011/audio/">Web Audio
-              Working Group</a> finished its work on
-              the <a href="https://www.w3.org/TR/webaudio/">Web&nbsp;Audio&nbsp;API&nbsp;1.0</a>
-              and is concentrating on the
-              Web&nbsp;Audio&nbsp;API&nbsp;2.0. New <a href="https://github.com/WebAudio/web-audio-api-v2/issues?q=is%3Aissue+is%3Aopen+label%3Afeature">features</a>
-              are incubated in
-              the <a href="https://www.w3.org/community/audio-comgp/">Audio
-              Community Group</a>.</p>
+          </p><p>
+							<a href="https://www.w3.org/2011/audio/">Web Audio WG</a>は <a href="https://www.w3.org/TR/webaudio/">Web&nbsp;Audio&nbsp;API&nbsp;1.0</a> についての作業を完了し、Web&nbsp;Audio&nbsp;API&nbsp;2.0 について注力しています。新規<a href="https://github.com/WebAudio/web-audio-api-v2/issues?q=is%3Aissue+is%3Aopen+label%3Afeature">機能</a>については、<a href="https://www.w3.org/community/audio-comgp/">Audio CG</a>で議論されています。
+						</p>
 
-	  <p>Web&nbsp;Audio&nbsp;1.0, which is implemented in all
-            browsers, enables synthesizing audio in the browser. Audio
-            operations are performed with audio nodes, which are
-            linked together to form a modular audio routing
-            graph. Multiple sources — with different types of channel
-            layout — are supported. This modular design provides the
-            flexibility to create complex audio functions with dynamic
-            effects.</p>
+	  <p>
+						Web&nbsp;Audio&nbsp;1.0 はすでにすべてのブラウザで実装されており、ブラウザでの統合音声を実現します。音声操作は、モジュール化された音声操作要素をつなぐ形の、音声ノードにより行われます。異なるチャネルレイアウトを含む複数音源もサポートされます。モジュールデザインにより動的にはたらく複雑な音声機能の作成に自由度がもたらされました。
+					</p>
 
-	  <p>Web&nbsp;Audio&nbsp;2.0 builds on this robust foundation,
-	  adding nodes that were in strong demand from audio
-	  developers.</p>
+	  <p>Web&nbsp;Audio&nbsp;2.0 はこの安定した基礎の上に組み上げられており、音声関係の開発者からの強い要望があったノードの追加について検討しています。</p>
 	  </section>
 
 	<section class="right">
           <h3 id="wasm">WebAssembly</h3>
 	  
-          <p><a href="https://www.w3.org/TR/?title=webassembly">All
-              WebAssembly specifications</a></p>
+          <p><a href="https://www.w3.org/TR/?title=webassembly">すべての仕様の一覧</a></p>
 
-          <p>WebAssembly is a virtual machine and execution
-          environment widely deployed in browsers and stand-alone
-          environments, that enables near-native performance,
-          optimized load time, and perhaps most importantly, a
-          compilation target for existing code
-          bases. <a href="https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en">WebAssembly
-          became a W3C Recommendation</a> last December.</p>
+          <p>
+					  WebAssembly はブラウザと単独環境の両方で広く利用可能な仮想マシンと実行環境で、ネイティブに近い性能、最適化された読み込み時間、そしてもっとも重要と思われる既存コードをコンパイル可能にする、などを実現します。<a href="https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en">WebAssembly は昨年12月に W3C 勧告となりました</a>。
+				</p>
 	  	  
-	  <p>The group and
-            companion <a href="https://www.w3.org/community/webassembly/">Community
-            Group</a>, where requirements gathering and language
-            development take place, continue to work on a range of
-            features for future versions of the standard,
-            including:</p>
+	  <p>
+						WG に対応し、要求収集と言語開発が行われている<a href="https://www.w3.org/community/webassembly/">コミュニティーグループ</a>では、次期バージョンの仕様にどの領域の機能を入れるかについての議論を進めています:
+					</p>
 	  <ul>
-	    <li>Threading: Provide the benefits of shared-memory
-	      multi-threading and atomic memory accesses.</li>
-	    <li>Fixed-width SIMD: Vector operations that execute loops
-	      in parallel.</li>
-	    <li>Reference types: Allow WebAssembly code to directly
-	      reference host objects.</li>
-	    <li>Tail calls: Enable calling functions without using
-	      extra stack space.</li>
-	    <li>ECMAScript module integration: Interact with
-	      JavaScript by loading executables as ES6 modules.</li>
+				<li>スレッド: 共有メモリによるマルチスレッドとメモリ不可分操作の機能を提供します</li>
+				<li>固定長 SIMD: 並列処理を行うベクトル操作</li>
+				<li>参照型: WebAssembly において直接ホストの参照型を利用可能にします</li>
+				<li>末尾呼出: 追加のスタックを必要としない関数呼び出しを実現します</li>
+				<li>ECMAScript モジュール統合: WebAssembly の実行モジュールを ES6 モジュールとして JavaScript から呼び出す機能</li>
 	  </ul>
 	</section>
 	</div>
@@ -711,57 +638,27 @@
 	  <section class="left">
 	    <h3 id="miniapps">MiniApps</h3>
 
-	    <p>The
-	    <a href="https://www.w3.org/community/miniapps/">MiniApps
-	    Ecosystem Community Group</a> is looking into the basic architecture of
-	    MiniApps to determine if a workable standard is possible. The group
-	    released  a few proposals including:</p>
+			<p><a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem CG</a> では適用可能な標準化が可能かどうかについて MiniApps の基礎的な構成を検討しています。グループでは以下のいくつかの提案を提示しています:</p>
 	    <ul>
-	      <li><a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp
-		  URI Scheme</a></li>
-	      <li><a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp
-		  Manifest</a></li>
-	      <li><a href="https://w3c.github.io/miniapp/specs/lifecycle/">Lifecycle</a>, 
-		and</li>
-	      <li><a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp
-		  Packaging</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI Scheme</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp Manifest</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/lifecycle/">Lifecycle</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging</a></li>
 	    </ul>
 	    
-	    <p>After a few
-	      <a href="https://github.com/w3ctag/design-reviews/blob/master/reviews/miniapps_feedback.md">discussions
-		with the TAG</a> and the
-	      <a href="https://www.w3.org/2020/07/30-miniapp-minutes.html">
-		Web Platform community</a>, members in the CG agreed that
-	      vendors, developers and users will benefit if we are able
-	      to reach interoperability across the different MiniApp
-	      platforms while working together under the goal of
-	      <a href="https://github.com/w3ctag/design-reviews/blob/master/reviews/miniapps_feedback.md#the-goal-of-one-web">One
-	    Web</a>.
+			<p><a href="https://github.com/w3ctag/design-reviews/blob/master/reviews/miniapps_feedback.md">TAG との議論</a>と<a href="https://www.w3.org/2020/07/30-miniapp-minutes.html">Web Platform コミュニティーとの議論</a>を経て、CG の参加者は<a href="https://github.com/w3ctag/design-reviews/blob/master/reviews/miniapps_feedback.md#the-goal-of-one-web">一つのウェブ</a>原則の元での異なる MiniApp プラットフォーム間の相互運用性を確保できれば、	ベンダー・開発者・ユーザに利点をもたらすという点で合意しました。
           </p></section>
 	  <section class="right">
-	    <h3 id="testing">Testing</h3>
+	    <h3 id="testing">テスト</h3>
 	  	  
-          <p>Since 2014 W3C began work on this coordinated open-source
-            effort to build a cross-browser test suite for the Web
-            Platform, which WHATWG, and <em>all</em> major browsers
-            adopted. Recent progress in
-            the <a href="https://web-platform-tests.org/">WebPlatform
-            Tests project</a> includes:</p>
+          <p>
+						2014年から W3C ではウェブプラットフォームについてのブラウザを問わないテストスィートをオープンソースで構築する活動を続けており、WHATWG と<em>全ての</em>主要ブラウザが参加しています。<a href="https://web-platform-tests.org/">WebPlatform Tests プロジェクト</a>の最近の進展は:
+					</p>
 	  <ul>
-	    <li>Revision of the <a href="https://github.com/web-platform-tests/wpt/blob/master/CODE_OF_CONDUCT.md">code
-		of conduct</a>,
-		and <a href="https://lists.w3.org/Archives/Public/public-test-infra/2020AprJun/0000.html">migration
-		to Python&nbsp;3</a></li>
-	    <li>Over a 30 days period in July-August, over 150
-	      authors have contributed to the project</li>
-	    <li>575,000 subtests (not counting the over one million
-	    tests related to the encoding specification)</li>
-	    <li>Support for
-	    the <a href="https://privacycg.github.io/storage-access/#automation">Storage
-	    Access API</a>, a proposal incubated in the Privacy
-	    Community Group, was added as
-	    a <a href="https://github.com/web-platform-tests/wpt/pull/24319">Web
-	    Driver extension</a></li>
+	    <li><a href="https://github.com/web-platform-tests/wpt/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>の更新、<a href="https://lists.w3.org/Archives/Public/public-test-infra/2020AprJun/0000.html">Python&nbsp;3 への移行</a></li>
+	    <li>7-8月の30日以上の期間において150人以上がプロジェクトに貢献しました</li>
+	    <li>575000件のテスト項目 (encoding 仕様に関する百万以上のテストを除外して)</li>
+	    <li>Privacy CG で議論中の <a href="https://privacycg.github.io/storage-access/#automation">Storage Access API</a> に対応し、<a href="https://github.com/web-platform-tests/wpt/pull/24319">Web Driver 拡張</a>に組込み</li>
 	  </ul>
 	 
 	</section>
