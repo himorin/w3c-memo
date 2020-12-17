@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020/10 W3C 活動概要 (日本語版)</title>
+    <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/base.css">
+    <link rel="stylesheet" href="https://www.w3.org/2014/10/w3c-highlights/default.css">
+    <link rel="stylesheet" href="https://www.w3.org/2014/10/w3c-highlights/styles.css">
+    <style>
+      /*increased container width*/
+      body {padding:2em; font-size:120%;} /*overriding previously uneven values*/   
+      #container {
+      max-width: 90%; 
+      }
+      /*section box styling*/    
+      section {border: 1px solid #3f9aea; padding: 3%; margin:2em 0;}
+      /*use .box for the parent container, add children as a div or section*/
+      @media (min-width: 38em) {
+         .box {display: flex}
+         .box > section + section {margin-left: 2em}
+      }
+      .box > div{padding-right: 3.5em; width:300px;} 
+      img {
+      float: right;
+      max-width: 150px;
+      padding: 10px;
+      }
+      p, blockquote, li, dt, dd {
+      max-width: 60em;
+      }
+      h1 {padding: 10px 10px 10px 10px;}
+      h2 {
+      padding: 1em;
+      /* white-space: nowrap; */
+      background: #005A9C;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 0;
+      }
+      h3 {font-weight: 600;
+	 }
+      h2, h3, h4 { clear: both; }
+      .quote {
+      margin-left: 19%;
+      margin-top: 0;
+      margin-bottom: 2em;
+      }
+      .clear{
+      clear: both;
+      }
+      .text-col{
+      width:75%;
+      }
+      .columns {
+        columns: 3;
+      }
+      .columns > ul {
+        margin: 0;
+        padding-bottom: 1em;
+      }
+      .columns > h5 {
+        break-before: column;
+	margin-left: 2em;
+	margin: 0 0 1em 2em;
+      }
+      @supports (display: grid) {
+	.columns {
+	  display: grid;
+	  grid: "a   c   e   g"
+		"b   d   f   h"
+	      / 1fr 1fr 1fr 1fr;
+	  grid-gap: 0 1em; /* Obsolete name, for some older browsers */
+	  gap: 0 1em;
+	  grid-auto-flow: column;
+	}
+      }
+      .desc {color:#005A9C;}      
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <a href="https://www.w3.org/"><img alt="W3C" src="https://www.w3.org/Icons/WWW/w3c_home_nb.png"
+            height="48" width="72"></a>
+      <h1>2020/10<br>W3C活動概要</h1>
+      <div class="section">
+        <div class="status">
+          <p>この2020年10月5日版レポートは、2020/10に行われた <a href="https://www.w3.org/2020/10/TPAC/ac-agenda.html">W3C 諮問委員会オンライン総会</a> (W3C 会員限定ページ)向けに用意されました。同時に公開された<a href="factsheet.html" hreflang="en">2020/10 W3C 現状</a>(翻訳はありません) も参照ください。前回のバージョンは2020/05 版活動概要 (<a href="https://www.w3.org/2020/05/w3c-highlights/" hreflang="en">英語版</a>、<a href="https://www.w3.org/2020/05/w3c-highlights/Overview.html.ja" hreflang="ja">日本語版</a>)になります。このレポートの更新版は<a href="https://www.w3.org/Consortium/highlights/">最新版</a>をご参照ください。 (訳注: 一般向けに原版にはない説明のリンクや追記を入れている部分があります。)</p>
+		  <p><a href="./" hreflang="en">オリジナルの英語版</a>に加え、<a href="./zh.Overview.html" hreflang="zh-hans">簡体字中国語</a>翻訳も提供されています。</p>
+        </div>
+        <div id="toc">
+          <p><a title="Show/Hide Table of Contents" href="#toc_list" onclick="toggleNav(); return false;">☰
+			目次</a></p>
+          <ul class="contents" id="toc_list">
+            <li><a href="#intro">概要</a> </li>
+            <li><a href="#funnel">将来のウェブ標準に向けて</a> </li>
+            <li><a href="#industry">技術ニーズへの追随</a>
+              <ul>
+                <li><a href="#payments">ウェブペイメントと商取引</a></li>
+                <li><a href="#publishing">デジタル出版</a></li>
+		<li><a href="#entertainment">メディアとエンターテイメント</a> </li>
+                <li><a href="#telco">Web と通信</a> </li>
+                <li><a href="#automotive">自動車と運送</a></li>
+                <li><a href="#wot">Web of Things</a></li>
+		<li><a href="#smart-cities">新規: スマートシティ</a></li>
+		<li><a href="#data">データのウェブ</a></li>
+              </ul>
+            </li>
+            <li><a href="#core">ウェブコア技術の強化</a>
+              <ul>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#fonts">フォント</a></li>
+                <li><a href="#audio">オーディオ</a></li>
+                <li><a href="#webperf">パフォーマンス</a></li>
+		<li><a href="#wasm">WebAssembly</a></li>
+                <li><a href="#testing">テスト</a></li>
+              </ul>
+            </li>
+            <li><a href="#web-for-all">全ての人の為に</a>
+              <ul>
+                <li><a href="#secpri">セキュリティ、プライバシー、個人特定</a></li>
+                <li><a href="#i18n">国際化 (i18n)</a></li>
+                <li><a href="#accessibility">ウェブアクセシビリティ</a></li>
+              </ul>
+            </li>
+            <li><a href="#outreach">アウトリーチ</a>
+              <ul>
+                <li><a href="#devrel">W3C デベロッパーリレーション</a></li>
+                <li><a href="#training">W3C トレーニング</a></li>
+		<li><a href="#translations">翻訳</a></li>
+                <li><a href="#liaisons">W3C リエゾン</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+	  
+          <h2 id="intro">概要</h2>
+	  <section>
+	  <h3 id="covid-19">Covid-19 流行</h3>
+          <img src="https://www.w3.org/comm/assets/icons/globe.png" alt="">
+	  
+	  <p>前回のレポートでは COVID-19 流行下における世界的な健康・福祉や W3C への懸念について記載しました。</p>
+
+	  <p>懸念点であった人々の健康についての状況は継続しておりますが、組織として受けた影響は大きなものにはなりませんでした。
+		 社会的距離の確保の重要性に鑑み、人々の健康を最優先とし、すぐに業務渡航を全面的に取りやめ、コミュニティとともに遂行している最も重要な活動 &ndash; ウェブ標準の策定は<a href="https://www.w3.org/Guide/meetings/continuity.html">完全リモートで行われています</a>。
+		 オフライン会議やワークショップをオンラインへ転換することに成功し、これまで25年かけて築いてきたウェブの可能性を最大限に引き出せています。</p>
+	  <p>実際に、2020年のパンデミックの状況下において世界中でバーチャル化の流れがより加速し、社会全般で情報共有・商業・リアルタイム通話・娯楽などにおいてウェブがますます重要になってきています。
+			そして、産業界でビジネスをオンラインで行うためにウェブの重要性が増し、その認識が進むことで、さまざまな団体が<a href="https://www.w3.org/Consortium/Member/List">W3Cに加入</a>し、ビデオ通信・メディア・出版・金融・広告などにおける次世代の標準化の活動に加わっています。
+		</p>
+	  
+	  <h3 id="process-patent-policy-cepc">迅速な標準開発 &amp; 新しい行動規範</h3>
+	  
+	  <p>これらの流れは、ウェブ標準化の工程や慣習に高速性や迅速性を求める結果となりました。今年9月にW3Cの2020年版プロセスと特許ポリシーが<a href="https://www.w3.org/2020/09/pressrelease-process-document-patent-policy-2020.html.en">適用開始</a>となりました。これによりウェブ標準構築の加速を目指します。</p>
+
+		<p>これらの更新の中でも、Living Standard 方式を含む継続的標準開発方法、実装者へ早期に特許フリー保護を実現する規定により、ウェブ技術を共通基盤として形成するためのわれわれの活動が高速化し、かつより強化されることになります。</p>
+
+		<p>また、今年はW3Cの<a href="https://www.w3.org/Consortium/cepc/">行動規範</a>(CEPC)についても2015年の策定以来初めての更新を行いました。
+			W3CのCPECでは、取るべき、また、許容される振る舞いと、専門家としての高いレベルの習慣を規定しています。
+			この文書では、評価基準、コミュニティとグループ運営における透明性の確保、参加者への不安やハラスメントがない環境の保持、組織活動への参加についての情報を提供します。</p>
+
+	  <h3 id="focus">このレポートについて</h3>
+	  <img src="https://www.w3.org/comm/assets/icons/magnifier.png" alt="">
+	  
+	  <p>このレポートは、ウェブの世界を拡張しその発展と強みを広げる最近の活動のまとめです。
+			W3Cコミュニティの活動によってインターネットのコア技術上に構築されたウェブが、科学的な協働や発見を加速しつづける、家族・友人をつなぐ場になる、オンラインで学習し技術を高める手段になる、活発なビジネスを行う、などのツールとなっています。</p>
+	  
+		<p><a href="https://www.w3.org/groups/">37個のワーキンググループと10個のインタレストグループ</a>による活動によるW3Cのウェブ標準の策定や、
+			ガイドライン・解説文書の作成により、<a href="https://www.w3.org/Consortium/mission">使命</a>を遂行しています。</p>
+
+		<p>全体で<a href="https://w3c.github.io/spec-dashboard/report.html">274個の仕様</a>にわたる多くの活動は、
+			GitHub 上のワークスペースにおいて全体を通して均質な<a href="https://w3c.github.io/validate-repos/report.html">良質な監視と管理</a>の元で遂行されています。</p>
+	</section>
+
+          <h2 id="funnel">将来のウェブ標準に向けて</h2>
+	  
+	<section>
+
+	  <h3 id="pipeline">将来に向けた標準化領域の探索</h3>
+	  <img src="https://www.w3.org/comm/assets/icons/lightbulb.png" alt="">
+	  
+          <p>W3Cでは将来のウェブ標準についての議論のためにさまざまな方策を取っています。会員内での議論、他の標準化団体との連携、
+						<a href="https://www.w3.org/community/groups/">355を超えるコミュニティグループ</a>の数千を超える参加者の活動、そしてW3Cワークショップの開催などです。
+						その中でたくさんのよいアイデアが出ています。W3C戦略チームでは将来の標準化に向けた領域の探索や、参加者の募集を行っています。
+					</p>
+		<p><a href="/2003/08/Workshops/archive">ワークショップ</a>の開催により、新領域についてのプレゼンテーション・パネル・分科会、そして仮想的な"廊下"会合を行いコミュニティ形成に繋がります。<a href="https://www.w3.org/Guide/meetings/continuity.html#workshops">バーチャル移行</a>に伴い活動形態の変更や予定変更が発生しましたが、分散会合になることでよりアクセシブルかつ全世界から参加しやすくなっています。</p>
+		<p><a href="https://github.com/w3c/strategy/milestone/2">準備中のワークショップ:</a></p>
+		<ul>
+	    <li><a href="https://github.com/w3c/strategy/issues/221">ウェブでの音声対話</a></li>
+	    <li><a href="https://github.com/w3c/strategy/issues/209">ウェブ上での相互やり取りのためのコンテンツの扱い</a></li>
+		</ul>
+	  <p>直近で開催されたワークショップ:</p>
+	  <ul>
+	    <li><a href="https://www.w3.org/2020/maps/">W3C/OGC 合同オンラインワークショップ - ウェブでの地図</a> (2020年9月21日～10月2日)
+				地理に関する標準とウェブ上の地図データサービス、ウェブ上の地図クライアントツール・アプリケーション、ウェブ標準とブラウザ開発に関する専門家を集め、ウェブ上での地図の可能性を探る。
+			</li>
+	    <li><a href="https://www.w3.org/2020/06/machine-learning-workshop/">Webと機械学習</a> (2020年9月16～29日)
+				機械学習のツールキットやフレームワーク開発者とウェブ標準関係者を集め、機械学習をよりよく取り込んだオープンなウェブ標準を検討。
+	    <li>仮想環境についてのウェブ標準でのインクルーシブ環境についてのW3Cワークショップ (2019年11月5～6日; <a href="https://www.w3.org/2019/08/inclusive-xr-workshop/report.html">報告を見る</a>)</li>
+	  </ul>
+	  
+          <p>"<a href="/Strategy/Funnel">Strategy Funnel</a>" はスタッフによる新領域の可能性の探索について示しており、
+              <a href="https://github.com/w3c/strategy/projects/2#column-215578">インキュベーション</a>と
+              <a href="https://github.com/w3c/strategy/projects/2#column-215579">評価</a>から、新規標準化グループの
+							<a href="https://github.com/w3c/strategy/projects/2#column-215580">設立</a>までを俯瞰することができます。
+							GitHub プロジェクトでの漏斗 (Funnel) 表示では新規領域についての議論が"カード"として並び、通常は左から右へカラムの間を進んでいきます。 
+							ほとんどのカードは<a href="https://github.com/w3c/strategy/projects/2#column-215576">探索</a>から始まり、
+							<a href="https://github.com/w3c/strategy/projects/2#column-215580">設立</a>や漏斗の外へ動いていきます。
+					</p>
+	  
+          <p>
+						特にインキュベーションが始まったものについて、<strong>一般からの情報提供はどの段階でも歓迎</strong>です。
+						それにより W3C がどの領域を標準化するに値するかを判断する助けになり、その領域の環境についての評価や、標準化作業に参加する団体の特定や、実情に合った内容で設立趣意書を作成することにも役立ちます。継続的なフィードバックは標準化作業全体の高速化に寄与します。
+					</p>
+
+	</section>
+	<section>
+	  
+	  <h3 id="groups">直近で設立された活動</h3>
+	  
+	  <img src="https://www.w3.org/comm/assets/icons/megaphone-left.png"
+	  alt="">	  
+	  
+          <p>前回の活動概要報告以降、W3C では以下の多数のグループの設立・延長・提案などを行いました:</p>
+	  <div class="columns">
+            <h5>新規設立・更新</h5>
+            <ul>
+              <li>新規: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Sep/0004.html">WebTransport</a></li>
+              <li>新規: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0007.html">GPU for the Web</a></li>
+              <li>新規: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0004.html">EPUB&nbsp;3</a></li>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0001.html">JSON-LD</a></li>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Jun/0016.html">Accessibility Education and Outreach</a></li>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0008.html">Distributed Tracing</a></li>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0005.html">Web Real-Time Communications</a> (WebRTC)</li>
+            </ul>
+            <h5>期間延長</h5>
+            <ul>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Jul/0000.html">Devices and Sensors</a></li>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Jun/0022.html">Automotive</a></li>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Jun/0007.html">Service Workers</a></li>
+              <li><a href="https://lists.w3.org/Archives/Public/public-new-work/2020Jun/0000.html">Web Performance</a></li>
+            </ul>
+            <h5>提案中・予告</h5>
+            <ul>
+              <li>更新: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Aug/0006.html">Chinese Web</a></li>
+							<li>新規: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Oct/0000.html">Audiobooks</a></li>
+							<li>予告: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Sep/0006.html">Decentralized Web</a></li>
+							<li>予告: <a href="https://lists.w3.org/Archives/Public/public-new-work/2020Oct/0001.html">Web Machine Learning</a></li>
+						</ul>
+	  </div>
+        <h4 id="decent">Decentralized Web IG</h4>
+         <p>
+						W3C Team は新規の Decentralized Web IG について準備中の憲章案についての<a href="https://lists.w3.org/Archives/Public/public-new-work/2020Sep/0006.html">予告</a>を公開し、策定初期段階の草案による影響の特定・均衡・緩和、一様な実装の推進、開かれた標準の原則の推進を目的とする W3C の One Web 原則に従う標準開発への貢献も目標としています。提案中の IG では <a href="/community/web-adv/">Improving Web Advertising BG</a> の参加者により取りまとめ中の2つの草案についての議論から進める予定です。
+					</p>
+
+         <h4 id="wml">Web Machine Learning WG</h4>
+         <p>
+						2020年9月16～29日に開催した<a href="https://www.w3.org/2020/06/machine-learning-workshop/">ウェブと機械学習に関する W3C ワークショップ</a>の参加者により、新しいウェブ上での機械学習についてのワーキンググループを <a href="https://webmachinelearning.github.io/webnn/">Web Neural Network API</a> を基礎として立ち上げることが提案されました。W3C Team は準備中の検証案についての<a href="https://lists.w3.org/Archives/Public/public-new-work/2020Oct/0001.html">予告</a>を公開しました。
+				</p>
+			</section>
+
+	  <h2 id="industry">技術ニーズへの追随</h2>
+	
+	<section>
+	  
+	  <h3 id="payments">ウェブペイメントと商取引</h3>
+	  
+	  <img src="https://www.w3.org/comm/assets/icons/creditc.png" alt="">
+	  
+	  <p><a href="https://www.w3.org/TR/?title=payment&amp;version=latest">全ての仕様の一覧</a></p>
+	  
+          <p class="desc">W3Cのウェブペイメント標準により事業者にとってフロント・開発共に低コストかつウェブ上どこでも同じとなる、統合された決済のユーザ体験を実現します。ユーザは情報を保存・再利用可能になり、オンライン決済をより速く正確に完了できるようになります。
+					</p>
+	  
+	  <p>この領域では2つの動きがあります:</p>
+	  <ul>
+	    <li><b>Web Authentication</b> が多くのブラウザで実装され、モバイルデバイスへの認証器の実装が進んだことで、Web Authentication をより強力な利用者認証に使うことへの興味が増大しています</li>
+	    <li>ブラウザ実装での<b>フィンガープリンティングの可能性の削減</b>と、第三者のストレージアクセスへの制限により、フィンガープリンティングにも利用可能な機構についての代替策の探索に興味が集まっています</li>
+	  </ul>
+	  
+	  <p>
+			これらの変化により世界の決済関係の標準化団体(例えば、ヨーロッパでの<abbr title="Payment Services Directive">PSD</abbr>2)においても影響が出ており、強力な(多要素の)ユーザ認証の要求が増大し、また、現在のウェブにおける決済リスク評価方法はフィンガープリンティングとされる機能に依存することが多いためブラウザ実装の変化に影響される可能性もあります。
+	</p>
+
+	  <p>
+			FIDO と EMVCo では Web Authentication のデータをどのように EMV 3-D Secure の処理に取り込めるかについての議論を行っています。<a href="https://www.w3.org/Payments/WG/">Web Payments WG</a>、WebAuthn との合同タスクフォースである <a href="https://www.w3.org/securepay/">Web Payment Security IG</a> において、Web Authentication を決済方式選択に円滑に統合した決済方式についての複数の案を議論しています。
+			<a href="https://github.com/rsolomakhin/secure-payment-confirmation">Secure Payment Confirmation</a> は複数の関係者が関心を寄せている一つの案です。このグループでは、これまでのワンタイムパスワードでなく Web Authentication を 3-D Secure の認証フローの中で "Step-Up" としてユーザの負担なく利用する方式について、Stripe と Google により2020年Q3とQ4の間に試験が完了することを想定しています。
+			また、Web Payments WG では Secure Payment Confirmation が EMV® Secure Remote Commerce (SRC)、銀行決済、即時決済などのユースケースでどのように利用可能かについても調査を行っています。
+		</p>
+
+	  <p>
+			また、W3C では <a href="https://www.w3.org/blog/2020/09/new-w3c-merchant-business-group/">Merchant BG</a> を設立し、商業、システム構築者、プラットフォーム提供者などの間で進化するウェブ技術がユーザ体験をどのように改善するかや、追加で必要とされるウェブ技術についての議論を行っています。
+		</p>
+
+	</section>
+	<section>
+          <h3 id="publishing">デジタル出版</h3>
+	  
+          <img src="https://www.w3.org/comm/assets/icons/publishing.png" alt="">
+	  
+	  <p><a href="https://www.w3.org/TR/?tag=data">全ての仕様の一覧</a> &#8226; <a href="https://www.w3.org/publishing/groups/publ-wg/PublStatus">出版分野のマイルストーン</a></p>
+	  
+          <p class="desc">ウェブは世界共有の出版プラットフォームです。出版がウェブから受ける影響はより大きくなっており、またウェブが出版に与える寄与もより大きくなっています。<a href="https://www.w3.org/publishing/">Publishing@W3C</a> において特に興味を持たれているものは、体裁とレイアウト、アクセシビリティ、可用性、可搬性、流通、保管、オフラインアクセス、オンデマンド印刷、そして信頼性のある相互参照性です。また、グループには幅広い出版コミュニティが参加しており、旧来の"商業"出版社、ebook システム開発者に加え、オーディオブックの出版社、論文誌や教育出版、司書研究者やブラウザ開発者も入っています。</p>
+	  
+	  <p>
+			W3C では、EPUB&nbsp;3仕様の保守、開発と明確化の活動、W3C の中での EPUB コミュニティの代弁、そして EPUB&nbsp;3 を利用したコンテンツ作成者・消費者へのサポートのために、2020年8月に<a href="https://www.w3.org/publishing/groups/epub-wg">EPUB&nbsp;3 WG</a>を立ち上げました。グループの重要な活動成果として EPUB 出版物と表示システムの相互運用性の増強があります。実装試験を行うという厳格な W3C のプロセスにより、より明確で分かりやすく実装しやすい EPUB&nbsp;3 仕様の開発につながるでしょう。
+		</p>
+	  
+	  <p>
+			<a href="https://www.w3.org/publishing/groups/publ-wg/">Publishing WG</a>は拡大しつつある領域であるにもかかわらず、安定した標準がないために出版までに追加の経費が掛かっているオーディオブックの分野に注力します。今年の年末を目標とした標準仕様化に向けて以下についての活発な開発が続いています:
+    </p>
+	  <ul>
+	    <li><a href="https://www.w3.org/TR/pub-manifest/">出版マニフェスト (Publication Manifest)</a></li>
+	    <li><a href="https://www.w3.org/TR/audiobooks/">ウェブ出版のためのオーディオブックプロファイル (Audiobook profile for Web Publications)</a></li>
+	    <li><a href="https://w3c.github.io/lpf/">軽量パッケージ形式 (Lightweight Packaging Format)</a> (グループノート)</li>
+	  </ul>
+	  
+	  <p><a href="https://www.w3.org/publishing/groups/publ-bg">Publishing BG</a> では <a href="https://www.w3.org/blog/2020/05/publishingw3c-epub-survey-results/">EPUB とデジタル出版のサーベイ: 現在、次世代、そして将来</a>の調査を行い調査結果を公表しました。</p>
+
+	</section>
+	<section>
+	  
+          <h3 id="entertainment">メディアとエンターテイメント</h3>
+	  
+          <img src="https://www.w3.org/comm/assets/icons/media.png" alt="">
+	  
+          <p><a href="https://www.w3.org/TR/?tag=media">すべての仕様の一覧</a> &#8226; <a href="https://w3c.github.io/web-roadmaps/media/">ウェブでのメディア技術の概要・ロードマップ</a></p>
+
+	  <div class="desc">
+      <p class="desc">
+				<a href="https://www.w3.org/tv/">メディアとエンターテイメントの活動</a>ではメディアに関連した機能や没入体験を作り出すのに必要な機能の標準化に取り組んでいます。HTML5、<abbr title="Timed Text Markup Language">TTML</abbr> と TTML のプロファイル、<abbr title="Web Video Text Track">WebVTT</abbr> によりウェブに標準的な音声・ビデオ・字幕機能をもたらし、世界中にメディア処理とメディア体験の革命をもたらし、ウェブをメディアコンテンツを届けるための成熟したプラットフォームとしました。</p>
+	    
+	    <p>現在の目標は:</p>
+            <ul>
+              <li>コアメディア技術の増強</li>
+              <li>分断の低減</li>
+              <li>将来に向けて</li>
+            </ul>
+	  </div>
+	  
+	  <h4 id="reinforce">コアメディア技術の増強</h4>
+
+	  <ul>
+	    <li><a href="http://www.w3.org/AudioVideo/TT/">Timed Text WG</a> は <a href="https://www.w3.org/TR/ttml-imsc1.2/">TTML-IMSC 1.2</a> を勧告化しました。</li>
+	    <li><a href="https://www.w3.org/TR/media-capabilities/">Media Capabilities</a>、<a href="https://www.w3.org/TR/picture-in-picture/">Picture-in-picture</a>、<a href="https://www.w3.org/TR/mediasession/">Media	Session</a> の各仕様の勧告候補化に進展がありました。</li>
+	    <li>2画面状態の活用におけるデバイス間相互運用性の確保のための <a href="https://w3c.github.io/openscreenprotocol/">Open Screen Protocol</a> では遅いながらも進展がありました。</li>
+	    <li><a href="https://www.w3.org/Style/CSS/members">CSS WG</a> (CSS Color, CSS Media Queries)、<a href="https://www.w3.org/community/colorweb/">Color
+		on the Web CG</a> と <a href="https://www.w3.org/media-wg/">Media WG</a> の共同で拡張色サポート (HDR, 広いガンマ) について活動しています。</li>
+	    <li>時系列のメディアイベント (emsg, data cues)の改善。<abbr title="Web Incubator Community Group">WICG</abbr> での <a href="https://github.com/wicg/datacue">DataCue</a> についてのインキュベーションについては、ブラウザベンダー・メディア技術会社と DASH-IF といった他の団体からの参加により早いスピードで進んでいます。</li>
+	  </ul>
+
+	  <h4 id="reduce">分断の低減</h4>
+
+	  <ul>
+			<li>メディアデバイスのための共通の試験可能なベースラインの年次公開は、<a href="https://www.w3.org/community/webmediaapi/">Web Media APIs CG</a> と <a href="https://cta.tech/Resources/Standards/WAVE-Project">CTA WAVE Project</a> の共同で行われています。</li>
+			<li><a href="http://www.w3.org/2011/webtv/">Media and Entertainment IG</a> では<a href="http://w3c.github.io/web-roadmaps/media/">ウェブにおけるメディア技術のロードマップ</a>を、メディアアプリケーション・サービスを構築するのに利用可能なウェブ技術や、追加のユースケースを実現するために必要な技術のリストアップとして公開しています。</li>
+	  </ul>
+	  
+	  <h4 id="create">将来に向けて</h4>
+	  
+	  <ul>
+			<li><a href="https://www.w3.org/immersive-web/">Immersive	Web WG</a> では VR/AR 体験を実現するための <a href="https://www.w3.org/TR/webxr/">WebXR Device API</a> と関連仕様の安定化を行っています。</li>
+			<li><a href="https://www.w3.org/2020/gpu/">GPU for the Web WG</a> が設立され、ウェブでの画像、機械学習、重い処理などのための GPU の活用について活動します。</li>
+			<li><a href="https://www.w3.org/groups/wg/webtransport">Web Transport WG</a> が設立され、ライブストリーミングやクラウドゲームなどの低レイテンシーでのメディア伝送に向けた有用な技術になると想定される WebTransport API について活動を始めました。</li>
+		  <li>クラウドに保管された産業用メディアアセットを、メディア製作のためにウェブで扱うことは可能か？Media and Entertainment IG では<a href="https://w3c.github.io/me-media-production/">メディア製作からの要求</a>のとりまとめに着手しました。</li>
+	    <li>ウェブでのゲームは？<a href="https://www.w3.org/community/games/">Games CG</a> では要件とギャップのとりまとめについて活動しています。</li>
+	    <li>将来の高性能メディア体験に必要な新しい技術はなにか？<a href="https://github.com/w3c/strategy/issues/209">W3C Workshop on Interactive Media Bundling</a> について検討中です。</li>
+	    <li>メディアを実時間で処理するために、<a href="https://wicg.github.io/web-codecs/">WebCodecs</a> の検討が最近かなり進みました。メディア処理について <a href="https://www.w3.org/2020/06/machine-learning-workshop/presentations.html">W3C workshop on Web and Machine Learning</a> でも議論が行われましたので合わせてご覧ください。</li>
+			<li><a href="https://w3c.github.io/danmaku/usecase.html">Bullet Chatting (弾幕)</a>は、ビデオ共有サービスにおいてユーザによるコメント追加を特定の時間に紐づけて行うことで、ソーシャル機能をつけたより没入可能なメディア体験を実現するための機構として提案中です。</li>
+	  </ul>
+
+	</section>
+	<section>
+	  
+	  <h3 id="telco">Web と通信</h3>
+	  
+          <p class="desc">
+						ウェブはモバイルでもオープンなプラットフォームです。音声通信サービスとネットワーク設備の事業者は長らくウェブ技術の展開において重要な位置に居ました。 ウェブプラットフォームの発展に伴いより豊富な機能を持つことで、既存サービスを新しいユーザやデバイスに対して、そしてより拡張された機能を提供できるようになり、新規や革新的なサービスの提案に繋がっています。
+					</p>
+	  
+	  <h4 id="rtc">リアルタイム通信 (WebRTC)</h4>
+          <img src="https://www.w3.org/comm/assets/logos/webrtc-logo-vert-retro-255x305.png" alt="WebRTC logo">
+	  
+          <p> <a href="https://www.w3.org/TR/?title=webrtc">すべての仕様の一覧</a> </p>
+	  
+          <p>
+						WebRTC は全ての繋がっているデバイスへコミュニケーション機能を導入可能にすることでコミュニケーション事業全体を再定義し、音声・動画通信をどこでも、どのネットワークでも実現し、事業者が顧客に繋がる機会を大いに増加させます。<a href="https://www.w3.org/TR/webrtc/">WebRTC</a> はさまざまなオンライン通信や共同作業に欠かせない機能を提供します。
+					</p>
+
+	  <p>
+						COVID-19 の状況下で、移動や物理接触が制限される中で WebRTC がすでにどれだけ重要なものとなっているかや、浮かび上がってきた新しい利用形態からいくつもの技術への改善点が提示されるなどされています。
+					</p>
+
+          <p>
+						<a href="http://www.w3.org/2011/04/webrtc/">WebRTC WG</a> は更新された運営憲章の元での2年間にわたる活動を開始し、今年末目標の <a href="https://www.w3.org/TR/webrtc/">WebRTC&nbsp;1.0</a> (と関連するメディアキャプチャーとストリームの仕様) の勧告化に向けて活動を続けています。
+					</p>
+
+	  <p>
+		    Zoom が最近 W3C に加入するとともに、Facebook Messenger のチームもこの WG に参加しており、社会でこれまで以上に必要とされるオンライン環境整備の中でウェブが重要な役割を果たし続けられるための活動をより強力に行っていきます。
+	    </p>
+
+	  <p>
+				それに加え、(WebRTC NV とも呼ばれる)<a href="https://www.w3.org/TR/webrtc-nv-use-cases/">WebRTC の拡張のユースケース</a>の検討は拡大しており、特に <a href="https://w3c.github.io/webrtc-insertable-streams/">WebRTC	 Insertable Media using Streams</a> が追加されています。
+			</p>
+	
+	  <h4 id="web-networks">ウェブとネットワーク</h4>
+	  
+	  <p><a href="https://www.w3.org/web-networks/">Web &amp; Networks IG</a> では<a href="https://www.w3.org/wiki/Networks#Meetings">電話会議の開催</a>により2つの大きな活動項目について注力しています:</p>
+	  <ul>
+	    <li><a href="https://www.w3.org/wiki/Networks/Edge_computing">ウェブプラットフォームにおけるエッジコンピューティング</a>の影響</li>
+	    <li><a href="https://www.w3.org/wiki/Network_Quality_Monitoring_and_Prediction">ウェブブラウザ上でネットワーク品質監視と推定を行う</a>方法</li>
+	  </ul>
+	  
+	</section>
+	<section>
+          <h3 id="automotive">自動車と運送</h3>
+	  
+          <p><a href="https://www.w3.org/TR/?title=vehicle">すべての仕様の一覧</a></p>
+
+	  <p class="desc">
+		  運送に係る共有データの活用は、より強力な情報・娯楽・効率化・保守・安全や利便性の提供につながるなど、ユーザ体験が非常に向上する可能性があります。並行して、センサー・通信・クラウドやデータ処理基盤・地理情報・機械学習・モバイル環境・ユーザ環境や関連分野の拡充により、価値を創造する大きな機会が生まれています。自動車や運送分野でのこれらの発展により、コネクテッドカー・輸送方式やそれらの関連分野において標準化の必要性が生まれています。
+	  </p>
+
+	  <h4 id="autobg">W3C Automotive and Web Platform BG</h4>
+
+          <img src="https://www.w3.org/comm/assets/icons/car.png" alt="">
+	  
+		<p>Automotive	Webplatform BG から <a href="https://www.w3.org/community/autowebplatform/">Automotive and Transportation BG</a> に改名となり、幅広い運送系データの領域との連携や将来の標準化分野の開拓を含めた W3C Automotive WG の標準開発継続に向けた役割を果たしていきます。このグループの活動領域は:</p>
+	  
+	  <ul>
+	    <li>Vehicle Signal Specification (VSS) に関する GENIVI との連携</li>
+	    <li>VSS ontology (VSSo) の開発</li>
+	    <li>Jaguar Land Rover によるリモート通信手順提案と関連した車両情報サービスカタログの初期仕様開発</li>
+	    <li>Graph、'Gen2' とその他の初期開発・デモプロジェクト</li>
+	    <li>車載アプリケーションベストプラクティス</li>
+	    <li>関連データ利用に関するポリシーガイドライン開発における他グループとの連携</li>
+	    <li>VSS、VSSo や W3C の車両サービス標準の普及</li>
+	    <li>運送関係オントロジー開発の調整</li>
+	    <li>W3C Automotive WG に対するインキュベーターとしての役割を継続</li>
+	  </ul>
+	  	  
+	  <h4 id="autowg">W3C Automotive WG</h4>
+	  
+          <p>W3C <a href="https://www.w3.org/auto/wg/">Automotive WG は、実際の車両にも利用されている <a href="https://www.w3.org/TR/vehicle-information-service/">Vehicle Information Service Specification</a> (VISS) の実環境などでの運用における知見から、<strong>車両向けの高機能アプリケーションエコシステムの構築</strong>を目指して活動しています。</p>
+	  
+          <p>
+						提示する標準により、エンジン温度、燃料・充電レベル、走行距離、タイヤ圧などの車両のすべての情報を共通して扱う方法を提供します。数千に及ぶ異なるデータ項目となる全ての車両情報へのアクセスを可能にし、さらに自動運転やドライバー補助技術と電装装備などの高度な運転情報のサポートも目指します。
+					</p>
+	  
+	  <p>
+			車両自体で動作するアプリケーション、 (車載音楽システムの載る) "ヘッドユニット"や、他のデバイスが車両情報にアクセスできるようになります。またクラウドにあるサービスに車両情報への間接的なアクセスを提供します。
+		</p>
+	  
+	  <p>フォルクスワーゲンによる <a href="https://www.w3.org/Submission/2019/SUBM-viwi-protocol-20190718/">VIWI 提案</a>によるデータモデルを基礎とし、このグループでは VISS の後継について、車両情報や、位置ベースのサービス・メディア・通知・情報キャッシュなどの、 他の車載向け要求に同様の方式を適用する方策について議論しています。このグループでは、まだ名称は決定していないながら "Gen2" の初期プロトタイプを作成しています。</p>
+	  	  
+	</section>
+	<section>
+          <h3 id="wot">Web of Things</h3>
+	  
+          <img src="https://www.w3.org/comm/assets/logos/WOT-logos/WOT-white.png" alt="WoT logo">
+          
+	  <p><a href="https://www.w3.org/TR/?tag=wot">すべての仕様の一覧</a></p>
+	  
+          <p class="desc">
+						W3C の <a href="https://www.w3.org/WoT/">Web of Things</a> は、分断された技術スタックの橋渡しを行い、デバイス間連携や大規模運用を可能にするために設計され、分断された Internet of Things のさらなる可能性の実現や相互運用性を提供します。Web of Things により既存の IoT エコシステムに対し提供者のコストとリスクが削減可能となり、複数のデバイスや情報サービスを組み合わせたアプリケーションにより付加価値を提供します。スマートホーム、スマートシティ、工場、農業、健康サービスなど、様々な領域に価値をもたらします。
+					</p>
+
+	  <p>
+				<a href="http://www.w3.org/WoT/IG/">Web of Things IG</a>では他の標準化団体や産業上の連盟と、標準化前の段階でのアイデア交換について連携を模索しています。2つのコア領域でリエゾン関係が進行中です:
+			</p>
+	  <ul>
+	    <li>セマンティクスの相互運用性</li>
+	    <li>異なるプラットフォームをまたぐ端点間のセキュリティ</li>
+	  </ul>
+	  	  
+          <p><a href="https://www.w3.org/WoT/WG/">Web of Things WG</a> では<a href="https://www.w3.org/2020/04/pressrelease-wot-rec.html.en">最初の Web of Things 標準を完成</a> (<a href="https://www.w3.org/TR/wot-architecture/">Web of Things Architecture</a>, <a href="https://www.w3.org/TR/wot-thing-description/">Thing Descriptions</a>) させ、相互運用性のあるプロファイル、検出、ライフサイクルや初期接続、ID 管理などについて活動することを目標に運営憲章を更新しました。</p>
+
+	  <h3 id="smart-cities">新規: スマートシティ</h3>
+	  
+	  <p>
+		  Government Technology Agency of Singapore (GovTech) により、2019 年開催の<a href="https://www.w3.org/WoT/ws-2019/schedule.html#day2">第2回 W3C Web of Things ワークショップ</a>でのスマートシティにおける標準化の必要性についての興味深いプレゼンテーションと、それに加えての Web of Things IG が試験実装タスクフォースで検討中でもあるスマートシティの地理情報と公衆衛生調査についての次世代 Web of Things ユースケース案が提示されました。
+	</p>
+
+	  <p>
+			この機会がスマートシティについての W3C IG を形成するよい機会だと信じ、グループの憲章案を作成中です: 
+		</p>
+	  <ul>
+	    <li>スマートシティに関する技術的議論のための場の提供</li>
+	    <li>ウェブ技術ベースのスマートシティにおける重要機能についての有識者からの情報収集</li>
+	    <li>スマートシティにおいてウェブ技術を利用する外部団体からの意見収集</li>
+	    <li>スマートシティのサービスをより密接に実現するために必要とされる既存もしくは新規 W3C 仕様に関するユースケースと要求の特定</li>
+	  </ul>
+	  
+	</section>
+
+	<section>
+	  <h3 id="data" class="clear">データのウェブ</h3>
+
+          <img src="https://www.w3.org/comm/assets/icons/share.png" alt="">
+
+          <p><a href="https://www.w3.org/TR/?tag=data">すべての仕様の一覧</a> • <a href="https://www.w3.org/TR/dwbp/">ベストプラクティス</a></p>
+	  
+          <p class="desc">
+						データは、特に<abbr title="Internet of Things">IoT</abbr>やビックデータ、<abbr title="Artificial Intelligence">AI</abbr>、機械学習の隆盛を受けて社会における重要性が増しています。Linked Data は対象についての名前のように URI を利用するためのもので、それらの URI を詳細情報取得や他のデータにリンクとして格納するためのデリファレンスとして利用可能です。 
+					</p>
+	  
+	  <p class="desc">
+						W3C は20年にわたり開発が続けられたデータに関連する成熟し広い範囲の標準を持っており、将来目標として開発者にグラフデータやナレッジグラフについて扱いやすい仕様を提供し、産業向けに供給とバリューチェーンとの水平統合と工場からオフィスまでの垂直統合の両方に提供していく予定です。
+					</p>
+	  	  
+	  <p>
+			Verifiable Credentials と Decentralized Identities (DIDs) は密接に関連しています: Verifiable Credentials による各種の記述の同定には、暗号による検証が主要機能であることから、暗号により検証可能な特性を持つ DID が最適の方法であることです。Verifiable Credentials 仕様の開発は1年頃前に成功裏に完了しています。
+		</p>
+	  
+	  <h4 id="did">デジタル識別子</h4>
+
+	  <p>
+		デジタル識別子はウェブやそれ以外での各種サービスの実装に、相互連携するアプリケーションとデータのウェブの実装の両方の面で必須です。各種アプリケーションでの利用を考えると、識別子は簡単に生成可能で、非集権的で、永続し、解決可能で、暗号による検証が可能でなければなりません。(Web URL、ISBN、ORCID 番号、メールアドレス、UUID など)数々の識別子スキーマではそれらの<i>いくつかの</i>要求を実現可能ですが、<i>すべてを</i>実現するものはありません。
+	</p>
+
+	  <p>
+		<a href="https://www.w3.org/2019/did-wg/">Decentralized Identifier WG</a> は、関連した DID 文書を持つ URI スキーマでデジタル識別子を実現しようとしています。どのような利用者でも証明を検証可能で、個人情報を交換でき、サービス情報を受け渡せる暗号化された情報を含む JSON 形式の文書と、さまざまな分散型台帳や github などのウェブストレージ、<abbr title="InterPlanetary File System">IPFS</abbr> などに保管可能な方法です。このグループでは <a href="https://www.w3.org/TR/did-core/">DID Identifiers v 1.0</a>、<a href="https://www.w3.org/TR/did-spec-registries/">DID Specification Registries</a> と <a href="https://www.w3.org/TR/did-use-cases/">DID Use Cases and Requirements</a> を継続的に更新しています。また、DID 仕様を今年末頃に CR 化しようとしています。
+	</p>
+
+	  <h4 id="vc">Verifiable Credentials</h4>
+	  
+	  <p>
+		証明書は日常的に利用されています。例えば、運転免許証は車両を運転可能なことを証明し、学位は教育レベルを保証し、政府発行のパスポートは国をまたぐ旅行に必要になります。このような証明書、特にデジタル版の証明書は、各種サービス、ユーザ間での操作、ワークフローをウェブ上で実施するのに本質的に重要なものになります。そういった証明書は暗号論的に安全で検証可能でなくてはならず、プライバシーにも配慮し、それらを利用するアプリケーションの柔軟性や長期安定性のために非集権的な形で管理されることが必要です。
+	</p>
+
+	  <p>
+			<a href="https://www.w3.org/2017/vc/WG/">Verifiable Credentials WG</a> は仕様のメンテナンスのみを行う形態に憲章を更新し、2019年に公開した多数の異なるアプリケーション間におけるデジタル証明書の大規模運用についての基本を提供する <a href="https://www.w3.org/TR/vc-data-model/">Verifiable Credentials Data Model 1.0</a> の勧告仕様および <a href="https://www.w3.org/TR/vc-use-cases/">Verifiable	Credentials Use Cases</a> について対応します。技術的な更新は予定していません。
+	</p>
+	    
+	</section>
+
+	<h2 id="core">ウェブコア技術の強化</h2>
+
+	<!-- Using box to display 2 section blocks -->
+	<div class="box">
+	<section class="left">
+
+	  	  <h3 id="css">CSS</h3>
+	  <p><a href="https://www.w3.org/TR/?title=css">すべての仕様の一覧</a></p>
+
+	  <p>
+			<abbr title="Cascading Style Sheets">CSS</abbr> は開かれたウェブプラットフォームの重要な要素です。<a href="https://www.w3.org/Style/CSS/">CSS WG</a> は大きく二つの CSS ユーザから要求を取りまとめています: 出版業界とアプリケーション開発者です。前者はページ組のサポートと高度なフォントの取り扱い、後者は高度 (かつ高速な!) スクロールとアニメーションに関する要求が大きいです。
+		</p>
+	  
+	  <p>
+			CSS は現実には 100 近くの仕様の<a href="https://drafts.csswg.org/">集大成</a>となっており、<b>モジュール</b>として認識されています。CSS の現状は年1回更新される<a href="https://www.w3.org/TR/CSS/">スナップショット</a>として提供されます。このグループでは CSS 仕様のすべての定義についての<a href="https://drafts.csswg.org/indexes/">索引</a>も提供しています。
+		</p>
+
+	  <p>
+		  前回のこの文書以降、<a href="https://www.w3.org/Style/CSS/">CSS ワーキンググループ</a>は 23 の文書 (作業草案、勧告候補) を提示し、この中には<a href="https://www.w3.org/TR/mediaqueries-4/">CSS	Media	Queries&nbsp;4</a>、<a href="https://www.w3.org/TR/css-display-3/">Display&nbsp;3</a>、<a href="https://www.w3.org/TR/css-grid-1/">Grid</a> (Level 1)等があります。
+	</p>
+	</section>
+	
+	<section class="right">
+	  <h3 id="fonts">フォント</h3>
+	  
+          <p><a href="https://www.w3.org/TR/?title=woff">すべての仕様の一覧</a></p>
+	  
+          <p>
+					  ウェブフォントは、中国語・日本語・韓国語といったフォント全体をダウンロードすることが重い言語や、アラビア語・インド諸語などのサブセット化されたウェブフォントでは頻繁に正しく表示されないような言語においても利用されます。<a href="https://www.w3.org/Fonts/WG/">Web Fonts WG</a>ではウェブでの相互運用性のあるダウンロード可能なフォントの仕様を開発しており、Progressive Font Enrichment (PFE) に注力するとともに WOFF 仕様のメンテナンスを行っています。<a href="https://github.com/w3c/PFE-analysis">PFE テストと解析フレームワーク</a>の開発により、標準化作業の開始前に提案仕様の厳密な評価を行っています。
+				</p>
+
+		<p><b>メモ:</b> 2020/7/27に Web Open Font Format の FPWD 公開から<a href="https://www.w3.org/blog/2020/07/happy-birthday-web-fonts/">10周年</a>となりました。</p>
+	</section>
+	</div>
+
+	<!-- Using box to display 2 section blocks -->
+	<div class="box">	
+	<section class="left">
+	  
+	  <h3 id="html">HTML</h3>
+
+	  <p>WHATWG の <a href="https://dom.spec.whatwg.org/review-drafts/2019-06/">DOM 仕様の2019/6スナップショット</a>が W3C 勧告となりました。これが初めての WHATWG のスナップショットの勧告化になります。</p>
+
+	  <p><abbr title="HyperText Markup Language">HTML</abbr> のスナップショットについては現在 Wide Review 中です。</p>
+	</section>
+
+	<section class="right">
+	  
+          <h3 id="webperf">パフォーマンス</h3>
+
+          <p><a href="https://www.w3.org/TR/?tag=performance">すべての仕様の一覧</a></p>
+	  
+          <p><a href="http://www.w3.org/2010/webperf/">Web Performance WG</a> ではウェブアプリケーションのパフォーマンス改善の新しい手段についてと、提案中の機構 (<a href="https://docs.google.com/document/d/1xALH9W7rWmX0FpjudhDeS2TNTEOXuPn4Tlc9VmuPdHA/edit#heading=h.7nki9mck5t64">Third-Party Origin Trials</a>、<a href="https://lists.webkit.org/pipermail/webkit-dev/2020-August/031329.html">Event Timing</a>、<a href="https://docs.google.com/presentation/d/1xYpHsK6LDhEZZPRkKChn3wKjmHwN3ecCpdAdks6j_QU/edit#slide=id.p">Interactions, Normalization, &amp; <abbr title="single-page application">SPA</abbr> Navs</a>) がどのようにパフォーマンスに影響しているかについて議論しています。</p>
+	  
+	</section>	
+	</div>
+
+	<!-- Using box to display 2 section blocks -->
+	<div class="box">
+	  <section class="left">
+	    <h3 id="audio">オーディオ</h3>
+
+	  <p><a href="https://www.w3.org/TR/?title=audio">すべての仕様の一覧</a>
+	    
+          </p><p>
+							<a href="https://www.w3.org/2011/audio/">Web Audio WG</a>は <a href="https://www.w3.org/TR/webaudio/">Web&nbsp;Audio&nbsp;API&nbsp;1.0</a> についての作業を完了し、Web&nbsp;Audio&nbsp;API&nbsp;2.0 について注力しています。新規<a href="https://github.com/WebAudio/web-audio-api-v2/issues?q=is%3Aissue+is%3Aopen+label%3Afeature">機能</a>については、<a href="https://www.w3.org/community/audio-comgp/">Audio CG</a>で議論されています。
+						</p>
+
+	  <p>
+						Web&nbsp;Audio&nbsp;1.0 はすでにすべてのブラウザで実装されており、ブラウザでの統合音声を実現します。音声操作は、モジュール化された音声操作要素をつなぐ形の、音声ノードにより行われます。異なるチャネルレイアウトを含む複数音源もサポートされます。モジュールデザインにより動的にはたらく複雑な音声機能の作成に自由度がもたらされました。
+					</p>
+
+	  <p>Web&nbsp;Audio&nbsp;2.0 はこの安定した基礎の上に組み上げられており、音声関係の開発者からの強い要望があったノードの追加について検討しています。</p>
+	  </section>
+
+	<section class="right">
+          <h3 id="wasm">WebAssembly</h3>
+	  
+          <p><a href="https://www.w3.org/TR/?title=webassembly">すべての仕様の一覧</a></p>
+
+          <p>
+					  WebAssembly はブラウザと単独環境の両方で広く利用可能な仮想マシンと実行環境で、ネイティブに近い性能、最適化された読み込み時間、そしてもっとも重要と思われる既存コードをコンパイル可能にする、などを実現します。<a href="https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en">WebAssembly は昨年12月に W3C 勧告となりました</a>。
+				</p>
+	  	  
+	  <p>
+						WG に対応し、要求収集と言語開発が行われている<a href="https://www.w3.org/community/webassembly/">コミュニティグループ</a>では、次期バージョンの仕様にどの領域の機能を入れるかについての議論を進めています:
+					</p>
+	  <ul>
+				<li>スレッド: 共有メモリによるマルチスレッドとメモリ不可分操作の機能を提供します</li>
+				<li>固定長 SIMD: 並列処理を行うベクトル操作</li>
+				<li>参照型: WebAssembly において直接ホストの参照型を利用可能にします</li>
+				<li>末尾呼出: 追加のスタックを必要としない関数呼び出しを実現します</li>
+				<li>ECMAScript モジュール統合: WebAssembly の実行モジュールを ES6 モジュールとして JavaScript から呼び出す機能</li>
+	  </ul>
+	</section>
+	</div>
+
+	<!-- Using box to display 2 section blocks -->
+	<div class="box">
+	  <section class="left">
+	    <h3 id="miniapps">MiniApps</h3>
+
+			<p><a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem CG</a> では適用可能な標準化が可能かどうかについて MiniApps の基礎的な構成を検討しています。グループでは以下のいくつかの提案を提示しています:</p>
+	    <ul>
+	      <li><a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI Scheme</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp Manifest</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/lifecycle/">Lifecycle</a></li>
+	      <li><a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging</a></li>
+	    </ul>
+	    
+			<p><a href="https://github.com/w3ctag/design-reviews/blob/master/reviews/miniapps_feedback.md">TAG との議論</a>と<a href="https://www.w3.org/2020/07/30-miniapp-minutes.html">Web Platform コミュニティとの議論</a>を経て、CG の参加者は<a href="https://github.com/w3ctag/design-reviews/blob/master/reviews/miniapps_feedback.md#the-goal-of-one-web">一つのウェブ</a>原則の元での異なる MiniApp プラットフォーム間の相互運用性を確保できれば、	ベンダー・開発者・ユーザに利点をもたらすという点で合意しました。
+          </p></section>
+	  <section class="right">
+	    <h3 id="testing">テスト</h3>
+	  	  
+          <p>
+						2014年から W3C ではウェブプラットフォームについてのブラウザを問わないテストスィートをオープンソースで構築する活動を続けており、WHATWG と<em>全ての</em>主要ブラウザが参加しています。<a href="https://web-platform-tests.org/">WebPlatform Tests プロジェクト</a>の最近の進展は:
+					</p>
+	  <ul>
+	    <li><a href="https://github.com/web-platform-tests/wpt/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>の更新、<a href="https://lists.w3.org/Archives/Public/public-test-infra/2020AprJun/0000.html">Python&nbsp;3 への移行</a></li>
+	    <li>7-8月の30日以上の期間において150人以上がプロジェクトに貢献しました</li>
+	    <li>575000件のテスト項目 (encoding 仕様に関する百万以上のテストを除外して)</li>
+	    <li>Privacy CG で議論中の <a href="https://privacycg.github.io/storage-access/#automation">Storage Access API</a> に対応し、<a href="https://github.com/web-platform-tests/wpt/pull/24319">Web Driver 拡張</a>に組込み</li>
+	  </ul>
+	 
+	</section>
+	</div>
+	
+        <h2 id="web-for-all">全ての人の為に</h2>	
+
+	<section>      
+	  
+          <h3 id="secpri">セキュリティ、プライバシー</h3>
+
+	  <img src="https://www.w3.org/comm/assets/icons/lock.png" alt="">
+	  
+          <p><a href="https://www.w3.org/TR/?tag=security">全てのセキュリティ仕様の一覧</a> • <a href="https://www.w3.org/TR/?tag=privacy">全てのプライバシー仕様の一覧</a> </p>
+
+	  <p class="desc">
+			プライバシーとセキュリティ - 人権と自由権に不可欠なもの - は W3C の活動において長らく重要とされてきています。例えば、認証技術の開発により弱いパスワードやフィッシングなどの攻撃の脅威を減らすことによるウェブセキュリティの改善などが上げられます。
+		</p>
+	  
+	  <p class="desc">
+			しかしながら、ブラウザフィンガープリンティング、偽情報の拡散、などのオンラインの脅威といった、個人データの不正利用やオンラインでのトラッキングなどが問題となってきています。これらは緊急かつ難しい問題です。ユーザが検閲なしに安全に利用可能なウェブを手助けするための議論が始まっています。
+		</p>
+
+	  <h4 id="privacy-cg">新しいプライバシー関連仕様の開発</h4>
+
+	  <p><a href="http://www.w3.org/community/privacycg">Privacy CG</a> が今年初めに設立されて以来、幅広い領域からの60程度の参加者による会議により、以下の領域の議論が行われています:</p>
+          <ul>
+	    <li>ユーザのプライバシーを守りながら広告効果を測定できるようにする <a href="https://github.com/privacycg/private-click-measurement">private click measurement</a> の機構</li>
+	    <li><a href="https://github.com/privacycg/storage-partitioning">サイトの利用するデータをそれぞれに分離する</a>機構や<a href="https://github.com/privacycg/storage-access">制限付きストレージへのアクセスを要求するAPI</a>機構の提案</li>
+	    <li>3rd party クッキーや他の追跡機構が非推奨化された時代のログイン状況管理に使える2つの提案: <a href="https://github.com/privacycg/first-party-sets">どのドメインが連携しているかを宣言する方法</a>と<a href="https://github.com/privacycg/is-logged-in">ユーザがサイトにログインしているかをブラウザに通知する API</a></li>
+	  </ul>
+
+	  <h4 id="web-adv">ウェブ広告の改善</h4>
+	  
+		<p><a href="https://www.w3.org/community/web-adv/">Improving Web Advertising BG</a> に90以上の組織から200以上の参加者が参加し、プライバシー配慮のウェブ広告についての議論や<a href="https://github.com/w3c/web-advertising/blob/master/support_for_advertising_use_cases.md">ユースケースと提案</a>について議論を重ねています。</p>
+	  
+	  <p>FLoC、TURTLEDOVE、SPARROW、といったプライベート広告配信についての活動グループの形成を受けてこの議論が始まっています。</p>
+	  
+	  <p>プライバシー保護下での効率測定、クライアントサイドでの興味ベースの広告選択、3rd party クッキーなしでのウェブへの準備、などの領域での構想提案について、このグループは <abbr title="Web Incubator Community Group">WICG</abbr> や Privacy CG との議論も進めています。</p>
+	  
+	  <h4 id="webauthn">リンク・フィッシング不可な認証</h4>
+	  
+	  <p>2019年春の <a href="https://www.w3.org/TR/webauthn-1/">WebAuthn Level&nbsp;1</a>の勧告公開以来、ブラウザや主要ウェブアプリケーションでの実装が進み、強力な暗号による認証の利用が普及しています。<a href="https://www.w3.org/community/webauthn-adoption/">WebAuthn Adoption CG</a> では今年初めに W3C の DevRel チームと共同で WebAuthn の活用から開発者を遠ざける要因の抽出と、相互運用性のあるセキュリティ標準をより活用するために開発者・利用者を支援する活動を始めました。	</p>
+
+	  <p><a href="https://www.w3.org/Webauthn/">Web Authentication WG</a> は WebAuthen Level&nbsp;2 を今年リリースする目標で活動しています。</p>
+	      
+	  <h4 id="ping">Privacy IG</h4>
+
+	  <p><a href="https://www.w3.org/Privacy/IG/">Privacy IG</a> (PING) はウェブに影響するプライバシー問題についての追跡と、新しいプライバシー問題が発生しうる領域の調査を行っています。また、このグループでは <a href="https://w3cping.github.io/privacy-threat-model/">Target Privacy Threat Model</a> についての文書を公開しました。</p>
+
+	  <p>また、標準開発の中でのプライバシー問題の考え方についてのガイドラインと助言を、仕様の中でのプライバシーの考え方を含めて提供しています。他のグループによる仕様についてのプライバシーレビューについて、新しい<a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3cping/tracking-issues">issueを追跡するためのツール</a>を利用し始めました(この画面ではセキュリティレビューとして追加されたissueもリストされ、リスト中のissueは W3C チームとボランティアメンバーにより処理されます)。PING は仕様についてのプライバシーとフィンガープリンティングについて検討する検討会を更新しました。</p>
+	  
+	</section>
+	
+	<section>
+          <h3 id="i18n">国際化 (i18n)</h3>
+
+          <a href="https://www.w3.org/2014/10/w3c-highlights/images/i18n.png"><img src="https://www.w3.org/2014/10/w3c-highlights/images/i18n.png" alt="indic script example"></a>
+
+					<p><a href="https://www.w3.org/TR/?tag=i18n">すべての仕様の一覧</a>
+						• <a href="https://www.w3.org/International/articlelist">国際化に関する教育コンテンツ一覧</a>
+						• <a href="https://www.w3.org/International/techniques/developing-specs">仕様開発者向けチェックリスト</a>
+						• <a href="https://www.w3.org/International/layout">多様な言語を利用可能にする活動の一覧</a>
+						• <a href="https://www.w3.org/International/sponsorship/">国際化イニシアティブ</a></p>
+
+      	  <p class="desc">
+						世界人口のうち英語を話せる人は8億人程度ですが、オンライン情報の50%以上がいまだに英語だけのままです。ウェブで利用が困難な言語の利用者はますます軽んじられ締め出されていくことでしょう。ウェブによる経済的、教育的、また民主的な利点を享受できず、しかもその層の参加が得られないことでウェブの潜在的な可能性を世界全体まで伸ばせないことになります。
+					</p>
+	  
+          <p class="desc">
+						W3C はウェブを真に'世界中の'ものにすべく、<a href="https://www.w3.org/International/">Internationalization Activity (i18n)</a> を1998年に立ち上げました。全世界の利用者にとってウェブで様々な言語が利用できて本当に動作するようにするために、言語の専門家、ウェブサイトデザイナ、開発者、ベンダーといった活発にウェブを進化させる活動を行う人々の協力が必要です。W3C の Internationalization Activity では、ウェブで利用可能な世界中の言語の組版に関する<a href="https://w3c.github.io/typography/gap-analysis/language-matrix.html">言語マトリクス</a>を作成しています。全世界で利用されている言語がウェブで利用可能となったとき、全ての言語コミュニティをつなぐことができるようになるでしょう。
+					</p>
+	  
+          <p>現在のプロジェクトの活動状況は<a href="https://w3c.github.io/i18n-activity/projects/">レーダー</a>で見ることができます。</p>
+
+	  <h4 id="i18n-initiative">Internationalization Initiative (国際化イニシアティブ)</h4>
+
+	  
+	  <p>
+			<a href="https://www.w3.org/International/sponsorship/">Internationalization initiative</a> では、文化対応強化活動への参加者・有識者の増加を含めて、W3C の基礎的経費での活動範囲を超えた国際化領域での活動について追加のスポンサー獲得を行っています。
+		</p>
+
+	  <p>ここ1年でより参加しやすくなるような改善を行っています:</p>
+	  <ul>
+	    <li>対話型テスト: <a href="https://github.com/w3c/i18n-tests/wiki/Writing-i18n-tests">新方式</a>により、ギャップ分析の作業に必要なテストをより高速に開発可能になり、またその結果を記録可能になっています。	</li>
+	    <li>ギャップ分析文書の内容を GitHub ベースで作成: ギャップ分析文書の編集への敷居を低くし、データの様々な表示形式を可能にし、協調作業を改善するためです。</li>
+	    <li><a href="https://w3c.github.io/typography/">言語の利用可能性の一覧</a>: 実装・開発者向けのポインタを提供し、また組版処理の要件、ギャップ分析、テスト、言語サポートに関する未解決の質問へのリンクなども含まれています。</li>
+	  </ul>
+	  
+	  <p>
+			追加の経費により、次の３つの主要領域についての活動を行っています: 言語対応の活動、開発者サポート、(教育 &amp; アウトリーチの)製作者サポート
+		</p>
+
+	  <p>以下がこれらの領域での活動の詳細です。</p>
+
+	  <h4 id="lang-enablement">言語対応の活動</h4>
+
+	  <p>
+			日本語・中国語のグループが定例会議を開催し、それぞれの作成文書について活発に活動しています。アラビア語、東南アジア諸言語、インド諸言語のタスクフォースも活動中です。
+			ヨーロッパ系、アフリカ系の言語についての議論用のネットワークの構築も行っており、(最近に)米州の言語についても活動しています。<strong>より多くの有識者</strong>からのギャップ解析文書と言語要求文書への貢献が求められます。現状のまとめは<a href="https://w3c.github.io/typography/gap-analysis/language-matrix.html">言語マトリクス</a>を参照ください。
+		</p>
+
+	  <p><a href="https://w3c.github.io/i18n-drafts/getting-started/languagedev.en">言語対応活動</a>の最近の主要更新点は:</p>
+	  <ul>
+	    <li>CSS、SVG、XSL-FO等に利用される全般的な日本語レイアウトについての要求の <a href="https://www.w3.org/TR/jlreq/">JLReq が更新され</a>、修正と文書構造の改善が行われました</li>
+	    <li><a href="https://www.w3.org/TR/simple-ruby/">Simple Ruby</a> にてこれまでの歴史全体を含む複雑な JLReq の規定でなく、開発者・実装者向けの一般的かつ最低限の要求としてのルビのガイドラインが公開になりました。</li>
+			<li>24 件の新しい草案が公開になりました! <a href="https://www.w3.org/blog/International/2020/06/17/3-fpwds-for-language-requirements/">3つの言語要求文書</a>と<a href="https://www.w3.org/blog/International/2020/06/17/21-gap-analysis-first-public-working-drafts-published/">21個のギャップ解析文書</a>で以下の言語をカバーします: 
+				Arabic/Persian, Chinese, Ethiopic, Dutch, Georgian, Modern Greek, Hungarian, Bengali, Devanagari, Gurmukhi, Guarati, Tamil,
+	      Japanese, Inuktitut/Cree, Cherokee, Lao, Khmer, Javanese, Thai, Mongolian, Tibetan</li>
+	    <li>フェーズ4の進捗: 見えてきた特有の問題点や新しく対応し始めた言語についてのギャップ解析文書の作成を開始しています。言語グループが存在しているわけではないですが、既存の構成の中で文書化を進めています。これには、フランス語、ドイツ語、に加えて Osage と近い将来に Adlam で書かれた Fula の絶滅寸前の言語があります。</li>
+	  </ul>
+	  
+	  <h4 id="dev-support">開発者サポート</h4>
+
+	  <p><a href="https://www.w3.org/International/core/">Internationalization WG</a> では、仕様のレビューに加え、CSS、WHATWG、WebXR、アクセシビリティガイドライン、ウェブ出版、MiniApps、GeoLocation など多数の仕様開発グループへの助言などについて活発に活動しています。</p>
+
+	  <p>最近の活動としては:</p>
+	  <ul>
+	    <li><a href="https://www.w3.org/wiki/DocumentReview">仕様レビュー</a>のページを、他の水平レビューグループを含めたレビュー要求を仕様開発グループが行うためのワンストップページとして公開しています。</li>
+			<li><a href="https://www.w3.org/TR/string-meta/">Strings on the Web: Language and Direction Metadata</a> (ウェブでの文字列: 言語・記述方向のメタデータ) の文書が間もなく完成: 言語や記述方向などを JSON や他のデータ形式の中で記述し受け渡すための取りえる方策についての問題点・議論を提示しています。また、<a href="https://w3c.github.io/i18n-drafts/articles/lang-bidi-use-cases/index.en">Use cases for bidi and language metadata on the Web</a> (ウェブでの BiDi と言語メタデータのユースケース)では仕様で取り上げられた例を挙げています。</li>
+	    <li>新規: <a href="https://www.w3.org/TR/2015/WD-ltli-20150423/">Language Tags and Locale Identifiers for the World Wide Web</a> にてウェブ上でデータ値とその他の情報を処理・表示する上で、コンテンツの言語の選択・特定やロケール設定をどう扱うかについてのベストプラクティスをまとめています。</li>
+	  </ul>
+
+	  <h4 id="educ-outreach">製作者サポート (教育 &amp; アウトリーチ)</h4>
+
+	  <p>上記のリソースに加えて、<a href="https://www.w3.org/International/articlelist">国際化に関する製作者向けの文書</a>を提供しています。</p>
+
+	</section>
+	<section>
+          <h3 id="accessibility">ウェブアクセシビリティ</h3>
+
+          <img src="https://www.w3.org/Icons/wai" alt="logo of the Web Accessibility Initiative">
+
+				  <p><a href="https://www.w3.org/TR/?tag=accessibility">すべての仕様の一覧</a>
+						• <a href="https://www.w3.org/WAI/translations/">WAI の翻訳版</a>
+						• <a href="https://www.w3.org/WAI/news/">WAI ニュース</a>
+						• <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">アクセシビリティの基礎</a>
+						• <a href="https://www.w3.org/WAI/business-case/">デジタルアクセシビリティのビジネスケース</a></p>
+	  
+	  <p class="desc">
+			2006年に全ての障碍者が人権と基本的自由を享受できるようにするために国連で障害者権利条約 (CRPD) が締結されました。代表者会議ではウェブとデジタル出版を含む情報へのアクセスを基本的人権と定義しています。ウェブを含むデジタルアクセシビリティは全ての人が平等にアクセスし、機会を得、参加するための鍵となります。
+		</p>
+
+	  <p class="desc">
+			ウェブサイトやツールが正しく設計され作成されていれば、障碍を持つ人も利用でき、個人、産業、社会も利益を享受できます。1997年に設立された W3C の <a href="https://www.w3.org/WAI/">Web	Accessibility Initiative (WAI)</a> では技術仕様、指針、技法を作成するとともに、認知や実装を進めるためのアウトリーチや学習用資料などの補助資料を提供してきました。WAI の<a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> はウェブアクセシビリティに関する権威のある標準仕様として参照され、世界中のいくつもの政府に参照されています。
+		</p>
+
+	  <p class="desc">
+			しかしながら、ウェブの複雑さが増し、デジタル出版や仮想環境がウェブに載るなどの技術の発展に伴い、それらの技術におけるアクセシビリティの実現が加速的に重要となってきました。W3C の関与なくては障碍を持つ方々が取り残されていきます。
+			WAI は W3C の<a href="https://www.w3.org/Consortium/mission.html#principles">全ての人のためのウェブ</a>のため、またアクセシビリティ関連の活動を協調したものとし、W3C の活動領域全体に<a href="https://www.w3.org/WAI/about/sponsoring/">WAI への出資・後援者</a>による支援も受けつつ貢献しています。
+		</p>
+
+	  <h4 id="ag">ウェブアクセシビリティガイドライン</h4>
+
+	  <ul>
+	    <li>Wide review中: <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG)&nbsp;2.2</a> では認知・学習障碍者、低視力者、運動機能障碍者に向けたアクセシビリティ要求を追加しています</li>
+	    <li>W3C Accessibility Guidelines (WCAG)&nbsp;3.0 の FPWD が2020年第4四半期に予定</li>
+	    <li>新規文書: <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for Cognitive and Learning Disabilities</a></li>
+	    <li>新ツール: <a href="https://www.w3.org/WAI/atag/report-tool/"><abbr title="Authoring Tools Accessibility Guidelines">ATAG</abbr> レポートツール</a>によりどのツールがアクセシブルなコンテンツを作成できるかを探せるようになります</li>
+	  </ul>
+
+	  <h4 id="covid">COVID-19 が障碍を持つ方にどう影響しているか?</h4>
+	  
+	  <p>
+		  デジタルアクセシビリティは対面で会えない現在の状況下ではより重要になっています。リモートミーティング、学校、仕事、健康において、<a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG&nbsp;2)</a>から参照できるウェブアクセシビリティは全ての人に対応するための基礎を提供します。
+	</p>
+
+	  <p><a href="https://www.w3.org/WAI/APA/task-forces/research-questions/wiki/Accessibility_of_Remote_Meetings#How_to_Get_Involved_in_W3C_work_related_to_remote_accessibility">リモート会議におけるアクセシビリティ</a>において、WAI は現在のアクセシビリティガイドラインの適用についてと、新しいガイドラインや技術提供が必要となるギャップ解析を行っています。アクセシビリティガイドラインは<a href="https://www.w3.org/Guide/meetings/continuity.html">運営の継続のために</a>にも取り込まれ、W3C Team が全ての仕事上の旅行を取りやめ完全にリモート環境での運営を行う中で参照しています。</p>
+	  
+	  <h4 id="other">ウェブアクセシビリティに関する技術的な進捗</h4>
+	  
+	  <ul>
+	    <li>W3C のすべての仕様についてのアクセシビリティ面でのレビューが<a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures (APA) WG</a> により継続されています。<a href="https://w3c.github.io/apa/fast/">Framework for Accessible Specification of Technology (FAST)</a> のツールを各仕様開発グループに対し自主レビュー用に提供しています。</li>
+	    <li><a href="https://w3c.github.io/aria/"><abbr title="Accessible Rich Internet Applications">ARIA</abbr>&nbsp;1.2</a>、<a href="https://www.w3.org/WAI/personalization/">Personalization Semantics</a>、<a href="https://www.w3.org/WAI/pronunciation/">Pronunciation</a> の各文書の策定を進めています。</li>
+			<li>新規技術: Research Questions Task Force (RQTF) では<a href="https://www.w3.org/WAI/APA/task-forces/research-questions/wiki/Media_Synchronization_Requirements">media synchronization</a>でのアクセシビリティについての検討を、AR/VR ("<a href="https://www.w3.org/TR/xaur/"><abbr title="XR Accessibility User Requirements">XAUR</abbr>"</a>)と<a href="https://raw.githack.com/w3c/apa/AccessibleRTC/rtc/index.html"><abbr title="Real-Time Communications">RTC</abbr>でのアクセシビリティ</a>について行っています。</li>
+	    <li><a href="https://www.w3.org/community/immersive-captions/">Immersive Captions CG</a> がAR/VRにおけるキャプションについての技術要求の開発を継続しています。</li>
+	  </ul>
+
+	</section>
+
+        <h2 id="outreach">アウトリーチ</h2>
+        
+	<section>
+
+          <h3 id="devrel">W3C デベロッパーリレーション</h3>
+
+	  <img style="max-width:10%" src="https://www.w3.org/2015/10/W3C-Developers_Assets/W3C-Developers-Dark.png" alt="web developers icon">
+
+	  <p class="desc">ウェブ標準開発とウェブ開発者間のより密接なフィードバックループを実現するため、また広いコミュニティからの参加を即すため、W3C デベロッパーリレーションでは次のような活動を行っています:</p>
+          <ul>
+            <li><a href="https://twitter.com/w3cdevs/">@w3cdevs</a>
+              では W3C 全体の多数の活動について投稿しています</li>
+			<li>技術ビデオ: 新しく <a href="https://www.youtube.com/W3COfficial">W3COfficial YouTube channel</a> を立ち上げ、各種の W3C の技術ビデオを掲載しています (W3C メンバーの短いインタビュー、ワークショップでのトーク、ミートアップでのトーク、など)。これは、現代的なアクセシブルなスライドビューアー付き(詳細は最近の<a href="https://www.w3.org/blog/2020/09/making-video-pages-for-the-w3c-ac-meeting/">技術解説</a>参照)であり、2020 AC オンライン会議などのビデオを掲載している既存の <a href="https://www.webcastor.fr/">WebCastor</a> による運営の独立の StreamFizz サイトを補完するものです。</li>
+          </ul>
+	</section>
+	<section>
+          <h3 id="training">W3C トレーニング</h3>
+
+          <img style="max-width:10%" src="https://www.w3.org/2015/03/w3cx-logo.png" alt="w3cx logo">
+
+	  <p class="desc">
+  		2015年以来、W3C では W3Cx を edX との共同で運営し、MOOC (オンラインコース)をコアウェブ技術全般に渡って提供しています。
+	  </p>
+	  
+	  <ul>
+	    <li><a href="https://w3cx.org/">W3Cx</a> では6つのコースが開催されています。</li>
+      <li><a href="https://www.edx.org/professional-certificate/w3cx-front-end-web-developer">W3Cx "Front-End Web Developer" (FEWD) プログラム</a>は非常に有名で、百万視聴を達成しつつあります。</li>
+	    <li><a href="https://www.edx.org/course/web-accessibility-introduction">"Introduction to Web Accessibility"</a> が最新の MOOC プログラムです。</li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h3 id="translations">翻訳</h3>
+
+	  <img src="https://www.w3.org/comm/assets/graphics/world_map_w3c-blue.png" alt="">
+
+		<p>たくさんのウェブユーザが英語が基本である W3C の文書に対する<a href="https://www.w3.org/Translations/">翻訳</a>版を参照しています。</p>
+		<p>W3C はコミュニティによる、特に仕様書に対して、さまざまな言語で無料で幅広い利用者に対して利用可能になるように公開している、継続的なこれらの貢献に感謝します。</p>
+		<p><a href="https://www.w3.org/Consortium/Translation/">貢献するには</a> ページから翻訳活動に参加する方法を見ることができます。</p>
+	</section>
+	<section>
+          <h3 id="liaisons">W3C リエゾン</h3>
+          <img src="https://www.w3.org/comm/assets/icons/handshake.png" alt="">
+
+          <p>多数の組織や標準化団体 (SDOs) との<a href="http://www.w3.org/2001/11/StdLiaison">リエゾンと連携関係</a>は W3C にとって重要で:</p>
+          <ul>
+      		  <li>標準が相互運用可能であるようにすること</li>
+		        <li>インターネット上のガバナンスに関連する調整: W3C は ICANN, GIPO, IGF, と I* 組織 (ICANN, IETF, ISOC, IAB) に参加しています</li>
+		        <li>W3C の標準化活動が公式に認識される政府とのリエゾン関係の構築、これは調達において標準に沿った製品 (W3C メンバーによるものが多いです) が俎上に上がるために重要です。W3C は ISO において <a href="https://www.w3.org/2001/11/StdLiaison#dejure"><abbr title="Approved RS Originator Organization">ARO</abbr>/<abbr title="Publicly Available Specification">PAS</abbr> ステータス</a>を持ちます。 W3C は <a href="https://ec.europa.eu/digital-single-market/en/rolling-plan-ict-standardisation">EU MSP and Rolling Plan on Standardization</a> にも参加しています</li>
+		        <li>全世界的に互換性のある技術セットによるウェブとインターネット標準を技術・政策レベルで実現する (特許取り扱い、分断対策、政策策定)</li>
+		        <li>標準技術の採用を産業、公共、一般向けに同じレベルで推進していく</li>
+						<li>公式リエゾン関係でのやり取りが<a href="https://lists.w3.org/Archives/Member/member-archive-liaisons/">会員向けアーカイブ</a>に集積されるようになりました。</li>
+					</ul>
+	</section>
+        <div id="footer">
+          <hr>
+          <address> <a href="https://www.w3.org/People#coralie">Coralie
+              Mercier</a>, Editor, W3C Marketing &amp;
+              Communications<br>
+            <small>$Id: Overview.html,v 1.55 2020/10/22 09:34:17 xueyuan Exp $</small><br> Copyright © 2020
+            W3C <sup>®</sup>
+            (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts
+            Institute of
+            Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European
+            Research Consortium for Informatics and
+            Mathematics">ERCIM</abbr></a>,
+            <a href="http://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>)
+            <a href="/Consortium/Legal/ipr-notice">Usage policies apply</a>. </address>
+        </div>
+        <!-- footer end -->
+        <script>
+	  var originalNavClasses;
+	  function toggleNav() {
+	      var elem = document.getElementById('toc_list');
+	      var classes = elem.className;
+	      if (originalNavClasses === undefined) {
+		  originalNavClasses = classes;
+	      }
+	      elem.className = /expanded/.test(classes) ? originalNavClasses : originalNavClasses + ' expanded';
+      }      </script> </div>
+    </div>
+  
+
+</body></html>
