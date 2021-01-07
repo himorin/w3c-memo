@@ -26,10 +26,12 @@ function ListRepositories() {
   }
   document.getElementById('group_info').innerText = ginfo;
 
+  var cstr;
   w3c_data.forEach(elem => {
     if (elem.w3c && (elem.w3c.group == gid)) {
       out += '<tr>';
-      out += '<td>' + elem.owner.login + '/' + elem.name + '</td>';
+      cstr = elem.owner.login + '/' + elem.name;
+      out += '<td><a href="https://github.com/' + cstr + '">' + cstr + '</td>';
       out += '<td>' + elem.createdAt + '</td>';
       out += '<td>' + elem.homepageUrl + '</td>';
       out += '<td>' + elem.isPrivate + '</td>';
