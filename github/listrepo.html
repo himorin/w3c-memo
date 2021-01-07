@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>List of repositories per group using validate-repo</title>
+  <script src="listrepo.js"></script>
+  <style>
+  <!--
+  .repos th, .repos td { border: 1px solid black; padding: 0 0.5em; }
+  .repos { border-collapse: collapse; }
+  -->
+  </style>
+</head>
+<body>
+
+<p>List repositories with properties for Group ID: 
+<input type="text" width="20" id="group_id">
+<input type="submit" id="group_submit">
+(IWCG: 87846, IWWG: 109735, TTWG: 34314)
+</p>
+<p>This page uses JSON report data from <a href="https://w3c.github.io/validate-repos/">validate-repos</a></p>
+<p>Group info: <span id="group_info"></span></p>
+
+<table class="repos">
+<thead>
+<tr>
+  <th>Name</th>
+  <th>createdAt</th>
+  <th>homepageURL</th>
+  <th>isPrivate</th>
+  <th>defaultBranch</th>
+  <th>repo-type</th>
+</tr>
+</thead>
+<tbody id="repos_list">
+</tbody>
+</table>
+
+</body>
+
