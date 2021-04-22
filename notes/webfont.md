@@ -38,7 +38,7 @@
 
 * WOFF2Header : 全体についてのデータを格納するヘッダ、圧縮時・解凍後のデータサイズやデータブロックまでのオフセット
   * UInt32 signature: `wOF2`
-  * UInt32 flavor: sfnt version
+  * UInt32 flavor: sfnt version - `ttcf`などのフォントコレクションといったフォーマットの指定
   * UInt32 length: WOFFファイルの全サイズ
   * UInt16 numTables: フォントテーブルのディレクトリのエントリ数
   * UInt16 reserved: `0`
@@ -50,14 +50,26 @@
   * UInt32 metaLength: 解凍後のExtendedMetadataのデータサイズ
   * UInt32 privOffset: PrivateDataまでのオフセット
   * UInt32 privLength: PrivateDataのデータサイズ
-* TableDirectory : WOFF2Header.numTablesの数のテーブルのエントリ、各エントリは可変長なので読まないとサイズは決まらない
+* TableDirectory : WOFF2Header.numTablesの数のテーブルのエントリ、各エントリは可変長なので読まないとサイズは決まらない。またフォントコレクションの場合も全テーブルをここに並べる（分別は次のブロックで）。
   * 各エントリは以下の４つの値の配列、圧縮領域に格納されている順に並べられる
     * UInt8 flags: `0..5`の6bitがテーブル定義(`63`以外は定義値、`63`は次の値を利用)、`6..7`の2bitがプリプロセスでのtransformationのバージョン番号`0-3`を示す
     * UInt32 tag: （オプション）`flags=63`の時のテーブル名４文字、後ろ空白パディング
     * UIntBase128 origLength: 非圧縮時のサイズ
     * UIntBase128 transformLength: transform適用後のサイズ（null transformationでない場合、また処理によっては複数の結果になる場合があるので必ずしも正しくならない）
   * 未定義のtransformationのバージョンが指定されたものはテーブルごと拒否
-* CollectionDirectory
+* CollectionDirectory : 該当のWOFFファイルがフォントコレクションの場合にのみ必要
+  * データは`CollectionHeader`と`CollectionFontEntry`のリストで構成され、一つの`CollectionHeader`の直後に定義された数の`CollectionFontEntry`が並ぶ
+  * `CollectionHeader`はテーブル数の定義
+    * UInt32 version: オリジナルのフォントのTTCヘッダにあるバージョン
+    * 255UInt16 numFonts: コレクションの中のフォント数
+  * `CollectionFontEntry`は各フォントに対応するテーブルのピックアップ用のデータ
+    * 255UInt16 numTables: 利用するテーブル数
+    * UInt32 flavor: `sfnt` version
+    * 255UInt16 index (`numTables`分の配列): `TableDirectory`のエントリを0始まりで数えたときの利用するテーブルの番号の配列
+  * コレクション間のテーブルの共有は可能 = 違うコレクションで`index`の中に同じ番号が出現してもよい（逆に同じテーブルデータを複数回含むことは禁止）
+    * `glyf`と`loca`のペアについて、片方のみを共有しているような設定は禁止
+    * エンコーダは入力されたフォントファイルに対してここの並び順を維持するように設定する必要がある
+    * デコーダはこのコレクションの圧縮処理を行わない元の形式に戻すようにすべき（あとのブラウザ処理の中でTTF/OTFと同じように利用できるようにするため？）
 * CompressedFontData
 * ExtendedMetadata
   * 圧縮されたXML (UTF-8)のデータ、vendor, copyrightなどのデータを入れられる部分
