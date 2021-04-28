@@ -1,12 +1,20 @@
 # WebFont関係まとめ
 
+まだ作成中
+
 ## 関連仕様、ノート類
 
+情報として整理して入れたものは末尾に`- ok`をつけている
+
 * WOFF関係 (Web Open Font Format; [WebFonts WG](https://www.w3.org/Fonts/WG/))
-  * [WOFF2](https://www.w3.org/TR/2018/REC-WOFF2-20180301/) (2018/03/01 REC)
-    * [WOFF2 Evaluation Report](http://www.w3.org/TR/2016/NOTE-WOFF20ER-20160315/) (2016/03/15 WG-NOTE)
-  * [WOFF1](https://www.w3.org/TR/2012/REC-WOFF-20121213/) (2012/12/13 REC)
-  * [MicroType Express (MTX) Font Format](https://www.w3.org/Submission/2008/SUBM-MTX-20080305/) (2008/03/05 Monotype Imaging SUBM)
+  * [WOFF2](https://www.w3.org/TR/2018/REC-WOFF2-20180301/) (2018/03/01 REC) - ok
+    * [WOFF2 Evaluation Report](http://www.w3.org/TR/2016/NOTE-WOFF20ER-20160315/) (2016/03/15 WG-NOTE) - ok
+  * [WOFF1](https://www.w3.org/TR/2012/REC-WOFF-20121213/) (2012/12/13 REC) - ok
+  * [MicroType Express (MTX) Font Format](https://www.w3.org/Submission/2008/SUBM-MTX-20080305/) (2008/03/05 Monotype Imaging SUBM) - ok
+    * WOFF2の開発の際に参考とされた効率化の手法の文書、仕様書よりも各項目の導入背景などが詳しい
+    * TTFを変換して中間形式のCTFに、LZCOMPで圧縮してMTXに
+  * [Incremental Font Transfer](https://w3c.github.io/PFE/Overview.html) PFE向けの仕様
+  * [Progressive Font Enrichment (PFE) Evalucation Report](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) (2020/10/15 WG-NOTE)
 * [RFC 7932 (Brotli Compressed Data Format)](https://tools.ietf.org/html/rfc7932)
 * [Open Font Format (OFF; ISO/IEC 14496-22:2015)](http://standards.iso.org/ittf/PubliclyAvailableStandards/c066391_ISO_IEC_14496-22_2015.zip)
   * [Amendment 1: Updates for font collections functionality](http://standards.iso.org/ittf/PubliclyAvailableStandards/c069450_ISO_IEC_14496-22_2015_Amd_1_2017.zip)
@@ -23,7 +31,17 @@
 ## WOFF2の概要
 
 * 重複データなどを除くようなフォントのテーブル自体を簡単化するプリプロセスを行う
-* フォントデータ本体は圧縮形式でファイル内に格納される、WOFF2ではBrotliの単独ストリーム、WOFF1ではzlib/compress2を利用
+* フォントデータ本体は圧縮形式でファイル内に格納される、WOFF2ではBrotliの単独ストリーム、WOFF1ではzlib/compress2を利用しテーブルごと圧縮
+
+MTXでは以下のような処理を行っており、その中からピックアップされている。Data setへの分割は取り入れられなかった部分。
+
+* TTFからCTFの際に`glyf` (重複情報削除), `loca` (いれない、デコード時に再生成), `cvt ` (より小さく格納), `hdmx` (bitエンコード), `VDMX` (bitエンコード)に変換を掛けた
+  * `glyf`の変換は`Triplet Encoding`を含め、WOFF2の変換に持ち込まれている
+* フォントデータを３パートに分け、各パートごとにテーブルごとにLZCOMPで圧縮
+  * Data set 1: `glyf`のアウトラインデータとその他のテーブル全部、`cvt `, `hdmx`, `VDMX`, `glyf`を圧縮、その他は非圧縮
+  * Data set 2: `glyf`のpush dataを格納
+    * WOFF2での255UInt16は255USHORTとして定義されている
+  * Data set 3: Glyph instructionを格納
 
 ### WOFF2ファイル構成
 
@@ -92,6 +110,12 @@
 * `glyf`と`loca`はWOFFが一つのフォントセットのみの場合は間に別なものが入っていいが、フォントコレクションの場合は必ず対応関係の`glyf`と`loca`は連続しなければならない
   * `cmap`, `glyf`, `hhea`, `hmtx`, `loca`, `maxp`の並び順は可能
   * フォントコレクションでは`cmap`, `glyf`, `loca`, `hhea`, `hmtx`, `glyf`, `loca`, `maxp`, `post` のような並び順になる必要がある
+
+#### WOFF v1からの変更
+
+* 圧縮がBrotilになった
+  * 詳細の検討の流れはWOFF2 Evaluation Reportに、WOFF1はテーブルごとにzlib/compress2圧縮だったのが、テーブル全体をBrotil圧縮に変更
+* 圧縮効率を上げるためにテーブルのtransformationを導入 (MTX形式から一部の処理を持ってきた)
 
 ### フォントデータのtransformation
 
