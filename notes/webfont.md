@@ -54,8 +54,8 @@
   * 各エントリは以下の４つの値の配列、圧縮領域に格納されている順に並べられる
     * UInt8 flags: `0..5`の6bitがテーブル定義(`63`以外は定義値、`63`は次の値を利用)、`6..7`の2bitがプリプロセスでのtransformationのバージョン番号`0-3`を示す
     * UInt32 tag: （オプション）`flags=63`の時のテーブル名４文字、後ろ空白パディング
-    * UIntBase128 origLength: 非圧縮時のサイズ
-    * UIntBase128 transformLength: transform適用後のサイズ（null transformationでない場合、また処理によっては複数の結果になる場合があるので必ずしも正しくならない）
+    * UIntBase128 origLength: 非圧縮時のサイズ (null transforationでない場合は戻した後のサイズ、また処理によっては複数の結果になる場合があるので必ずしも正しくはならない)
+    * UIntBase128 transformLength: transform適用後のサイズ（null transformationでない場合にのみ必要、格納されたデータのサイズとなる)
   * 未定義のtransformationのバージョンが指定されたものはテーブルごと拒否
 * CollectionDirectory : 該当のWOFFファイルがフォントコレクションの場合にのみ必要
   * データは`CollectionHeader`と`CollectionFontEntry`のリストで構成され、一つの`CollectionHeader`の直後に定義された数の`CollectionFontEntry`が並ぶ
@@ -70,7 +70,15 @@
     * `glyf`と`loca`のペアについて、片方のみを共有しているような設定は禁止
     * エンコーダは入力されたフォントファイルに対してここの並び順を維持するように設定する必要がある
     * デコーダはこのコレクションの圧縮処理を行わない元の形式に戻すようにすべき（あとのブラウザ処理の中でTTF/OTFと同じように利用できるようにするため？）
-* CompressedFontData
+* CompressedFontData : テーブル全体のデータが圧縮されたデータ領域
+  * デコーダは展開後のデータをOFF仕様に合うように展開する必要があり、`checkSum`の値が正しいものである必要がある（再計算必要）、また全体に対して`checkSumAdjustment`の値を再計算し`head`テーブルを更新する
+  * 展開後のサイズはTableDirectoryのサイズの合計に一致する必要がある
+  * transformation : `glyf`, `loca`, `hmtx`に適用される
+    * `glyf`: アウトラインデータの保持
+    * `loca`: それぞれのグリフのデータが`glyf`のどこに保持されているかのオフセットデータ
+    * `hmtx`: グリフの水平方向のメトリクスの保持
+  * ここの最適化処理のために入力の元ファイルとデコードされて得られたファイルはバイナリで一致しないことがあるので、WOFFには`DSIG`テーブルは含めない
+  * エンコーダは`head`テーブルの`flags`のbit 11をたてないといけない（ロスレス変換を経たということの提示のため）
 * ExtendedMetadata
   * 圧縮されたXML (UTF-8)のデータ、vendor, copyrightなどのデータを入れられる部分
   * XMLの形式やエレメント定義はWOFF1/WOFF2で変化なし
@@ -83,8 +91,79 @@
 * `glyf`と`loca`は常にペアでこの順に配置されている必要がある。reverse transformが`glyf`に設定されている時に`loca`が必要なため。
 * `glyf`と`loca`はWOFFが一つのフォントセットのみの場合は間に別なものが入っていいが、フォントコレクションの場合は必ず対応関係の`glyf`と`loca`は連続しなければならない
 
+### フォントデータのtransformation
+
+#### `glyf`
+
+* `3`: null transform (unmodified)
+* `0`: table transformation, 重複情報の削除と実際のグリフアウトラインに対する効率的なエンコード
+  * エンコード(transform)してデコード(reconstruct)したものは、意味・機能的には同じであるが、ビット列として異なる可能性があるという意味で可逆変換ではない
+  * WOFF2 Table Directoryの`origLength`とデコード後のサイズは一致しない可能性がある
+  * 圧縮効率向上を目的に複数のストリームに分割することがあり、サブストリームのサイズの配列の後に各サブストリームを並べた配置となることがある
+  * デコーダは１グリフごとに処理を行い、再構成した`glyf`テーブル内でのオフセットが`loca`テーブルの値になる
+
+##### transform後の`glyf`テーブルのデータ構造
+
+* Fixed/UInt32 (0x00000000): version
+* UInt16 numGlyphs: 定義されたグリフの数
+* UInt16 indexFormat: `loca`テーブルのオフセットの形式、`head`テーブルの`indexToLocFormat`と一致
+* UInt32 nCounterStreamSize: `nCounter`ストリームのバイト数
+* UInt32 nPointsStreamSize: `nPoints`ストリームのバイト数
+* UInt32 flagStreamSize: `flag`ストリームのバイト数
+* UInt32 glyphStreamSize: `glyph`ストリームのサイズ数
+* UInt32 compositeStreamSize: `composite`ストリームのバイト数
+* UInt32 bboxStreamSize: `bbox`データのバイト数、`bboxBitmap`と`bboxStream`の合計
+* UInt32 instructionStreamSize: `instruction`ストリームのサイズ
+* Int16 nCounterStream (array): 各グリフレコードの`counter`の数の配列
+* 255UInt16 nPointsStream (array): グリフレコード中の各`counter`のアウトライン点の数の配列
+* UInt8 flagStream (array): 各アウトライン点に対するフラグの配列
+* Vary glyphStream (array): [5.2節](https://www.w3.org/TR/WOFF2/#triplet_decoding)に定義される形式でのアウトライン点座標の配列
+* Vary compositeStream (array): `component`フラグの値と付属するcomposite glyphのデータの配列
+* UInt8 bboxBitmap (array): explicit bounding boxかを示す、ビット数で`numGlyphs`分の長さの配列
+  * ビット列は先頭ビットから順に、全データサイズは`4 * floor((numGlyphs + 31) / 32)` (4byteパッド)
+  * 明確なbboxなのか点座標から導出可能なbboxなのかのフラグ、`bboxStream`に対応するbboxが格納されていれば立てる
+  * simple glyphについてはエンコーダがx/y Min/Maxを計算して一致したらデータを格納しない、一致しなければこのフラグを立ててデータを格納する
+  * `counter`がゼロ個の場合はbboxがすべて0であることを確認し、違ったらエンコーダは入力フォントを無効として却下する、okならフラグを下す
+  * composite glyphについては必ず立ててbboxを格納する
+* Int16 bboxStream (array): グリフのbounding boxデータの配列
+* UInt8 instructionStream (array): 各対応するグリフの`instruction` setの配列
+
+glyphStreamに格納されるデータは一つ前の点座標に対するdeltaで表記され、先頭は(0, 0)に対するdeltaである。
+バイト列からのdelta値の再構成の対応表は[5.2節 `Triplet Encoding`](https://www.w3.org/TR/WOFF2/#triplet_decoding)にあり、
+先頭バイトがIndexで`flagStream`からの1バイトを含み2-5バイトで表記される値(`glyphStream`からは1-4バイト)で格納され、計算後は(`flag`, `x`, `y`)のセットとなる。
+`flagStream`からの`flag`は
+
+* 先頭bit: on/off-curveの点のフラグ
+* 残り7bit: `glyphStream`からの値を評価するためのインデックス
+  * `glyphStream`からのデータをX/Yに対して割り振るビット長 (割り振る場合は先頭ビットからXに利用)
+  * 割り振られた値に対して出力を計算するデータ、値に追加する量と正負
+    * たとえばIndex=4だと、１バイトをXに0bit、Yに8bitで割り振り、Yに512を足して負の値として評価する、となる
+
+##### デコーダの再構成の流れ
+
+* `nCounterStream`からInt16 1データを読み、`glyf`の`numberOfCounters`の値とする
+  * 0なら空、正ならsimple glyphでアウトラインのcounterの数、0xFFFF (-1)ならcomposite glyph、となり、以下の各処理を行う
+  * 空の場合
+    * `loca`は一つ前のグリフと同じ値に設定する
+  * simple glyph
+    * `nPointsStream`から`numberOfCounters`分の255UInt16データを取得、それぞれがcounter内のデータ点数となり、`endPtsOfCounters[]`へ格納 (数でなく終了位置とするので-1する)
+    * `flagStream`から一つ前に計算した全ポイント数分のUInt8データを取得、これがデータ点のフラグの配列になる
+    * 全ポイント数分の点座標を`glyphStream`から読んでいき、各データから計算したdelta-x/yを`glyf`に格納していく
+    * `glyphStream`から一つの255UInt16の値を取得、`instruction`の配列の長さ(`instructionLength`)となる
+    * `instructionLength`分のデータを`instructionStream`から取得する
+  * composite glyph
+    * `compositeStream`から一つのUInt16の値を取得、TrueTypeの`component flag word`のデータとする
+    * `component flag word`のデータに対応する長さの追加データを`compositeStream`から読みだし (4-14バイト)、`glyf`に格納する
+      * `glyph index`, `arg1`, `arg2`, `optional scale`, `affine matrix`のデータ
+      * この段階で読みだされた`component flag word`の`FLAG_MORE_COMPONENTS` (bit 5)が立っていれば再度このステップを繰り返す
+    * 取得された`component flag word`のどれかに`FLAG_WE_HAVE_INSTRUCTIONS` (bit 8)が立っているものがあれば、`instruction`が存在するのでsimple glyphの4-5ステップ目を行う
+* bboxについて`bboxBitmap`でデータが格納されているグリフについて、`bboxStream`から4つのInt16を取得しxMin/yMin/xMax/yMaxの値とする
+  * simple glyphについては必要であれば計算する
+  * composite glyphについては必ずついている
+
 
 ### Brotli
 
 * LZ77とハフマン符号化ベースの圧縮アルゴリズム
 * 120KiB/13000 words程度のコーパスから生成された事前定義辞書を利用
+* CFFアウトラインデータがde-subroutinizedされている方が圧縮後のサイズが5-10%程度小さくなることが観測されている、が同時にde-subroutinizationにより～10%サイズが増えていた: WOFF2では取り入れられていない
