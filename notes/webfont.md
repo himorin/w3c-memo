@@ -4,25 +4,29 @@
 
 ToC
 
-* [関連仕様、ノート類](#関連仕様、ノート類)
-* [TTF/OTF/OFF/CFF関連](#TTF/OTF/OFF/CFF関連)
-* [WOFF2の概要](#WOFF2の概要)
-  * [WOFF2ファイル構成](#WOFF2ファイル構成)
+* [関連仕様、ノート類](#関連仕様ノート類)
+* [TTF/OTF/OFF/CFF関連](#ttfotfoffcff関連)
+* [WOFF2の概要](#woff2の概要)
+  * [WOFF2ファイル構成](#woff2ファイル構成)
   * [フォントデータのtransformation](#フォントデータのtransformation)
-  * [Brotli](#Brotli)
+  * [Brotli](#brotli)
+* [WOFF2後のwebfont高速化](#woff2後のwebfont高速化) (PFE)
+  * [evaluation reportでの評価対象](#evaluation-reportでの評価対象)
+  * [Incremental font transferの提案仕様](#incremental-font-transferの提案仕様)
 
 ## 関連仕様、ノート類
 
-情報として整理して入れたものは末尾に`- ok`をつけている
+WOFF関係のパートはいれた。Brotliの詳細、OFF以降はまだ
 
 * WOFF関係 (Web Open Font Format; [WebFonts WG](https://www.w3.org/Fonts/WG/))
-  * [WOFF2](https://www.w3.org/TR/2018/REC-WOFF2-20180301/) (2018/03/01 REC) - ok
-    * [WOFF2 Evaluation Report](http://www.w3.org/TR/2016/NOTE-WOFF20ER-20160315/) (2016/03/15 WG-NOTE) - ok
-  * [WOFF1](https://www.w3.org/TR/2012/REC-WOFF-20121213/) (2012/12/13 REC) - ok
-  * [MicroType Express (MTX) Font Format](https://www.w3.org/Submission/2008/SUBM-MTX-20080305/) (2008/03/05 Monotype Imaging SUBM) - ok
+  * [WOFF2](https://www.w3.org/TR/2018/REC-WOFF2-20180301/) (2018/03/01 REC)
+    * [WOFF2 Evaluation Report](http://www.w3.org/TR/2016/NOTE-WOFF20ER-20160315/) (2016/03/15 WG-NOTE)
+  * [WOFF1](https://www.w3.org/TR/2012/REC-WOFF-20121213/) (2012/12/13 REC)
+  * [MicroType Express (MTX) Font Format](https://www.w3.org/Submission/2008/SUBM-MTX-20080305/) (2008/03/05 Monotype Imaging SUBM)
     * WOFF2の開発の際に参考とされた効率化の手法の文書、仕様書よりも各項目の導入背景などが詳しい
     * TTFを変換して中間形式のCTFに、LZCOMPで圧縮してMTXに
   * [Incremental Font Transfer](https://w3c.github.io/PFE/Overview.html) PFE向けの仕様
+    * 開発中、このページの現状では2021/3/22版を参照している
   * [Progressive Font Enrichment (PFE) Evalucation Report](https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/) (2020/10/15 WG-NOTE)
 * [RFC 7932 (Brotli Compressed Data Format)](https://tools.ietf.org/html/rfc7932)
 * [Open Font Format (OFF; ISO/IEC 14496-22:2015)](http://standards.iso.org/ittf/PubliclyAvailableStandards/c066391_ISO_IEC_14496-22_2015.zip)
@@ -236,3 +240,55 @@ glyphStreamに格納されるデータは一つ前の点座標に対するdelta�
 * 120KiB/13000 words程度のコーパスから生成された事前定義辞書を利用
 * CFFアウトラインデータがde-subroutinizedされている方が圧縮後のサイズが5-10%程度小さくなることが観測されている、が同時にde-subroutinizationにより～10%サイズが増えていた: WOFF2では取り入れられていない
 * 同じ圧縮用テーブルを利用しての後ろに追加していくバイナリパッチが可能
+
+
+## WOFF2後のwebfont高速化
+
+Evaluation reportではCSSによるunicode-rangeでのstatic subsetが導入された後のwebfontの問題点として
+
+* CJKなどのグリフが多い言語において全部いりフォントのデータサイズが巨大になり利用されにくい
+* 約物を含む複数言語に共通して利用される文字についてstatic subsetの場合にフォントが混ざって複雑なshapingやカーニング情報などが正しく利用できない
+
+などが挙げられている。これに対応するためにprogressive subsetが提案され、一つ目については必要なコードポイントの部分のみのダウンロード、
+二つ目については整合性のある大きいセットから必要部分だけを持ってくることでshaping/kerningを整合性をもって適用することが可能になる。
+
+### evaluation reportでの評価対象
+
+フォント全体を落としてくるという操作に対して、unicode rangeでの複数woff2ファイルへの分割、以外に、２種類の方式が追加で評価されている
+
+* patch subset: 個別リクエストに向けてサーバ上で動的にサブセットを作成する方式、サーバ上での処理が可能でなければならない
+  * 初回は必要とされたグリフだけが入ったOpenTypeフォント、その後継続してのリクエストではBrotilのバイナリパッチ方式を利用して追加のグリフを供給
+* range request: ビデオストリームのように必要とされた部分だけを抜き出してリクエストする、クライアントがサーバにbyte rangeのリクエストを出す
+  * 最初にクライアントはtableDirectoryまでをサーバから取得し、必要なテーブル・グリフのみをbyte rangeのリクエストで要求する
+  * グリフのテーブルはプリプロセスされている必要があり、また、ファイルの一番最後に配置、アウトラインのグリフが相互に独立している必要がある
+    * 取得してくるbyte rangeの簡単化のためにプリプロセスでよく同時に使われるコードポイントを近くに配置するなどの処理も行える
+  * グリフ以外のテーブルは全部落としてくることになる
+
+評価はいくつかの言語グループを想定して行われている。それぞれ転送されるであろうバイト数、転送速度によるコスト評価が行われた。
+
+* alphabetic
+  * 転送量はどの方式でも改善、patch subsetで50%、unicode rangeで40%
+  * コスト評価はrange requestの場合(と低速ネットワークの場合出は全て)のみ非常に悪くなった
+* glyph shaping
+  * 転送量はどの方式でも改善、patch subsetで55%、unicode rangeとrange requestで25%
+  * コスト評価はrange requestの場合非常に悪くなった
+* CJK
+  * 転送量はpatch subsetで90%超、range requestで80%、unicode rangeで50%の改善
+  * コスト評価は高速ネットワークではどれでも改善、低速では悪くなった。patch subsetが一番改善が大きい。
+
+評価での結論は、patch subsetもrange requestも高い効果をもたらしたとするが、
+patch subsetはサーバの更新が必要だがrange requestは既存のフレームワーク内で処理可能とも指摘。
+今後の作業として以下の点を挙げている:
+
+* シミュレーションではWOFF2圧縮の一つ目の処理であるテーブル再配置を行っていないので、その点で改善の可能性
+* コードポイント推定をよりよくし、ネットワーク速度依存性について追加で解析
+* ストリーミングフォント向けのプリプロセス方式をさらに追及する
+* HTTP/2 POSTはキャッシュをバイパスするので、キャッシュ可能な方式を検討する
+* patch subsetの方式でCJKフォントでは90%以上のデータ量削減が行えたので、利用率向上に資する可能性がある
+* PFE有効のフォントの利用にはCSSへの変更が必要となるので、新しいフォーマットタイプの割り当てが必要かもしれない
+
+
+### Incremental font transferの提案仕様
+
+2021/3/22版ではpatch subsetの方式(Patch Based Incremental Transfer)のデータ型定義の途中までしかない。
+転送方式などについてはなにもまだ掛れていない。データのEncodingにはCBOR (RFC #8949)を利用する。
