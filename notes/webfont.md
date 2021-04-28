@@ -85,11 +85,13 @@
 * PrivateData
   * 非定型のベンダー固有データ領域
 
-テーブル・フォントデータの並び順について（詳細は[section 5.5](https://www.w3.org/TR/WOFF2/#table_order)に）
+テーブル・フォントデータの並び順について（以下の詳細は[section 5.5](https://www.w3.org/TR/WOFF2/#table_order)から）
 
 * OFFではテーブルの並び順を`ascending alphabetical order`としているが、WOFFでは処理の高速化のために制限をつけている
 * `glyf`と`loca`は常にペアでこの順に配置されている必要がある。reverse transformが`glyf`に設定されている時に`loca`が必要なため。
 * `glyf`と`loca`はWOFFが一つのフォントセットのみの場合は間に別なものが入っていいが、フォントコレクションの場合は必ず対応関係の`glyf`と`loca`は連続しなければならない
+  * `cmap`, `glyf`, `hhea`, `hmtx`, `loca`, `maxp`の並び順は可能
+  * フォントコレクションでは`cmap`, `glyf`, `loca`, `hhea`, `hmtx`, `glyf`, `loca`, `maxp`, `post` のような並び順になる必要がある
 
 ### フォントデータのtransformation
 
@@ -161,9 +163,43 @@ glyphStreamに格納されるデータは一つ前の点座標に対するdelta�
   * simple glyphについては必要であれば計算する
   * composite glyphについては必ずついている
 
+#### `loca`
+
+独立してtransformationの設定の値を持つが、`glyf`のtransformationに依存するので現実には`glyf`の値と同じとなる
+
+* `3`: null transform (unmodified)
+  * データをそのまま格納し、オリジナルのフォントテーブルの解析時と同じくデータを読むのに必要となる
+* `0`: table transformation
+  * `glyf`のデコーダの処理の中で`loca`テーブルが作成されるのでデータはない
+  * `transformLength`は必ず0
+  * `origLength`は`numGlyphs`+1にグリフごとのサイズを掛けたもの、`glyf`の`indexFormat`が0の場合2バイト、それ以外は4バイト
+
+#### `hmtx`
+
+* `0`: null transform (unmodified)
+* `1`: table transformationを行う、`hmtx`テーブルの冗長部分を削る
+  * OFFでは`hmtx`はMin側にプロポーショナル・モノスペースの２種のグリフに対応する２つの配列を持つが、通常はTrueTypeの推奨通り同じなので省ける
+
+##### transform後の`hmtx`テーブルのデータ構造
+
+フォントが`glyf`テーブルを持つなどのTrueType系列の場合にのみ適用可能である。
+エンコーダは全グリフについて`leftSideBearing`がbbox `xMin`に一致するかを確認する必要があり、一致していればこのtransformを適用する必要がある。
+なお、コレクション内で`hmtx`テーブルが共有されている場合は全ての対応先についてこの確認をする必要がある。
+
+* UInt8 Flags: 適用した変換の詳細を示すビット列
+  * `TableDirectory`で変換が指定されている場合、bit 0/1は立て、bit 2-7は予約(0)となる。なので必ず0xC0、そして`advanceWidth`のみ存在することになる。
+  * bit 0: 設定時には`lsb[]`が存在しない、`glyf`のxMinから
+  * bit 1: 設定時には`leftSideBearing[]`が存在しない、`glyf`のxMinから
+* UInt16 advanceWidth (array): プロポーショナルグリフの水平方向の`advanceWidth`の配列、`hhea`テーブルの`numOfHMetrics`の個数分
+* Int16 lsb (array): プロポーショナルグリフの水平方向の`left side bearing`の配列、`hhea`テーブルの`numOfHMetrics`の個数分
+  * `Flags`のbit 0が設定されていない場合のみ存在する
+* Int16 leftSideBearing (array): モノスペースの水平方向の`left side bearing`の配列、`numGlyphs` - `numOfHMetrics`の数分
+  * `Flags`のbit 1が設定されていない場合のみ存在する
+
 
 ### Brotli
 
 * LZ77とハフマン符号化ベースの圧縮アルゴリズム
 * 120KiB/13000 words程度のコーパスから生成された事前定義辞書を利用
 * CFFアウトラインデータがde-subroutinizedされている方が圧縮後のサイズが5-10%程度小さくなることが観測されている、が同時にde-subroutinizationにより～10%サイズが増えていた: WOFF2では取り入れられていない
+* 同じ圧縮用テーブルを利用しての後ろに追加していくバイナリパッチが可能
