@@ -2,7 +2,14 @@
 
 まだ作成中
 
-{:toc}
+ToC
+
+* [関連仕様、ノート類](#関連仕様、ノート類)
+* [TTF/OTF/OFF/CFF関連](#TTF/OTF/OFF/CFF関連)
+* [WOFF2の概要](#WOFF2の概要)
+  * [WOFF2ファイル構成](#WOFF2ファイル構成)
+  * [フォントデータのtransformation](#フォントデータのtransformation)
+  * [Brotli](#Brotli)
 
 ## 関連仕様、ノート類
 
