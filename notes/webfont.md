@@ -41,6 +41,104 @@ WOFF関係のパートはいれた。Brotliの詳細、OFF以降はまだ
 * SFNT?
 * OTF = TTF + PS CFF/Type2
 
+### OpenTypeの概要
+
+* もともとTTFの拡張として作られ、`sfnt`コンテナ構造を利用している
+* グリフのアウトラインはCFF, CFF v2, TrueTypeを利用可能
+* 多色表現が可能、埋め込みの色のビットマップ、SVG、色ごとのグリフの組み合わせ
+* Unicode全体をサポート
+* OpenType Layoutテーブルを利用してより高性能なタイポグラフィー機能を利用可能
+* mathematical typesettingテーブルにより複雑なレイアウトや数式用のデータを利用可能
+  * 数式用のテーブルを利用することでTeXやMathMLで必要な複雑なレイアウトに対応する
+* OpenType collectionでは共通データを共有する形でのテーブル定義が可能に
+* font variationsによりアウトラインとその他のデータについて複数のデザインパラメータにより組み合わせが可能に、効率的な形式でフォントファミリー全体を表現可能に
+* テーブル定義リストは[feature registry](https://docs.microsoft.com/typography/opentype/spec/featuretags)に
+  * shapingを完全に定義することはOpenTypeでは行わず、特定アプリケーションでの閉じた実装に依存
+* 文字とグリフの高度なマッピング、リガチャ、並び依存の形式、代替、などに対応
+* ２次元で配置を指定可能、スクリプト・言語の指定
+* 独自のフィーチャーを定義可能
+* baseline情報を含められる
+* 用語 (注: このノート中ではカタカナ表記の場合が多い)
+  * `Font face`: 特定のデザインパラメータによるグリフデータの一つの集合で、メトリクス値、名前、などのメタデータが添付されていることがある
+  * `Font resource`: フォントとして機能する(最小でも最低限の)必要なテーブルセットを含むOpenTypeデータ
+  * `Font family`: 共通のフォント名を持つフォントのセット、同じ名前がname ID 16 (Typographics Family Name)かname ID 1に記載される
+  * `Axis of variation`: 同じファミリーの中でvariationとして変化させている種類
+  * `Variable font`: 同じファミリーの複数フォントフェイスを持つフォントリソース、OpenType Font Variationsの機構を利用する
+  * `Glyph design grid`: グリフのアウトラインがデザインされている平面
+  * `Design-variation space`: variationの軸で構成されるフォントファミリー内での変化、`fvar`テーブルに定義される軸によるn次元空間
+  * `Variation data`: variationで設定される値に対応するフォントフェースを実現するためのデフォルト値からの差異もしくは変換値
+  * `Variation tables`: OpenType Font Variationsに直結するテーブルは以下のリストになる
+    * `avar`: Axis variations
+    * `cvar`: CVT (control value table) variations
+    * `fvar`: font variations
+    * `gvar`: glyph variations
+    * `HVAR`: horizontal metrics variations
+    * `MVAR`: metrics variations
+    * `VVAR`: vertical metrics variations
+  * `Point`: グリフデザイングリッド中の平面上の座標
+  * `Variation instance`: variationの値の組のそれぞれに対応するインスタンス
+  * `Named instance`: `variation instance`のうちの`fvar`テーブルで固有の名前が定義されているもの (UIのドロップダウンでフォント名として出てくるようなやつ)
+  * `User coordinate scale`: あるvariationの軸における特徴づけに利用されるスケール
+    * variationによっては事前定義の制約付き範囲を持つことがある。また、`fvar`テーブルに軸の利用される最大・最小が記述されより制限されることもある。
+  * `Normalized coordinate scale`: 
+
+基本的な処理の流れ
+
+* `cmap`テーブルを利用して、入力された文字コードの列をグリフIDの列に変換する
+* `GSUB`テーブルを利用して、グリフIDの列に対して、代替配置・縦書き、リガチャなどの変換を加える
+* `GPOS`テーブルを利用して配置場所を、`BASE`テーブルからベースラインを取得、グリフを配置する
+* `design coordinates`においてデバイス非依存の改行位置を判定 (デバイス非依存の改行???)
+* 指定があれば`JSTF`テーブルを利用して、揃え処理を行う
+* `design coordinates`からグリフを出力先に合わせて`device coordinates`に変換する
+
+Font Variationの方法
+
+* 該当するフォントは`fvar` (font variations)テーブルを持ち、利用しているvariationの種類が記述されており、既定値も定義されている
+  * `STAT` (Style attributes)を各variationについての詳細の為に含めることができ、単独軸のパラメータについてや複数軸を合わせての名前付けができUIで利用される
+  * Apple TrueType GXからは、`fvar`の仕様が更新され、`fmtx`が利用されなくなった
+* variationによってLayoutテーブルに影響が出る(`GPOS`での配置位置など)ので、`GSUB`や`GPOS`など各テーブルの機能ごとでの変更テーブルが利用される。
+  * `rvrn` (Required Variation Alternates)機能も参照
+  * 必要な変換後のデータは各テーブルに含まれている必要がある、例えば`glyf`はグリフの既定のアウトライン、`gvar` (glyph variations)は各variationでの変更を記述する、など
+  * `fvar`に定義されている全軸の既定値の状態に対応するデータが可変のためのテーブルがなくなっている場合に利用される
+* グリフごとのvariation適用により、前後関係などで相互作用がどう発生するかについてフォント作成者が制御しきれない可能性がある。レイアウト処理では異なるvariationのものをそれぞれ別物として扱う必要がある。
+
+RTL対応、文字列の中に別なbidiレベルが出現した場合の処理として
+
+* LTRの部分について
+  * `ltrm`を利用して処理を行う
+  * `ltra`を利用してより精緻なグリフ選択を行う
+* RTLの部分について
+  * 文字`i`が`OMPL` (OpenType Mirroring Pairs List; U+0028/U+0029など)で`j`にマップされ、`cmap(j)`が有値なら、文字`i`について`cmap(j)`のグリフを利用する
+  * 前項の処理にかからなかったものについて`rtlm`を利用して処理を行う
+  * 全体に対して`rtla`を利用してより精緻なグリフ選択を行う
+
+#### テーブル定義
+
+* OpenType Layout
+  * GSUB: グリフ代用情報 - 1対1、リガチャなどの1対多・多対多、芸術的な代替、コンテキスト依存
+  * GPOS: グリフ位置補正のためのX/Y位置情報 - 単独、グリフペア、草書体、付属マーク、コンテキスト依存
+  * BASE: スクリプトごとのベースラインオフセット情報
+  * JSTF: 空白とKashidaを含む揃えの情報
+  * GDEF: フォント中の全個別グリフの情報 - タイプ(simple, ligature, combining mark)、追加の点 (あれば)、リガチャグリフの場合に分割点
+
+### RFC 8081 / フォントメディアタイプ
+
+`application/font-xxx`や`application/x-font-xxx`のようなMIME型でなく、`font/xxx`の提案とレジストリ。まだProposed Standardの状態。
+どのような種類のフォント形式があるかの一覧には役立ちそう。
+以下のリストでparameterは基本的にカンマ区切りのリストで、同じ名前は同じ内容となる(ので初出のみ詳述)。
+
+* `font/snft`: Generic SFNT font
+  * parameter outlines: フォントで提供されるアウトラインのデータ形式、`TTF` (TrueType), `CFF` (PostScript/CFF), `SVG` (SVF)
+  * parameter layout: 利用される拡張フォントフィーチャーの形式、`OTL` (OpenType text layout), `AAT` (Apple Advanced Typography), `SIL` (Graphite SIL)
+* `font/ttf`: TTF font
+  * parameter layout
+* `font/otf`: OpenType Layout font
+  * parameter outlines
+* `font/collection`: Collection font
+  * parameter outlines
+* `font/woff`: WOFF 1.0
+* `font/woff2`: WOFF 2.0
+
 ## WOFF2の概要
 
 * 重複データなどを除くようなフォントのテーブル自体を簡単化するプリプロセスを行う
