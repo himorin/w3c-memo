@@ -80,9 +80,21 @@ WOFF関係のパートはいれた。Brotliの詳細、OFF以降はまだ
   * `Named instance`: `variation instance`のうちの`fvar`テーブルで固有の名前が定義されているもの (UIのドロップダウンでフォント名として出てくるようなやつ)
   * `User coordinate scale`: あるvariationの軸における特徴づけに利用されるスケール
     * variationによっては事前定義の制約付き範囲を持つことがある。また、`fvar`テーブルに軸の利用される最大・最小が記述されより制限されることもある。
-  * `Normalized coordinate scale`: 
+  * `Normalized coordinate scale`: variable fontのデータから特定の表示用にするさいに、正規化の中で`normalized scale` (-1から1の間)を適用して各軸のユーザスケールでのデータをこの正規化されたデータに変換する
+    * `fvar`テーブルに各軸のスケールの最小・規定・最大値を指定可能で、それらが正規化の際に`(-1, 0, 1)`にマップされる
+    * `avar`テーブルにそれ以外の値のマッピングが定義されていることもある
+  * `Tuple` / `N-tuple`: variationの空間の中における座標を定義するのに利用される順序付きの座標値
+    * TrueTypeでのフォントのvariationの空間の中での特定領域に紐づいたvariationのデータセットの意味での`tuple`ではない (OpenTypeでは`tuple variation data`となる)
+  * `Region`: あるvariationでの変換が適用される領域
+    * フォントのvariationを行う全ての軸に対して値を持ち、一部のサブセットに対してだけというのはない。正規化された座標は直交座標系でなければならず、領域の角は直角になる。
+    * variationの領域の中で65535`Region`が定義可能
+  * `Master`: フォント開発フローの中で特定のフォントフェースについて揃ったアウトラインデータを含むソース
+  * `Deltas` / `Adjustment deltas`: variation空間の中やある軸の一部分といった部分領域に対するデータに加える補正データ
+  * `Delta set`: ある`Region`に関連する`Adjustment deltas`のセット
+  * `Scalars`: 特定のvariationで必要となる補正値を生成するために`deltas`に掛ける補正係数
+  * `Interpolation`: 補正値を計算するプロセス
 
-基本的な処理の流れ
+#### 基本的な処理の流れ
 
 * `cmap`テーブルを利用して、入力された文字コードの列をグリフIDの列に変換する
 * `GSUB`テーブルを利用して、グリフIDの列に対して、代替配置・縦書き、リガチャなどの変換を加える
@@ -91,18 +103,38 @@ WOFF関係のパートはいれた。Brotliの詳細、OFF以降はまだ
 * 指定があれば`JSTF`テーブルを利用して、揃え処理を行う
 * `design coordinates`からグリフを出力先に合わせて`device coordinates`に変換する
 
-Font Variationの方法
+#### Font Variationの方法
 
+* 実際の変換の様子は[Variation space, Default Instances and Adjustment Deltas](https://docs.microsoft.com/ja-jp/typography/opentype/spec/otvaroverview#variation-space-default-instances-and-adjustment-deltas)の図を見るのがわかりやすい
 * 該当するフォントは`fvar` (font variations)テーブルを持ち、利用しているvariationの種類が記述されており、既定値も定義されている
   * `STAT` (Style attributes)を各variationについての詳細の為に含めることができ、単独軸のパラメータについてや複数軸を合わせての名前付けができUIで利用される
   * Apple TrueType GXからは、`fvar`の仕様が更新され、`fmtx`が利用されなくなった
+  * TrueTypeのアウトラインデータでは、左端が`xMin`に一致し、`head`テーブルの`flags`のbit 1が立っている必要がある
+  * 全てのvariableフォントでは`head`テーブルの`flags`のbit 5が落ちてる必要がある
 * variationによってLayoutテーブルに影響が出る(`GPOS`での配置位置など)ので、`GSUB`や`GPOS`など各テーブルの機能ごとでの変更テーブルが利用される。
   * `rvrn` (Required Variation Alternates)機能も参照
   * 必要な変換後のデータは各テーブルに含まれている必要がある、例えば`glyf`はグリフの既定のアウトライン、`gvar` (glyph variations)は各variationでの変更を記述する、など
   * `fvar`に定義されている全軸の既定値の状態に対応するデータが可変のためのテーブルがなくなっている場合に利用される
 * グリフごとのvariation適用により、前後関係などで相互作用がどう発生するかについてフォント作成者が制御しきれない可能性がある。レイアウト処理では異なるvariationのものをそれぞれ別物として扱う必要がある。
+* よく利用されるvariationの手法は`fvar`仕様に`axis tag`として定義されている (weightとか)
+  * defaultをどこに置くか、例えばweightの場合にdefaultをnormalに置くか一番両端(minかmax)にするか、はフォントデザイン次第
+  * `User coordinate`と`Normalized coordinate`の関係は、min/default/maxの３点をマップした変換空間の座標変換
+    * 各軸は既定では3点を折れ線で結ぶ線形変換、ただし追加の制御点を`avar`テーブルで定義でき、追加点を含む複数制御点による折れ線の線形変換
+    * 複数軸の場合はそれぞれの軸での変換係数の積、有効範囲外は0となる。ある軸が領域内で常に1の場合、領域内外を区別するステップ関数のようになる。
+      * 境界を接して2領域間でsharp transitionを行う場合、境界点の置き場は注意して選択しないといけない
+      * glyph substitutionを利用する手もある。OpenTypeでは`GSUB`の`FeatureVariations`テーブルと`rvrn`を組み合わせることが可能。
+* variation dataのテーブルについて
+  * `glyf`テーブルに対しては、`gvar`テーブルのvariationのデータは、適用対象の`Region`用の`delta`の値となる
+    * CVTの値に対するvariationは`cvar`テーブルに入る
+  * `OS/2`テーブルに対しては`MVAR`テーブルを利用する
+    * `MVAR`テーブル自体は他の`gasp`, `hhea`, `post`, `vhea`テーブルなどに対しても適用できる
+  * `CFF2`テーブルにはその中に含めることができる (CFF 1.0では対応していない)
+    * 逆に四隅の算出が`CFF2`のみでは不可能なので、`hmtx`/`vmtx`に加えて`HVAR`/`VVAR`が必須
+  * metrics用の`hmtx`と`vmtx`テーブルに対しては、それぞれ`HVAR`と`VVAR`テーブルが対応する
+    * TrueTypeの場合、`glyf`テーブルの`xMin`などから四隅を算出できるがコスト高いことから、これらのテーブルを含めることが推奨される
+    * OpenTypeの場合、`GDEF`, `GPOS`, `JSTF`を必要に応じて追加。また、`BASE`にvariationのデータを追加する。
 
-RTL対応、文字列の中に別なbidiレベルが出現した場合の処理として
+#### RTL対応、文字列の中に別なbidiレベルが出現した場合の処理として
 
 * LTRの部分について
   * `ltrm`を利用して処理を行う
