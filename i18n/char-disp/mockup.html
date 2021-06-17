@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>MOCKUP - Character list</title>
+  <style>
+    td { height: 1.5em; width: 1.5em; }
+  </style>
+  <script>
+  function switchMode(tgt) {
+    let elems = document.getElementsByClassName('vhtgt');
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style['writing-mode'] = tgt;
+    }
+  }
+  </script>
+</head>
+<body>
+
+<table border="1">
+<tr>
+<td class="vhtgt"><span class="vhtgt"><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a=213b" title="U+213B">&#x213b;</a></span></td>
+<td class="vhtgt"><span class="vhtgt"><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a=2126" title="U+2126">&#x2126;</a></span></td>
+<td class="vhtgt"><span class="vhtgt"><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a=210e" title="U+210e">&#x210e;</a></span></td>
+</tr>
+</table>
+
+<p>
+<label><input type="radio" name="wm" onclick="switchMode('horizontal-tb');">Horizontal</label>
+<br>
+<label><input type="radio" name="wm" onclick="switchMode('vertical-rl');">Vertical</label>
+<br>
+</p>
+
+</body>
+</html>
