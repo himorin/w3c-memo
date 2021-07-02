@@ -34,9 +34,9 @@ def outputHTML(fname):
   <meta charset="utf-8">
   <title>MOCKUP - Character list</title>
   <style>
-    .vhtgt { height: 2em; width: 2em; }
     table { border-collapse: collapse; }
-    .sgnchar { font-size: 2em; border: 1px solid black; }
+    tr.disp { height: 4em; }
+    .sgnchar { font-size: 2rem; line-height: 2rem; margin: 0.5rem; border: 1px solid black; display: inline-block; }
   </style>
   <script>
   function switchMode(tgt) {
@@ -45,11 +45,38 @@ def outputHTML(fname):
       elems[i].style["writing-mode"] = tgt;
     }
   }
+  function switchFont() {
+    let tgt = document.getElementById('fontname').value;
+    let elems = document.getElementsByClassName("vhtgt");
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style["font-family"] = tgt;
+    }
+  }
   </script>
 </head>
 <body>
+<p>
+<label><input checked type="radio" name="wm" onclick="switchMode(\'horizontal-tb\');">Horizontal</label>
+<br>
+<label><input type="radio" name="wm" onclick="switchMode(\'vertical-rl\');">Vertical</label>
+<br>
+<p>Font: <input type="text" name="fontname" id="fontname" list="fontlist" onchange="switchFont()"> (Double click to select)</p>
+<datalist id="fontlist">
+  <option value="游ゴシック">
+  <option value="游明朝">
+  <option value="ヒラギノ">
+  <option value="メイリオ">
+  <option value="Times New Roman">
+  <option value="Arial">
+  <option value="serif">
+  <option value="sans-serif">
+  <option value="monospace">
+  <option value="rounded">
+  <option value="system-ui">
+</datalist>
+</p>
 <table border="1">
-<tr>
+<tr class="disp">
             ''')
     cnum = -1
     ccodes = []
@@ -61,7 +88,7 @@ def outputHTML(fname):
             cnum = 0
             fp.write('</tr><tr>')
             printSupport(fp, ccodes)
-            fp.write('</tr><tr>')
+            fp.write('</tr><tr class="disp">')
             ccodes = []
         code = format(ord(cchr), 'x')
         ccodes.append(code)
@@ -71,12 +98,6 @@ def outputHTML(fname):
     fp.write('''
 </tr>
 </table>
-<p>
-<label><input checked type="radio" name="wm" onclick="switchMode(\'horizontal-tb\');">Horizontal</label>
-<br>
-<label><input type="radio" name="wm" onclick="switchMode(\'vertical-rl\');">Vertical</label>
-<br>
-</p>
 </body>
 </html>
             ''')
