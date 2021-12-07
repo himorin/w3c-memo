@@ -265,129 +265,45 @@
 
 	  <!-- start description -->
 	  <div class="desc">
-            <p>The <a href="https://www.w3.org/tv/">Media and
-		Entertainment activity</a>
-		(<a href="https://w3c.github.io/web-roadmaps/media/">Roadmap:
-		Overview of Media Technologies for the Web</a>) tracks
-		and standardizes media-related capabilities and
-		features needed to create immersive
-		experiences. HTML5, <abbr title="Timed Text Markup
-		Language">TTML</abbr> and TTML
-		profiles, <abbr title="Web Video Text
-		Track">WebVTT</abbr>, brought standard audio, video
-		and captions to the Web and have revolutionized the
-		media pipeline and media consumption worldwide,
-		turning the Web into a professional platform fully
-		suitable for the delivery of media content.</p>
+            <p><a href="https://www.w3.org/tv/">メディアとエンターテイメントの活動</a>（英語版のロードマップ：<a href="https://w3c.github.io/web-roadmaps/media/">Roadmap: Overview of Media Technologies for the Web</a>）ではメディアに関連した機能や没入体験を作り出すのに必要な機能の標準化に取り組んでいます。HTML5、<abbr title="Timed Text Markup Language">TTML</abbr> と TTML のプロファイル、<abbr title="Web Video Text Track">WebVTT</abbr> によりウェブに標準的な音声・ビデオ・字幕機能をもたらし、世界中にメディア処理とメディア体験の革命をもたらし、ウェブをメディアコンテンツを届けるための成熟したプラットフォームとしました。</p>
 	  </div>
 	  <!-- end description -->
 	  
-	  <h4 id="reinforce">Reinforce core media support</h4>
+	  <h4 id="reinforce">コアメディア技術の増強</h4>
 
 	  <ul>
-	    <li>Continued progress towards Candidate Recommendation
-	      for <a href="https://www.w3.org/TR/media-capabilities/">Media
-	      Capabilities</a>, <a href="https://www.w3.org/TR/picture-in-picture/">Picture-in-picture</a>
-	      and <a href="https://www.w3.org/TR/mediasession/">Media
-	      Session</a>.</li>
-	    <li>Update of
-	    the <a href="https://www.w3.org/TR/media-source/">Media
-	    Source Extensions</a> (MSE) standard with a new codec
-	    switching feature for ad-insertion scenarios, and to make
-	    it usable from workers and
-	    avoid <a href="https://www.techopedia.com/definition/29607/jank-web-development">jank</a>.</li>
-	    <li>First public working draft of
-	      the <a href="https://w3c.github.io/openscreenprotocol/">Open
-	      Screen Protocol</a>, which ensures interoperability
-	      between devices in second-screen scenarios.</li>
-	    <li>Enhancement of color support is discussed in
-		the <a href="https://www.w3.org/groups/cg/colorweb">Color
-		on the Web Community Group</a>. The <a href="https://www.w3.org/Graphics/Color/Workshop/">W3C
-		Workshop on Wide Color Gamut and High Dynamic Range
-		for the Web</a> just ended in September 2021.</li>
-	    <li>The <a href="https://www.w3.org/groups/wg/timed-text">Timed
-		Text Working Group</a>, which
-		maintains <a href="https://www.w3.org/TR/ttml2/">TTML</a>
-		and <a href="https://www.w3.org/TR/webvtt/">WebVTT</a>,
-		is <strong>looking for feedback on the Hypothetical
-		Render Model (HRM) of IMSC</strong> to evaluate
-		subtitles complexity
-		(see <a href="https://www.w3.org/blog/2021/08/keeping-the-complexity-of-imsc-documents-under-control/">keeping
-		the complexity of IMSC documents under
-		control</a>)</li>
-	    <li>Improvement of support for Media timed events (emsg,
-	      data cues) takes place notably through the incubation
-	      of <a href="https://github.com/wicg/datacue">DataCue</a>
-	      in <abbr title="Web Incubator Community
-	      Group">WICG</abbr> and exchanges with browser vendor
-	      representatives within the Media &amp; Entertainment
-	      Interest Group.</li>
-	    <li>New: Reducing needs for memory copies in web-platform
-	      APIs
-	      (see <a href="https://github.com/WICG/reducing-memory-copies/">WICG
-		repo</a>) are now being discussed, since they often are a
-	      performance bottleneck when media streams need to be
-	      processed.</li>
+	    <li><a href="https://www.w3.org/TR/media-capabilities/">Media Capabilities</a>、<a href="https://www.w3.org/TR/picture-in-picture/">Picture-in-picture</a>、<a href="https://www.w3.org/TR/mediasession/">Media	Session</a> の各仕様の勧告候補化に向けて作業を継続中。</li>
+	    <li>広告挿入の場面向けに新しいコーデック変更機能を導入する、Workerで利用可能にする、<a href="https://www.techopedia.com/definition/29607/jank-web-development">jank</a>（低パフォーマンス）を防ぐなどの<a href="https://www.w3.org/TR/media-source/">Media Source Extensions</a> (MSE)仕様の更新。</li>
+	    <li>2画面環境でのデバイス間の相互可用性を担保するための、<a href="https://w3c.github.io/openscreenprotocol/">Open Screen Protocol</a>のFPWDの公開。</li>
+	    <li><a href="https://www.w3.org/groups/cg/colorweb">Color on the Webコミュニティーグループ</a>にて拡張色空間サポートが議論されています。<a href="https://www.w3.org/Graphics/Color/Workshop/">W3C 	Workshop on Wide Color Gamut and High Dynamic Range for the Web</a>が2021年9月に開催されました。</li>
+	    <li><a href="https://www.w3.org/TR/ttml2/">TTML</a>と<a href="https://www.w3.org/TR/webvtt/">WebVTT</a>の開発を担当する<a href="https://www.w3.org/groups/wg/timed-text">Timed	Textワーキンググループ</a>では、字幕要素の複雑性を評価する<strong>IMSC用のHypothetical Render Model (HRM)に関するフィードバックを募集しています</strong>（<a href="https://www.w3.org/blog/2021/08/keeping-the-complexity-of-imsc-documents-under-control/">keeping the complexity of IMSC documents under control</a>の記事も参考ください）。</li>
+	    <li>時系列のメディアイベント（emsg, data cues）について、<a href="https://github.com/wicg/datacue">DataCue</a>についての<abbr title="Web Incubator Community Group">WICG</abbr>とMedia &amp; Entertainmentインタレストグループでのブラウザベンダーを交えた意見交換により非常に改善が進んでいます。</li>
+	    <li>新規: メディアストリームの処理においてよくパフォーマンスボトルネックになっている、ウェブプラットフォームのAPIにおけるメモリコピー操作の削減（<a href="https://github.com/WICG/reducing-memory-copies/">WICGの関連レポジトリ</a>参照）について議論されています。</li>
 	  </ul>
 	  
-	  <h4 id="reduce">Reduce fragmentation</h4>
+	  <h4 id="reduce">分断の低減</h4>
 
 	  <ul>
-	    <li>Annual release in December 2020
-	      of <a href="https://www.w3.org/2020/12/webmediaapi.html">Web
-	      Media API snapshot</a>, a common and testable baseline
-	      for media devices.</li>
 	    <li>The <a href="https://www.w3.org/groups/ig/me">Media
 		&amp; Entertainment Interest Group</a> maintains the
 		roadmap: <a href="https://w3c.github.io/web-roadmaps/media/">Overview
 		of Media Technologies for the Web</a> and organizes
 		monthly calls on Web technologies related to media to
 		gather pain points from media industries.</li>
+      <li>2020年12月版の<a href="https://www.w3.org/2020/12/webmediaapi.html">ウェブメディアAPIのスナップショット</a>の年次リリースは、メディアデバイスでの共通の試験可能なベースラインです。</li>
+      <li><a href="https://www.w3.org/groups/ig/me">Media &amp; Entertainmentインタレストグループ</a>では<a href="https://w3c.github.io/web-roadmaps/media/">ウェブにおけるメディア技術のロードマップ</a>を公開し、またメディア業界からウェブ技術に関連した利用上の課題を収集する月一度の会合を開催しています。</li>
 	  </ul>
 	  
-	  <h4 id="create">Create the future</h4>
+	  <h4 id="create">将来に向けて</h4>
 	  
 	  <ul>
-	    <li><a href="https://www.w3.org/2021/03/media-production-workshop/">Joint
-	    W3C/SMPTE Workshop on Professional Media Production</a>
-	    planned in November 2021, to evaluate how the Web platform
-	    may be used to manipulate professional media assets stored
-	      in the cloud to run media production steps.</li>
-	    <li>The <a href="https://www.w3.org/groups/wg/media">Media
-		Working Group</a> makes fast progress on
-		the <a href="https://wicg.github.io/web-codecs/">WebCodecs</a>
-		specification, which gives applications more control
-		over media encoding/decoding and enables efficient
-		media processing scenarios (in realtime and
-	      non-realtime scenarios).</li>
-	    <li>The <a href="https://www.w3.org/groups/wg/gpu">GPU
-		for the Web Working Group</a> actively develops
-		the <a href="https://gpuweb.github.io/gpuweb/">WebGPU</a>
-		and <a href="https://gpuweb.github.io/gpuweb/wgsl.html">WebGPU
-		Shading Language</a> specifications to harness GPUs
-		for graphics and computing purpose.</li>
-	    <li>The <a href="https://www.w3.org/groups/wg/webtransport">Web
-		Transport Working Group</a> actively develops
-		the <a href="https://w3c.github.io/webtransport/">WebTransport
-		API</a> that could become a useful technology for
-		low-latency media streaming scenarios (live streaming,
-		cloud gaming).</li>
-	    <li>The <a href="https://www.w3.org/groups/cg/games">Games
-	      Community Group</a> organizes monthly calls to explore
-	      game technologies and needs, alternating calls with
-	      speakers and workshop-like calls for discussion. For
-	      example, the August 2021 workshop was on game virality
-	      on the Web.</li>
-	    <li>The <a href="https://www.w3.org/groups/wg/immersive-web">Immersive
-		Web Working Group</a> is stabilizing
-		the <a href="https://www.w3.org/TR/webxr/">WebXR
-		Device API</a> and companion specs to enable VR/AR
-		experiences.<br>  🎥 Watch a short demo
-		of <a href="https://www.w3.org/2021/10/TPAC/demos/webxr.html">WebXR</a>
-		(October 2021, 2 minutes), where Ada Rose Cannon introduces new
-		features of WebXR: hit-testing, lighting estimation,
-		depth sensing API, XR anchors and WebXR
-		Navigation.</li>
+	    <li><a href="https://www.w3.org/2021/03/media-production-workshop/">Joint W3C/SMPTE Workshop on Professional Media Production</a>が2021年11月開催予定で、ウェブ技術でクラウドに保管された産業用メディアアセットに対してメディア作成をどのように行うかについて議論します。</li>
+	    <li><a href="https://www.w3.org/groups/wg/media">Mediaワーキンググループ</a>では<a href="https://wicg.github.io/web-codecs/">WebCodecs</a>仕様について早い速度で活動中で、アプリケーションからのメディアのエンコード・デコードの操作がより可能になり、（実時間、非実時間を問わず）効率的なメディア処理が可能になります。</li>
+	    <li><a href="https://www.w3.org/groups/wg/gpu">GPU for the Webワーキンググループは</a>GPUを画像や計算処理目的に活用するための<a href="https://gpuweb.github.io/gpuweb/">WebGPU</a>と<a href="https://gpuweb.github.io/gpuweb/wgsl.html">WebGPU Shading Language</a>仕様について活発に活動しています。</li>
+	    <li><a href="https://www.w3.org/groups/wg/webtransport">Web Transportワーキンググループ</a>は（ライブストリーミングやクラウドゲームなどの）低遅延メディア伝送で有用になる技術として<a href="https://w3c.github.io/webtransport/">WebTransport API</a>を開発しています。</li>
+	    <li><a href="https://www.w3.org/groups/cg/games">Gamesコミュニティーグループ</a>では、ゲーム関連技術とその要求について、トークとワークショップ型の議論による毎月の会議を行っています。2021年8月はウェブ上でのゲームの拡散に関するワークショップでした。</li>
+	    <li><a href="https://www.w3.org/groups/wg/immersive-web">Immersive Webワーキンググループ</a>は<a href="https://www.w3.org/TR/webxr/">WebXR Device API</a>の安定化とともに、関連するVR/AR関連仕様を策定しています。<br>
+				🎥 Ada Rose CannonがWebXRの機能を紹介する<a href="https://www.w3.org/2021/10/TPAC/demos/webxr.html">WebXR</a>に関する短いデモビデオ（2021年10月、2分）をご覧ください: hit-testing,、lighting estimation、depth sensing API、XR anchors、WebXR Navigationが紹介されています。</li>
 	  </ul>
 
 	</section>
