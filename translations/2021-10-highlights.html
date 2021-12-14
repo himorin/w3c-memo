@@ -661,13 +661,8 @@
 	  <p>新しい原則の項目が<a href="https://www.w3.org/TR/design-principles/">Web Platform Design Principles</a>に追加になりました：DOMHighResTimeStampの利用、factory methodsとconstructors、ハードウェア・デバイス機能に対して設計するAPI</p>
 	  <p>🎥 2020年のビデオですが今でも有効な<a href="https://www.youtube.com/watch?v=Icv-HqVBXSE&list=PLNhYw8KaLq2XKd-y-q_8aQExSTiF2HCyE&index=2">W3C Technical Architecture Group (TAG)のアップデート：ウェブの原則について</a>（2020年10月、13分）のビデオと、2021年10月の<a href="https://www.w3.org/blog/2021/10/tag-update/">TAG update</a>のポストをご覧ください。</p>
 	  
-	  <h4>Security &amp; Privacy Questionnaire</h4>
-	  <p>The TAG added text to both
-	  the <a href="https://www.w3.org/TR/security-privacy-questionnaire/#non-fully-active">Security
-	  &amp; Privacy Questionnaire</a> and
-	  the <a href="https://www.w3.org/TR/design-principles/#support-non-fully-active">Web
-	  Platform Design Principles</a> covering the topic of
-	  "non-'fully active' documents".</p>
+	  <h4>Security &amp; Privacy Questionnaire　（セキュリティー・プライバシー確認事項）</h4>
+	  <p>TAGは<a href="https://www.w3.org/TR/security-privacy-questionnaire/#non-fully-active">Security &amp; Privacy Questionnaire</a>と<a href="https://www.w3.org/TR/design-principles/#support-non-fully-active">Web Platform Design Principles</a>の両方に、「現在開かれていないページ」に関する項目を追加しました。</p>
 
 	</section>
 	
@@ -678,110 +673,36 @@
 	  
 	  <!-- start description -->	  
 	  <div class="desc">
-	  <p>Privacy and security – integral to human rights and
-	    civil liberties – have long been important in the Web
-	    Consortium's agenda. For example, our work has been
-	    instrumental in improving Web security through the
-	    development of authentication technologies that can
-	    replace weak passwords and reduce the threats of phishing
-	    and other attacks.</p>
-	  
-	  <p>However, users rightly fear the misuse
-	    of their personal data and being tracked online, including
-	    browser fingerprinting, the spread of disinformation, and
-	    other online harms. These are difficult and urgent
-	    challenges. We have begun discussions about how to help
-	    users find trustworthy content on the Web without
-	    increasing censorship.</p>
+			<p>プライバシーとセキュリティ - 人権と自由権に不可欠なもの - は W3C の活動において長らく重要とされてきています。例えば、認証技術の開発により弱いパスワードやフィッシングなどの攻撃の脅威を減らすことによるウェブセキュリティの改善などが上げられます。</p>
+			<p>しかしながら、ブラウザフィンガープリンティング、偽情報の拡散、などのオンラインの脅威といった、個人データの不正利用やオンラインでのトラッキングなどが問題となってきています。これらは緊急かつ難しい問題です。ユーザが検閲なしに安全に利用可能なウェブを手助けするための議論が始まっています。</p>
 	  </div>
 	  <!-- end description -->
 
 	  <h4 id="privacy-cg">Privacy incubation</h4>
 
-	  <p>The <a href="https://www.w3.org/groups/cg/privacycg">Privacy
-	    Community Group</a> hosts incubation of new
-	    privacy-focused specification and APIs, as well as monthly
-	    calls which regularly attract vibrant
-	    participation. Recent work items include:</p>
-          <ul>
-	    <li>A mechanism
-	      for <a href="https://github.com/privacycg/private-click-measurement">private
-	      click measurement</a> that may be useful to measure
-	      advertising success while also preserving user
-	      privacy</li>
-	    <li>A proposal
-	      for <a href="https://github.com/privacycg/storage-partitioning">isolating
-	      sites' data from each other</a> and
-	      an <a href="https://github.com/privacycg/storage-access">API
-	      for requesting access to blocked storage</a></li>
-	    <li>Two proposals that may help facilitate login state
-	      management in a world where third-party cookies and
-	      other tracking mechanisms are being rapidly deprecated:
-	      one
-	      to <a href="https://github.com/privacycg/first-party-sets">declare
-	      what domain names are connected to each other</a> and
-	      an <a href="https://github.com/privacycg/is-logged-in">API
-	      to tell a browser if a user is logged into a
-	      site</a></li>
+	  <p><a href="https://www.w3.org/groups/cg/privacycg">Privacyコミュニティーグループ</a>ではプライバシー重視の新しい仕様とAPIの検討を行い、また活気のある参加者とともに毎月の会議を開催しています。最近の活動内容として：</p>
+    <ul>
+				<li>ユーザプライバシーを侵害することなしに広告効果測定を行うのに利用可能な<a href="https://github.com/privacycg/private-click-measurement">private click measurement</a>提案</li>
+				<li><a href="https://github.com/privacycg/storage-partitioning">サイト間でデータを分離する</a>ことと<a href="https://github.com/privacycg/storage-access">保護されたストレージにアクセスを要求するためのAPI</a>の提案</li>
+				<li>3rdパーティークッキーが利用できず他のトラッキング方式もすぐに無効化される時代にログイン状態を保持するため２つの方式の提案: <a href="https://github.com/privacycg/first-party-sets">どのドメイン名が関連先であるかを示す方法</a>と<a href="https://github.com/privacycg/is-logged-in">ブラウザにユーザが該当サイトにログイン状態であるかどうかを通知するAPI</a></li>
 	  </ul>
 	  
-	  <h4 id="webauthn">Unlinkable and unphishable authentication</h4>
+	  <h4 id="webauthn">リンク・フィッシング負荷な認証</h4>
 	  
-	  <p>The <a href="https://www.w3.org/groups/wg/webauthn">Web
-	      Authentication Working Group</a>
-	      published <a href="https://www.w3.org/TR/webauthn-2/">WebAuthn
-	      Level&nbsp;2</a> as a W3C Recommendation and a First
-	      Public Working Draft
-	      of <a href="https://www.w3.org/TR/webauthn-3/">Web
-	      Authentication Level&nbsp;3</a> in April. The group is
-	      re-chartering to work on new features including
-	      device-loss recovery and other API enhancements.</p>
-	  <p>The
-	      companion <a href="https://www.w3.org/groups/cg/webauthn-adoption">WebAuthn
-	      Adoption Community Group</a> aims to lift obstacles that
-	      might prevent developers from adopting WebAuthn, and
-	      help developers and users of the specification to
-	    improve adoption of its interoperable security.</p>
-	  <p>🎥 Watch a
-	  short <a href="https://www.w3.org/2021/10/TPAC/demos/webauthncg.html">Web
-	  Authentication Adoption Community Group video update</a>
-	  (October 2021, 5 minutes) by Nick Steele.</p>
-	  <p>W3C Member Yubico and W3C collaborated to design for W3Cx
-	  (W3C's <abbr title="Massive Open Online Course">MOOC</abbr>
-	  platform)
-	  the <a href="https://www.w3.org/2021/10/pressrelease-webauthn-mooc.html.en">first
-	  online Web Authentication course for developers</a>. Titled
-	  “Introduction to Web Authentication”, the course equips
-	  learners with the knowledge to replace aging password-based
-	  credentials with a secure model that incorporates strong
-	    authentication.</p>
+	  <p><a href="https://www.w3.org/groups/wg/webauthn">Web Authenticationワーキンググループ</a>は<a href="https://www.w3.org/TR/webauthn-2/">WebAuthn Level&nbsp;2</a>をW3C勧告として公開し、4月に<a href="https://www.w3.org/TR/webauthn-3/">Web Authentication Level&nbsp;3</a>のFPWDを公開しました。このグループでは、デバイス紛失からの復旧や他のAPIの拡張を含めた新しい憲章を策定中です。</p>
+	  <p>関連の<a href="https://www.w3.org/groups/cg/webauthn-adoption">WebAuthn Adoptionコミュニティーグループ</a>では開発者がWebAuthnの利用を避ける項目についての調査や、開発者とユーザが相互可用性のあるセキュリティーをより利用しやすくなるように助ける活動を行っています。</p>
+	  <p>🎥 Nick Steeleによる<a href="https://www.w3.org/2021/10/TPAC/demos/webauthncg.html">Web Authentication Adoptionコミュニティーグループの更新についてのビデオ</a>（2021年10月、5分）をご覧ください。</p>
+	  <p>W3C会員のYubicoとW3Cが共同でW3Cx（W3Cの<abbr title="Massive Open Online Course">MOOC</abbr>基盤）での<a href="https://www.w3.org/2021/10/pressrelease-webauthn-mooc.html.en">最初のWeb Authenticationに関するオンライン開発者向け講義</a>を立ち上げました。“Introduction to Web Authentication”というタイトルで、古いパスワードベースの認証をより強力な認証を含む安全なモデルに置き換えるための知識を得られます。</p>
 
-	  <h4 id="webappsec">Web Application Security</h4>
+	  <h4 id="webappsec">ウェブアプリケーションのセキュリティー</h4>
 
-	  <p>The <a href="https://www.w3.org/groups/wg/webappsec">Web
-	  Application Security Working Group</a> published a new Note
-	  on <a href="https://www.w3.org/TR/post-spectre-webdev/">Post-Spectre
-	  Web Development</a>, which outlines a threat model we can
-	  share, and a set of mitigation recommendations. The group is
-	    in the process of re-chartering.</p>
+	  <p><a href="https://www.w3.org/groups/wg/webappsec">Web Application Securityワーキンググループ</a>では、情報漏洩に関する概要と推奨される解決策を開設している新しい<a href="https://www.w3.org/TR/post-spectre-webdev/">Post-Spectre Web Development</a>のNOTEを公開しました。このグループでは新しい憲章を策定中です。</p>
 	  
-	  <h4 id="ping">Privacy and Security reviews</h4>
+		<h4 id="ping">プライバシー・セキュリティー面でのレビュー</h4>
 
-	  <p>The <a href="https://www.w3.org/groups/ig/privacy">Privacy
-	      Interest Group</a> (PING) does privacy reviews of other
-	    groups' specifications. It has been
-	    using <a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3cping/tracking-issues">new
-	      tooling to track issues</a> and has had renewed success
-	    making groups aware of privacy and fingerprinting issues
-	    in their specifications. The group is also writing
-	    a <a href="https://w3cping.github.io/privacy-threat-model/">Target
-	      Privacy Threat Model</a> document.</p>
-	  
-	  <p>Security reviews are done by a pool of volunteer
-	    reviewers coordinated by the W3C team. We welcome more
-	    people in that pool. Issues raised are tracked using
-	    the <a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3c/security-review">same
-	      tooling used by PING</a>.</p>
+		<p><a href="https://www.w3.org/groups/ig/privacy">Privacy Interest Group</a> (PING)が他のグループの仕様に対するプライバシーレビューを行っています。この活動は<a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3cping/tracking-issues">新しい追跡ツール</a>を利用しており、各グループがプライバシーとフィンガープリンティング関連の仕様における問題に対して認識を持ってもらうことに成功しています。また、<a href="https://w3cping.github.io/privacy-threat-model/">Target Privacy Threat Model</a>の文書を策定中です。</p>
+				
+		<p>セキュリティーレビューはW3C Teamが運用するボランティアプールの方によって行われています。新規加入は歓迎です。課題追跡は<a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3c/security-review">PINGと同じツールで行われています</a>。</p>
 	</section>
 	
 	<section>
