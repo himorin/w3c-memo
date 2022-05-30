@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W3C Strategic Highlights - April 2022</title>
     <link rel="stylesheet" href="../../../StyleSheets/TR/base.css">
@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="../../../2014/10/w3c-highlights/styles.css">
     <style>
       /*increased container width*/
-      body {padding:2em; font-size:120%;} /*overriding previously uneven values*/   
+      body {padding:2em; font-size:120%;} /*overriding previously uneven values*/
       #container {
-      max-width: 90%; 
+      max-width: 90%;
       }
-      /*section box styling*/    
+      /*section box styling*/
       section {border: 1px solid #3f9aea; padding: 3%; margin:2em 0;}
       /*use .box for the parent container, add children as a div or section*/
       @media (min-width: 38em) {
@@ -22,7 +22,7 @@
 	  .box > * {flex: 1}
 	  .box > section + section {margin-left: 2em}
       }
-      .box > div{padding-right: 3.5em; width:300px;} 
+      .box > div{padding-right: 3.5em; width:300px;}
       img {
       float: right;
       max-width: 150px;
@@ -80,7 +80,7 @@
 	  grid-auto-flow: column;
 	}
       }
-      .desc {color:#005A9C;}      
+      .desc {color:#005A9C;}
     </style>
   </head>
   <body>
@@ -90,22 +90,23 @@
         April 2022</h1>
       <div class="section">
         <div class="status">
-          <p>This public report, dated 30 March 2022, was prepared for
-            the April
+          <p>This report, released to the public early May, and dated 22 April 2022 was prepared for the
+            April
             2022 <a href="https://www.w3.org/2022/04/AC/ac-agenda.html">Virtual
-            W3C Advisory Committee Meeting</a> (member-only link). For
-            the previous edition, see
+            W3C Advisory Committee Meeting</a> (member-only link).</p>
+	  <p>For the previous edition, see
             the <a href="https://www.w3.org/2021/10/w3c-highlights/">October
             2021 W3C Strategic Highlights</a>. For future editions of
             this report, please bookmark
             the <a href="https://www.w3.org/Consortium/highlights/">latest
             version</a>.</p>
-	  <!--
+	 
 	  <p>This document has been translated
 	  into <a href="zh.Overview.html"
-	  hreflang="zh-hans" title="W3C 重点报告 — 2022年10月版
-	  ">Chinese</a> and <a href="Overview.html.ja" hreflang="ja"
-	  title="2022/10 W3C 活動概要 （日本語版）">Japanese</a>.</p>
+	  hreflang="zh-hans" title="W3C 重点报告 — 2022年4月版
+	  ">Chinese</a>.</p> 
+	  <!--and <a href="Overview.html.ja" hreflang="ja"
+	  title="2022/10 W3C 活動概要 （日本語版）">Japanese</a>.
 	  -->
         </div>
         <div id="toc">
@@ -132,19 +133,17 @@
             <li><a href="#core">W3C Project Management: strengthening the core of the web</a>
               <ul>
                 <li><a href="#audio">Audio</a></li>
-		<li><a href="#btt">Browser testing and tools</a></li>
 		<li><a href="#css">CSS</a></li>
-		<li><a href="#datex">Dataset Exchange</a></li>
 		<li><a href="#did">Decentralized Identifier</a></li>
-		<li><a href="#das">Devices and Sensors</a></li>
-		<li><a href="#web-editing">Web Editing</a></li>
-                <li><a href="#fonts">Fonts</a></li>		
+                <li><a href="#fonts">Web Fonts</a></li>
                 <li><a href="#html">HTML</a></li>
 		<li><a href="#webml">Web Machine Learning</a></li>
 		<li><a href="#math">Math</a></li>
 		<li><a href="#miniapps">MiniApps</a></li>
+		<li><a href="#timedtext">Timed Text</a></li>
+		<li><a href="#verifiablecredentials">Verifiable Credentials</a></li>
 		<li><a href="#webapps">Web Applications</a></li>
-		<li><a href="#wasm">WebAssembly</a></li>
+		<li><a href="#webperformance">Web Performance</a></li>
               </ul>
             </li>
             <li><a href="#web-for-all">Web for all &amp; horizontal work</a>
@@ -165,23 +164,23 @@
             </li>
           </ul>
         </div>
-	
+
         <h2 id="intro">Introduction</h2>
 	<section>
-	  <h3 id="benefit">The work of the Web Consortium benefits millions</h3>
+	  <h3 id="benefit">The work of the Web Consortium benefits billions</h3>
 	  <img src="https://www.w3.org/comm/assets/icons/magnifier.png"
 	  alt="">
 
 	  <p>We are proud to put the web standards into the web, and
-	  that our work is benefitting millions. The web, which just
-	  turned 33 this year has been the ultimate tool of resilience
+	  that our work is benefitting billions. The web, which just
+	  turned 33 this year, has been the ultimate tool of resilience
 	  for the world as the impact of the global pandemic continues
 	  to be a weighty blow to society. Perhaps the most crucial
 	  role the web played during the pandemic was allowing
 	  families and friends to remain connected. It has also been
 	  essential in enabling remote learning, making vaccine
 	  appointments, but also online shopping, and
-	  entertainment. It has countless businesses stay afloat. All
+	  entertainment. It has helped countless businesses stay afloat. All
 	  of industry has been substantially aided by the web during
 	  the age of Covid. By the same token, it has made it possible
 	  for workers across all industries to interact if not
@@ -189,8 +188,35 @@
 	  productive. Web access kept millions employed, no doubt
 	  preventing a full-on economic depression.</p>
 
+	  <h3 id="specs">Key figures representing our work</h3>
+
+	  <p>W3C's work continues to be essential to
+            the ways in which our world is meeting the challenge of
+            the health crisis while working on the solutions for the
+            web of the future.</p>
+	  <p>This report highlights recent work to enhance the web and
+            innovate for its growth and strength.</p>
+
+	  <p>That work is conducted
+	      by <a href="https://www.w3.org/groups/">42 working
+	      groups and 9 interest groups</a> which enable W3C to
+	      pursue its
+	      <a href="https://www.w3.org/Consortium/mission">mission</a>
+	    through the creation of web standards, guidelines, and
+	    other specifications and supporting documents.</p>
+
+	  <p>The work of the Consortium has increased significantly
+	  since our last report:
+	      <a href="https://w3c.github.io/spec-dashboard/report.html">347
+	      specifications</a> are in active development, 168 of
+	      which aim to reach the status of W3C Recommendation (web
+	      standard). W3C Recommendations and other types of
+	      specifications and guidelines are published daily
+	      on <a href="https://www.w3.org/TR/">all Standards and
+	      Drafts</a>.</p>
+
 	  <h3 id="needs">Greater usage, greater needs</h3>
-	  
+
 	  <p>As the usage of the web intensifies, the needs for web
 	  technologies and web standards become greater. More
 	  organizations become W3C members with requests to help with
@@ -201,52 +227,26 @@
 	  accessible to people around the world, more secure, and can
 	  function as the engine to fuel growth in key parts of
 	  economy and society.</p>
-	  
-	  <h3 id="specs">Key figures representing our work</h3>
-	  
-	  <p>We are proud that W3C's work continues to be essential to
-            the ways in which our world is meeting the challenge of
-            the health crisis while working on the solutions for the
-            web of the future.</p>
-	  <p>This report highlights recent work to enhance the web and
-            innovate for its growth and strength.</p>
-	  
-	  <p>That work is conducted
-	      by <a href="https://www.w3.org/groups/">43 working
-	      groups and 9 interest groups</a> which enable W3C to
-	      pursue its
-	      <a href="https://www.w3.org/Consortium/mission">mission</a>
-	    through the creation of web standards, guidelines, and
-	    other specifications and supporting documents.</p>
-
-	  <p>The work of the Consortium has increased significantly since our last report: 
-	      <a href="https://w3c.github.io/spec-dashboard/report.html">345
-	      specifications</a> are in active development, 174 of
-	      which aim to reach the status of W3C Recommendation (web
-	      standard). W3C Recommendations and other types of
-	      specifications and guidelines are published daily
-	      on <a href="https://www.w3.org/TR/">all Standards and
-	      Drafts</a>.</p>
 	</section>
 
           <h2 id="future-web">Future web standards</h2>
-	  
+
 	<section>
 
 	  <h3 id="pipeline">Identifying promising standardization
 	  areas</h3>
 	  <img src="https://www.w3.org/comm/assets/icons/lightbulb.png" alt="">
-	  
+
           <p>W3C uses a variety of mechanisms to engage community
             discussion on future Web standards: conversations with the
             Membership, liaising with other standards bodies, tracking
             the activity of thousands of participants in
-            <a href="https://www.w3.org/community/groups/">375
+            <a href="https://www.w3.org/community/groups/">377
             W3C community groups</a>, and hosting W3C Workshops. There
             are lots of good ideas. The W3C strategy team works to
             identify promising topics for standardization and
             invites public participation.</p>
-	  
+
 	  <h3 id="workshops">W3C Workshops</h3>
 	  <p><a href="/2003/08/Workshops/archive">W3C Workshops</a>
 	    bring communities together around presentations, panels,
@@ -262,12 +262,14 @@
 	    pre-recorded presentations, real-time captioning during
 	    live sessions, and ASL or other sign language where
 	    possible upon request.</p>
-	  <!--
-	  <p><a href="https://www.w3.org/2003/08/Workshops/">Upcoming W3C Workshop</a>:</p>
+
+	  <p><a href="https://www.w3.org/2003/08/Workshops/">Upcoming Workshop</a>:</p>
 	  <ul>
-	    <li></li>
+	    <li><a href="https://github.com/w3c/strategy/issues/303">Workshop
+	    on Interoperability in Data Spaces</a>, 3 June 2022,
+	    Vienna (Austria), co-organized by W3C</li>
 	  </ul>
-	  -->
+
 	  <p><a href="https://www.w3.org/2003/08/Workshops/archive">W3C Workshops</a> recently completed:</p>
 	  <ul>
 	    <li><a href="https://www.w3.org/2021/03/media-production-workshop/">W3C/SMPTE
@@ -277,7 +279,7 @@
 	    Workshop on Wide Color Gamut and High Dynamic Range for
 	    the Web</a>, 13-24 September 2021 (virtual event)</li>
 	  </ul>
-	  
+
 	  <h3 id="funnel">W3C strategy funnel</h3>
           <p>The <a href="/Strategy/Funnel">Strategy incubation
             pipeline</a> documents the exploration of potential new
@@ -294,7 +296,7 @@
             and move towards
             <a href="https://github.com/w3c/strategy/projects/2#column-215580">Chartering</a>,
             or move out of the pipeline.</p>
-	  
+
           <p><strong>Public input is welcome at any stage</strong> but
             particularly once Incubation has begun. This helps W3C
             identify work that is sufficiently incubated to warrant
@@ -305,7 +307,7 @@
             standardization process.</p>
 	  <h3 id="advance">Advance notice of work in progress</h3>
 	  <p>W3C may begin work on a Working Group or Interest Group
-	    charter at any time. When this is the case, the team
+	    charter at any time. When it does, the team
 	    informs the W3C Members and
 	    the <a href="https://lists.w3.org/Archives/Public/public-new-work/">public</a>,
 	    aiming to raise awareness, even if no formal proposal is
@@ -321,18 +323,18 @@
 	    Identifier (DID) Working Group Charter</a></li>
 	  </ul>
 	</section>
-	
+
 	<h2 id="industry">Business ecosystems: meeting industry needs</h2>
 
-	<p>This section focuses on work of many W3C work groups that
-	map direction to specific business ecosystems.</p>
-	
+	<p>This section focuses on the work of many W3C working groups that
+	map to specific business ecosystems.</p>
+
 	<section>
 	  <h3 id="payments">Web Payments &amp; Web Commerce</h3>
-	  
+
 	  <img src="https://www.w3.org/comm/assets/icons/creditc.png" alt="">
-	 
-	  <!-- start description -->	  
+
+	  <!-- start description -->
           <p class="desc">W3C's payments standards enable a
             streamlined checkout process, giving a consistent user
             experience across the web with lower front-end
@@ -342,7 +344,7 @@
 	  <!-- end description -->
 
 	  <h4 id="spc">Secure Payment Confirmation (SPC)</h4>
-	  <p>A pilot
+	  <p>A 2021 pilot
 	    of <a href="https://github.com/w3c/secure-payment-confirmation">Secure
 	      Payment Confirmation</a> (SPC) from
 	    Stripe <a href="http://www.w3.org/2021/Talks/spc-pilot-202103.pdf">showed</a>
@@ -354,20 +356,20 @@
 	      Payments Working Group</a> and
 	    <a href="https://www.w3.org/groups/ig/securepay">Web Payment
 	      Security Interest Group</a>, and it was encouraging that in
-	    February 2022 it has gotten
+	    February 2022 the W3C Technical Architecture Group
+	    (TAG) offered
 	    a <a href="https://github.com/w3ctag/design-reviews/issues/675#issuecomment-1039354818">positive
-	      review</a> from the W3C Technical Architecture Group
-	    (TAG).</p>
+	      review</a>.</p>
 	  <p>Signaling strong industry interest,
 	    EMVCo <a href="https://www.emvco.com/emvco_document/emvco-publishes-emv-3-d-secure-2-3-to-support-more-secure-and-convenient-e-commerce-authentication/">announced</a>
 	    support for SPC in version 2.3 of the EMV® 3-D Secure
 	    specification. W3C Members Airbnb and Adyen began their SPC pilot in
-	    January 2022 and Stripe plans to conduct a second
+	    January 2022 and Stripe has indicated plans to conduct a second
 	    experiment.</p>
 	  <p>Related work taking place in parallel:</p>
 	  <ul>
 	    <li>integration of SPC with other underlying protocols
-	      (e.g., EMV Secure Remote Commerce, open banking)</li>
+	      (e.g., EMV&reg; Secure Remote Commerce, open banking)</li>
 	    <li>close work with the Web Authentication Working Group
 	      to ensure that SPC tracks the general direction of Web
 	      Authentication, including with regard to proposals for
@@ -379,19 +381,17 @@
 	</section>
 	<section>
           <h3 id="publishing">Digital Publishing</h3>
-	  
+
           <img src="https://www.w3.org/comm/assets/icons/publishing.png" alt="">
-	  
-	  <!-- start description -->	  
+
+	  <!-- start description -->
           <p class="desc">The web is the universal publishing platform
             and both impact each
             other. <a href="https://www.w3.org/publishing/">Publishing@W3C</a>
             focuses on typography and layout, accessibility,
             usability, portability, distribution, archiving, offline
-            access, print on demand, and reliable cross
-            referencing. See
-            the <a href="https://www.w3.org/publishing/groups/publ-wg/PublStatus">publication
-            milestones</a>. The work done in that space benefits at
+            access, print on demand, and reliable
+            cross-referencing. The work done in this space benefits at
             the same time the traditional "trade" publishers, ebook
             reading system manufacturers, but also publishers of
             audiobooks, scholarly journals or educational materials,
@@ -406,7 +406,7 @@
 	    consumers. An important outcome of the group is to
 	    significantly increase the interoperability of EPUB
 	    publications and reading systems.</p>
-	  
+
 	  <p>Without changing the technical requirements, the group is
 	  actively improving the work to streamline and make the
 	  specifications more
@@ -437,9 +437,9 @@
 	  the EU regulations.</p>
 	</section>
 	<section>
-	  
+
           <h3 id="entertainment">Media and entertainment</h3>
-	  
+
           <img src="https://www.w3.org/comm/assets/icons/media.png" alt="">
 
 	  <!-- start description -->
@@ -452,8 +452,8 @@
 		features needed to create immersive
 		experiences. HTML5, <abbr title="Timed Text Markup
 		Language">TTML</abbr> and TTML
-		profiles, <abbr title="Web Video Text
-		Track">WebVTT</abbr>, brought standard audio, video
+		profiles, and <abbr title="Web Video Text
+		Track">WebVTT</abbr> brought standard audio, video
 		and captions to the web and have revolutionized the
 		media pipeline and media consumption worldwide,
 		turning the web into a professional platform fully
@@ -463,17 +463,17 @@
 	    on rendering, computing and transport technologies.</p>
 	  </div>
 	  <!-- end description -->
-	  
+
 	  <h4 id="reinforce">Reinforce core media support</h4>
 
 	  <ul>
 	    <li>New version of
 	      the <a href="https://www.w3.org/TR/media-source/">Media
-		Source Extensions</a> (MSE) standard adds a new codec
-	      switching feature for ad-insertion scenarios, and to make
+		Source Extensions</a> (MSE) standard adds a new
+	      codec-switching feature for ad-insertion scenarios, and to make
 	      it usable from workers and
 	      avoid <a href="https://www.techopedia.com/definition/29607/jank-web-development">jank</a>.</li>
-	    <li>Color support enhancement is discussed in
+	    <li>Color-support enhancement is discussed in
 	      the <a href="https://www.w3.org/groups/cg/colorweb">Color
 		on the Web Community Group</a>. This includes adding
 	      HDR support to PNG in the PNG Working Group and
@@ -483,13 +483,13 @@
 	    <li>To improve support for media timed events (emsg, data
 	      cues), <a href="https://github.com/wicg/datacue">DataCue</a>
 	      is incubated in <abbr title="Web Incubator Community
-	      Group">WICG</abbr>, and browser vendor representatives
+	      Group">WICG</abbr>, and browser-vendor representatives
 	      are engaged within the Media &amp; Entertainment
 	      Interest Group. The need to expose SEI (Supplemental
 	      Enhancement Information) metadata events has recently
 	      emerged in that space.</li>
 	  </ul>
-	  
+
 	  <h4 id="reduce">Reduce fragmentation</h4>
 
 	  <ul>
@@ -504,9 +504,9 @@
 	      monthly calls on web technologies related to media to
 	      gather pain points from media industries.</li>
 	  </ul>
-	  
+
 	  <h4 id="create">Create the future</h4>
-	  
+
 	  <ul>
 	    <li><a href="https://www.w3.org/2021/03/media-production-workshop/">Joint
 		W3C/SMPTE Workshop on professional media
@@ -562,10 +562,10 @@
 
 	</section>
 	<section>
-	  
+
 	  <h3 id="telco">Network &amp; communications</h3>
 
-	  <!-- start description -->	  
+	  <!-- start description -->
           <p class="desc">The web is the open platform for
             mobile. Telecommunication service providers and network
             equipment providers have long been critical actors in the
@@ -574,10 +574,10 @@
             extend existing services to new users and devices, and
             propose new and innovative services.</p>
 	  <!-- end description -->
-	  
+
 	  <h4 id="rtc">Real-Time Communications (WebRTC)</h4>
           <img src="https://www.w3.org/comm/assets/logos/webrtc-logo-vert-retro-255x305.png" alt="WebRTC logo">
-	  
+
           <p>With <a href="https://www.w3.org/2021/01/pressrelease-webrtc-rec.html.en">WebRTC
             a complete standard</a> recognizing the interoperability
             of web browsers to enable real-time audio/video
@@ -604,7 +604,7 @@
 	    coordinated and shared with the Media Working Group, the
 	    Web Machine Learning Working Group and the GPU on the Web
 	    Working Group.</p>
-	  
+
 	  <h4 id="web-transport">WebTransport</h4>
 	  <p>Chartered in September 2020 and operating in
 	    collaboration with the IETF's WEBTRANS Working Group,
@@ -619,9 +619,9 @@
 	    the <a href="https://www.w3.org/2021/10/TPAC/demos/webtransport.html">WebTransport
 	      Working Group update video presentation</a> (October 2021,
 	    12 minutes) by Will Law.</p>
-	  
+
 	  <h4 id="web-networks">Web &amp; Networks</h4>
-	  
+
 	  <p>The <a href="https://www.w3.org/groups/ig/web-networks">Web
 	      &amp; Networks Interest Group</a> explores the evolution
 	      in the networking layer and the web. Current focus is
@@ -645,7 +645,7 @@
 	<section>
           <h3 id="automotive">Automotive and transportation</h3>
 
-	  <!-- start description -->	  
+	  <!-- start description -->
 	  <p class="desc">Shared data associated with transportation
 	  has great potential for improving the user experience, with
 	  opportunities to offer enhanced information, entertainment,
@@ -661,18 +661,18 @@
 	  <!-- end description -->
 
           <img src="https://www.w3.org/comm/assets/icons/car.png" alt="">
-	  
+
 	  <h4 id="autowg">W3C Automotive Working Group</h4>
-	  
+
           <p>The
               W3C <a href="https://www.w3.org/groups/wg/auto">Automotive
-              Working Group</a> builds on real-world experience from
-              the
+              Working Group</a> is
+              designing <a href="https://www.w3.org/TR/viss2-core/">VISS
+              version 2</a> as a replacement for the
               first <a href="https://www.w3.org/TR/vehicle-information-service/">
               Vehicle Information Service Specification</a> (VISS),
-              which is in production vehicles, and
-              whose <a href="https://www.w3.org/TR/viss2-core/">version
-              2</a> aims to replace.</p>
+              drawing from extensive experience in production
+              vehicles.</p>
 	  <p>With a goal to create a rich ecosystem for
 	    vehicles by running on the "head unit", the standard provides an access
 	    method to a common data model for all the signals
@@ -695,7 +695,7 @@
 	      Signal Specification Ontology</a> (VSSo)
 	    and <a href="https://www.w3.org/TR/2022/WD-vsso-core-20220303">Vehicle
 	      Signal Specification Core Ontology</a> (VSSo Core).</p>
-	  
+
 	  <h4 id="autobg">W3C Automotive and Transportation Business
             Group</h4>
 
@@ -725,12 +725,12 @@
 	  </ul>
 	</section>
 	<section>
-	  
-          <h3 id="wot">Web of Things</h3>	  
+
+          <h3 id="wot">Web of Things</h3>
 
           <img src="https://www.w3.org/comm/assets/logos/WOT-logos/WOT-white.png" alt="WoT logo">
 
-	  <!-- start description -->	  
+	  <!-- start description -->
           <p class="desc">W3C's <a href="/WoT/">Web of Things</a> work
             is designed to bridge disparate technology stacks to allow
             devices to work together and achieve scale, thus enabling
@@ -746,8 +746,8 @@
 
 	  <p>🎥 Watch <a href="https://www.w3.org/WoT/videos/">Web of
 	      Things videos</a> (introduction, updates, tutorials,
-	      interviews)</p>	  
-	  
+	      interviews)</p>
+
 	  <h4 id="wotig">Web of Things Interest Group</h4>
 
 	  <p>The
@@ -776,13 +776,13 @@
               Things Working Group</a> will re-charter with the same
               scope, to continue work on operability profiles,
               discovery, lifecycle/onboarding, and ID management.</p>
-	  	  
+
 	</section>
 
 	<section>
 	  <h3 id="web-advertising">Web advertising</h3>
 	  <img src="https://www.w3.org/comm/assets/icons/web-ads.png" alt="">
-	  
+
 	  <!-- start description -->
 	  <div class="desc">
 	    <p>Web advertising is about making online advertising more
@@ -806,7 +806,7 @@
 	    privacy assurances. Read
 	    the <a href="https://www.adexchanger.com/privacy/new-w3c-group-aims-to-dial-back-the-rhetoric-and-get-practical-about-post-cookie-tech/">January
 	    2022 article on adexchanger</a>.</p>
-	  
+
 	  <p>The group will work alongside existing groups:
 	    W3C's <a href="https://www.w3.org/Privacy/IG/">Privacy
 	      Interest Group</a> (PING),
@@ -814,7 +814,7 @@
 	      Community Group</a> and
 	    the <a href="https://www.w3.org/groups/bg/web-adv">Improving
 	      Web Advertising Business Group</a>.</p>
-	  
+
 	  <h4 id="web-adv-bg">Improving Web Advertising Business Group</h4>
 
 	  <p>The <a href="https://www.w3.org/groups/bg/web-adv">Improving
@@ -835,7 +835,7 @@
 	    group's <a href="https://w3c.github.io/web-advertising/dashboard/">dashboard</a>
 	    tracks issues across various discussion and incubation
 	    repositories.</p>
-	  	  
+
 	</section>
 
 	<h2 id="core">W3C Project Management: strengthening the core of the web</h2>
@@ -843,7 +843,6 @@
 	<p>Find in this section recent highlights from some of the W3C
 	work groups that directly strengthen the Web.</p>
 
-	<div style="opacity:.6"> <!-- sections I have not yet updated -->
 	<!-- start of 2-box block -->
 	<div class="box">
 	  <!-- start of left box -->
@@ -864,77 +863,21 @@
               functions with dynamic effects.</p>
 	    </div>
 	    <!-- end description -->
-	    <p>The group published
+	    <p>Having published
               the <a href="https://www.w3.org/2021/06/pressrelease-webaudio.html.en">Web&nbsp;Audio&nbsp;API&nbsp;1.0
-              as a W3C Recommendation</a> in June, adding to the Web
-              platform the standard means to manipulate music and create
-              audio directly from the Web browser, including in a collaborative and interactive fashion.</p>
-	    <p>Web Audio is used in many applications including:
-	      SoundCloud, Mozilla Hubs, Firefox Mixed Reality,
-	      Ableton, Google Meet and Stadia, SoundTrap, Amped
-	      Studio, BandLab, BeatPort, Soundation, Leimma & Apotome,
-	      and Spotify.</p>
-            <p>Work has started on
-              an <a href="https://github.com/WebAudio/web-audio-api-v2">2nd
-              version</a>, in conjunction with
-              the <a href="https://www.w3.org/groups/cg/audio-comgp">Web
-              Audio Community Group</a>. This version will build on and
-              enrich the first version of the API, adding more complex
-              and much-requested features.</p>
+              as a W3C Recommendation</a> in June 2021, the group is
+              discussing various new features as updates for the
+              specification.</p>
+            <p>A new charter for the group is being reviewed by the
+            W3C Members. The scope remains unchanged but instead of
+            starting a new specification (version 2) of the Web Audio
+            API, the group plans to incrementally update the existing
+            Web Audio API Recommendation.</p>
 	  </section>
 	  <!-- end of left box -->
 
 	  <!-- start right box -->
 	  <section class="right">
-	    <!-- needs an h3 -->	    
-	    <h3 id="btt">Browser testing and tools</h3>
-	    <!-- start description -->
-	    <div class="desc">
-	      <p>The <a href="https://www.w3.org/groups/wg/browser-tools-testing">Browser
-	      Testing and Tools Working Group</a> aims to create
-	      technologies for automating web browsers, with a focus
-	      to enabling automated testing of web applications
-	      running inside those browsers while accounting for
-	      differences between browser engines.</p>
-	    </div>
-	    <!-- end description -->
-	    <p><a href="https://www.w3.org/TR/webdriver/">WebDriver</a>
-	      became a W3C recommendation in 2018, providing an
-	      HTTP-based protocol for simulating user interaction with
-	      a website, executing a script, in order to provide
-	      end-to-end testing and to make writing tests very easy
-	      in a wide variety of programming languages.</p>
-	    <p>But when automation tools are tied to specific
-	    browsers, developers have to decide whether to opt for
-	    advanced features or cross-browser support and that's a
-	    problem for the open web. The group is
-	    developing
-	    a <a href="https://www.w3.org/TR/webdriver2/">2nd version
-	    of WebDriver</a>, because it is important for the health
-	    of the Web to give the browser automation ecosystem a basis in standards. This version aims to be able to observe
-	    internal state changes happening in the browser, much as
-	    developer tools do, and to address the non-determinism
-	    that can be introduced by modern web applications that use
-	      scripts which might invoke network requests.</p>
-	    <p>The group also develops WebDriver
-	    <abbr title="bidirectional">BiDi</abbr>, a slightly
-	    lower-level protocol, to send events directly to the
-	    automation tool, rather than only respond to commands.</p>
-	    <p>🎥 Watch
-	    the <a href="https://www.w3.org/2021/10/TPAC/demos/btt.html">browser
-	    testing and tools Working Group update video
-	    presentation</a> (October 2021, 11 minutes) by James
-	    Graham.</p>
-	  </section>
-	  <!-- end right box -->
-	</div>
-	<!-- end of 2-box block -->
-
-	
-	<!-- start of 2-box block -->
-	<div class="box">
-	  <!-- start of left box -->
-	  <section class="left">
 	    <!-- needs an h3 -->
 	    <h3 id="css">CSS</h3>
 	    <!-- start description -->
@@ -954,52 +897,29 @@
 	      defining every term defined by CSS specifications.</p>
 	    </div>
 	    <!-- end description -->
-	    
-	    <p>Since our last report, the group published 1 W3C
-	      Recommendation and 5 Candidate
-	      Recommendations. With <a href="https://drafts.csswg.org/">100
-	      or more Editors drafts</a>, the CSS working group is a
-	      regular publisher.</p>
-	    <p>🎥 Watch short recent videos (October 2021) to understand
-	    how Cascade Layers, Container Queries and Scope improve
-	    the architecture of CSS in a
-	    short <a href="https://www.w3.org/2021/10/TPAC/demos/css-architecture.html">overview
-	    and demo by Miriam Suzanne</a> (6 minutes), and learn about Nesting
-	    CSS
-	    with <a href="https://www.w3.org/2021/10/TPAC/demos/css-nesting.html?#intro">Adam
-	    Argyle live coding</a> (3 minutes).</p>
 
+	    <p>Since our last report, the group published
+	      the <a href="https://www.w3.org/TR/css-2021/">CSS
+	      Snapshot 2021</a>, which collects into one
+	      definition all the specs that together form the current
+	      state of Cascading Style Sheets (CSS) as of 2021.</p>
+	    <ul>
+	      <li><a href="https://www.w3.org/TR/css-counter-styles-3/">CSS
+	      Counter Styles Level&nbsp;3</a> was added to the list of
+	      specifications that the group considers stable</li>
+	      <li><a href="https://www.w3.org/TR/css-scrollbars-1/">CSS
+	      Scrollbars Styling Module Level&nbsp;1</a> is becoming
+	      fairly stable but has limited implementation
+	      experience</li>
+	      <li>Work has been ongoing on multiple modules, including
+	      <a href="https://www.w3.org/TR/2021/WD-css-nesting-1-20210831/">Nesting</a>, <a href="https://www.w3.org/TR/2022/WD-css-color-4-20220428/">Color</a>, <a href="https://www.w3.org/TR/2022/CR-css-color-adjust-1-20220210/">Color
+	      Adjustment</a>, <a href="https://www.w3.org/TR/2021/WD-css-cascade-6-20211221/">Cascading
+	      and Inheritance</a>,
+	      and <a href="https://www.w3.org/TR/2022/CR-css-conditional-4-20220217/">Conditional
+	      Rules</a></li>
+	    </ul>
 	  </section>
-	  <!-- end of left box -->
-	  
-	  <!-- start right box -->
-	  <section class="right">
-	    <!-- needs an h3 -->
-	    <h3 id="datex">Dataset Exchange</h3>
-	    <!-- start description -->
-	    <div class="desc">
-	      <p>The <a href="https://www.w3.org/groups/wg/dx">Dataset
-	      Exchange Working Group</a> is chartered to maintain and
-	      develop
-	      the <a href="https://www.w3.org/TR/vocab-dcat/">Data
-	      Catalog Vocabulary</a> (DCAT) which is an interoperable
-	      and reusable data assets catalogue,
-	      and <a href="https://www.w3.org/TR/dx-prof-conneg/">Content
-	      Negotiation by Profile</a>, a specification which is
-	      useful when requesting and serving data on the Web.</p>
-	    </div>
-	    <!-- end description -->
-	    <p>The group is currently developing the third version of
-	    DCAT and adding features to it. The specification is
-	    intended as an evergreen standard regularly updated to
-	    address users' requirements.</p>
-	    <p>🎥 Watch
-	    the <a href="https://www.w3.org/2021/10/TPAC/demos/dxwg.html?#intro">Dataset
-	    Exchange Working Group update video presentation</a>
-	    (October 2021, 6 minutes) by Peter Winstanley.</p>
-
-	  </section>
-	  <!-- end of right box -->
+	  <!-- end right box -->
 	</div>
 	<!-- end of 2-box block -->
 
@@ -1032,82 +952,20 @@
 	      published <a href="https://www.w3.org/TR/did-core/">DID
 	      Identifiers v1.0</a> as a Proposed Recommendation which
 	      is when W3C Members give their final review, and is the
-	      last step before publication as a Web standard. The
-	      group will recharter, probably as a maintenance
-	      group.</p>
+	      last step before publication as a Web standard. Some
+	      Formal Objections have been raised against the document
+	      by W3C Members, and the decision on those is still
+	      pending at the time of publication of this report.</p>
+	    <p>The group plans to recharter after expiration of the
+	      current charter in June 2022. The details of the
+	      upcoming charter will be informed by the resolution of
+	      the Formal Objections.</p>
 	  </section>
 	  <!-- end of left box -->
-	  
-	  <!-- start right box -->
-	  <section class="right">
-	    <!-- needs an h3 -->
-	    <h3 id="das">Devices and Sensors</h3>
-	    <!-- start description -->
-	    <div class="desc">
-	    <p>The <a href="https://www.w3.org/groups/wg/das">Devices
-	    and Sensors Working Group</a> aims to create secure and
-	    privacy-preserving client-side APIs that enable the
-	    development of web applications that interact with device
-	    capabilities.</p>	      
-	    </div>
-	    <!-- end description -->
-	    <p>Since the group rechartered at the end of 2020 it
-	    published a First Public Working Draft of
-	    the <a href="https://www.w3.org/TR/2020/WD-screen-fold-20201217/">Screen
-	    Fold API</a> (since then renamed Device Posture API), and
-	    plans to update its charter
-	    to <a href="https://github.com/w3c/dap-charter/issues/97">add
-	    the Contact Picker API</a> to the list of specifications
-	    it works on.</p>
-	  </section>
-	  <!-- end of right box -->
-	</div>
-	<!-- end of 2-box block -->
 
-	<!-- start of 2-box block -->
-	<div class="box">
-	  <!-- start of left box -->
-	  <section class="left">
-	    <!-- needs an h3 -->
-	    <h3 id="web-editing">Web Editing</h3>
-	    <!-- start description -->
-	    <div class="desc">
-	      <p>The <a href="https://www.w3.org/groups/wg/webediting">Web
-	      Editing Working Group</a> aims to explore limitations in
-	      existing browser primitives, provide use cases for new
-	      APIs and suggest solutions either by standardizing
-	      existing behaviors or introducing new APIs relevant for
-	      text editing. The goal is to facilitate the creation of
-	      fully-featured editing systems as well as small editors
-	      using JavaScript.</p>
-	    </div>
-	    <!-- end description -->
-	    <p>W3C launched earlier this year a working group that
-	    standardizes features relevant for text editing –a work
-	      that has been ongoing for more than seven years.</p>
-	    <p>The group published last August a First Public Working
-	    Draft
-	    of <a href="https://www.w3.org/TR/2021/WD-virtual-keyboard-20210928/">VirtualKeyboard
-	    API</a>, which provides authors with greater control over
-	    the visibility of the virtual keyboard (VK), and greater
-	    ability to adapt the layout of web pages when VK
-	      visibility changes.</p>
-	    <p>There is also work on EditContext – a new API which
-	    decouples texting input from the DOM and enables web-based
-	    editors to have full control of DOM while handling the
-	    user text input.</p>
-	    <p>🎥 Watch
-	    the <a href="https://www.w3.org/2021/10/TPAC/demos/web-editing.html">Web
-	    Editing Working Group update video presentation</a> which
-	    includes a demo of virtual keyboard APIs (October 2021, 6
-	    minutes), by Johannes Wilm, Alex Keng and Anupam
-	    Snigdha.</p>
-	  </section>
-	  <!-- end of left box -->
-	  
 	  <!-- start of right box -->
 	  <section class="right">
-	    <h3 id="fonts">Fonts</h3>
+	    <h3 id="fonts">Web Fonts</h3>
 
 	    <!-- start description -->
             <p class="desc">Web Fonts are used for languages such as
@@ -1120,69 +978,44 @@
               Progressive Font Enrichment (PFE) as well as maintenance
               of WOFF Recommendations.</p>
 	    <!-- end description -->
-	    
+
 	    <p>The <a href="https://www.w3.org/groups/wg/webfonts">Web
-		Fonts Working Group</a> published a First Public Working
-	      Draft of <a href="https://www.w3.org/TR/IFT/">Incremental
-		Font Transfer</a>, which allows to load only the portions
-	      of a font that is actually need, which greatly speeds up
-	      loading and reduces data transfer. A font can be loaded
-	      over multiple requests, each incrementally adding
-	      additional data.</p>
-	    
-	    <p>This work builds on
-	      the <a href="https://www.w3.org/TR/2020/NOTE-PFE-evaluation-20201015/">evaluation
-		report for progressive font enrichment</a> which looked at
-	      group of languages currently unable to use Webfonts (e.g.,
-	      Chinese, Japanese and Korean (CJK)) due to the very large
-	      file sizes, and evaluated solutions that would allow
-	      WebFonts to be used where slow networks, very large fonts,
-	      or complex subsetting requirements currently preclude
-	      their use.</p>	    
+		Fonts Working Group</a> is one of the recipients of
+		the <a href="https://www.w3.org/2022/04/pressrelease-woff-emmyaward.html.en">3rd
+		Annual Technology & Engineering Emmy® Awards</a>. The
+		award, jointly won with MPEG, is for the
+		"Standardization of Font Technology for Custom
+		Downloadable Fonts and Typography for Web and TV
+		Devices".</p>
+
+	    <p>The group continues work
+		on <a href="https://www.w3.org/TR/IFT/">Incremental
+		Font Transfer</a> which will merge
+		with <a href="https://www.w3.org/TR/2022/WD-RangeRequest-20220125/">Incremental
+		Font Transfer via Range Request</a>. This collection
+		of technologies allows to load only the portions of a
+		font that is actually needed, which greatly speeds up
+		rendering and reduces data transfer. A font can be
+		loaded over multiple requests, each incrementally
+		adding additional data.</p>
 	  </section>
 	  <!-- end of right box -->
 	</div>
 	<!-- end of 2-box block -->
-	
-	
+
+
 	<!-- start of 2-box block -->
 	<div class="box">
-	  <!-- start of left box -->	  
+	  <!-- start of left box -->
 	  <section class="left">
-	    
+
 	    <h3 id="html">HTML</h3>
 
 	    <!-- start description -->
-	    <p class="desc"><abbr title="Hypertext Markup
-	    Language">HTML</abbr> is the core markup language of the
-	    World Wide Web, a foundational technology upon which
-	    websites are built. Originally, HTML was primarily
-	    designed as a language for semantically describing
-	    scientific documents. Its general design, however, has
-	    enabled it to be adapted, over the subsequent years, to
-	    describe a number of other types of documents and even
-	    applications.</p>
-	    <!-- end description -->	    
-
-	    <p>Taking into account reviews from the W3C community,
-	      tracked by
-	      the <a href="https://www.w3.org/groups/wg/htmlwg">HTML
-	      Working Group</a>, W3C Members endorsed in January the
-	      first <a href="https://www.w3.org/TR/2021/REC-html-20210128/">snapshot
-	      of HTML</a>, and expects to endorse a snapshot
-	      of <a href="https://www.w3.org/TR/dom/"><abbr title="Document
-	      Object Model">DOM</abbr></a>, which defines a
-	      platform-neutral model for events, aborting activities,
-	      and node trees.</p>
-	    
-	    <p>The group is working on a renewing its charter for
-	    2021-2023. It will maintain
-	    the <a href="https://www.w3.org/blog/2019/05/w3c-and-whatwg-to-work-together-to-advance-the-open-web-platform/">expectations</a>
-	    to publish a snapshot of HTML and DOM every year, and to
-	    take into account the needs of the global community, and
-	    continues to improve in areas such as accessibility,
-	    internationalization and privacy while providing greater
-	    interoperability, performance and security.</p>
+	    <p class="desc">HTML is the core markup language of the World Wide Web, a foundational technology upon which websites are built. Originally, HTML was primarily designed as a language for semantically describing scientific documents. Its general design, however, has enabled it to be adapted, over the subsequent years, to describe a number of other types of documents and even applications.</p>
+	    <p><!-- end description -->The <a href="https://www.w3.org/groups/wg/htmlwg">HTML Working Group</a> has been conducting the wide review to update the snapshots of <a href="https://www.w3.org/TR/html/">HTML</a> and <a href="https://www.w3.org/TR/dom/">DOM</a>, in collaboration with the WHATWG<abbrev>.</abbrev> A <a href="https://www.w3.org/2022/02/ruby-agreement.html">recent agreement between W3C and WHATWG</a> includes work on extended HTML Ruby markup under the W3C Recommendation track. This will be a derived document with some textual copying from WHATWG HTML and W3C HTML Ruby Markup Extensions.</p>
+	    <p>The group is in the process of drafting a <a href="https://w3c.github.io/charter-drafts/html-2021.html">new charter</a> and was <a href="https://lists.w3.org/Archives/Public/public-new-work/2022Mar/0001.html">extended</a> until 30 April 2022 to allow additional time for the group to resolve the issues raised during the horizontal review of the new charter.
+      </p>
 	  </section>
 	  <!-- end of left box -->
 
@@ -1199,24 +1032,8 @@
 		experiences, as well as access to platform capabilities and dedicated hardware.</p>
 	    </div>
 	    <!-- end description -->
-	    <p>The <a href="https://www.w3.org/groups/wg/webmachinelearning">Web
-		Machine Learning Working Group</a> launched in April
-		2021 to develop APIs following a two-year incubation
-		period in the
-		companion <a href="https://www.w3.org/community/webmachinelearning/">Web
-		Machine Learning Community Group</a> which is
-		anticipated to continue to gather requirements and
-		initiate specification development.</p>
-	    <p>The group published last June a First Public Working
-	      Draft of <a href="https://www.w3.org/TR/webnn/">Web Neural
-		Network API</a> as well as subsequent working drafts. It
-	      also published
-	      a <a href="https://github.com/webmachinelearning/webnn/blob/main/explainer.md">Web
-		Neural Network API Explainer</a>.</p>
-	    <p>🎥 Watch a short video where Wanming Lin
-	    compares <a href="https://www.w3.org/2021/10/TPAC/demos/webnn.html">Web
-	    Neural Network API Performance</a> (October 2021, 2
-	    minutes).</p>
+	    <p>The <a href="https://www.w3.org/groups/wg/webmachinelearning">Web Machine Learning Working Group</a> launched in April 2021 to develop APIs for enabling efficient machine learning inference in the browser.</p>
+	    <p>The group published a First Public Working Draft of the <a href="https://www.w3.org/TR/webnn/">Web Neural Network API</a> as well as an <a href="https://github.com/webmachinelearning/webnn/blob/main/explainer.md">Web Neural Network API Explainer. </a>The group is now charting its <a href="https://github.com/webmachinelearning/webnn/issues/240">path toward a first Candidate Recommendation</a>, with a focus on integration with other technologies (WebGPU, media processing) and integrating input from privacy, security and ethical reviews.	  </p>
 	  </section>
 	  <!-- end of right box -->
 
@@ -1235,30 +1052,14 @@
 	      beyond, which makes mathematics first-class on the Web
 	      so that mathematical and scientific content is well
 	      displayed, accessible to people with disabilities, and
-	      searchable.</p>
+	      searchable just as HTML has enabled this functionality for text.</p>
 	    </div>
 	    <!-- end description -->
-	    <p>The <a href="https://www.w3.org/groups/wg/math">Math
-	    Working Group</a> was chartered in April 2021 to revise
-	    MathML so that features of the modern Web platform are
-	      compatible.</p>
-	    <p>MathML&nbsp;4 will build upon previous versions of the
-	    language (MathML&nbsp;1, a 1999 web standard;
-	    MathML&nbsp;2 published as a Recommendation in 2001 and
-	    revised as a second edition in 2003; and MathML&nbsp;3,
-	    published as a Recommendation in 2010 and revised as a
-	    second edition in 2014), as well as the experience with
-	    needs for accessibility, and many years of practical
-	    experience and use.</p>
-	    <p>The group published a First Public Working Draft
-	    of <a href="https://www.w3.org/TR/mathml-core/">MathML
-	    Core</a> last August, and subsequent working draft. The
-	    specification defines the core subset of Mathematical
-	    Markup Language that is suitable for browser
-	    implementation.</p>
+	    <p>The <a href="https://www.w3.org/groups/wg/math">Math Working Group</a>, chartered in April 2021, is continuing its work to revise Mathematical Markup Language, or MathML, so that features of the modern Web platform are compatible. MathML is a low-level specification for the Web and beyond, whose markup language makes mathematics first-class on the Web by describing mathematical notation and capturing both its structure and content, so that mathematical and scientific content is well displayed, accessible to people with disabilities, and searchable on the World Wide Web, just as HTML has enabled this functionality for text.	    </p>
+	    <p>The group is iterating on <a href="https://www.w3.org/TR/mathml-core/">MathML Core</a>, which defines a core subset of MathML that is suitable for browser implementation.	  </p>
 	  </section>
 	  <!-- end of left box -->
-	  
+
 	  <!-- start right box -->
 	  <section class="right">
 	    <!-- needs an h3 -->
@@ -1266,32 +1067,42 @@
 	    <!-- start description -->
 
 	    <div class="desc">
-	      <p>MiniApps are hybrid mobile apps that are small,
-		install-free, fast-loading, that use web technologies
-		(especially CSS and JavaScript) and integrate with
-		capabilities of Native Apps.</p>
+	      <p>MiniApps are small, install-free, fast-loading programs that run inside a larger native application or directly run in the operating system. MiniApps leverage both Web technologies like CSS and JavaScript as well as the capabilities of native applications.</p>
 	    </div>
 	    <!-- end description -->
-	    <p>The <a href="https://www.w3.org/groups/wg/miniapps">MiniApps
-		Working Group</a> published as First Public Working
-		Draft
-		<a href="https://www.w3.org/TR/miniapp-lifecycle/">MiniApp
-		Lifecycle</a>
-		and <a href="https://www.w3.org/TR/miniapp-manifest/">MiniApp
-		Manifest</a>, and is soon going to publish as
-		such <a href="https://w3c.github.io/miniapp-packaging/">MiniApp
-		Packaging</a>.</p>
-	    <p>An important change is that the group is rewriting
-	      the <a href="https://w3c.github.io/miniapp-addressing/">MiniApp
-		URI Scheme</a> to use http/https.</p>
-	    <p>The
-	      companion <a href="https://www.w3.org/community/miniapps/">MiniApps
-	      Ecosystem Community Group</a> is incubating new
-	      proposals, among which
-	      are <A href="https://w3c.github.io/miniapp-iot/">Miniapp
-	      for <abbr title="Internet of Things">IoT</abbr></a>
-	      and <a href="https://w3c.github.io/miniapp-components/">Miniapp
-	      Common UI Components</a>.</p>
+	    <p>The <a href="https://www.w3.org/groups/wg/miniapps">MiniApps Working Group</a> launched in January 2021 to produce specifications that facilitate the development of interoperable and robust MiniApps. </p>
+	    <p>The working group published <a href="https://w3c.github.io/miniapp-packaging/">MiniApp Packaging</a> as a First Public Working Draft; rewrote <a href="https://w3c.github.io/miniapp-addressing/">MiniApp Addressing</a> (previously called <em>MiniApp URI Scheme</em>) to use http/https as the URI scheme and has resolved to publish the <a href="https://w3c.github.io/miniapp-widget/req/">MiniApp Widget Requirements</a> document as a Note. They are  updating the <a href="https://w3c.github.io/miniapp/white-paper/">MiniApp Standardization White Paper</a>, including the main text and the <a href="https://github.com/w3c/miniapp/issues/177">comparison of APIs</a> and  discussing new features like <a href="https://github.com/w3c/miniapp-packaging/issues/42">Streaming</a>.</p>
+	    <p>The <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> continues to discuss and incubate new proposals, including <a href="https://w3c.github.io/miniapp-components/">Common UI Components</a> and <a href="https://w3c.github.io/miniapp-iot/">IoT</a>.</p>
+	  </section>
+	  <!-- end of right box -->
+	</div>
+	<!-- end of 2-box block -->
+
+		  <!-- start of 2-box block -->
+	<div class="box">
+	  <!-- start of left box -->
+	  <section class="left">
+	    <!-- needs an h3 -->
+	    <h3 id="timedtext">Timed Text</h3>
+	    <!-- start description -->
+	    <div class="desc">
+	      <p>The <a href="https://www.w3.org/groups/wg/timed-text">Timed Text Working Group</a> is chartered to develop W3C Recommendations for media online captioning by developing and maintaining new versions of the Timed Text Markup Language (TTML) and WebVTT (Web Video Text Tracks) based on implementation experience and interoperability feedback, and the creation of semantic mappings between those languages.</p>
+	    </div>
+	    <!-- end description -->The group published a working draft of <a href="https://www.w3.org/TR/imsc-hrm/">IMSC Hypothetical Render Model</a>, which specifies a model that constrains the complexity of an IMSC Document Instance.	  </section>
+	  <!-- end of left box -->
+
+	  <!-- start right box -->
+	  <section class="right">
+	    <!-- needs an h3 -->
+	    <h3 id="verifiablecredentials">Verifiable Credentials</h3>
+	    <!-- start description -->
+
+	    <div class="desc">
+	      <p>The mission of the <a href="https://www.w3.org/groups/wg/vc">Verifiable Credentials Working Group</a> (VCWG) is to make expressing and exchanging credentials that have been verified by a third party easier and more secure on the Web. The group was formerly known as Verifiable Claims Working Group.</p>
+	    </div>
+	    <p><!-- end description -->The Verifiable Credentials Working Group  published an updated Recommendation of <a href="https://www.w3.org/TR/vc-data-model/">Verifiable Credentials Data Model v1.1</a> which is a slight update of the <a href="https://www.w3.org/TR/2019/REC-vc-data-model-20191119/">Recommendation published 2 years ago</a>.</p>
+	    <p>The group, which is chartered until the end of April, is working on a <a href="https://w3c.github.io/vc-wg-charter/">new Working Group charter</a> with the goal of publishing a version 2.0 of the Verifiable Credentials Data Model specification, as well as specifications to express proofs of integrity of verifiable credentials in an interoperable manner. The charter is expected to be sent for AC Review in April 2022.
+	  </p>
 	  </section>
 	  <!-- end of right box -->
 	</div>
@@ -1310,63 +1121,25 @@
 	      that facilitate the development of client-side web
 	      applications.</p>
 	    </div>
-	    <!-- end description -->
-	    <p>The group recently published a Candidate Recommendation
-	    Draft of <a href="https://www.w3.org/TR/html-aria/">ARIA
-	    in HTML</a> in August, and a First Public Working Draft
-	    of <a href="https://www.w3.org/TR/IndexedDB-3/">Indexed
-	    Database API&nbsp;3.0</a> last March.</p>
-	    <p>🎥 Watch
-	    the <a href="https://www.w3.org/2021/10/TPAC/demos/webapps.html">Web
-	    Applications Working Group update video presentation and
-	    demos</a> (October 2021, 2 minutes) in which Marcos
-	    Caceres shows how the specifications developed by the
-	    group allow to build Web applications that integrate
-	    better with their computing environment. In a second recent
-	    video, Diego González 
-	    gives <a href="https://www.w3.org/2021/10/TPAC/demos/pwa.html">tips
-	    for integrating your PWA into your desktop environment</a>
-	    (October 2021, 13 minutes).</p>
-	  </section>
+      <!-- end description -->The group is among those <a href="https://lists.w3.org/Archives/Member/w3c-ac-members/2021OctDec/0053.html">extended</a> while Formal Objections raised against the proposed charter are resolved. Recent publications include updates for <a href="https://www.w3.org/TR/IndexedDB-3/">Indexed Database API 3.0</a> and <a href="https://www.w3.org/TR/2021/WD-screen-orientation-20210906/">Screen Orientation API.</a>	  </section>
 	  <!-- end of left box -->
-	  
+
 	  <!-- start right box -->
 	  <section class="right">
 	    <!-- needs an h3 -->
-	    <h3 id="wasm">WebAssembly</h3>
+	    <h3 id="webperformance">Web Performance</h3>
 	    <!-- start description -->
 
 	    <div class="desc">
-	      <p>The <a href="https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en">WebAssembly&nbsp;1.0
-              Recommendation</a> is a virtual machine and execution
-              environment widely deployed in browsers and stand-alone
-              environments, that enables near-native performance,
-              optimized load time, and perhaps most importantly, a
-              compilation target for existing code bases.</p>
+	      <p>The <a href="https://www.w3.org/groups/wg/webperf">Web Performance Working Group</a> provides methods to measure aspects of application performance of user agent features and APIs.</p>
 	    </div>
-	    <!-- end description -->
-	    <p>The <a href="https://www.w3.org/groups/wg/wasm">WebAssembly
-		Working Group</a>, working with
-		companion <a href="https://www.w3.org/groups/cg/webassembly">WebAssembly
-		Community Group</a> where proposals are incubated
-		before graduating to the former for final
-		specification, has been specifying many features to
-		add to the standard which improve performance, enable
-		use of hardware capabilities, handle more efficient
-		support for language features, or improve integration
-		between compile language and JS/Web.</p>
-	    <p>🎥 Watch
-	    the <a href="https://www.w3.org/2021/10/TPAC/demos/web-assembly.html">Web
-	    Assembly Community and Working Groups updates video
-	    presentation</a> (October 2021, 12 minutes) by co-chairs
-	    Derek Schuff and Luke Wagner.</p>
-	  </section>
+	    <!-- end description -->The Web Performance group published updates to <a href="https://www.w3.org/TR/2022/WD-hr-time-3-20220128/">High Resolution Time</a> and <a href="https://www.w3.org/TR/2022/WD-hr-time-3-20220128/">Resource Timing</a>.	  </section>
 	  <!-- end of right box -->
 	</div>
 	<!-- end of 2-box block -->
 	</div>
-		
-        <h2 id="web-for-all">Web for all &amp; horizontal work</h2>	
+
+        <h2 id="web-for-all">Web for all &amp; horizontal work</h2>
 
 	<p>This section focuses on the work of W3C work groups that
 	underpins other technical work or directly impacts the entire
@@ -1374,33 +1147,19 @@
 	hardware, software, network infrastructure, native language,
 	culture, geographical location, or physical or mental
 	ability.</p>
-	
+
 	<section>
-	  <h3 id="data">Web of data and knowldge</h3>
+	  <h3 id="data">Web of data and knowledge</h3>
 
 	  <img src="https://www.w3.org/comm/assets/icons/share.png" alt="">
-	  
+
 	  <!-- start description -->
 	  <div class="desc">
-	    <p>Data, information, knowledge are at the heart of the
-	    web. Many W3C work groups are active to respond to high
-	    interest in knowledge graphs, digital transformation, data
-	    markets and data spaces in general. The ever-increasing
-	    sources of open linked data, the rise of the Internet of
-	    Things, of Big Data, as well as the opportunities around
-	    Artificial Intelligence (AI), machine learning and
-	    reasoning, all account for the greater need for
-	    flexibility and adapting to change, for ways to create and
-	    sustain interoperable data services for suppliers and
-	    consumers.</p>
-	    <p>W3C has decades of experience, a mature and extensive
-	    suite of web standards and vocabularies relating to data
-	    and knowledge, linking data or things using URIs and names
-	    that can be dereferenced to get further information, and
-	    included as links to other data.</p>
+	    <p>Data and digital transformation are increasingly important to society, especially with the rise of IoT, Big Data, and the opportunities around Artificial Intelligence (AI) and Machine Learning on one hand, and on the other, the need for greater flexibility and agility for adapting to change. Linked Data uses URIs as names for things that can be dereferenced to get further information, and included as links to other data. There are ever-increasing sources of open Linked Data on the web, as well as data services that are restricted to the suppliers and consumers of those services.	  </p>
 	  </div>
 	  <!-- end description -->
 
+	  <p>W3C has a mature and extensive suite of web standards relating to data. We are currently seeking Member input on priorities for future work on data-related standards and emerging opportunities for <abbr title="artificial intelligence">AI</abbr> and machine learning. One topic of interest is simplifying semantic interoperability across different kinds of information systems, e.g. RDBMS, CSV files, Spreadsheets, Linked Data and Property Graphs. Another topic is the role of Linked Data in relation to trust and privacy for digital dataspaces and associated marketplaces. We are also examining ideas for supporting vocabulary development across a spectrum of maturity, and use cases, requirements and techniques for operating on imperfect knowledge (i.e., subject to uncertainties), incompleteness and inconsistencies, along with many kinds of automated reasoning.</p>
 	  <p>W3C work groups in this space:</p>
 	  <ul>
 	    <li><a href="#Dataset_Exchange">Dataset Exchange Working Group</a> </li>
@@ -1416,36 +1175,19 @@
 	    <li><a href="#Web_of_Things_Working_Group"> Web of Things Working Group</a></li>
 	    <li><a href="#Web_Machine_Learning"> Web Machine Learning Working Group</a></li>
 	    <li><a href="#Automotive_and_Transportation_Business_Group"> Automotive and Transportation Business Group</a></li>
-	    <li><a href="#Automotive_Working_Group"> Automotive Working Group</a></li>
+	    <li><a href="#Automotive_Working_Group"> Automotive Working Group</a>  </li>
 	  </ul>
+	      <p>Many  data-related W3C Community Groups are preparing the ground for future standards with incubation work on RDF-star, the N3 rule language, Human-like AI, Linked Building Data, and more. A Working Group charter is in preparation for moving RDF-star to the W3C Recommendation track.</p>
 
-	  <p>W3C Members and the public have been recently informed of
-	  ongoing <a href="https://lists.w3.org/Archives/Public/public-new-work/2022Mar/0012.html">work
-	  in progress to create a charter for a RDF-star Working
-	  Group</a>, with a primary mission to extend a set of RDF and
-	  SPARQL recommendations, with the ability to concisely
-	  represent and query statements about statements.</p>
-
-	  <p>In addition, another group is being set
-	  up: <a href="https://w3c.github.io/rch-wg-charter/">RDF
-	  Dataset Canonicalization and Hash Working Group</a>. The
-	  advance notice sent a year ago generated much conversation
-	  in the community which resulted in renaming the group and
-	  adapting its proposed scope. The mission of the group would
-	  be to define a standard to uniquely and deterministically
-	  calculate a hash of RDF Datasets for use cases such as
-	  Detecting changes in Datasets, and pave the way for digital
-	  signature. The work will include defining RDF Dataset
-	  Canonicalization algorithms.</p>
 	</section>
 
-	<div style="opacity:.6"> <!-- sections I have not yet updated -->	
-	<section>      
+	<div> <!-- sections I have not yet updated -->
+	<section>
           <h3 id="secpri">Security, privacy</h3>
 
 	  <img src="https://www.w3.org/comm/assets/icons/lock.png" alt="">
-	  
-	  <!-- start description -->	  
+
+	  <!-- start description -->
 	  <div class="desc">
 	  <p>Privacy and security – integral to human rights and
 	    civil liberties – have long been important in the Web
@@ -1454,7 +1196,7 @@
 	    development of authentication technologies that can
 	    replace weak passwords and reduce the threats of phishing
 	    and other attacks.</p>
-	  
+
 	  <p>However, users rightly fear the misuse
 	    of their personal data and being tracked online, including
 	    browser fingerprinting, the spread of disinformation, and
@@ -1467,272 +1209,104 @@
 
 	  <h4 id="privacy-cg">Privacy incubation</h4>
 
-	  <p>The <a href="https://www.w3.org/groups/cg/privacycg">Privacy
-	    Community Group</a> hosts incubation of new
-	    privacy-focused specification and APIs, as well as monthly
-	    calls which regularly attract vibrant
-	    participation. Recent work items include:</p>
-          <ul>
-	    <li>A mechanism
-	      for <a href="https://github.com/privacycg/private-click-measurement">private
-	      click measurement</a> that may be useful to measure
-	      advertising success while also preserving user
-	      privacy</li>
-	    <li>A proposal
-	      for <a href="https://github.com/privacycg/storage-partitioning">isolating
-	      sites' data from each other</a> and
-	      an <a href="https://github.com/privacycg/storage-access">API
-	      for requesting access to blocked storage</a></li>
-	    <li>Two proposals that may help facilitate login state
-	      management in a world where third-party cookies and
-	      other tracking mechanisms are being rapidly deprecated:
-	      one
-	      to <a href="https://github.com/privacycg/first-party-sets">declare
-	      what domain names are connected to each other</a> and
-	      an <a href="https://github.com/privacycg/is-logged-in">API
-	      to tell a browser if a user is logged into a
-	      site</a></li>
-	  </ul>
-	  
+	  <p>Two W3C Community Groups formed following TPAC 2021, hoping to address tasks that might be complicated by the ongoing deprecation of third party cookies: <a href="https://www.w3.org/community/fed-id/">Federated Identity CG</a> and <a href="https://www.w3.org/community/antifraud/">Anti Fraud CG</a>.</p>
+	  <p>There's a new <a href="https://www.w3.org/community/patcg/join">Private Advertising Technology CG</a> to incubate proposals previously discussed (primarily) in the Web Advertising business group (see the <a href="https://www.w3.org/2011/05/MemRel/wiki/Member_Outreach_Script_Q1_2022#Web_Advertising">"Web Advertising"</a> section).</p>
+	  <p>The <a href="https://www.w3.org/groups/cg/privacycg">Privacy Community Group</a>, formed in 2020, hosts incubation of new specifications. The group is seeing vibrant participation; its calls routinely draw 60 participants. Work items include:</p>
+	  <ul>
+	    <li>NEW: <a href="https://github.com/privacycg/nav-tracking-mitigations">Ways to mitigation "navigation tracking."</a></li>
+	    <li><a href="https://github.com/privacycg/private-click-measurement">A mechanism for private click measurement</a> that may be useful to measure advertising success while also preserving user privacy.</li>
+	    <li><a href="https://github.com/privacycg/storage-partitioning">A proposal for isolating sites' data from each other</a> and <a href="https://github.com/privacycg/storage-access">an API for requesting access to blocked storage</a>.</li>
+	    <li>Two proposals that may help facilitate login state management in a world where third-party cookies and other tracking mechanisms are being rapidly deprecated: a proposal to <a href="https://github.com/privacycg/first-party-sets">declare what domain names are connected to each other</a> and <a href="https://github.com/privacycg/is-logged-in">an API to tell a browser if a user is logged into a site</a>.</li>
+      </ul>
+
 	  <h4 id="webauthn">Unlinkable and unphishable authentication</h4>
-	  
-	  <p>The <a href="https://www.w3.org/groups/wg/webauthn">Web
-	      Authentication Working Group</a>
-	      published <a href="https://www.w3.org/TR/webauthn-2/">WebAuthn
-	      Level&nbsp;2</a> as a W3C Recommendation and a First
-	      Public Working Draft
-	      of <a href="https://www.w3.org/TR/webauthn-3/">Web
-	      Authentication Level&nbsp;3</a> in April. The group is
-	      re-chartering to work on new features including
-	      device-loss recovery and other API enhancements.</p>
-	  <p>The
-	      companion <a href="https://www.w3.org/groups/cg/webauthn-adoption">WebAuthn
-	      Adoption Community Group</a> aims to lift obstacles that
-	      might prevent developers from adopting WebAuthn, and
-	      help developers and users of the specification to
-	    improve adoption of its interoperable security.</p>
-	  <p>🎥 Watch a
-	  short <a href="https://www.w3.org/2021/10/TPAC/demos/webauthncg.html">Web
-	  Authentication Adoption Community Group video update</a>
-	  (October 2021, 5 minutes) by Nick Steele.</p>
-	  <p>W3C Member Yubico and W3C collaborated to design for W3Cx
-	  (W3C's <abbr title="Massive Open Online Course">MOOC</abbr>
-	  platform)
-	  the <a href="https://www.w3.org/2021/10/pressrelease-webauthn-mooc.html.en">first
-	  online Web Authentication course for developers</a>. Titled
-	  “Introduction to Web Authentication”, the course equips
-	  learners with the knowledge to replace aging password-based
-	  credentials with a secure model that incorporates strong
-	    authentication.</p>
+
+	  <p>The <a href="https://www.w3.org/groups/wg/webauthn">Web Authentication Working Group</a> published <a href="https://www.w3.org/TR/webauthn-2/">WebAuthn Level 2</a> as a Recommendation, and published a First Public Working Draft of <a href="https://www.w3.org/TR/webauthn-3/">Web Authentication Level 3</a> in April 2021. </p>
+	  <p>The group is re-chartering to add new features including device-loss recovery and other API enhancements to the group's scope. The group is among those <a href="https://lists.w3.org/Archives/Member/w3c-ac-members/2021OctDec/0053.html">extended</a> while Formal Objections raised against the proposed charter are resolved.</p>
+	  <p>The group focuses on related work in adoption with the <a href="https://www.w3.org/community/webauthn-adoption/">WebAuthn Adoption Community Group</a>.</p>
+	  <p>🎥 Watch a short <a href="https://www.w3.org/2021/10/TPAC/demos/webauthncg.html">Web Authentication Adoption Community Group video update</a> (October 2021, 5 minutes) by Nick Steele.</p>
 
 	  <h4 id="webappsec">Web Application Security</h4>
 
-	  <p>The <a href="https://www.w3.org/groups/wg/webappsec">Web
-	  Application Security Working Group</a> published a new Note
-	  on <a href="https://www.w3.org/TR/post-spectre-webdev/">Post-Spectre
-	  Web Development</a>, which outlines a threat model we can
-	  share, and a set of mitigation recommendations. The group is
-	    in the process of re-chartering.</p>
-	  
+	  <p>The <a href="https://www.w3.org/groups/wg/webappsec">Web Application Security Working Group</a> is working on cross-site leak mitigation and on documenting how to deploy the security tools it has developed. The group is among those <a href="https://lists.w3.org/Archives/Member/w3c-ac-members/2021OctDec/0053.html">extended</a> while Formal Objections raised against the proposed charter are resolved.</p>
+
 	  <h4 id="ping">Privacy and security reviews</h4>
 
-	  <p>The <a href="https://www.w3.org/groups/ig/privacy">Privacy
-	      Interest Group</a> (PING) does privacy reviews of other
-	    groups' specifications. It has been
-	    using <a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3cping/tracking-issues">new
-	      tooling to track issues</a> and has had renewed success
-	    making groups aware of privacy and fingerprinting issues
-	    in their specifications. The group is also writing
-	    a <a href="https://w3cping.github.io/privacy-threat-model/">Target
-	      Privacy Threat Model</a> document.</p>
-	  
-	  <p>Security reviews are done by a pool of volunteer
-	    reviewers coordinated by the W3C team. We welcome more
-	    people in that pool. Issues raised are tracked using
-	    the <a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3c/security-review">same
-	      tooling used by PING</a>.</p>
+	  <p>The <a href="https://www.w3.org/groups/ig/privacy">Privacy Interest Group (PING)</a> does privacy reviews of other groups' specifications. It has been using <a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3cping/tracking-issues">new tooling to track issues</a>, and it has had renewed success making WGs aware of privacy and fingerprinting issues in their specifications. PING is also writing a <a href="https://w3cping.github.io/privacy-threat-model/">Target Privacy Threat Model</a>document.</p>
+	  <p>Security reviews are done by a pool of volunteer reviewers coordinated by the team. We welcome more people in that pool; direct those interested to weiler@w3.org. Issues raised are tracked using <a href="https://w3c.github.io/horizontal-issue-tracker/?repo=w3c/security-review">the same tooling used by PING</a>.</p>
+
 	</section>
-	
+
 	<section>
-          <h3 id="i18n">Internationalization (i18n)</h3>
+      <h3 id="i18n">Internationalization (i18n)</h3>
           <img src="https://www.w3.org/comm/assets/icons/globe.png" alt="">
 
-          <p><a href="https://www.w3.org/International/articlelist">Educational
-              articles related to Internationalization</a>
-              • <a href="https://www.w3.org/International/techniques/developing-specs">spec
-              developers checklist</a>
-              • <a href="https://www.w3.org/International/layout">overview
-              of language enablement work in progress</a>
-              • <a href="https://www.w3.org/International/sponsorship/">Internationalization
-              Initiative</a></p>
+          <p><a href="https://www.w3.org/International/">Internationalization home page</a> •  <a href="https://www.w3.org/International/sponsorship/">Internationalization Initiative</a>,• <a href="https://www.w3.org/International/i18n-drafts/nav/learn">Educational materials related to Internationalization</a> •  <a href="https://www.w3.org/International/i18n-drafts/techniques/shortchecklist">Checklist for spec developers</a> •  <a href="https://www.w3.org/International/i18n-drafts/nav/languagedev">Overview of language enablement work in progress</a><a href="https://www.w3.org/International/articlelist">          </a></p>
 
-	  <!-- start description -->	  
+	  <!-- start description -->
 	  <div class="desc">
-	  <p>Only a quarter of the world's population of
-            almost 8 billion speaks English, and yet over 50% of
-            online content is written in that one language. Those
-            whose voice and language are not included on the Web are
-            marginalized and excluded. They do not receive the
-            economic, educational or democratic benefits of the Web
-            and by not having their presence and participation, we
-            lose the potential of the Web to reflect the full richness
-            of the world.</p>
-	  
-          <p>The Web Consortium launched
-            the <a href="https://www.w3.org/International/">Internationalization
-            Activity (i18n)</a> in 1998 to make the Web truly 'world
-            wide'. For the Web to truly work for stakeholders all
-            around the world engaging with content in various
-            languages, there must be a collaboration of language
-            experts, Web site designers, developers, and vendors who
-            are active in moving the Web forward. We will only be able
-            to connect all communities that share a language when the
-            Web supports all the world's languages and international
-            typography.</p>
-          <p>For an overview of current projects see the
-            i18n <a href="https://w3c.github.io/i18n-activity/projects/">radar</a>.</p>
+	  <p>If the web is to live up to the "World Wide" portion of its name, and we are to create a web for all, it must support the needs of worldwide users as they engage with content in various languages. The growth of e-publishing also brings requirements for new features and improved typography on the web, and it is important to ensure that those changes capture the needs of local communities.</p>
+	  <p>The W3C Internationalization activities pursue this goal by language enablement, developer support, and education &amp; outreach. See below for recent work. For an overview of current projects see the <a href="http://w3c.github.io/i18n-activity/projects/">i18n project radar</a></p>
 	  </div>
 	  <!-- end description -->
 
-	  <h4 id="i18n-initiative">Can you fund web internationalization?</h4>
 
-	  <p>The <a href="https://www.w3.org/International/sponsorship/">Internationalization
-	    initiative</a> allows sponsors to fund extra resources in
-	    i18n beyond what the core membership funding
-	    covers. Additional funding increases resources allocated
-	    to this crucial empowering work.</p>
-
-	  <p>If you can donate time and expertise, please join to
-	    contribute in the key areas of Language enablement,
-	    Developer support, and Author support (education &amp;
-	    outreach).</p>
 
 	  <h4 id="lang-enablement">Language enablement</h4>
 
-	  <p class="desc">Documentation of requirements for specific
-	    scripts and languages, and of barriers to their use in
-	    technologies that exist or are currently in
-	    development.</p>
+	  <p class="desc">Documenting requirements for specific scripts and languages, and barriers to their use in technologies that exist or are currently in development. We welcome participation in this work      </p>
 	  <ul>
-	    <li>[New] <b><a href="https://github.com/w3c/i18n-activity/projects/3">Gap-Analysis Pipeline</a></b>: A dashboard to
-	      identify critical missing pieces of the
-	      internationalized Web and track support for filling
-	      those gaps.<br>  The tool shows distinct issues,
-	      pointers to underlying issues and needed next
-	      steps.</li>
-	    <li>[New] <b>feature support</b>: WebKit support for
-	    isolation of bidirectional text closed a key gap in
-	    supporting scripts such as Arabic, Hebrew, and Adlam, and
-	    pages with both left-to-right and right-to-left
-	    text. Chrome implementation of CSS Counter Styles improves
-	    local customization of numbered lists and headings.</li>
-	    <li>Japanese and Chinese layout task forces continue to
-	    meet regularly and are actively working on their
-	    documents. <strong>We need additional participants to
-	    drive the work, notably on Arabic, Southeast Asian,
-	   Indic, European, African and Americas languages</strong>.</li>
+
+	        <li><strong>Gap-Analysis Pipeline</strong>: A dashboard to identify critical missing pieces of the internationalized web and track support for filling those gaps. This tool currently tracks around 100 issues raised, giving pointers to related GitHub issues and needed next steps.</li>
+	        <li><strong>Gap-Analysis work</strong>: We have been working through the issues in the gap-analysis pipeline, researching them and creating tests, then raising bugs against browsers and issues against specifications.</li>
+	        <li><strong>Group activity</strong>: Japanese and Chinese layout task forces continue to meet regularly and are actively discussing new documents, including a new version of <a href="https://www.w3.org/TR/jlreq">JLREQ</a> aimed at offering more direct advice and more specifically addressing the expectations of modern digital text. Documents produced by those groups to date include gap analysis and requirements information.</li>
+
 	  </ul>
-	  <p>For a summary of current status, see
-	    the <a href="https://w3c.github.io/typography/gap-analysis/language-matrix.html">language
-	    matrix</a> and
-	    the <a href="https://github.com/w3c/i18n-activity/projects/3">gap-analysis
-	    pipeline</a>. Read more
-	    on <a href="https://www.w3.org/International/i18n-drafts/nav/languagedev">language
-	    enablement</a>.</p>
-	  
+	  <p>For a summary of current status, see the <a href="http://w3c.github.io/typography/gap-analysis/language-matrix.html">Language Matrix</a> and the <a href="https://github.com/w3c/i18n-activity/projects/3">Gap-analysis Pipeline</a>. For more information see <a href="https://www.w3.org/International/i18n-drafts/nav/languagedev">Language Enablement</a></p>
+
+
 	  <h4 id="dev-support">Developer support</h4>
 
-	  <p class="desc">Reviews, discussion and advice for W3C work
-	    groups (and sometimes for external initiatives at the
-	    Unicode Consortium or the IETF, etc.) and preparation of
-	    guidelines and checklists that groups can use to do
-	    self-review or self-education, as well as focus on
-	    specific technological problems.</p>
-	  
+	  <p class="desc">Reviews, discussion and advice for work groups (and sometimes for external initiatives at the Unicode Consortium or the IETF, etc.), and preparation of guidelines and checklists that work groups can use to do self-review or self-education, as well as projects that focus on a specific technological problem, as the need arises.</p>
+
 	  <ul>
-	    <li>[New] <b><a href="https://www.w3.org/TR/i18n-glossary/">Internationalization
-	    Glossary</a></b>: The new document groups together terms
-	    used by the Internationalization Activity, and provides or
-	    points to definitions.</li>
-	    <li>[New] <b>Monetization primers</b>: Publication as part
-	    of our support of
-	    the <a href="https://www.w3.org/blog/2021/01/grant-for-the-web/">Grant
-	    for the Web project</a> of
-	    an <a href="https://www.w3.org/projects/gftw/i18n/explainer.html">explainer</a>,
-	    a <a href="https://www.w3.org/projects/gftw/i18n/checklist">checklist</a>,
-	    and
-	    a <a href="https://community.webmonetization.org/r12a/what-s-in-a-name-26hc">blog
-	    post</a>, aiming to sensitize developers of monetization
-	    apps to the needs of the international community.</li>
-	    <li><b><a href="https://www.w3.org/wiki/DocumentReview">Document
-	    Review</a></b> is now the one goto page for working groups
-	    wanting to engage with horizontal groups.</li>
-	    <li><b><a href="https://www.w3.org/TR/string-meta/">Strings on
-	    the Web: Language and Direction Metadata</a></b> has been updated.</li>
+	    <li><strong><a href="https://www.w3.org/TR/i18n-glossary/">Internationalization Glossary</a></strong>: This recently published document groups terms used by the Internationalization Activity, and provides or points to definitions.</li>
+	    <li><strong>String metadata</strong>: We are talking with various groups to find a way of standardizing the assignment of language and direction information for strings that are passed around on the web. For background and recommendations, see <a href="https://www.w3.org/TR/string-meta/">Strings on the web: Language and Direction Metadata</a>.</li>
 	  </ul>
 
-	  <p>The <a href="https://www.w3.org/groups/wg/i18n-core">Internationalization
-	  Working Group</a> has been active reviewing specifications
-	  and providing advice to other work groups. Completed and
-	  in-progress reviews are listed in the <a href="https://github.com/w3c/i18n-request/projects/1">Review Radar</a> and
-	  issues we are tracking or discussing are listed in the
-	  <a href="https://w3c.github.io/i18n-activity/reviews/">Review
-	  Tracker</a>.</p>
-	  
+	  <p>The <a href="https://www.w3.org/groups/wg/i18n-core">Internationalization Working Group</a> has been actively reviewing specifications and providing advice to other working groups. Completed and in-progress reviews are listed in the <a href="https://github.com/w3c/i18n-request/projects/1">Review Radar</a> and issues we are tracking or discussing are listed in the <a href="https://w3c.github.io/i18n-activity/reviews/">Review Tracker</a>.</p>
+
 	  <h4 id="educ-outreach">Author support (education &amp; outreach)</h4>
 
-	  <p class="desc">Articles to help content authors, spec
-	    developers, and implementers understand and use i18n
-	    features. I18N advice for courses, maintenance of an i18n
-	    checker for authors of web pages.</p>
+	  <p class="desc">Articles to help content authors, spec developers, and implementers understand and use i18n features. I18N advice for courses, maintenance of an i18n checker for authors of web pages. Talks at conferences, etc.</p>
 
 	  <ul>
-	    <li>New articles:
-	      <ul>
-		<li><a href="https://www.w3.org/International/questions/qa-indic-graphemes">Typographic
-		character units in complex scripts</a></li>
-		<li><a href="https://www.w3.org/International/articles/lang-bidi-use-cases/">Use
-		cases for bidi and language metadata on the
-		Web</a></li>
-		<li><a href="https://www.w3.org/International/questions/qa-direction-from-language">Can
-		we derive base direction from language?</a></li>
-	      </ul>
-	    </li>
-	    <li>Updated resources, taking into account recent
-	    developments and providing clearer guidance::
-	      <ul>
-		<li><a href="https://www.w3.org/International/questions/qa-html-dir">Structural
-		markup and right-to-left text in HTML</a></li>
-		<li><a href="https://www.w3.org/International/articles/inline-bidi-markup/">Inline
-		markup &amp; bidi text in HTML</a></li>
-		<li><a href="https://www.w3.org/International/articles/inline-bidi-markup/bidi_examples">Inline
-		bidi markup examples</a></li>
-	      </ul>
-	    </li>
+	    <li><strong>Recently published articles</strong>: <a href="https://www.w3.org/International/questions/qa-indic-graphemes">Typographic character units in complex scripts</a>, <a href="https://www.w3.org/International/articles/lang-bidi-use-cases/">Use cases for bidi and language metadata on the web</a>, <a href="https://www.w3.org/International/questions/qa-direction-from-language">Can we derive base direction from language?</a>.</li>
+	    <li><strong>Monetization primers</strong>: In support of the Grant For The Web project, an <a href="https://www.w3.org/projects/gftw/i18n/explainer.html">explainer</a>, a <a href="https://www.w3.org/projects/gftw/i18n/checklist">checklist</a>, and a <a href="https://community.webmonetization.org/r12a/what-s-in-a-name-26hc">blog post</a> were published to help developers of monetization apps address the needs of the international community.</li>
 	  </ul>
-	  
-	  <p>See <a href="https://www.w3.org/International/techniques/authoring-html">HTML
-	  &amp; CSS Authoring Techniques</a>, and
-	  other <a href="https://www.w3.org/International/articlelist">educational
-	  Internationalization techniques</a>.</p>
+
+	  <p>A number of educational articles are in the pipeline or newly published. See the <a href="https://www.w3.org/International/techniques/authoring-html">HTML &amp; CSS Authoring Techniques</a>. See also the <a href="https://www.w3.org/International/articlelist">list of available articles</a>.</p>
+
+	  <h4 id="participation">Participation and Support</h4>
+<p>The <strong>Internationalization Working Group is looking for additional participants</strong>. We particularly need people who can help with reviewing W3C and Unicode specifications. <strong>Please check whether YOUR organization can supply new participants in the Internationalization WG</strong>, and if so, please <a href="https://www.w3.org/2004/01/pp-impl/32113/join">nominate them</a>.</p>
+<p>Please also consider whether your organization can <strong>provide sponsorship to help us increase resources</strong> at the W3C dedicated to internationalization (see the <a href="https://www.w3.org/International/sponsorship/">Internationalization Initiative overview</a>), and contact Jeff Jaffe &lt;jeff@w3.org&gt;.</p>
+<p>The various <strong>language enablement groups are also looking for additional participation</strong> from experts and practitioners for many languages, to contribute information to our gap analysis documents about the state of language support on the web around the world.</p>
+<p>Don't forget to <strong>use the self-review checklist</strong> at FPWD and before requesting internationalization review, in order to spot internationalization concerns early enough to fix without pain. For assistance, see <a href="https://www.w3.org/International/review-request">Request a review</a>.</p>
 
 	</section>
 
 	<section>
-          <h3 id="accessibility">Web accessibility</h3>
+      <h3 id="accessibility">Web accessibility</h3>
 	  <img src="https://www.w3.org/comm/assets/logos/WAI.png" alt="logo of the Web Accessibility Initiative">
 
-	  <p><a href="https://www.w3.org/WAI/news/">WAI news</a>
-              • <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Accessibility
-              fundamentals</a>
-              • <a href="https://www.w3.org/WAI/business-case/">Business
-              case for digital accessibility</a>
-              • <a href="https://www.w3.org/WAI/translations/">WAI
-              translations</a>
-              • <a href="https://www.w3.org/WAI/about/participating/">participating
+	  <p><a href="https://www.w3.org/WAI">Web Accessibility Initiative (WAI) Home Page</a> • <a href="https://www.w3.org/WAI/news/">WAI News highlights</a>
+		  • <a href="https://www.w3.org/WAI/tips/">WAI Tips </a> • <a href="https://www.w3.org/WAI/tutorials/"> WAI Tutorials</a>
+              • <a href="https://www.w3.org/WAI/translations/">WAI Translations</a>
+
+              • <a href="https://www.w3.org/WAI/about/participating/">Participating
               in WAI</a></p>
 
-	  <!-- start description -->	  
+	  <!-- start description -->
 	  <div class="desc">
 	  <p>The Web
 	    Consortium’s <a href="https://www.w3.org/WAI/">Web
@@ -1759,112 +1333,42 @@
 	  </div>
 	  <!-- end description -->
 
-	  <h4 id="ag">WAI guidelines</h4>
+	  <p>See: <a href="https://www.w3.org/WAI/update/">What We're Working On - <em>Accessibility Activities and Publications, March 2022</em></a></p>
+	  <h4>WAI guidelines</h4>
 
 	  <ul>
-	    <li>What level guidelines should you use to make your
-	      website and web apps accessible? At
-	      least <a href="https://www.w3.org/WAI/WCAG21/quickref/"><abbr title="Web
-	      Contact Accessibility
-	      Guidelines">WCAG</abbr>&nbsp;2.1&nbsp;AA.</a></li>
-	    <li>WAI published a second wide review draft
-	      of <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2</a> in
-	      May, and expect completion within 2021.</li>
-	    <li>An updated
-	      W3C <a href="https://www.w3.org/TR/wcag-3.0/">Accessibility
-		Guidelines (WCAG) 3.0</a> Working Draft was published in
-	      June 2021 for review. WCAG 3 is intended to cover a
-	      broader scope of technologies, with different types of web
-	      content, apps, and tools, and a different name, scope,
-	      structure, and draft conformance model.</li>
-	    <li>Recently published supporting resources:
-	      <ul>
-		<li><a href="https://www.w3.org/TR/coga-usable/">Making
-		    Content Usable for Cognitive and Learning
-		    Disabilities</a></li>
-		<li><a href="https://www.w3.org/WAI/atag/report-tool/">ATAG
-		    Report Tool</a> from Authoring Tool Accessibility
-		  Guidelines (ATAG) 2.0.</li>
-	      </ul>
-	    </li>
-	  </ul>
-	  
-	  <h4 id="covid">How important is web accessibility in times
-	    where Covid is impacting people with disabilities?</h4>
-	  <ul>
-	    <li><a href="https://www.w3.org/WAI/media/av/">Making
-	    Audio and Video Media Accessible</a> has useful
-	    information for making videoconferences accessible.</li>
-	    <li><a href="https://raw.githack.com/w3c/apa/main/remote-meetings/">Accessibility
-	    of Remote Meetings</a> is developed by the Research
-	    Questions Task Force (RQTF) of the Accessible Platform
-	    Architecture Working Group (APA WG).</li>
-	  </ul>
-	  
-	  <h4 id="other">Other progress on the technical side of web
-	    accessibility</h4>
-	  
-	  <ul>
-	    <li>Web accessibility reviews of all W3C specifications
-	    under development is done by
-	    the <a href="https://www.w3.org/groups/wg/apa">Accessible
-	    Platform Architectures (APA) Working
-	    Group</a>. The <a href="https://w3c.github.io/apa/fast/">Framework
-	    for Accessible Specification of Technology (FAST)</a> is a
-	    tool that allows groups to perform self review.</li>
-	    <li>Drafts in progress
-	    of <a href="https://w3c.github.io/aria/"><abbr title="Accessible
-	    Rich Internet
-	    Applications">ARIA</abbr>&nbsp;1.3</a>, <a href="https://www.w3.org/WAI/personalization/">Personalization
-	    Semantics</a>
-	    and <a href="https://www.w3.org/WAI/pronunciation/">Pronunciation</a>.</li>
-	    <li>The Accessibility Conformance Testing Task Force (of
-	    AG WG) completed the W3C Recommendation
-	    of <a href="https://www.w3.org/WAI/standards-guidelines/act/">ACT
-	    Conformance Rules Format</a>, and is now building
-	    the <a href="https://act-rules.github.io/rules/">repository
-	    of rules</a>.</li>
-	    <li>Emerging technology: the Research Questions Task Force
-	    is developing user accessibility requirements
-	    for <a href="https://www.w3.org/WAI/APA/task-forces/research-questions/wiki/Media_Synchronization_Requirements">media
-	    synchronization</a>, for AR and VR
-	    ("<a href="https://w3c.github.io/apa/xaur/"><abbr title="XR
-	    Accessibility User Requirements">XAUR</abbr>"</a>), and
-	    recently
-	    published <a href="https://www.w3.org/TR/raur/"><abbr title="Real-Time
-	    Communications">RTC</abbr> Accessibility User
-	    Requirements</a>.</li>
-	    <li>The <a href="https://www.w3.org/groups/cg/immersive-captions">Immersive
-	    Captions Community Group</a> is exploring research on
-	    effective use of captions in augmented and virtual
-	    reality.</li>
+	    <li><a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2</a> expected completion in mid-2022, with improvements in navigability, input modalities, predictability, and input assistance.</li>
+	    <li>The <a href="https://www.w3.org/groups/wg/ag">Accessibility Guidelines Working Group</a> (AGWG) is continuing to develop <a href="https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/">WCAG 3.0</a> which will take several more years. The specification is set to cover a broader scope of technologies, different types of web content, apps, and tools, and a new conformance model. Comments and participation are welcome in the <a href="https://www.w3.org/WAI/GL/task-forces/silver/wiki/Main_Page">Silver Task Force's Wiki</a>.</li>
+	    <li>Supporting resources include <a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for Cognitive and Learning Disabilities</a>, and the Authoring Tool Accessibility Guidelines (ATAG) 2.0 <a href="https://www.w3.org/WAI/atag/report-tool/">ATAG Report Tool</a></li>
 	  </ul>
 
-	  <h4 id="learning">Learning more about accessibility</h4>
+	  <h4 id="covid">Web accessibility is crucial to staying connected during Covid</h4>
+	  <ul>
+	    <li>Digital accessibility continues to be especially important during this time when it is harder to gather together in person. Many people, including those with disabilities, continue to need virtual and hybrid options, and web accessibility provides an inclusive foundation. </li>
+	    <li>The Research Questions Task Force (RQTF) of the Accessible Platform Architecture Working Group (APA WG), is continuing to develop <a href="https://raw.githack.com/w3c/apa/main/remote-meetings/">Accessibility of Remote Meetings</a>. This complements existing resources on <a href="https://www.w3.org/WAI/teach-advocate/accessible-presentations/">How to Make Your Presentations Accessible to All</a> and <a href="https://www.w3.org/WAI/media/av/">Making Audio and Video Media Accessible</a>.</li>
+	    <li>W3C is also developing guidance on <a href="https://github.com/w3c/Guide/blob/main/meetings/mixed-mode.md">hybrid events.</a></li>
+	  </ul>
+
+	  <h4 id="technical">What's new on the technical side of accessibility</h4>
 
 	  <ul>
-	    <li><a href="https://www.w3.org/WAI/tips/">Tips</a>, <a href="https://www.w3.org/WAI/tutorials/">tutorials</a>, <a href="https://www.w3.org/WAI/roles/">role-based
-		learning resources</a>.</li>
-	    <li>Learn Digital Accessibility Foundations from our free
-	    online W3Cx
-	    course: <a href="https://www.w3.org/WAI/fundamentals/foundations-course/">"Introduction
-		to Web Accessibility"</a>.</li>
-	    <li>Get engaged directly in development of educational
-	    resources such as the
-	    draft <a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">What's
-	    New in WCAG&nbsp;2.2</a>, and other work listed in the
-	    new <a href="https://www.w3.org/WAI/EO/charter2020"><abbr title="Education
-	    and Outreach working group">EOWG</abbr> charter</a>.</li>
-	    <li>Help <a href="https://www.w3.org/WAI/about/translating/">translating
-	    WAI materials</a> so that more people can learn about web
-	      accessibility.</li>
-	    <li>Learn about accessibility and anti-discrimination
-	    against disability also as part of
-	    W3C's <a href="https://www.w3.org/community/pwe/">Positive
-	    Work Environment</a> work and Inclusion and Diversity
-	    work.</li>
+	    <li>The <a href="https://www.w3.org/groups/wg/apa">Accessible Platform Architectures (APA) Working Group</a> continues to review all W3C specifications for accessibility support while under development. We welcome new reviewers! Please use the <a href="https://w3c.github.io/apa/fast/">Framework for Accessible Specification of Technology (FAST)</a> which includes the <a href="https://w3c.github.io/apa/fast/checklist.html">FAST Checklist</a> for a do-it-yourself initial accessibility review of your working group's specifications. </li>
+	    <li>Work in progress include <a href="https://w3c.github.io/aria/">ARIA 1.3</a>. <a href="https://www.w3.org/WAI/personalization/">Personalization Semantics</a>, to support tailoring user experience to meet needs and preferences of individual users; and <a href="https://www.w3.org/WAI/pronunciation/">Pronunciation</a>, to support text-to-speech synthesis which is critical for education, publishing, communication, entertainment.</li>
+	    <li>The Accessibility Conformance Testing Task Force completed the W3C Recommendation <a href="https://www.w3.org/WAI/standards-guidelines/act/">ACT Conformance Rules Format</a>, and is continuing to build the <a href="https://act-rules.github.io/rules/">repository of rules.</a></li>
+	    <li>In emerging technologies, the <a href="https://www.w3.org/WAI/APA/task-forces/research-questions/work-statement">Research Questions Task Force</a> is developing user accessibility requirements for <a href="https://www.w3.org/WAI/APA/task-forces/research-questions/wiki/Media_Synchronization_Requirements">media synchronization</a>; for AR and VR ("<a href="https://w3c.github.io/apa/xaur/">XAUR</a>"). APA recently published <a href="https://www.w3.org/TR/raur/">RTC Accessibility User Requirements</a></li>
+	    <li>The <a href="https://www.w3.org/groups/cg/immersive-captions">Immersive Captions Community Group</a> is exploring research on effective use of captions in augmented and virtual reality.</li>
 	  </ul>
-	  
+
+	  <h4 id="learning">Helping your organization learn more about accessibility</h4>
+
+	  <ul>
+	    <li>In addition to the Tips, Tutorials and Translations mentioned above, please also see the <a href="https://www.w3.org/WAI/roles/">role-based learning resources</a>. These include resources for the roles of content writers, designers, developers, evaluators, testers, managers, policy makers, trainers, educators, web users, people with disabilities, and advocates. </li>
+	    <li>Learn <strong><a href="https://www.w3.org/WAI/fundamentals/foundations-course/">Digital Accessibility Foundations from the free online course</a></strong> "Introduction to Web Accessibility". </li>
+	    <li>Get engaged directly in development of educational resources such as the draft <a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">What's New in WCAG 2.2</a>, and other work listed in <a href="https://www.w3.org/WAI/EO/wiki/EOWG_Current_Projects">EOWG Current Projects</a>.</li>
+	    <li>Help recruit translations of WAI materials so that more people can learn about web accessibility, using translation guidance at "<a href="https://www.w3.org/WAI/about/translating/">Translating WAI Resources</a>".</li>
+	    <li>Learn about accessibility and anti-discrimination against disability also as part of W3C's <a href="https://www.w3.org/community/pwe/">Positive Work Environment work.</a></li>
+	  </ul>
+
 	</section>
 
         <h2 id="outreach">Outreach to the world</h2>
@@ -1876,104 +1380,58 @@
 	    <img src="https://www.w3.org/2015/10/W3C-Developers_Assets/W3C-Developers-Dark.png" alt="web developers icon">
             <h3 id="devrel">W3C developer relations</h3>
 
-		<!-- start description -->	  
+		<!-- start description -->
 	    <p class="desc">For a tight and effective feedback loop
               between Web Standards development and Web developers,
               and growing participation from that diverse
               community.</p>
 	    <!-- end description -->
-	    
+
             <ul>
-              <li>Follow <a href="https://twitter.com/w3cdevs/">@w3cdevs</a>,
-              our twitter account promoting the enormous amount of
-              work done at the Web Consortium, tailored for web
-              developers.
-		</li>
-	      <li>🎥 Watch tech videos on
-		  our <a href="https://www.youtube.com/W3COfficial">W3COfficial
-		  YouTube channel</a> (short interviews of W3C
-		members, workshops' talks, meetup talks). Two recent videos give details on W3C DevRel work:
-		<ul>
-		  <li><A href="https://youtu.be/sw-j75MQtQU">W3C &amp;
-		  Web developers: why and how to get involved in W3C
-		  as a developer or designer?</a></li>
-		  <li><a href="https://youtu.be/QwWuyp9giIY">Developer
-		  Relations at W3C - April 2021 Update</a></li>
-		</ul>
-	      </li>
-	      <li>The W3C team maintains
-	      the <a href="https://github.com/w3c/webref/">Webref
-	      project</a> to collect re-usable information from across
-	      a wide range of browser-targeted specifications used by
-	      many developer ecosystem tools, both internal to the W3C
-	      community (respec, bikeshed, Web Platform Tests) and
-	      external (MDN, Typescript declarations, validator
-	      libraries).<br>  🎥 Watch a short video where François
-	      Daoust introduces
-	       <a href="https://www.w3.org/2021/10/TPAC/demos/reffy.html">Reffy
-	      - a tool to analyse Web specifications</a> (October
-	      2021, 4 minutes) which powers Webref.</li>
-	      <li>Working
-	      with <a href="https://developer.mozilla.org/en-US/">MDN
-	      Web Docs</a>
-	      and <a href="https://opencollective.com/open-web-docs">Open
-	      Web Docs (OWD)</a>, the W3C team has been able to
-	      significantly improve how W3C specifications are
-		referenced from MDN.</li>
-	      <li>The team is experimenting with
-	      a <a href="https://w3c.github.io/dev-support/">W3C Dev
-	      Advocate program</a> to encourage and give structural
-	      support to W3C work group interactions with their
-	      developer communities.</li>
+              <li><strong><a href="https://twitter.com/w3cdevs">@w3cdevs</a></strong>: the @w3cdevs Twitter account remains an active communication channel for the broader W3C community, tracking and promoting the enormous amount of work happening across W3C.</li>
+              <li><strong><a href="https://www.youtube.com/W3COfficial">Tech videos on YouTube</a></strong>: the W3C's official video channel hosts short interviews of W3C members, workshops' talks, meetup talks, TPAC2021 breakout sessions recordings, etc.</li>
+              <li><strong>Reffy</strong>: the W3C team maintains the <a href="https://github.com/w3c/webref/">webref project</a> to collect re-usable information from across a wide range of browser-targeted specifications, used across many developer ecosystem tools, both internal to the W3C community (respec, bikeshed, Web Platform Tests) and external (MDN, Typescript declarations, validator libraries, etc.).<br>
+                🎥 Watch a short video where François Daoust introduces <a href="https://www.w3.org/2021/10/TPAC/demos/reffy.html">Reffy - a tool to analyse Web specifications</a> (Oct. 2021, 4 minutes) which powers Webref.</li>
+              <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a> and <a href="https://opencollective.com/open-web-docs">Open Web Docs</a> (OWD): working with OWD and the MDN teams, the W3C team has been able to significantly improve how W3C specifications are referenced from MDN.</li>
+              <li>For more information about W3C's DevRel's work:
+                <ul>
+                  <li><a href="https://www.w3.org/blog/2021/11/w3c-devrel-tpac21-debrief/">W3C DevRel – TPAC21 debrief</a> (November 2021)</li>
+                  <li><a href="https://youtu.be/QwWuyp9giIY">Developer Relations at W3C</a> (April 2021, 5-minute video)</li>
+                  <li><a href="https://youtu.be/sw-j75MQtQU">W3C &amp; Web developers: why and how to get involved in W3C as a developer or designer?</a> (January 2021, 12-minute video).              </li>
+                </ul>
+              </li>
             </ul>
 	  </section>
 	  <!-- end of left box -->
 
-	  <!-- start of right box -->	  
+	  <!-- start of right box -->
 	  <section class="right">
             <img src="https://www.w3.org/2015/03/w3cx-logo.png"
-            alt="w3cx logo">	    
+            alt="w3cx logo">
             <h3 id="training">W3C training</h3>
 
-	    <!-- start description -->	  
+	    <!-- start description -->
 	    <p class="desc">W3Cx is W3C's partnership with edX since
 	      2015 where we develop <abbr title="Massive Open Online
 	      Courses">MOOCs</abbr> on core Web technologies.</p>
 	    <!-- end description -->
-	    
+
 	    <ul>
-	      <li>New MOOC: WebAuthn introductory course, to open on
-	      30 November 2021. W3C
-	      Member <a href="https://www.w3.org/2021/10/pressrelease-webauthn-mooc.html.en">Yubico
-	      and W3C collaborated to design the first online Web
-	      Authentication course for developers</a>. Titled
-	      “Introduction to Web Authentication”, the course equips
-	      learners with the knowledge to replace aging
-	      password-based credentials with a secure model that
-	      incorporates strong authentication.</li>
-	      <li>One of our latest MOOCs,
-		  <a href="https://www.edx.org/course/web-accessibility-introduction">"Introduction
-		  to Web Accessibility"</a>, has been extended until end of December 2021.</li>
-	      <li>Since we passed
-		the <a href="https://www.w3.org/blog/2020/12/one-million-enrollments-in-w3cx/">1
-	      Million enrollment mark</a> at the end of 2020, the
-	      count of our students from around the world increased to
-	      over 1.3M.
-	      The <a href="https://www.edx.org/professional-certificate/w3cx-front-end-web-developer">W3Cx
-	      "Front-End Web Developer" (FEWD) program</a> is still
-		the most popular.</li>
-	      <li>W3C MOOCs are accessible
-	      via <a href="https://w3cx.org/">W3Cx</a> or via
-	      the <a href="https://www.edx.org/school/w3cx">edX Web
-	      site</a>.</li>
+	      <li>W3C&rsquo;s catalog is composed of 7 MOOCs: in addition to the <a href="https://www.edx.org/professional-certificate/w3cx-front-end-web-developer">W3Cx Front-End Web Developer program</a> (5 courses on HTML5, CSS and JS), W3C produced 2 courses:
+	        <ul>
+	          <li>"Introduction to Web Accessibility" (available until 31 December 2022)</li>
+	          <li>"Introduction to Web Authentication" (new session to be launched in late 2022)</li>
+            </ul>
+          </li>
+	      <li>W3C MOOCs are accessible via <a href="https://w3cx.org/">W3Cx</a> or via the <a href="https://www.edx.org/school/w3cx">edX Web site.</a></li>
 	    </ul>
 	  </section>
 	  <!-- start of right box -->
 	</div>
 	<!-- end of 2-box block -->
 
-	</div> <!-- end opacity -->
-	
+	</div>
+
 	<!-- start of 2-box block -->
 	<div class="box">
 	  <!-- start of left box -->
@@ -1987,7 +1445,7 @@
 	      of documents developed at W3C whose official language is
 	      English.</p>
 	    <!-- end description -->
-	    
+
 	    <p>W3C is extremely grateful to the continuous
 	      efforts of its community in ensuring our various
 	      deliverables in general, and in our specifications in
@@ -2000,12 +1458,12 @@
 	  </section>
 	  <!-- end of left box -->
 
-	  <!-- start of right box -->	  
+	  <!-- start of right box -->
 	  <section class="right">
 	    <img src="https://www.w3.org/comm/assets/icons/handshake.png" alt="">
             <h3 id="liaisons">W3C liaisons</h3>
 
-	    <!-- start description -->	    
+	    <!-- start description -->
             <p class="desc">W3C engages
 		in <a href="http://www.w3.org/2001/11/StdLiaison">liaisons
 		and coordination</a> with numerous organizations and
@@ -2042,16 +1500,16 @@
 	</div>
 	<!-- end of 2-box block -->
 
-	
-	<div style="opacity:0.5"> <!-- opacity starts -->
-	</div> <!-- opacity ends -->
-	
+
+	<div>
+	</div>
+
         <div id="footer">
           <hr>
           <address> <a href="https://www.w3.org/People#coralie">Coralie
               Mercier</a>, Editor, W3C Marketing &amp;
               Communications<br>
-            <small>$Id: Overview.html,v 1.21 2022/04/06 19:59:05 coralie Exp $</small><br> Copyright © 2022
+            <small>$Id: Overview.html,v 1.39 2022/05/16 05:03:01 xueyuan Exp $</small><br> Copyright © 2022
             W3C <sup>®</sup>
             (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts
             Institute of
@@ -2072,6 +1530,6 @@
 	      }
 	      elem.className = /expanded/.test(classes) ? originalNavClasses : originalNavClasses + ' expanded';
       }      </script> </div>
-    </div>    
+    </div>
   </body>
 </html>
