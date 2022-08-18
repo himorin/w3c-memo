@@ -1,8 +1,6 @@
 #! /usr/bin/env python3
 
 import read_off
-import table_defs
-import util
 import sys
 import os
 import copy
@@ -86,66 +84,6 @@ def PrintHead(fhead):
     for name, val in fhead['table_index'].items():
       print("{} {:>8}   {:>7}   {:08x}".format(name, val['offset'], val['len'], val['checksum']))
 
-def PrintTTC(fhead, argv):
-  if argv[2].isdigit():
-    tgtf = int(argv[2])
-    if tgtf < fhead['num_fonts']:
-      chead = ParseHead(fhead['fname'], fhead['font_offsets'][tgtf])
-      if len(argv) == 3:
-        PrintHead(chead)
-      else:
-        carg = copy.copy(argv)
-        carg.pop(0)
-        PrintTTF(chead, carg)
-
-def PrintTTF(fhead, argv):
-  if argv[2] == 'cmap':
-    fdat = read_off.ParseCmap(fhead['fname'], fhead['table_index']['cmap']['offset'])
-    read_off.PrintCmapOverview(fdat)
-  elif argv[2] == 'head':
-    print('head table information')
-    util.PPHeaderArray(
-      fhead['fname'], fhead['table_index']['head']['offset'], 
-      table_defs.TABLE_HEAD, table_defs.TABLE_HEAD_FORMAT)
-  elif argv[2] == 'hhea':
-    print('hhea table information')
-    util.PPHeaderArray(
-      fhead['fname'], fhead['table_index']['hhea']['offset'], 
-      table_defs.TABLE_HHEA, table_defs.TABLE_HHEA_FORMAT)
-  elif argv[2] == 'vhea':
-    print('vhea table information')
-    util.PPHeaderArray(
-      fhead['fname'], fhead['table_index']['hhea']['offset'], 
-      table_defs.TABLE_VHEA, table_defs.TABLE_VHEA_FORMAT)
-  elif argv[2] == 'maxp':
-    print('maxp table information')
-    fdat = util.ParseHeaderArray(
-      fhead['fname'], fhead['table_index']['maxp']['offset'],
-      table_defs.TABLE_MAXP)
-    util.PrintHeaderArray(fdat, table_defs.TABLE_MAXP, [])
-    if fdat['ver'] == 1.0:
-      util.PPHeaderArray(
-        fhead['fname'], fhead['table_index']['maxp']['offset'] + 6, 
-        table_defs.TABLE_MAXP_1_0, [])
-  elif argv[2] == 'OS2':
-    print('OS/2 table information')
-    fdat = util.ParseHeaderArray(
-      fhead['fname'], fhead['table_index']['OS/2']['offset'],
-      table_defs.TABLE_OS2)
-    util.PrintHeaderArray(fdat, table_defs.TABLE_OS2, [])
-    if fdat['ver'] > 0:
-      util.PPHeaderArray(
-        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 78, 
-        table_defs.TABLE_OS2_1, [])
-    if fdat['ver'] > 1:
-      util.PPHeaderArray(
-        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 86, 
-        table_defs.TABLE_OS2_4, [])
-    if fdat['ver'] > 4:
-      util.PPHeaderArray(
-        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 96, 
-        table_defs.TABLE_OS2_5, [])
-
 if __name__ == "__main__":
   if len(sys.argv) < 2:
     print("Usage: {} <fone file name> <options>".format(sys.argv[0]))
@@ -162,8 +100,18 @@ if __name__ == "__main__":
     PrintHead(fhead)
     exit()
   if fhead['tag_name'] == 'TTC':
-    PrintTTC(fhead, sys.argv)
+    # for TTC, root -> font list (additional layer) -> font header -> tables
+    if sys.argv[2].isdigit():
+      tgtf = int(sys.argv[2])
+      if tgtf < fhead['num_fonts']:
+        chead = ParseHead(fhead['fname'], fhead['font_offsets'][tgtf])
+        if len(sys.argv) == 3:
+          PrintHead(chead)
+        else:
+          carg = copy.copy(sys.argv)
+          carg.pop(0)
+          read_off.PrintTTF(chead, carg)
   else:
-    PrintTTF(fhead, sys.argv)
+    read_off.PrintTTF(fhead, sys.argv)
 
 
