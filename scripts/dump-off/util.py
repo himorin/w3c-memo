@@ -14,6 +14,7 @@ format of 'target': array of hash as
   fixed: if fixed value or deprecated, set this as its value
   comp: composited value, not to be displayed as single
         parsing function should provide format string array with 'name' as id
+  disp: display format, [xbs][0-9] for x as HEX, b as bin, s as str : x8 = 08x
 return: hash of value with 'name' as ID
 '''
 def ReadHeaderArray(fp, target):
@@ -66,7 +67,24 @@ def ParseHeaderArray(fname, offset, table):
 def PrintHeaderArray(tdat, table, format):
   for tgt in table:
     if ('fixed' not in tgt) and ('comp' not in tgt):
-      print('{}: {}'.format(tgt['desc'], tdat[tgt['name']]))
+      if ('disp' in tgt):
+        if tgt['disp'] == 'x2':
+          print('{}: {:#02x}'.format(tgt['desc'], tdat[tgt['name']]))
+        elif tgt['disp'] == 'x4':
+          print('{}: {:#04x}'.format(tgt['desc'], tdat[tgt['name']]))
+        elif tgt['disp'] == 'x8':
+          print('{}: {:#08x}'.format(tgt['desc'], tdat[tgt['name']]))
+        elif tgt['disp'] == 'b8':
+          print('{}: {:#08b}'.format(tgt['desc'], tdat[tgt['name']]))
+        elif tgt['disp'] == 'b16':
+          print('{}: {:#016b}'.format(tgt['desc'], tdat[tgt['name']]))
+        elif tgt['disp'] == 'b32':
+          print('{}: {:#032b}'.format(tgt['desc'], tdat[tgt['name']]))
+        elif tgt['disp'] == 's4':
+          val = tdat[tgt['name']].to_bytes(4, 'big').decode()
+          print('{}: "{}"'.format(tgt['desc'], val))
+      else:
+        print('{}: {}'.format(tgt['desc'], tdat[tgt['name']]))
   for tgt in format:
     print(tgt.format(tdat))
 

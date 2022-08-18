@@ -21,6 +21,8 @@ For TTF
   head      : dump 'head' table (font header table)
   hhea      : header table for horizontal layout
   vhea      : header table for vertical layout
+  maxp      : maximum profile table
+  OS2       : font metrics table
 
 
 For TTC (font collection)
@@ -101,6 +103,34 @@ def PrintTTF(fhead, argv):
     util.PPHeaderArray(
       fhead['fname'], fhead['table_index']['hhea']['offset'], 
       table_defs.TABLE_VHEA, table_defs.TABLE_VHEA_FORMAT)
+  elif argv[2] == 'maxp':
+    print('maxp table information')
+    fdat = util.ParseHeaderArray(
+      fhead['fname'], fhead['table_index']['maxp']['offset'],
+      table_defs.TABLE_MAXP)
+    util.PrintHeaderArray(fdat, table_defs.TABLE_MAXP, [])
+    if fdat['ver'] == 1.0:
+      util.PPHeaderArray(
+        fhead['fname'], fhead['table_index']['maxp']['offset'] + 6, 
+        table_defs.TABLE_MAXP_1_0, [])
+  elif argv[2] == 'OS2':
+    print('OS/2 table information')
+    fdat = util.ParseHeaderArray(
+      fhead['fname'], fhead['table_index']['OS/2']['offset'],
+      table_defs.TABLE_OS2)
+    util.PrintHeaderArray(fdat, table_defs.TABLE_OS2, [])
+    if fdat['ver'] > 0:
+      util.PPHeaderArray(
+        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 78, 
+        table_defs.TABLE_OS2_1, [])
+    if fdat['ver'] > 1:
+      util.PPHeaderArray(
+        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 86, 
+        table_defs.TABLE_OS2_4, [])
+    if fdat['ver'] > 4:
+      util.PPHeaderArray(
+        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 96, 
+        table_defs.TABLE_OS2_5, [])
 
 if __name__ == "__main__":
   if len(sys.argv) < 2:
