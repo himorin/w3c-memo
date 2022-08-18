@@ -7,5 +7,5 @@ Target:
 
 ## Usage
 
-execute `<command> help`
+execute `dump-off.py help`
 
