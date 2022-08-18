@@ -7,5 +7,5 @@ Target:
 
 ## Usage
 
-Basic use
+execute `<command> help`
 

@@ -15,8 +15,10 @@ Commands
   (blank)   : display font file overview, with table index @TTF, font index @TTC
 
 For TTF
-  cmap      : summary of cmap table
-  head      : dump 'head' table
+  cmap      : summary of 'cmap' table (Character to Glyph index mapping)
+  head      : dump 'head' table (font header table)
+  hhea      : header table for horizontal layout
+  vhea      : header table for vertical layout
 
 
 For TTC (font collection)
@@ -80,15 +82,10 @@ def PrintTTC(fhead, argv):
 
 def PrintTTF(fhead, argv):
   if argv[2] == 'cmap':
-    fdat = read_off.ParseTablecmap(fhead['fname'], fhead['table_index']['cmap']['offset'])
-    print('cmap table information')
-    print('  version: {}'.format(fdat['version']))
-    print('  number: {}'.format(fdat['num']))
-    print('encoding records array:')
-    print('  number PlatID EncID   Offset')
-    for id in range(len(fdat['records'])):
-      rec = fdat['records'][id]
-      print('  {:>6}  {:>5} {:>5} {:>8}'.format(id, rec['platform'], rec['encoding'], rec['offset']))
+    fdat = read_off.ParseCmap(fhead['fname'], fhead['table_index']['cmap']['offset'])
+    read_off.PrintCmapOverview(fdat)
+  elif argv[2] == 'head':
+    read_off.PrintHead(read_off.ParseHead(fhead['fname'], fhead['table_index']['head']['offset']))
 
 if __name__ == "__main__":
   if len(sys.argv) < 2:
