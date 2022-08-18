@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+# 'head' table
 TABLE_HEAD = [
   {'type': 'uint16', 'name': 'ver_maj', 'desc': 'major version'},
   {'type': 'uint16', 'name': 'ver_min', 'desc': 'minor version'},
@@ -22,5 +23,54 @@ TABLE_HEAD = [
 ]
 TABLE_HEAD_FORMAT = [
   'Bounding box: x({0[x_min]}, {0[x_max]}), y({0[y_min]}, {0[y_max]})'
+]
+
+# 'hhea' table
+TABLE_HHEA = [
+  {'type': 'uint16', 'name': 'ver_maj', 'desc': 'major version'},
+  {'type': 'uint16', 'name': 'ver_min', 'desc': 'minor version'},
+  {'type': 'FWORD', 'name': 'ascender', 'desc': 'Typographic ascent'},
+  {'type': 'FWORD', 'name': 'descender', 'desc': 'Typographic descent'},
+  {'type': 'FWORD', 'name': 'linegap', 'desc': 'Typographic line gap'},
+  {'type': 'UFWORD', 'name': 'max_adv', 'desc': 'Max advance width'},
+  {'type': 'FWORD', 'name': 'minLSB', 'desc': 'min left sidebearing'},
+  {'type': 'FWORD', 'name': 'minRSB', 'desc': 'min right sidebearing'},
+  {'type': 'FWORD', 'name': 'xmaxext', 'desc': 'x Max extent'},
+  {'type': 'int16', 'name': 'caret_rise', 'desc': 'slope of cursor', 'comp': 1},
+  {'type': 'int16', 'name': 'caret_run', 'desc': 'slope of cursor', 'comp': 1},
+  {'type': 'int16', 'name': 'caret_off', 'desc': 'slant amount', 'comp': 1},
+  {'type': 'int16', 'name': 'reserved0', 'desc': '', 'fixed': 0},
+  {'type': 'int16', 'name': 'reserved1', 'desc': '', 'fixed': 0},
+  {'type': 'int16', 'name': 'reserved2', 'desc': '', 'fixed': 0},
+  {'type': 'int16', 'name': 'reserved3', 'desc': '', 'fixed': 0},
+  {'type': 'int16', 'name': 'format', 'desc': 'metric data format'},
+  {'type': 'uint16', 'name': 'num_hmtx', 'desc': 'number of hMetric entries in hmtx'},
+]
+TABLE_HHEA_FORMAT = [
+  'caret: slope ({0[caret_rise]}/ {0[caret_run]}), slant offset {0[caret_off]}'
+]
+
+# 'vhea' table
+TABLE_VHEA = [
+  {'type': 'Version16Dot16', 'name': 'ver', 'desc': 'Version'},
+  {'type': 'int16', 'name': 'ascent', 'desc': 'From center to previous descent'},
+  {'type': 'int16', 'name': 'descent', 'desc': 'From center to next ascent'},
+  {'type': 'int16', 'name': 'linegap', 'desc': 'reserved', 'fixed': 0},
+  {'type': 'int16', 'name': 'max_adv', 'desc': 'maximum advance height'},
+  {'type': 'int16', 'name': 'minTSB', 'desc': 'min top sidebearing'},
+  {'type': 'int16', 'name': 'minBSB', 'desc': 'min bottom sidebearing'},
+  {'type': 'int16', 'name': 'ymaxext', 'desc': 'y max extent'},
+  {'type': 'int16', 'name': 'caret_rise', 'desc': 'slope of caret', 'comp': 1},
+  {'type': 'int16', 'name': 'caret_run', 'desc': 'slope of caret', 'comp': 1},
+  {'type': 'int16', 'name': 'caret_off', 'desc': 'slant amount', 'comp': 1},
+  {'type': 'int16', 'name': 'reserved0', 'desc': '', 'fixed': 0},
+  {'type': 'int16', 'name': 'reserved1', 'desc': '', 'fixed': 0},
+  {'type': 'int16', 'name': 'reserved2', 'desc': '', 'fixed': 0},
+  {'type': 'int16', 'name': 'reserved3', 'desc': '', 'fixed': 0},
+  {'type': 'int16', 'name': 'format', 'desc': 'metric data format', 'fixed': 0},
+  {'type': 'uint16', 'name': 'num_vmtx', 'desc': 'number of VMetric entries in vmtx'},
+]
+TABLE_VHEA_FORMAT = [
+  'caret: slope ({0[caret_rise]}/ {0[caret_run]}), slant offset {0[caret_off]}'
 ]
 

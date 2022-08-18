@@ -88,10 +88,19 @@ def PrintTTF(fhead, argv):
     read_off.PrintCmapOverview(fdat)
   elif argv[2] == 'head':
     print('head table information')
-    util.PrintHeaderArray(util.ParseHeaderArray(
+    util.PPHeaderArray(
       fhead['fname'], fhead['table_index']['head']['offset'], 
-      table_defs.TABLE_HEAD),
       table_defs.TABLE_HEAD, table_defs.TABLE_HEAD_FORMAT)
+  elif argv[2] == 'hhea':
+    print('hhea table information')
+    util.PPHeaderArray(
+      fhead['fname'], fhead['table_index']['hhea']['offset'], 
+      table_defs.TABLE_HHEA, table_defs.TABLE_HHEA_FORMAT)
+  elif argv[2] == 'vhea':
+    print('vhea table information')
+    util.PPHeaderArray(
+      fhead['fname'], fhead['table_index']['hhea']['offset'], 
+      table_defs.TABLE_VHEA, table_defs.TABLE_VHEA_FORMAT)
 
 if __name__ == "__main__":
   if len(sys.argv) < 2:

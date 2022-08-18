@@ -52,7 +52,8 @@ def ReadHeaderArray(fp, target):
     elif tgt['type'] == 'Offset32':
       ret[tgt['name']] = int.from_bytes(fp.read(4), 'big')
     elif tgt['type'] == 'Version16Dot16':
-      ret[tgt['name']] = int.from_bytes(fp.read(4), 'big')
+      tmp = int.from_bytes(fp.read(4), 'big')
+      ret[tgt['name']] = (tmp >> 16) + (float((tmp & 0xF000) >> 12) / 10.0)
   return ret
 
 def ParseHeaderArray(fname, offset, table):
@@ -68,5 +69,9 @@ def PrintHeaderArray(tdat, table, format):
       print('{}: {}'.format(tgt['desc'], tdat[tgt['name']]))
   for tgt in format:
     print(tgt.format(tdat))
+
+def PPHeaderArray(fname, offset, table, format):
+  PrintHeaderArray(
+    ParseHeaderArray(fname, offset, table), table, format)
 
 
