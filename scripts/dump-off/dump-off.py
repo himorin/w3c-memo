@@ -5,6 +5,7 @@ import table_defs
 import util
 import sys
 import os
+import copy
 
 TAG_TTC = 0x74746366
 TAG_TTF = 0x00010000
@@ -26,11 +27,15 @@ For TTF
 
 
 For TTC (font collection)
+  <num>     : display font header for ID <num> in font collection
+  <num> XXX : display table content for ID <num> in font collection
+              XXX parsed as for TTF
 
 """)
 
-def ParseHead(fname):
+def ParseHead(fname, start = 0):
   fp = open(fname, 'rb')
+  fp.seek(start, os.SEEK_SET) # to read table record for TTC
   fhead = {}
   fhead['tag'] = int.from_bytes(fp.read(4), 'big')
   if fhead['tag'] == TAG_TTC:
@@ -82,7 +87,16 @@ def PrintHead(fhead):
       print("{} {:>8}   {:>7}   {:08x}".format(name, val['offset'], val['len'], val['checksum']))
 
 def PrintTTC(fhead, argv):
-  return
+  if argv[2].isdigit():
+    tgtf = int(argv[2])
+    if tgtf < fhead['num_fonts']:
+      chead = ParseHead(fhead['fname'], fhead['font_offsets'][tgtf])
+      if len(argv) == 3:
+        PrintHead(chead)
+      else:
+        carg = copy.copy(argv)
+        carg.pop(0)
+        PrintTTF(chead, carg)
 
 def PrintTTF(fhead, argv):
   if argv[2] == 'cmap':
