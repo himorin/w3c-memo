@@ -7,11 +7,13 @@ import sys
 Read continuous header array by array of target
   fp: file descriptor, set seek to start point to read
   target: array of hash of target data to read
-format of 'target'
+format of 'target': array of hash as
   type: type of value, also taken as byte length
   name: tag name of value, used as hash ID of return
   desc: description for print
   fixed: if fixed value or deprecated, set this as its value
+  comp: composited value, not to be displayed as single
+        parsing function should provide format string array with 'name' as id
 return: hash of value with 'name' as ID
 '''
 def ReadHeaderArray(fp, target):
@@ -52,5 +54,19 @@ def ReadHeaderArray(fp, target):
     elif tgt['type'] == 'Version16Dot16':
       ret[tgt['name']] = int.from_bytes(fp.read(4), 'big')
   return ret
+
+def ParseHeaderArray(fname, offset, table):
+  fp = open(fname, 'rb')
+  fp.seek(offset, os.SEEK_SET)
+  tdat = ReadHeaderArray(fp, table)
+  fp.close()
+  return tdat
+
+def PrintHeaderArray(tdat, table, format):
+  for tgt in table:
+    if ('fixed' not in tgt) and ('comp' not in tgt):
+      print('{}: {}'.format(tgt['desc'], tdat[tgt['name']]))
+  for tgt in format:
+    print(tgt.format(tdat))
 
 

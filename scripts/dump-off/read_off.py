@@ -14,41 +14,19 @@ TABLE_HEAD = [
   {'type': 'uint16', 'name': 'unit', 'desc': 'units per EM'},
   {'type': 'LONGDATETIME', 'name': 't_create', 'desc': 'created at'},
   {'type': 'LONGDATETIME', 'name': 't_modify', 'desc': 'modified at'},
-  {'type': 'int16', 'name': 'x_min', 'desc': 'Min X of bounding box'},
-  {'type': 'int16', 'name': 'y_min', 'desc': 'Min Y of bounding box'},
-  {'type': 'int16', 'name': 'x_max', 'desc': 'Max X of bounding box'},
-  {'type': 'int16', 'name': 'y_max', 'desc': 'Max Y of bounding box'},
+  {'type': 'int16', 'name': 'x_min', 'desc': 'Min X of bounding box', 'comp': 1},
+  {'type': 'int16', 'name': 'y_min', 'desc': 'Min Y of bounding box', 'comp': 1},
+  {'type': 'int16', 'name': 'x_max', 'desc': 'Max X of bounding box', 'comp': 1},
+  {'type': 'int16', 'name': 'y_max', 'desc': 'Max Y of bounding box', 'comp': 1},
   {'type': 'uint16', 'name': 'macstyle', 'desc': 'bit flags of font style'},
   {'type': 'uint16', 'name': 'ppem', 'desc': 'Smallest readable size in pixels'},
   {'type': 'int16', 'name': 'directionhint', 'desc': '', 'fixed': 2},
   {'type': 'int16', 'name': 'off_form', 'desc': 'offset format'},
   {'type': 'int16', 'name': 'glyph', 'desc': 'glyph format'},
 ]
-
-'''
-Parse 'head' table, returns hash (see TABLE_HEAD array)
-'''
-def ParseHead(fname, offset):
-  fp = open(fname, 'rb')
-  fp.seek(offset, os.SEEK_SET)
-  tdat = util.ReadHeaderArray(fp, TABLE_HEAD)
-  fp.close()
-  return tdat
-
-def PrintHead(tdat):
-  print('head table information')
-  print('majorVersion: {}'.format(tdat['ver_maj']))
-  print('minorVersion: {}'.format(tdat['ver_min']))
-  print('fontRevision: {}'.format(tdat['rev']))
-  print('flags: {:016b}'.format(tdat['flags']))
-  print('unitsPerEm: {}'.format(tdat['unit']))
-  print('created: {}'.format(tdat['t_create']))
-  print('modified: {}'.format(tdat['t_modify']))
-  print('Bounding box: x({}, {}), y({}, {})'.format(tdat['x_min'], tdat['x_max'], tdat['y_min'], tdat['y_max']))
-  print('style: {:07b}'.format(tdat['macstyle']))
-  print('smallest pixel: {}'.format(tdat['ppem']))
-  print('offset format: {}'.format(tdat['off_form']))
-  print('glyph format: {}'.format(tdat['glyph']))
+TABLE_HEAD_FORMAT = [
+  'Bounding box: x({0[x_min]}, {0[x_max]}), y({0[y_min]}, {0[y_max]})'
+]
 
 '''
 Parse 'cmap' table, returns hash

@@ -1,6 +1,8 @@
 #! /usr/bin/env python3
 
 import read_off
+import table_defs
+import util
 import sys
 import os
 
@@ -85,7 +87,11 @@ def PrintTTF(fhead, argv):
     fdat = read_off.ParseCmap(fhead['fname'], fhead['table_index']['cmap']['offset'])
     read_off.PrintCmapOverview(fdat)
   elif argv[2] == 'head':
-    read_off.PrintHead(read_off.ParseHead(fhead['fname'], fhead['table_index']['head']['offset']))
+    print('head table information')
+    util.PrintHeaderArray(util.ParseHeaderArray(
+      fhead['fname'], fhead['table_index']['head']['offset'], 
+      table_defs.TABLE_HEAD),
+      table_defs.TABLE_HEAD, table_defs.TABLE_HEAD_FORMAT)
 
 if __name__ == "__main__":
   if len(sys.argv) < 2:
