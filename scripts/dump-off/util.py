@@ -3,6 +3,17 @@
 import os
 import sys
 
+DISP_FORMAT = {
+  'x2' : '{0[desc]}: {0[val]:#02x}',
+  'x4' : '{0[desc]}: {0[val]:#04x}',
+  'x8' : '{0[desc]}: {0[val]:#08x}',
+  'b8' : '{0[desc]}: {0[val]:#08b}',
+  'b16': '{0[desc]}: {0[val]:#016b}',
+  'b32': '{0[desc]}: {0[val]:#032b}',
+  's4' : '{0[desc]}: "{0[str]}" ({0[val]:#08x})',
+}
+
+
 '''
 Read continuous header array by array of target
   fp: file descriptor, set seek to start point to read
@@ -15,6 +26,7 @@ format of 'target': array of hash as
   comp: composited value, not to be displayed as single
         parsing function should provide format string array with 'name' as id
   disp: display format, [xbs][0-9] for x as HEX, b as bin, s as str : x8 = 08x
+        see also DISP_FORMAT
 return: hash of value with 'name' as ID
 '''
 def ReadHeaderArray(fp, target):
@@ -67,22 +79,11 @@ def ParseHeaderArray(fname, offset, table):
 def PrintHeaderArray(tdat, table, format):
   for tgt in table:
     if ('fixed' not in tgt) and ('comp' not in tgt):
-      if ('disp' in tgt):
-        if tgt['disp'] == 'x2':
-          print('{}: {:#02x}'.format(tgt['desc'], tdat[tgt['name']]))
-        elif tgt['disp'] == 'x4':
-          print('{}: {:#04x}'.format(tgt['desc'], tdat[tgt['name']]))
-        elif tgt['disp'] == 'x8':
-          print('{}: {:#08x}'.format(tgt['desc'], tdat[tgt['name']]))
-        elif tgt['disp'] == 'b8':
-          print('{}: {:#08b}'.format(tgt['desc'], tdat[tgt['name']]))
-        elif tgt['disp'] == 'b16':
-          print('{}: {:#016b}'.format(tgt['desc'], tdat[tgt['name']]))
-        elif tgt['disp'] == 'b32':
-          print('{}: {:#032b}'.format(tgt['desc'], tdat[tgt['name']]))
-        elif tgt['disp'] == 's4':
-          val = tdat[tgt['name']].to_bytes(4, 'big').decode()
-          print('{}: "{}"'.format(tgt['desc'], val))
+      if ('disp' in tgt) and (tgt['disp'] in DISP_FORMAT):
+        pdat = {'desc': tgt['desc'], 'val': tdat[tgt['name']] }
+        if tgt['disp'] == 's4':
+          pdat['str'] = tdat[tgt['name']].to_bytes(4, 'big').decode()
+        print(DISP_FORMAT[tgt['disp']].format(pdat))
       else:
         print('{}: {}'.format(tgt['desc'], tdat[tgt['name']]))
   for tgt in format:
