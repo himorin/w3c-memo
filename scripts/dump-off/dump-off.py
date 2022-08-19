@@ -15,19 +15,23 @@ def PrintCommands():
 Commands
   (blank)   : display font file overview, with table index @TTF, font index @TTC
 
-For TTF
-  cmap      : summary of 'cmap' table (Character to Glyph index mapping)
-  head      : dump 'head' table (font header table)
-  hhea      : header table for horizontal layout
-  vhea      : header table for vertical layout
-  maxp      : maximum profile table
-  OS2       : font metrics table
+For TTF : "<table_name>" or "<table_name> <option>..."
+  cmap        : summary of 'cmap' table (Character to Glyph index mapping)
+  head        : dump 'head' table (font header table)
+    flags     : bit dump of flags
+    macstyle  : bit dump of macStyle
+  hhea        : header table for horizontal layout
+  vhea        : header table for vertical layout
+  maxp        : maximum profile table
+  OS2         : font metrics table
+    fstype    : type flags
+    uniran1   : Unicode Range 1
 
 
 For TTC (font collection)
   <num>     : display font header for ID <num> in font collection
   <num> XXX : display table content for ID <num> in font collection
-              XXX parsed as for TTF
+              XXX parsed as for TTF (could be multiple options)
 
 """)
 

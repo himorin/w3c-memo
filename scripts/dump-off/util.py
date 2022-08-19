@@ -93,4 +93,10 @@ def PPHeaderArray(fname, offset, table, format):
   PrintHeaderArray(
     ParseHeaderArray(fname, offset, table), table, format)
 
+def PrintHeaderBitflag(dat, bitdef):
+  for txt in bitdef:
+    val = dat & 0x01
+    dat = dat >> 1
+    print(' {} {}'.format(val, txt))
+
 

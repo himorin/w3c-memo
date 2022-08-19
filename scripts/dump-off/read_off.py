@@ -62,10 +62,19 @@ def PrintTTF(fhead, argv):
     fdat = ParseCmap(fhead['fname'], fhead['table_index']['cmap']['offset'])
     PrintCmapOverview(fdat)
   elif argv[2] == 'head':
-    print('head table information')
-    util.PPHeaderArray(
-      fhead['fname'], fhead['table_index']['head']['offset'], 
-      table_defs.TABLE_HEAD, table_defs.TABLE_HEAD_FORMAT)
+    if len(argv) > 3:
+      fdat = util.ParseHeaderArray(
+        fhead['fname'], fhead['table_index']['head']['offset'],
+        table_defs.TABLE_HEAD)
+      if argv[3] == 'flags':
+        util.PrintHeaderBitflag(fdat['flags'], table_defs.TABLE_HEAD_BIT_FLAGS)
+      elif argv[3] == 'macstyle':
+        util.PrintHeaderBitflag(fdat['macStyle'], table_defs.TABLE_HEAD_BIT_MACSTYLE)
+    else:
+      print('head table information')
+      util.PPHeaderArray(
+        fhead['fname'], fhead['table_index']['head']['offset'], 
+        table_defs.TABLE_HEAD, table_defs.TABLE_HEAD_FORMAT)
   elif argv[2] == 'hhea':
     print('hhea table information')
     util.PPHeaderArray(
@@ -82,27 +91,33 @@ def PrintTTF(fhead, argv):
       fhead['fname'], fhead['table_index']['maxp']['offset'],
       table_defs.TABLE_MAXP)
     util.PrintHeaderArray(fdat, table_defs.TABLE_MAXP, [])
-    if fdat['ver'] == 1.0:
+    if fdat['version'] == 1.0:
       util.PPHeaderArray(
         fhead['fname'], fhead['table_index']['maxp']['offset'] + 6, 
         table_defs.TABLE_MAXP_1_0, [])
   elif argv[2] == 'OS2':
-    print('OS/2 table information')
     fdat = util.ParseHeaderArray(
       fhead['fname'], fhead['table_index']['OS/2']['offset'],
       table_defs.TABLE_OS2)
-    util.PrintHeaderArray(fdat, table_defs.TABLE_OS2, [])
-    if fdat['ver'] > 0:
-      util.PPHeaderArray(
-        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 78, 
-        table_defs.TABLE_OS2_1, [])
-    if fdat['ver'] > 1:
-      util.PPHeaderArray(
-        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 86, 
-        table_defs.TABLE_OS2_4, [])
-    if fdat['ver'] > 4:
-      util.PPHeaderArray(
-        fhead['fname'], fhead['table_index']['OS/2']['offset'] + 96, 
-        table_defs.TABLE_OS2_5, [])
+    if len(argv) > 3:
+      if argv[3] == 'fstype':
+        util.PrintHeaderBitflag(fdat['fsType'], table_defs.TABLE_OS2_BIT_FSTYPE)
+      elif argv[3] == 'uniran1':
+        util.PrintHeaderBitflag(fdat['ulUnicodeRange1'], table_defs.TABLE_OS2_BIT_UNICODERANGE1)
+    else:
+      print('OS/2 table information')
+      util.PrintHeaderArray(fdat, table_defs.TABLE_OS2, [])
+      if fdat['version'] > 0:
+        util.PPHeaderArray(
+          fhead['fname'], fhead['table_index']['OS/2']['offset'] + 78, 
+          table_defs.TABLE_OS2_1, [])
+      if fdat['version'] > 1:
+        util.PPHeaderArray(
+          fhead['fname'], fhead['table_index']['OS/2']['offset'] + 86, 
+          table_defs.TABLE_OS2_4, [])
+      if fdat['version'] > 4:
+        util.PPHeaderArray(
+          fhead['fname'], fhead['table_index']['OS/2']['offset'] + 96, 
+          table_defs.TABLE_OS2_5, [])
 
 
