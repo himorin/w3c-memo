@@ -11,8 +11,11 @@ Check [github repository](https://github.com/himorin/w3c-memo) for issues or PRs
   * [TTWG](tt/)
   * [メモ置き場](notes/)
 * [日本語翻訳置き場](translations/): 非公式訳の作業場です
-* [月間サマリー](monthly-summary/)
+* [月間サマリー](monthly-summary/) -> <a href="https://github.com/w3ckeio/w3ckeio.github.io">w3ckeio/w3ckeio.github.io</a>に移動済み
 * [公開ファイル](files/): 共有資料置き場です
+* [作業用スクリプト](scripts/)
+  * [i18n-activityの状況確認ツール](scripts/i18n-tracking-check/)
+  * [TTF/OTFダンプツール](scripts/dump-off/)
 
 
 ## Useful Links
