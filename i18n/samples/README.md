@@ -5,4 +5,5 @@
 * Ruby
   * [Simple](html_ruby.html)
   * [stretched text](html_ruby_stretch.html)
-
+* vertial and horizontal
+  * [form controls](form_controls.html)

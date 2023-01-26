@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <meta charset="utf-8">
+  <title>フォーム要素の縦横表示</title>
+  <style>
+    div {
+      margin: 2em;
+      padding: 1em;
+      border: 1px solid black;
+    }
+    span {
+      border: 1px solid black;
+    }
+  </style>
+  <script><!--
+    var is_vertical = false;
+    window.addEventListener('load', (e) => {
+    document.getElementById('switch-vh').addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log(is_vertical);
+      if (is_vertical) {
+        is_vertical = false;
+        document.body.style.writingMode = 'horizontal-tb';
+      } else {
+        is_vertical = true;
+        document.body.style.writingMode = 'vertical-rl';
+      }
+      console.log(is_vertical);
+      return false;
+    }, false);});
+  --></script>
+</html>
+<body>
+<h1>フォーム要素の縦横表示での状態の検証</h1>
+<form action="" method="get">
+<button id="switch-vh">縦横切替</button>
+<div>この文書は，CSS，SVGおよびXSL-FOなどの技術で実現が求められる一般的な日本語組版の要件を記述したものです．この文書は，主としてJIS X 4051（日本語組版規則）に基づいていますが，一部，JIS X 4051に記載されていない事項にも言及しています．この版では，誤りの訂正や関連情報へのリンク追加などが行われています．<br>
+処理系にもよるが，文字サイズの指示には複数の単位が使用できる．書籍において，文字サイズの指示に使用されている単位としては，主にポイントと級（Q，q）がある．ポイントは，活字組版で使用されていた単位で，JIS Z 8305（活字の基準寸法）では，1ポイントは0.3514mmと規定しており，このサイズが現在でも使用されている．ただし，1ポイントを1/72インチ（約0.3528mm）とすることができる処理系も多く，このサイズを採用しているものもある．級は写真植字で使用されていた単位で，1Qは0.25mmである．文字サイズの指示では，慣れているものが使いやすいということもあり，どれか1つに整理するのは困難であり，同じ出版社内でも複数の単位が使用されている例がある．</div>
+<div><button>ボタン</button> (注意: クリックでサブミットになりページリロードします)</div>
+<div>type=reset のリセットボタン: <input type="reset"></div>
+<div>type=submit の送信ボタン: <input type="submit"></div>
+<div>selectのテスト：
+  <select>
+    <option value="目次">目次</option>
+    <option value="ヘッダ">ヘッダ</option>
+    <option value="Abstract">Abstract</option>
+    <optgroup label="序論">
+      <option value="この文書の目的">この文書の目的</option>
+      <option value="この文書の作成方法">この文書の作成方法</option>
+      <option value="この文書の執筆方針">この文書の執筆方針</option>
+    </optgroup>
+    <optgroup label="日本語組版の基本">
+      <option value="日本語組版に使用する文字と配置の原則">日本語組版に使用する文字と配置の原則</option>
+      <option value="日本語文書の基本となる組体裁">日本語文書の基本となる組体裁</option>
+      <option value="組方向（縦組みと横組み）">組方向（縦組みと横組み）</option>
+    </optgroup>
+    <optgroup label="行の組版処理">
+      <option value="約物などの組版処理">約物などの組版処理</option>
+      <option value="和欧文混植処理 (縦中横処理を含む)">和欧文混植処理 (縦中横処理を含む)</option>
+      <option value="ルビと圏点処理">ルビと圏点処理</option>
+    </optgroup>
+  </select>
+</div>
+<div><label for="datalist-test-simple">datalistの表示 (ダブルクリックでリストが表示)</label> <input list="sample-data" id="datalist-test-simple" name="datalist-test-simple"></div>
+<div>
+  <fieldset>
+    <legend>fieldsetの表示 (input radio)</legend>
+    <span><input type="radio" name="fieldset-test" id="fieldset-test-1" value="1"><label for="fieldset-test-1">目次</label></span>
+    <span><input type="radio" name="fieldset-test" id="fieldset-test-2" value="2"><label for="fieldset-test-2">ヘッダ</label></span>
+    <span><input type="radio" name="fieldset-test" id="fieldset-test-3" value="3"><label for="fieldset-test-3">Abstract</label></span>
+    <span><input type="radio" name="fieldset-test" id="fieldset-test-4" value="4"><label for="fieldset-test-4">この文書の目的</label></span>
+    <span><input type="radio" name="fieldset-test" id="fieldset-test-5" value="5"><label for="fieldset-test-5">この文書の作成方法</label></span>
+    <span>それぞれのinputとlabelごとにspanで囲ってborder添付</span>
+  </fieldset>
+</div>
+<div>
+  <fieldset>
+    <legend>fieldsetの表示 (input radio)、brあり</legend>
+    <span><input type="radio" name="fieldset-test2" id="fieldset-test2-1" value="1"><label for="fieldset-test2-1">目次</label></span><br>
+    <span><input type="radio" name="fieldset-test2" id="fieldset-test2-2" value="2"><label for="fieldset-test2-2">ヘッダ</label></span><br>
+    <span><input type="radio" name="fieldset-test2" id="fieldset-test2-3" value="3"><label for="fieldset-test2-3">Abstract</label></span><br>
+    <span><input type="radio" name="fieldset-test2" id="fieldset-test2-4" value="4"><label for="fieldset-test2-4">この文書の目的</label></span><br>
+    <span><input type="radio" name="fieldset-test2" id="fieldset-test2-5" value="5"><label for="fieldset-test2-5">この文書の作成方法</label></span><br>
+    <span>それぞれのinputとlabelごとにspanで囲ってborder添付</span>
+  </fieldset>
+</div>
+<div>
+  <fieldset>
+    <legend>fieldsetの表示 (input checkbox)</legend>
+    <span><input type="checkbox" name="fieldset-test-c" id="fieldset-test-c-1" value="1"><label for="fieldset-test-c-1">目次</label></span>
+    <span><input type="checkbox" name="fieldset-test-c" id="fieldset-test-c-2" value="2"><label for="fieldset-test-c-2">ヘッダ</label></span>
+    <span><input type="checkbox" name="fieldset-test-c" id="fieldset-test-c-3" value="3"><label for="fieldset-test-c-3">Abstract</label></span>
+    <span><input type="checkbox" name="fieldset-test-c" id="fieldset-test-c-4" value="4"><label for="fieldset-test-c-4">この文書の目的</label></span>
+    <span><input type="checkbox" name="fieldset-test-c" id="fieldset-test-c-5" value="5"><label for="fieldset-test-c-5">この文書の作成方法</label></span>
+    <span>それぞれのinputとlabelごとにspanで囲ってborder添付</span>
+  </fieldset>
+</div>
+<div>
+  <fieldset>
+    <legend>fieldsetの表示 (input checkbox)、brあり</legend>
+    <span><input type="checkbox" name="fieldset-test-c2" id="fieldset-test-c2-1" value="1"><label for="fieldset-test-c2-1">目次</label></span><br>
+    <span><input type="checkbox" name="fieldset-test-c2" id="fieldset-test-c2-2" value="2"><label for="fieldset-test-c2-2">ヘッダ</label></span><br>
+    <span><input type="checkbox" name="fieldset-test-c2" id="fieldset-test-c2-3" value="3"><label for="fieldset-test-c2-3">Abstract</label></span><br>
+    <span><input type="checkbox" name="fieldset-test-c2" id="fieldset-test-c2-4" value="4"><label for="fieldset-test-c2-4">この文書の目的</label></span><br>
+    <span><input type="checkbox" name="fieldset-test-c2" id="fieldset-test-c2-5" value="5"><label for="fieldset-test-c2-5">この文書の作成方法</label></span><br>
+    <span>それぞれのinputとlabelごとにspanで囲ってborder添付</span>
+  </fieldset>
+</div>
+<div>
+  meter要素のテスト、inline-size 50em、min/maxは0/100、low/highは33/66、optimumは80<br>
+  <label for="meter-test1">meter要素 50</label>
+  <meter id="meter-test1" min="0" max="100" low="33" high="66" optimum="80" value="50" style="inline-size: 50em;">at 50</meter><br>
+  <label for="meter-test2">meter要素 10</label>
+  <meter id="meter-test2" min="0" max="100" low="33" high="66" optimum="80" value="10" style="inline-size: 50em;">at 10</meter><br>
+  <label for="meter-test3">meter要素 70</label>
+  <meter id="meter-test3" min="0" max="100" low="33" high="66" optimum="80" value="70" style="inline-size: 50em;">at 70</meter><br>
+  <label for="meter-test4">meter要素 90</label>
+  <meter id="meter-test4" min="0" max="100" low="33" high="66" optimum="80" value="90" style="inline-size: 50em;">at 90</meter><br>
+  <label for="meter-test5">meter要素 80</label>
+  <meter id="meter-test5" min="0" max="100" low="33" high="66" optimum="80" value="80" style="inline-size: 50em;">at 80</meter><br>
+</div>
+<div>
+  progress要素のテスト、inline-size 50em、maxは100<br>
+  <label for="progress-test1">progress要素 0</label>
+  <progress id="progress-test1" max="100" style="inline-size: 50em;" value="0">0</progress><br>
+  <label for="progress-test2">progress要素 25</label>
+  <progress id="progress-test2" max="100" style="inline-size: 50em;" value="25">15</progress><br>
+  <label for="progress-test3">progress要素 50</label>
+  <progress id="progress-test3" max="100" style="inline-size: 50em;" value="50">50</progress><br>
+  <label for="progress-test4">progress要素 75</label>
+  <progress id="progress-test4" max="100" style="inline-size: 50em;" value="75">75</progress><br>
+  <label for="progress-test5">progress要素 100</label>
+  <progress id="progress-test5" max="100" style="inline-size: 50em;" value="100">100</progress><br>
+</div>
+<div>
+  input rangeのテスト、min/max/stepは0/10/0.5<br>
+  <label for="input-range-1">value 0</label>
+  <input type="range" min="0" max="10" step="0.5" id="input-range-1" value="0"><br>
+  <label for="input-range-2">value 2</label>
+  <input type="range" min="0" max="10" step="0.5" id="input-range-2" value="2"><br>
+  <label for="input-range-3">value 5.5</label>
+  <input type="range" min="0" max="10" step="0.5" id="input-range-3" value="5.5"><br>
+  <label for="input-range-4">value 8.5</label>
+  <input type="range" min="0" max="10" step="0.5" id="input-range-4" value="8.5"><br>
+  <label for="input-range-5">value 20</label>
+  <input type="range" min="0" max="10" step="0.5" id="input-range-5" value="20"><br>
+</div>
+<div>
+  textarea要素、inline-size/block-sizeは50em/10em<br>
+  <textarea id="textarea-text" style="inline-size: 50em; block-size: 10em">
+    始め括弧類（cl-01），終わり括弧類（cl-02），読点類（cl-07），句点類（cl-06）及び中点類（cl-05）が連続する場合は，次のようにする（Figure 69）．これは体裁上からの処理である．なお，行中における句点類（cl-06）の後ろの二分アキを除いて，行末における句点類（cl-06）の後ろの二分アキを含めて原則として二分アキ又は四分アキとする箇所は，行の調整処理の詰める場合の対象にしてよい（行の調整処理については，3.8 行の調整処理を参照）．なお，行末に配置する終わり括弧類（cl-02），句点類（cl-06），読点類（cl-07）及び中点類（cl-05）の配置方法については3.1.9 行末に配置する終わり括弧類，句点類，読点類及び​中点類の​配置方法を参照．
+  </textarea>
+</div><div>
+  textarea要素、テストでrows/colsを10/50<br>
+  <textarea id="textarea-text2" rows="10" cols="50">
+    始め括弧類（cl-01），終わり括弧類（cl-02），読点類（cl-07），句点類（cl-06）及び中点類（cl-05）が連続する場合は，次のようにする（Figure 69）．これは体裁上からの処理である．なお，行中における句点類（cl-06）の後ろの二分アキを除いて，行末における句点類（cl-06）の後ろの二分アキを含めて原則として二分アキ又は四分アキとする箇所は，行の調整処理の詰める場合の対象にしてよい（行の調整処理については，3.8 行の調整処理を参照）．なお，行末に配置する終わり括弧類（cl-02），句点類（cl-06），読点類（cl-07）及び中点類（cl-05）の配置方法については3.1.9 行末に配置する終わり括弧類，句点類，読点類及び​中点類の​配置方法を参照．
+  </textarea>
+</div>
+<div>
+  Color: <input type="color" value="#0c8d7b">
+</div>
+<div>
+  さまざまなinputのtype<br>
+  <span>Date: <input type="date"></span><br>
+  <span>Datetime local: <input type="datetime-local"></span><br>
+  <span>time: <input type="time"></span><br>
+  <span>Month: <input type="month"></span><br>
+  <span>Week: <input type="week"></span><br>
+  <span>email: <input type="email" style="inline-size: 50em;"></span><br>
+  <span>number: <input type="number"></span><br>
+  <span>password: <input type="password"></span><br>
+  <span>tel: <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"></span><br>
+  <span>text: <input type="text" size="50"></span><br>
+  <span>search: <input type="search" size="50"></span><br>
+  <span>url: <input type="url" size="50"></span>
+</div>
+<div>
+  File: <input type="file">
+</div>
+
+<datalist id="sample-data">
+  <option value="目次"></option>
+  <option value="ヘッダ"></option>
+  <option value="Abstract"></option>
+  <optgroup label="序論">
+    <option value="この文書の目的"></option>
+    <option value="この文書の作成方法"></option>
+    <option value="この文書の執筆方針"></option>
+  </optgroup>
+  <optgroup label="日本語組版の基本">
+    <option value="日本語組版に使用する文字と配置の原則"></option>
+    <option value="日本語文書の基本となる組体裁"></option>
+    <option value="組方向（縦組みと横組み）"></option>
+  </optgroup>
+  <optgroup label="行の組版処理">
+    <option value="約物などの組版処理"></option>
+    <option value="和欧文混植処理 (縦中横処理を含む)"></option>
+    <option value="ルビと圏点処理"></option>
+  </optgroup>
+</datalist>
+
+</form>
+</body>
