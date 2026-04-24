@@ -40,4 +40,4 @@ List of tools used for W3C works
 * [ReSpec](https://github.com/w3c/respec) JS library to be included in any published documents online
   * [very basic guide](https://github.com/w3c/respec/wiki/ReSpec-Editor's-Guide)
 * [tr-design](https://github.com/w3c/tr-design) CSS improvement project on ones used for TR
-
+* bikeshed [memo](bikeshed.md)
