@@ -19,3 +19,7 @@
 ## boilerplate関係
 
 * `bikeshed update`で更新されるboilerplateは`<git root>/bikeshed/spec-data/boilerplate/`に落ちる
+
+## misc
+
+* WG定義など: https://github.com/speced/bikeshed-boilerplate/blob/main/boilerplate/doctypes.kdl
