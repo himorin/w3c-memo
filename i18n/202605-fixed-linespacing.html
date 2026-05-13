@@ -70,6 +70,14 @@ p {
   margin: 0px;
   padding: 16px;
 }
+img.image32px {
+  transform: rotate(90deg);
+  margin-bottom: calc(1em * 1.6 - mod(100%, calc(1em * 1.6)))
+}
+div.wrapper {
+  margin: 0px;
+  padding: 0px;
+}
 -->
   </style>
 </head>
@@ -138,6 +146,14 @@ p {
   デジタルデバイス上の組版は進化しつつある技術なので、はっきりとした答えがなかったり、未だ答えのない問題もあるだろう。
   それでも、現在までの経験や考察によりわかっていること、また明らかになった課題などを、一旦ここでまとめておくことに意味があると考える。
   また、現状に追い越されないように、一旦の完成後も将来のチームによって継続的なアップデートが必要になろう。
+</div>
+<div class="wrapper"><img src="./202605-fixed-linespacing-20px.png" height="250px" class="image32px"></div>
+<div>
+  画像を入れようとする場合、画像要素の縦の長さに合わせて下に入れるpaddingのサイズを設定してやることで行間を固定できると思われる。<br>
+  上の張り込みは背景に入れている160px正方形の画像を250pxの高さにし90度回転させている。<br>
+  既定のブラウザCSSでは画像の周囲はmarginとpaddingとも0pxであり、
+  画像をmarginとpaddingともに0pxにしたdivで囲み、imgのmargin-bottomにcalc(1em * 1.6 - mod(100%, calc(1em * 1.6)))を設定することにより、
+  下部paddingを含めた高さを行間隔の整数倍にしている。
 </div>
 <h3>日本語組版の要件 (h3)</h3>
 <div>
