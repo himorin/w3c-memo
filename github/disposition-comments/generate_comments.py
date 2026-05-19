@@ -73,7 +73,7 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
 #  c_dat = c_issue.get_comments().totalCount
 #  c_dat = c_issue.get_comments().get_page(0)
   for c_comment in c_issue.get_comments():
-    if (c_from is None) or (c_comment.updated_at < c_from):
+    if (c_from is not None) and (c_comment.updated_at < c_from):
       continue
     print("\n\n<!--\n%s\n%s\n%s\n%s\n-->\n" % (c_comment.id, c_comment.user.login, c_comment.created_at, c_comment.updated_at), file = c_fh)
     c_dat = {}
