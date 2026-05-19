@@ -62,6 +62,7 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
   print(base_routines.ReplaceBracket(DEF_ISSUE_HEAD, c_dat), file = c_fh)
   print(base_routines.ReplaceBracket(DEF_ISSUE_META, c_dat), file = c_fh)
 
+  c_dat['HL'] = str(c_cnf['hlevel'])
   c_dat = PackCommentUpdate(c_issue, c_dat)
   c_dat['COMMENT'] = c_gh.render_markdown(text = c_issue.body, context = c_repo)
   print(base_routines.ReplaceBracket(DEF_COMMENT_INIT, c_dat), file = c_fh)
