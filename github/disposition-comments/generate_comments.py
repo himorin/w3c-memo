@@ -68,7 +68,7 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
   c_dat['COMMENT'] = c_gh.render_markdown(text = c_issue.body, context = c_repo)
   print(base_routines.ReplaceBracket(DEF_COMMENT_INIT, c_dat), file = c_fh)
   print(base_routines.ReplaceBracket(DEF_COMMENT_BODY, c_dat), file = c_fh)
-  print(DEF_COMMENT_CLOS)
+  print(DEF_COMMENT_CLOS, file = c_fh)
 
 #  c_dat = c_issue.get_comments().totalCount
 #  c_dat = c_issue.get_comments().get_page(0)
@@ -82,7 +82,7 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
     c_dat['COMMENT'] = c_gh.render_markdown(text = c_comment.body, context = c_repo)
     print(base_routines.ReplaceBracket(DEF_COMMENT_HEAD, c_dat), file = c_fh)
     print(base_routines.ReplaceBracket(DEF_COMMENT_BODY, c_dat), file = c_fh)
-    print(DEF_COMMENT_CLOS)
+    print(DEF_COMMENT_CLOS, file = c_fh)
 
   c_fh.close()
 
