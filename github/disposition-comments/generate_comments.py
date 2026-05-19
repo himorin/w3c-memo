@@ -7,10 +7,11 @@ import datetime
 
 DEF_ISSUE_HEAD = "<h[HL]>Comments provided to issue <a href=\"[IURL]\">[IREPO] #[IID]: [ITITLE]</a></h[HL]>"
 DEF_ISSUE_META = "<ul><li>Status: [ISTAT]</li><li>Created: <time datetime=\"[ICREDT]\">[ICREDAY]</time></li></ul>"
-DEF_COMMENT_INIT = "<h[HL]><a href=\"[CURL]\">Initial comment by [CNAME]</a> (<a href=\"[CLOGINURL]\">@[CLOGIN]</a>) at [CDATE] [CEDITED]</h[HL]>"
-DEF_COMMENT_HEAD = "<h[HL]><a href=\"[CURL]\">Comment by [CNAME]</a> (<a href=\"[CLOGINURL]\">@[CLOGIN]</a>) at [CDATE] [CEDITED]</h[HL]>"
+DEF_COMMENT_INIT = "<section>\n\n<h[HL]><a href=\"[CURL]\">Initial comment by [CNAME]</a> (<a href=\"[CLOGINURL]\">@[CLOGIN]</a>) at [CDATE] [CEDITED]</h[HL]>"
+DEF_COMMENT_HEAD = "<section>\n\n<h[HL]><a href=\"[CURL]\">Comment by [CNAME]</a> (<a href=\"[CLOGINURL]\">@[CLOGIN]</a>) at [CDATE] [CEDITED]</h[HL]>"
 DEF_COMMENT_EDIT = "(edited in <time datetime=\"[CEDITEDDT]\">[CEDITEDDAY]</time>)"
 DEF_COMMENT_BODY = "<blockquote>[COMMENT]</blockquote>"
+DEF_COMMENT_CLOS = "\n</section>\n\n"
 
 def PackCommentUpdate(c_obj, c_dat):
   c_dat['CURL'] = c_obj.html_url
@@ -67,6 +68,7 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
   c_dat['COMMENT'] = c_gh.render_markdown(text = c_issue.body, context = c_repo)
   print(base_routines.ReplaceBracket(DEF_COMMENT_INIT, c_dat), file = c_fh)
   print(base_routines.ReplaceBracket(DEF_COMMENT_BODY, c_dat), file = c_fh)
+  print(DEF_COMMENT_CLOS)
 
 #  c_dat = c_issue.get_comments().totalCount
 #  c_dat = c_issue.get_comments().get_page(0)
@@ -80,6 +82,7 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
     c_dat['COMMENT'] = c_gh.render_markdown(text = c_comment.body, context = c_repo)
     print(base_routines.ReplaceBracket(DEF_COMMENT_HEAD, c_dat), file = c_fh)
     print(base_routines.ReplaceBracket(DEF_COMMENT_BODY, c_dat), file = c_fh)
+    print(DEF_COMMENT_CLOS)
 
   c_fh.close()
 
