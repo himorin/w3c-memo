@@ -131,6 +131,7 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
       c_dat['PRSTATLIST'] += "<li>%s<ul>%s</ul></li>" % (c_prr_stat, c_prr_status[c_prr_stat])
   else:
     c_dat['IPRMRG'] = ''
+    c_dat['IPRSTAT'] = ''
   print(base_routines.ReplaceBracket(DEF_ISSUE_HEAD, c_dat), file = c_fh)
   print(base_routines.ReplaceBracket(DEF_ISSUE_META, c_dat), file = c_fh)
 
