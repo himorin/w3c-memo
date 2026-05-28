@@ -4,6 +4,7 @@ import base_routines
 import json
 import sys
 import datetime
+import html
 
 DEF_ISSUE_HEAD = "<h[HL]>Comments provided to [ICAT] <a href=\"[IURL]\">[IREPO] #[IID]: [ITITLE]</a></h[HL]>"
 DEF_ISSUE_META = "<ul><li>Status: [ISTAT]</li><li>Created: <time datetime=\"[ICREDT]\">[ICREDAY]</time></li>[ICLOSE][IPRMRG][IPRSTAT]</ul>"
@@ -13,12 +14,15 @@ DEF_ISSUE_MERGE = "<li>PR Merged: <time datetime=\"[IPRMRGDT]\">[IPRMRGDAY]</tim
 DEF_ISSUE_MERGE_NOT = "<li>PR not yet merged</li>"
 DEF_ISSUE_END_BY = "by [IENDBYNAME] (@<a href=\"[IENDBYURL]\">[IENDBY]</a>)"
 DEF_PR_RSTAT = "<li>Reviews provided:<ul>[PRSTATLIST]</ul></li>"
-DEF_PR_DATE = "<li>[PRBYNAME] (@<a href=\"[PRBYURL]\">[PRBY]</a>) at <time datetime=\"[PRBYDT]\">[PRBYDAY]</time></li>"
+DEF_PR_DATE = "<li>[PRBYNAME] (@<a href=\"[PRBYURL]\">[PRBY]</a>) at <time datetime=\"[PRBYDT]\">[PRBYDAY]</time>[PRBYCOMMENT]</li>"
 DEF_COMMENT_INIT = "<section>\n\n<h[HL]><a href=\"[CURL]\">Initial comment by [CNAME]</a> (<a href=\"[CLOGINURL]\">@[CLOGIN]</a>) at <time datetime=\"[CDATEDT]\">[CDATE]</time> [CEDITED]</h[HL]>"
 DEF_COMMENT_HEAD = "<section>\n\n<h[HL]><a href=\"[CURL]\">Comment by [CNAME]</a> (<a href=\"[CLOGINURL]\">@[CLOGIN]</a>) at <time datetime=\"[CDATEDT]\">[CDATE]</time> [CEDITED]</h[HL]>"
 DEF_COMMENT_EDIT = "(edited in <time datetime=\"[CEDITEDDT]\">[CEDITEDDAY]</time>)"
 DEF_COMMENT_BODY = "<blockquote>[COMMENT]</blockquote>"
 DEF_COMMENT_CLOS = "\n</section>\n\n"
+DEF_REVIEW_HEAD = "<section>\n<h[HL]>Code review comment on original line [CRHOL] / line [CRHL]</h[HL]>"
+DEF_REVIEW_DIFF = "<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>[COMMENT]</pre></blockquote></section>"
+DEF_REVIEW_COMMENT = "<section><h[LHS]><a href=\"[CURL]\">Added comment by [CNAME]</a> (<a href=\"[CLOGINURL]\">@[CLOGIN]</a>) at <time datetime=\"[CDATEDT]\">[CDATE]</time> [CEDITED]</h[LHS]><blockquote>[COMMENT]</blockquote></section>"
 
 def PackCommentUpdate(c_obj, c_dat):
   c_dat['CURL'] = c_obj.html_url
@@ -51,6 +55,30 @@ def PrintComments(c_comments, c_from, c_fh, c_cnf, c_gh, c_repo):
     c_dat['COMMENT'] = c_gh.render_markdown(text = c_comment.body, context = c_repo)
     print(base_routines.ReplaceBracket(DEF_COMMENT_HEAD, c_dat), file = c_fh)
     print(base_routines.ReplaceBracket(DEF_COMMENT_BODY, c_dat), file = c_fh)
+    print(DEF_COMMENT_CLOS, file = c_fh)
+
+def PrintReviewComments(c_comments, c_from, c_fh, c_cnf, c_gh, c_repo):
+  c_prr = {}
+  for c_comment in c_comments:
+    if (c_from is not None) and (c_comment.updated_at < c_from):
+      continue
+    c_prr_id = str(c_comment.original_line) + "-" + str(c_comment.line)
+    if c_prr_id not in c_prr:
+      c_prr[c_prr_id] = []
+    c_prr[c_prr_id].append(c_comment)
+  for c_prr_block in c_prr:
+    c_dat = {}
+    c_dat['HL'] = str(c_cnf['hlevel'])
+    c_dat['HLS'] = str(c_cnf['hlevel'] + 1)
+    c_dat['CRHOL'] = str(c_prr[c_prr_block][0].original_line)
+    c_dat['CRHL'] = str(c_prr[c_prr_block][0].line)
+    print(base_routines.ReplaceBracket(DEF_REVIEW_HEAD, c_dat), file = c_fh)
+    c_dat['COMMENT'] = html.escape(c_prr[c_prr_block][0].diff_hunk)
+    print(base_routines.ReplaceBracket(DEF_REVIEW_DIFF, c_dat), file = c_fh)
+    for c_prr_item in c_prr[c_prr_block]:
+      c_dat = PackCommentUpdate(c_prr_item, c_dat)
+      c_dat['COMMENT'] = c_gh.render_markdown(text = c_prr_item.body, context = c_repo)
+      print(base_routines.ReplaceBracket(DEF_REVIEW_COMMENT, c_dat), file = c_fh)
     print(DEF_COMMENT_CLOS, file = c_fh)
 
 def PrintIssue(c_cnf, c_gh, url, fromdate = None):
@@ -125,7 +153,8 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
         'PRBY': c_prr.user.login,
         'PRBYURL': c_prr.user.html_url,
         'PRBYDT': c_prr.submitted_at.isoformat(),
-        'PRBYDAY': c_prr.submitted_at.strftime('%Y-%m-%d')
+        'PRBYDAY': c_prr.submitted_at.strftime('%Y-%m-%d'),
+        'PRBYCOMMENT': "" if (c_prr.body is None) or (c_prr.body == "") else "<ul><li>%s</li></ul>" % c_gh.render_markdown(text = c_prr.body, context = c_repo)
       })
     for c_prr_stat in c_prr_status:
       c_dat['PRSTATLIST'] += "<li>%s<ul>%s</ul></li>" % (c_prr_stat, c_prr_status[c_prr_stat])
@@ -149,7 +178,7 @@ def PrintIssue(c_cnf, c_gh, url, fromdate = None):
     print("\n\n<!-- get_issue_comments -->\n\n", file = c_fh)
     PrintComments(c_issue.get_issue_comments(), c_from, c_fh, c_cnf, c_gh, c_repo)
     print("\n\n<!-- get_review_comments -->\n\n", file = c_fh)
-    PrintComments(c_issue.get_review_comments(), c_from, c_fh, c_cnf, c_gh, c_repo)
+    PrintReviewComments(c_issue.get_review_comments(), c_from, c_fh, c_cnf, c_gh, c_repo)
   else:
     PrintComments(c_issue.get_comments(), c_from, c_fh, c_cnf, c_gh, c_repo)
 

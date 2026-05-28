@@ -1,0 +1,61 @@
+
+<!--
+https://github.com/w3c/charter-drafts/issues/799
+799
+open
+[wg/das] Portability: charter does not address whether device APIs are expected to work across platform families
+marcoscaceres
+2026-04-30 00:38:40+00:00
+2026-05-12 00:32:45+00:00
+None
+-->
+
+
+<h4>Comments provided to issue <a href="https://github.com/w3c/charter-drafts/issues/799">w3c/charter-drafts #799: [wg/das] Portability: charter does not address whether device APIs are expected to work across platform families</a></h4>
+<ul><li>Status: open</li><li>Created: <time datetime="2026-04-30T00:38:40+00:00">2026-04-30</time></li><li>Not yet closed</li></ul>
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/799">Initial comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-30T00:38:40+00:00">2026-04-30</time> (edited in <time datetime="2026-05-12T00:32:45+00:00">2026-05-12</time>)</h5>
+<blockquote><p dir="auto">Posting as W3C Member (not TAG Member).</p>
+<p dir="auto">The <a href="https://w3c.github.io/charter-drafts/2026/das-wg-charter.html" rel="nofollow">DAS WG 2026 charter</a> includes a number of specifications that are not implemented on all major platforms. The charter does not address whether these specifications are expected to be portable across platform families, or what cross-engine support means when some platforms do not implement them.</p>
+<p dir="auto"><strong>Existing sensor specifications and the Generic Sensor architecture</strong></p>
+<p dir="auto">Accelerometer, Gyroscope, Magnetometer, Ambient Light Sensor, Proximity Sensor, and Orientation Sensor each extend the <a href="https://www.w3.org/TR/generic-sensor/" rel="nofollow">Generic Sensor</a> API. Per MDN Browser Compat Data: Accelerometer, Gyroscope, and Orientation Sensor ship in Chrome (67+) only; Magnetometer and Ambient Light Sensor are in Chrome behind a flag; Proximity Sensor has no implementation in any browser (no BCD entry exists). None are implemented in Firefox or Safari.</p>
+<p dir="auto">Meanwhile, <a href="https://www.w3.org/TR/orientation-event/" rel="nofollow">Device Orientation and Motion</a> covers the primary orientation and motion detection use cases with multi-engine support: per BCD, DeviceOrientationEvent ships in Chrome 7+, Edge 12+, Firefox 6+, Safari 17+ (including iOS Safari 4.2+). DeviceMotionEvent ships in Chrome 31+, Edge 12+, Firefox 6+, Safari 17+ (including iOS Safari 4.2+).</p>
+<p dir="auto">The Generic Sensor stack provides additional capabilities beyond Device Orientation (raw sensor readings, standalone Magnetometer access, Ambient Light, Proximity), but the charter does not explain which use cases require these additional capabilities, or why both architectures need to continue receiving new features given that the higher-level API has achieved broader cross-engine adoption.</p>
+<p dir="auto">The TAG's review (<a href="https://github.com/w3ctag/design-reviews/issues/1187" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard">design-reviews#1187</a>) raised this concern directly:</p>
+<blockquote>
+<p dir="auto">"We're concerned to see the Chromium-only Accelerometer, Gyroscope, and Orientation Sensor specifications in the charter, now that the Device Orientation and Motion spec is in Baseline."</p>
+</blockquote>
+<p dir="auto"><strong>Tentative and proposed new deliverables</strong></p>
+<p dir="auto">Web Serial is a tentative deliverable. <a href="https://github.com/w3c/charter-drafts/pull/786" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/786/hovercard">PR #786</a> proposes adding Web Bluetooth and WebUSB as new tentative deliverables alongside Web Serial (which was already listed and is repositioned in the PR). These APIs expose raw transport protocols that are hardware-dependent by design. Per BCD, they ship only in Chromium-based browsers: Web Bluetooth (Chrome 70, Chrome Android 56), WebUSB (Chrome 61, Chrome Android 61), Web Serial (Chrome 89, Chrome Android 138), WebHID (Chrome 89, no Android support). Safari and Firefox do not implement them (Firefox BCD shows Web Serial at version 151, which is currently in beta, not yet in stable release).</p>
+<p dir="auto">The W3C <a href="https://www.w3.org/TR/ethical-web-principles/#multi" rel="nofollow">Ethical Web Principles</a> (§2.11) state:</p>
+<blockquote>
+<p dir="auto">"We will not create web technologies that encourage the creation of websites that work only in one browser, or only on particular hardware."</p>
+</blockquote>
+<p dir="auto">Does the charter expect these specifications to be portable across platform families? If not, how does the WG reconcile this with the principle above?</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4426267383
+reillyeon
+2026-05-12 00:32:44+00:00
+2026-05-12 00:32:44+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/799#issuecomment-4426267383">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-05-12T00:32:44+00:00">2026-05-12</time> </h5>
+<blockquote><blockquote>
+<p dir="auto">Does the charter expect these specifications to be portable across platform families? If not, how does the WG reconcile this with the principle above?</p>
+</blockquote>
+<p dir="auto">The multi-engine and cross-platform implementation of the Device Orientation and Motion specification demonstrates that this specification and the Generic Sensors-based specifications that overlap with it are implementable across platform families.</p>
+<p dir="auto">For the rest of the Generic Sensors APIs, Magnetometer and ALS seem to be implementable across all major platforms. Proximity perhaps not.</p>
+<p dir="auto">For the tentative deliverables, I argue that the Chromium project's implementation experience demonstrates that these specifications are portable across product families. Continuing the discussion from <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4060405554" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/772" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/772/hovercard" href="https://github.com/w3c/charter-drafts/issues/772">#772</a>, the exception to this for some APIs is the iOS platform, where Apple has made the product decision to block applications from implementing Web Serial, WebHID and WebUSB, however the hardware itself is perfectly capable of supporting such an implementation. This is demonstrated by the fact that the Macbook Neo is based on the same SoC as the iPhone 16 Pro and Chromium's implementations of these APIs work perfectly fine there.</p></blockquote>
+
+</section>
+
+

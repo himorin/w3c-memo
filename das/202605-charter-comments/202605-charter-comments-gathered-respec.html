@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <title>Disposition of comments for the Device and Sensors Working Group 2026 draft charter</title>
+  <style>
+  </style>
+  <script src='https://www.w3.org/Tools/respec/respec-w3c' defer class='remove'></script>
+  <script class='remove'>
+var respecConfig = {
+  specStatus: "base"
+  , shortName: "das-2026-charter-disposition"
+  , editors: [{
+    name: "Atsushi Shimono",
+    w3cid: "110639",
+    mailto: "atsushi@w3.org"
+  }]
+  , maxTocLevel: 2
+//  , group: "team"
+//  , edDraftURI: ""
+//  , github: { repoURL: "", branch: "" }
+}
+  </script>
+<body>
+  <section id='abstract'>
+    <p>This document is the disposition of comments for the Device and Sensors Working Group 2026 draft charter.</p>
+  </section>
+
+  <section id='sotd'>
+    <p>Status and Visibility</p>
+    <ul>
+      <li>Status: Personal memo</li>
+      <li>Latest comment included: 2026-05-27</li>
+    </ul>
+  </section>
+
+  <section id="history">
+    <h2>Procedural History</h2>
+    <dl>
+      <dt>2026-01-15</dt>
+      <dd>charter refinement started (until 2026-02-12)
+        <a href="https://lists.w3.org/Archives/Member/w3c-ac-members/2026JanMar/0010.html">https://lists.w3.org/Archives/Member/w3c-ac-members/2026JanMar/0010.html</a></dd>
+      <dt>2026-01-29</dt>
+      <dd>started horizontal review
+        <a href="https://github.com/w3c/strategy/issues/530#event-22366279026">https://github.com/w3c/strategy/issues/530#event-22366279026</a></dd>
+      <dt>2026-02-12</dt>
+      <dd>TAG provided concerns (5 points) by consensus
+        <a href="https://github.com/w3ctag/design-reviews/issues/1187#issuecomment-3889788860">https://github.com/w3ctag/design-reviews/issues/1187#issuecomment-3889788860</a>
+        TAG review tracker issue closed with this comment, and reopened 2026-04-07
+        (<a href="https://github.com/w3c/strategy/issues/530#issuecomment-4401804483">https://github.com/w3c/strategy/issues/530#issuecomment-4401804483</a>)</dd>
+      <dt>2026-03-10</dt>
+      <dd>charter extended to 2026-05-31
+        <a href="https://lists.w3.org/Archives/Member/w3c-ac-members/2026JanMar/0053.html">https://lists.w3.org/Archives/Member/w3c-ac-members/2026JanMar/0053.html</a></dd>
+      <dt>2026-03-12</dt>
+      <dd>Mozilla opened comment to add three specs into deliverables
+        <a href="https://github.com/w3c/charter-drafts/issues/773">https://github.com/w3c/charter-drafts/issues/773</a></dd>
+      <dt>2026-04-16</dt>
+      <dd>Mozilla finalized as tentative deliverables
+        <a href="https://github.com/w3c/charter-drafts/pull/786#pullrequestreview-4118298912">https://github.com/w3c/charter-drafts/pull/786#pullrequestreview-4118298912</a></dd>
+      <dt>2026-03-30</dt>
+      <dd>i18n HR added i18n-needs-resolution
+        <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4153917428">https://github.com/w3c/strategy/issues/530#issuecomment-4153917428</a>
+        Resolved by PR <a href="https://github.com/w3c/charter-drafts/pull/804">https://github.com/w3c/charter-drafts/pull/804</a>
+        merged at <time datetime="2026-05-13T17:03:40Z">2026-05-13</time></dd>
+      <dt>2026-04-07</dt>
+      <dd>Joint discussion among DAS co-chairs, the Team, and TAG during <a href="https://github.com/w3ctag/meetings/blob/gh-pages/2026/telcons/04-06-minutes.md">TAG telecon</a></dd>
+      <dt>2026-04-12</dt>
+      <dd>Jeffrey Yasskin described discrepancy whtin the TAG over comments provided to draft charter, 
+        <a href="https://lists.w3.org/Archives/Team/w3t-archive/2026Apr/0151.html">the Team asked for direction to be presented from the TAG</a>.</dd>
+      <dt>2026-04-16</dt>
+      <dd>Mozilla opened whatwg/sg discussion on Peripheral APIs
+        <a href="https://github.com/whatwg/sg/pull/264"></a>https://github.com/whatwg/sg/pull/264</a>, 
+        including three specifications mentioned in 
+        <a href="https://github.com/w3c/charter-drafts/pull/786#pullrequestreview-4118298912">https://github.com/w3c/charter-drafts/pull/786#pullrequestreview-4118298912</a>
+        and two additional - <a href="https://wicg.github.io/webhid/">WebHID API</a> and 
+        <a href="https://w3c-cg.github.io/web-nfc/">Web NFC</a>.
+      </dd>
+      <dt>2026-04-23</dt>
+      <dd>(closed discussion)
+        Following a reminding request from the Team on updated TAG message (2026-04-23), 
+        TAG Lola Odelola noticed the Team, Chrisitian is preparing TAG opinion in consensus, and to provide update “by the deadline”
+        <a href="https://lists.w3.org/Archives/Team/w3t-archive/2026Apr/0240.html">https://lists.w3.org/Archives/Team/w3t-archive/2026Apr/0240.html</a></dd>
+      <dt>2026-05-05</dt>
+      <dd>strategy issue wrongly closed by PR merged, and soon reopened
+        <a href="https://github.com/w3c/strategy/issues/530#event-25165291033">https://github.com/w3c/strategy/issues/530#event-25165291033</a></dd>
+      <dt>2026-05-06</dt>
+      <dd>the Team stated start AC review after compositing disposition of comments
+        <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4388656080">https://github.com/w3c/strategy/issues/530#issuecomment-4388656080</a></dd>
+      <dt>2026-05-08</dt>
+      <dd>As TAG co-chair, Jeffrey Yasskin spotted 5 items as concern as TAG consensus
+        <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4401804483">https://github.com/w3c/strategy/issues/530#issuecomment-4401804483</a></dd>
+      <dt>2026-05-08</dt>
+      <dd>As TAG deputy, Christian sent email on suggestion to adjust the charter draft text, on (only) point 1
+        <a href="https://lists.w3.org/Archives/Team/w3t-archive/2026May/0035.html">https://lists.w3.org/Archives/Team/w3t-archive/2026May/0035.html</a>
+        Followed by PR <a href="https://github.com/w3c/charter-drafts/pull/806">https://github.com/w3c/charter-drafts/pull/806</a></dd>
+      <dt>2026-05-14</dt>
+      <dd>
+        As TAG deputy, Christian noticed co-chairs of the DAS WG and the Team that 
+        <a href="https://lists.w3.org/Archives/Team/w3t-archive/2026May/0069.html">the TAG finalized consensus on the remaining four points on the TAG side</a>.
+        And opened PRs to implement the TAG comment.
+      </dd>
+      <dt>2026-05-21</dt>
+      <dd>
+        Mozilla announced in their blog post for support of <a href="https://wicg.github.io/serial/">Web Serial API</a> in Firefox, as 
+        <a href="https://hacks.mozilla.org/2026/05/web-serial-support-in-firefox/">Announcing Web Serial Support in Firefox</a>.
+      </dd>
+    </ul>
+  </section><!-- h2 history -->
+
+  <section id="tag-concerns">
+    <h2>Concerns raised by the TAG</h2>
+    <p>
+      At <time datetime="2026-02-12T09:38:31.000Z">2026-02-12</time>, 
+      TAG member Christian Liebel <a href="https://github.com/w3ctag/design-reviews/issues/1187#issuecomment-3889788860">raised</a> five concerns, 
+      with additional concerns which don't affect the charter but the TAG want to flag a few issues. 
+      (See <a href="#tag-concerns-5points">5 points of concerns</a> and <a href="#tag-concerns-additional">Additional concerns not affect the charter</a>)
+      At <time datetime="2026-04-07T13:00:00.000Z">2026-04-07</time>, 
+      joint discussion among DAS co-chairs, the Team, and TAG during <a href="https://github.com/w3ctag/meetings/blob/gh-pages/2026/telcons/04-06-minutes.md">TAG telecon</a>, 
+      but no conclusion in consensus made during the call, and decided to continue conversation along with TAG to finalize their position in consensus 
+      with proposed changes on what shall be implemented as work mode of the DAS WG to address the concerns.
+      At <time datetime="2026-05-07T23:03:38.000Z">2026-05-07</time>,
+      Christian Liebal again <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4401804483">confirmed</a> 
+      to be sure to specifically address the first 5 bullet points by TAG consensus.
+    </p>
+    <p>
+      In parallel to joint discussion during the TAG telecon and TAG finalizing its consensus, 
+      discussion continues under issues and PRs, 
+      including <a href="https://github.com/w3c/charter-drafts/pull/770">w3c/charter-drafts #770 Revise DAS WG charter with clearer implementation status</a>.
+      See <a href="#pr-tag-comments">Issues and changes proposed to address TAG concerns to w3c/charter drafts repository</a> for conversation held.
+    </p>
+    <p>
+      At <time datetime="2026-05-14T05:40:43Z">2026-05-14</time>, 
+      Christian noticed co-chairs of the DAS WG and the Team that 
+      <a href="https://lists.w3.org/Archives/Team/w3t-archive/2026May/0069.html">the TAG finalized consensus on the remaining four points on the TAG side</a>, 
+      and opened PRs to implement the TAG comment. 
+      (
+        See <a href="#tag-concerns-202605">Finalized consensus on the TAG side provided by 2026-05-14</a>, and 
+        following PRs and conversations at 
+        <a href="#tag-concerns-finalized-prs">Unresolved comments provided to PRs filed per TAG consensus</a>,
+        <a href="#tag-concerns-p4-pr">Merged PRs for TAG concern point 4</a>, and
+        <a href="#tag-concerns-p5">Comments and PR provided for TAG concern point 5</a>.
+      )
+      Following <a href="#tag-concerns-p4-pr">all of raised PRs for TAG concern point 4 merged</a>, 
+      Christian Liebel confirmed <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4549836034">TAG concern point 4 has been addressed</a>.
+    </p>
+    <p>
+      At 2026-05-26, for remaining unresolved items, the Team has discussed and decided to start AC review on the draft charter, 
+      with modification on proposed change by TAG on <a href="https://github.com/w3c/charter-drafts/pull/818">point 1</a> and 
+      <a href="https://github.com/w3c/charter-drafts/pull/819">point 3</a>, and integrating all proposed changes by  Anssi Kostiainen 
+      on <a href="https://github.com/w3c/charter-drafts/pull/808/changes">point 2</a>.
+    </p>
+
+    <section id="tag-concerns-5points">
+    <h3>5 points of concerns</h3>
+    <blockquote>
+<p dir="auto">The TAG endorses work on device APIs and the effort to get patent protection even for single-engine features, but we have several concerns with the way the DAS WG is being chartered to do that.</p>
+<ul dir="auto">
+<li><p dir="auto">We're concerned to see the Chromium-only Accelerometer, Gyroscope, and Orientation Sensor specifications in the charter, now that the <a href="https://www.w3.org/TR/orientation-event/" rel="nofollow">Device Orientation and Motion</a> spec is in Baseline. It makes sense to maintain non-consensus specifications while websites switch over to equivalent consensus APIs, but the charter should commit to only adding new features to the consensus versions. If there's not enough consensus on the new features to incorporate them into the core <a href="https://www.w3.org/TR/orientation-event/" rel="nofollow">Device Orientation and Motion</a> spec, this WG could develop an extension specification that allows websites to mostly use the Baseline feature, with a few engine-specific extensions.</p></li>
+<li><p dir="auto">We want to ensure that the other specifications fill clear user needs and are making appropriate tradeoffs between those user needs and any potential abuse of the APIs. In many WGs, we can rely on all 3 browser engines to check this, but since this WG does not currently include participation from all major browser engines, we're more concerned here. Could you add this goal to the charter for each of the specifications in that class? We see, for example, <span class="reference"><svg data-component="Octicon" class="octicon octicon-issue-opened open mr-1" title="Open" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path></svg><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2561794288" data-permission-text="Title is private" data-url="https://github.com/w3c/vibration/issues/45" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/45/hovercard" href="https://github.com/w3c/vibration/issues/45" aria-keyshortcuts="Alt+ArrowUp">Create an explainer<span class="issue-shorthand">&nbsp;w3c/vibration#45</span></a></span> to do this for Vibration, but it would be good to use the charter to ensure it gets done.</p></li>
+<li><p dir="auto">The <a href="https://www.w3.org/2025/08/vibration2-council-report.html#recommendations" rel="nofollow">Vibration Council recommended</a> that "the WG document the plan [to ship in multiple major browser engines] it thinks is best, whether or not that plan includes implementation in multiple browser engines, and a compelling rationale to help any reviewers decide whether the plan is acceptable." We couldn't find such a plan in this rechartering effort, and we encourage the WG to write such plans for each single-engine specification, in order to head off this possible formal objection.</p></li>
+<li>
+<p dir="auto">We would like the WG to find a way to signal the expected support level for each specification. There's some discomfort on the TAG with using the same spec status—Candidate Recommendation—for all of:</p>
+<ul dir="auto">
+<li>deprecated specs that are being maintained while websites migrate to a consensus replacement;</li>
+<li>features that are stable in one engine but opposed by the others;</li>
+<li>"living" consensus specs that never intend to advance to Recommendation; and</li>
+<li>consensus specs that are intended to advance to Recommendation.</li>
+</ul>
+<p dir="auto">At the same time, we recognize that this is the only status the Process defines for patent protection of these kinds of specifications. At a minimum, each document's support level should be in its SotD section, but ideally the WG would find a way to ensure that <em>developers reading a specification can tell at a glance which kind of document they're reading</em>.</p>
+</li>
+<li><p dir="auto">We're concerned by the appearance of Web Serial in the <a href="https://w3c.github.io/charter-drafts/2026/das-wg-charter.html#tentative" rel="nofollow">Tentative Deliverables</a>. At least Mozilla seems inclined to start implementing that API, and we want it to live in a WG that all implementers are comfortable joining, to ensure that all of their potential concerns about engine/platform capabilities, privacy, and security can be easily raised. That said, its presence in this charter doesn't prevent it from being adopted by another WG instead.</p></li>
+</ul>
+    </blockquote>
+    </section><!-- h3 tag-concerns-5points -->
+
+    <section id="tag-concerns-additional">
+    <h3>Additional concerns not affect the charter</h3>
+    <blockquote>
+<p dir="auto">The following concerns don't affect the charter, but we want to flag a few issues that are likely to come up in future design reviews for the individual specifications:</p>
+<ul dir="auto">
+<li>We will always look more critically at specifications developed by WGs without members from all major browser engines, since we want there to be <a href="https://www.w3.org/TR/ethical-web-principles/#multi" rel="nofollow">One Web</a> in the long run, and the fact that some browsers decide not to implement, inherently means there are concerns with the design. The WG should be prepared to explain how the non-members' critical feedback has been sought and considered.</li>
+<li>The Generic Sensor architecture seems overcomplicated overall. In reviews of features that use it, we'd appreciate some justification for why that architecture is better than defining APIs in a single layer, as <a href="https://www.w3.org/TR/orientation-event/" rel="nofollow">Device Orientation and Motion</a> does.</li>
+<li>Are the signals in the Battery API still the right ones to help websites help users achieve their goals? Would a "please reduce power use" signal be sufficient, with the UA in charge of deciding how the precise battery level and charging state contribute to that signal?</li>
+</ul>
+    </blockquote>
+    </section><!-- h3 tag-concerns-additional -->
+
+    <section id="tag-concerns-202605">
+      <h3>Finalized consensus on the TAG side provided by 2026-05-14</h3>
+      <p>
+        Following the TAG provided concerns (5 points) by consensus in 
+        <a href="https://github.com/w3ctag/design-reviews/issues/1187#issuecomment-3889788860">https://github.com/w3ctag/design-reviews/issues/1187#issuecomment-3889788860</a>
+        at 2026-02-12, and 
+        Joint discussion among DAS co-chairs, the Team, and TAG during 
+        <a href="https://github.com/w3ctag/meetings/blob/gh-pages/2026/telcons/04-06-minutes.md">TAG telecon</a>, 
+        Christian opened following PRs and sent message to co-chairs of the DAS WG and the Team,
+        by the TAG finalized consensus over all 5 points on the TAG side. 
+      </p>
+      <p>
+        For PRs opened for point 4, all PRs have merged by Reilly Grant, and 
+        as the TAG representative, 
+        Christian Liebel confirmed <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4549836034">TAG concern point 4 has been addressed</a>.
+      </p>
+      <ul>
+        <li>
+          For point 1:
+          a PR raised as w3c/charter-drafts #806 <a href="https://github.com/w3c/charter-drafts/pull/806">[wg/das] Adjust expected progress wording (resolves TAG feedback bullet point 1)</a>
+          at <time datetime="2026-05-08T16:56:39Z">2026-05-08</time>
+        </li>
+        <li>
+          For point 2:
+          a PR raised as w3c/charter-drafts #808 <a href="https://github.com/w3c/charter-drafts/pull/808">[wg/das] Add standards position commitment (resolves TAG feedback bullet point 2)</a>
+          at <time datetime="2026-05-14T05:53:32Z">2026-05-14</time>
+        </li>
+        <li>
+          For point 3:
+          a PR raised as w3c/charter-drafts #809 <a href="https://github.com/w3c/charter-drafts/pull/809">[wg/das] Add per-spec plans (resolves TAG feedback bullet point 3)</a>
+          at <time datetime="2026-05-14T05:57:18Z">2026-05-14</time>
+        </li>
+        <li>
+          For point 4, following PRs are opened against specifications, and all merged.
+          <ul>
+            <li>w3c/sensors #494 <a href="https://github.com/w3c/sensors/pull/494">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:47:35Z">2026-05-14</time></li>
+            <li>w3c/magnetometer #78 <a href="https://github.com/w3c/magnetometer/pull/78">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:47:59Z">2026-05-14</time></li>
+            <li>w3c/device-posture #173 <a href="https://github.com/w3c/device-posture/pull/173">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:48:13Z">2026-05-14</time></li>
+            <li>w3c/proximity #63 <a href="https://github.com/w3c/proximity/pull/63">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:48:06Z">2026-05-14</time></li>
+            <li>w3c/compute-pressure #319 <a href="https://github.com/w3c/compute-pressure/pull/319">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:48:09Z">2026-05-14</time></li>
+            <li>w3c/accelerometer #85 <a href="https://github.com/w3c/accelerometer/pull/85">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:46:34Z">2026-05-14</time></li>
+            <li>w3c/vibration #65 <a href="https://github.com/w3c/vibration/pull/65">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:48:17Z">2026-05-14</time></li>
+            <li>w3c/gyroscope #66 <a href="https://github.com/w3c/gyroscope/pull/66">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:47:28Z">2026-05-14</time></li>
+            <li>w3c/orientation-sensor #87 <a href="https://github.com/w3c/orientation-sensor/pull/87">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:47:31Z">2026-05-14</time></li>
+            <li>w3c/ambient-light #93 <a href="https://github.com/w3c/ambient-light/pull/93">Add implementation status note to SotD</a> at <time datetime="2026-05-14T11:48:02Z">2026-05-14</time></li>
+          </ul>
+        </li>
+        <li>
+          For point 5,
+          <a href="https://lists.w3.org/Archives/Public/www-archive/2026May/0000.html">email thread with subject as "[DAS & TAG] Charter Review Bullet Point 5"</a> 
+          started at <time datetime="2026-05-15T07:08:22Z">2026-05-15</time>. 
+          And an issue w3c/charter-drafts #810 <a href="https://github.com/w3c/charter-drafts/issues/810">DAS charter: update joint deliverables information</a> 
+          raised by Léonie Watson (@<a href="https://github.com/LJWatson">LJWatson</a>) at 
+          <time datetime="2026-05-20T07:47:30.000Z">2026-05-20</time>.
+        </li>
+      </ul>
+    </section><!-- h3 tag-concerns-202605 -->
+
+    <section id="tag-concerns-das-reply">
+    <h3>Reply to 5 point by the Devices and Sensors Working Group</h3>
+    <p>
+      <i>to be filled (once finalized)</i>
+    </p>
+    </section><!-- h3 tag-concerns-das-reply -->
+
+    <section id="tag-concern-team-decision">
+      <h3>Decision and modification on remaining four TAG concerns by the charter facilitator and the Team</h3>
+      <p>
+        The charter faciliator and the Team have discussed and decided to start AC review on the draft charter at 2026-05-26, 
+        with additional modification on proposed change by TAG on <a href="https://github.com/w3c/charter-drafts/pull/818">point 1</a> and 
+        <a href="https://github.com/w3c/charter-drafts/pull/819">point 3</a>, and integrating all proposed changes by  Anssi Kostiainen 
+        on <a href="https://github.com/w3c/charter-drafts/pull/808/changes">point 2</a>. 
+        For remaining concern about "the appearance of Web Serial in the tentative deliverables" in point 5, 
+        the charter facilitator and the Team have decided to ask the whole AC whether set of specifications 
+        added into the tentative deliverables shall be dropped or not, 
+        to make relationate presented by the TAG happen: 
+        <i>"to live in a WG that all implementers are comfortable joining, to ensure that all of their potential concerns 
+        about engine/platform capabilities, privacy, and security can be easily raised"</i>
+      </p>
+      <section id="tag-concern-team-decision-p1">
+        <h4>For point 1</h4>
+        <p>
+          The charter facilitator and the Team opened a PR w3c/charter-drafts #818 
+          <a href="https://github.com/w3c/charter-drafts/pull/818/changes">[wg/das] proposed Team decision on TAG feedback bullet point 1</a>, 
+          with adding modifications on the proposed change by the TAG on this point. 
+        </p>
+        <ul>
+          <li>
+            The Team modify the TAG proposed text to enable modification of adding new feature specifically related to security and 
+            privacy enhancements to existing specifications and features, such as integration with Permission API or newer scheme.
+          </li>
+          <li>
+            The Team keep the TAG proposed text for new features to be in the Device Orientations and Motion specification.
+          </li>
+        </ul>
+        </p>
+      </section>
+      <section id="tag-concern-team-decision-p2">
+        <h4>For point 2</h4>
+        <p>
+          The charter facilitator and the Team decided to pick all proposed changes by Anssi Kostiainen on the point 2 
+          at w3c/charter-drafts PR #808 
+          <a href="https://github.com/w3c/charter-drafts/pull/808/changes">[wg/das] Add standards position commitment (resolves TAG feedback bullet point 2)</a>, 
+          by following considertations.
+        </p>
+        <ul>
+          <li>
+            For removing sentence "For specifications not co-developed as Joint Deliverables with the Web Applications Working Group", 
+            there is no need to mention specifically about any another Working Group or to limit targets only to joint deliverables. 
+          </li>
+          <li>
+            For removing sentence "and recording how the concern was addressed or why it was not", 
+            since the disposition to be presented to the transition over matuarity levels 
+            shall be presented with recods of substantive concern and their resolution by the Working Group, 
+            and there is no need to duplicate the requirement presented in 
+            <a href="https://www.w3.org/policies/process/#transition-reqs">Advancement on the Recommendation Track of the W3C Process Document</a>.
+          </li>
+      </section>
+      <section id="tag-concern-team-decision-p3">
+        <h4>For point 3</h4>
+        <p>
+          The charter facilitator and the Team opened a PR w3c/charter-drafts #819 
+          <a href="https://github.com/w3c/charter-drafts/pull/819">[wg/das] proposed Team decision on TAG feedback bullet point 3</a>, 
+          with adding modifications on the proposed change by the TAG on this point. 
+        </p>
+        <ul>
+          <li>
+            The Team modify the TAG proposed text to add exit target not only as 
+            <a href="https://www.w3.org/policies/process/#abandon-draft">Discontinued Draft</a>
+            for completed end state but adding back to incubation in some community group.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="tag-concerns-comments">
+      <h3>Unresolved comments provided to the strategy issue and horizontal review issues</h3>
+      <ul>
+        <li><a href="#tag-concerns-comments-tagdr">w3ctag/design-reviews #1187</a></li>
+        <li><a href="#tag-concerns-comments-strat">w3c/strategy #530</a></li>
+      </ul>
+    </section><!-- h3 tag-concerns-comments -->
+
+    <section id="tag-concerns-finalized-prs">
+      <h3>Unresolved comments provided to PRs filed per TAG consensus (on points 1, 2, and 3)</h3>
+      <ul>
+        <li><a href="#tag-concerns-comments-cd-806">w3c/charter-drafts #806</a></li>
+        <li><a href="#tag-concerns-comments-cd-808">w3c/charter-drafts #808</a></li>
+        <li><a href="#tag-concerns-comments-cd-809">w3c/charter-drafts #809</a></li>
+      </ul>
+    </section>
+
+    <section id="tag-concerns-p4-pr">
+      <h3>Merged PRs for TAG concern point 4</h3>
+      <p>
+        Following PRs are opened against specifications, and all merged by the DAS WG co-chair.
+      </p>
+      <ul>
+        <li><a href="#tag-concerns-p4-pr-sensors">w3c/sensors #494</a></li>
+        <li><a href="#tag-concerns-p4-pr-magnetometer">w3c/magnetometer #78</a></li>
+        <li><a href="#tag-concerns-p4-pr-device-posture">w3c/device-posture #173</a></li>
+        <li><a href="#tag-concerns-p4-pr-proximity">w3c/proximity #63</a></li>
+        <li><a href="#tag-concerns-p4-pr-compute-pressure">w3c/compute-pressure #319</a></li>
+        <li><a href="#tag-concerns-p4-pr-accelerometer">w3c/accelerometer #85</a></li>
+        <li><a href="#tag-concerns-p4-pr-vibration">w3c/vibration #65</a></li>
+        <li><a href="#tag-concerns-p4-pr-gyroscope">w3c/gyroscope #66</a></li>
+        <li><a href="#tag-concerns-p4-pr-orientation-sensor">w3c/orientation-sensor #87</a></li>
+        <li><a href="#tag-concerns-p4-pr-ambient-light">w3c/ambient-light #93</a></li>
+      </ul>
+    </section><!-- h3 tag-concerns-p4-pr -->
+
+    <section id="tag-concerns-p5">
+      <h3>Comments and PR provided for TAG concern point 5</h3>
+      <p>
+        Followings are email conversation, filed issue and merged PR for the point 5 of the TAG concern. 
+        Concern remains, with cooment provided from Web Applications WG has been resolved by w3c/charter-drafts #810 and #812.
+      </p>
+      <ul>
+        <li><a href="#tag-concerns-p5-email">Email thread with subject as "[DAS & TAG] Charter Review Bullet Point 5"</a></li>
+        <li><a href="#tag-concerns-p5-810">w3c/charter-drafts #810</a></li>
+        <li><a href="#tag-concerns-p5-812">w3c/charter-drafts #812</a></li>
+      </ul>
+    </section><!-- h3 tag-concerns-p5 -->
+
+  </section><!-- h2 tag-concerns -->
+
+  <section id="add-three-mozilla">
+    <h2>Three additional tentative deliverables proposal by Mozilla, and two other in WHATWG/SG #264</h2>
+
+    <section id="add-three-mozilla-history">
+      <h3>Procedural History</h3>
+    <p>
+      Before charter refinement phase startes (from 2026-01-15), 
+      <a href="https://github.com/WICG/serial/issues/218">Graduate from Community Group to Working Group (WICG/serial #218)</a> was 
+      proposed by Reilly Grant (2026-01-14 (UTC)), 
+      and <a href="https://github.com/WICG/serial/issues/218#issuecomment-3751322182">community agreed</a> to add as new deliverable to 
+      the Devices and Sensors Working Group. 
+      <a href="https://github.com/w3c/charter-drafts/pull/763">Adding Web Serial API (charter-drafts #763)</a> was prepared 
+      to add Web Serial API as a tentative deliverable with a note to turn into a joint deliverable with the Web Applications Working Group, 
+      and the <a href="https://github.com/w3c/charter-drafts/pull/763#event-22366253773">PR was merged 2026-01-29</a> before starting horizontal reviews 
+      including TAG.
+    </p>
+    <p>
+      While charter refinement phase and horizontal reviews were running, three new issues have been filed 
+      by Haik Aftandilian (Mozilla) to move the Web Serial API into normative deliverables and add two new deliverables into tentative deliverables list: 
+      <a href="https://github.com/w3c/charter-drafts/issues/771">Move Web Serial from "Tentative Deliverable" to "Deliverable" (charter-drafts #771)</a>,
+      <a href="https://github.com/w3c/charter-drafts/issues/772">Add WebUSB as "Tentative Deliverable" (charter-drafts #772)</a> and 
+      <a href="https://github.com/w3c/charter-drafts/issues/773">Add Web Bluetooth as "Tentative Deliverable" (charter-drafts #773)</a>.
+    </p>
+    <p>
+      Following two proposals, 
+      a PR <a href="https://github.com/w3c/charter-drafts/pull/786#issue-4224211732">Revise DAS WG charter with new deliverables proposed by Mozilla (charter-drafts #786)</a>
+      has been opened by Anssi Kostiainen (2026-04-08 (UTC)) to add two specifications and move one specification into normative deliverables. 
+    </p>
+    <p>
+      Atsushi Shimono, as the W3C Team and as chartering facilitator for the draft DAS WG charter, 
+      mentioned a desire of certain consensus within the whole DAS WG before landing the PR at 
+      <a href="https://github.com/w3c/charter-drafts/pull/786#issuecomment-4218065793">2026-04-09 (UTC)</a>: 
+    </p>
+    <blockquote>
+<p dir="auto">Maybe not directly respond to your question, but I'd say as following, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko" aria-keyshortcuts="Alt+ArrowUp">@anssiko</a> .<br>
+For removing not relevant part to the specific title from this PR, I believe we shall update draft per topic basis via PR, at this stage, without mixing anything else.</p>
+<p dir="auto">(with staff contact hat on)<br>
+Coordination of WG activities are entirely up to co-chairs, by means I'd follow your decision, so I have no comment to land this PR into draft at this point.</p>
+<p dir="auto">(with <a href="https://www.w3.org/policies/process/#chartering-facilitator" rel="nofollow">chartering facilitator</a> hat on)<br>
+Since both draft charter and current charter states for potential new deliverables with subject of <strong>the Working Group</strong>, like 'the Working Group will prepare an updated Charter that differs only in deliverables', I shall need to state strong uncomfortable for landing this PR for adding new deliverables into normative list without securing consensus over the entire Working Group, e.g. using full CfC.</p>
+    </blockquote>
+    <p>
+      Following WG discussions and <a href="https://github.com/w3c/charter-drafts/pull/786#pullrequestreview-4118298912">Comment from Tantek Çelik (Mozilla)</a> 
+      as "<q>Considering all three of these as tentative deliverables works for Mozilla. Thank you.</q>", 
+      the PR has been updated with marking three as tentative deliverables.
+    </p>
+    <p>
+      Call for consensus has been issued by WG co-chairs on 2026-04-15 (UTC)
+      (<a href="https://lists.w3.org/Archives/Public/public-device-apis/2026Apr/0002.html">CfC to add Web Bluetooth, Web Serial and WebUSB to the DAS WG Charter - review by 25 April 2026</a>), 
+      and the DAS WG resolved to merge the PR on 2026-04-27 (UTC)
+      (<a href="https://lists.w3.org/Archives/Public/public-device-apis/2026Apr/0004.html">Re: CfC to add Web Bluetooth, Web Serial and WebUSB to the DAS WG Charter - review by 25 April 2026</a>). 
+      The <a href="https://github.com/w3c/charter-drafts/pull/786">charter-drafts PR #786</a> has been merged 
+      on <a href="https://github.com/w3c/charter-drafts/pull/786#event-25165290331">2026-05-05 (UTC)</a>, 
+      a while after the resolution for getting consensus within the Team, 
+      with unresolved concerns kept open.
+    </p>
+    <p>
+      In parall, Mozilla opened a request issue 
+      <a href="https://github.com/whatwg/sg/pull/264#issue-4273069606">Peripheral APIs Workstream Proposal (whatwg/sg #264)</a> (2026-04-16 (UTC))
+      to the WHATWG Steering Group to add Peripheral APIs into workstream. 
+      (Some discussions have held in WHATWG Steering Group following this proposal, such as 
+      <a href="https://github.com/whatwg/sg/issues/271">[Minutes] SG Minutes 2026-05-05 (whatwg/sg #271)</a>.)
+    </p>
+    <p>
+      Also an issue has been opened by Marcos Cáceres to the charter-drafts repository 
+      <a href="https://github.com/w3c/charter-drafts/issues/783">Web Serial: resolve TAG's venue concern before AC review (charter-drafts #783)</a>
+      on 2026-03-31 (UTC).
+    </p>
+    <p>
+      Following a proposal by Mozilla to whatwg/sg #264 
+      <a href="https://github.com/whatwg/sg/pull/264">Peripheral APIs Workstream Proposal (whatwg/sg #264)</a> (2026-04-16 (UTC)), 
+      the Team continued gathering comments and preferences from browser engines, 
+      and noted that there is some demand to include all five specifications into the DAS WG charter, 
+      and prepared a PR to add another two specifications 
+      <a href="https://wicg.github.io/webhid/">WebHID API</a> and <a href="https://w3c-cg.github.io/web-nfc/">Web NFC</a> as w3c/charter-drafts #820 
+      <a href="https://github.com/w3c/charter-drafts/pull/820">[wg/das] adding two peripheral apis as tentative deliverables</a>. 
+      (XXX conclusion)
+    </p>
+    </section><!-- h3 add-three-mozilla-history -->
+
+    <section id="add-three-mozilla-original">
+      <h3>Original proposals</h3>
+      <section id="add-three-mozilla-original-771" data-include="gh-html/w3c-charter-drafts-771-init.html"></section>
+      <section id="add-three-mozilla-original-772" data-include="gh-html/w3c-charter-drafts-772-init.html"></section>
+      <section id="add-three-mozilla-original-773" data-include="gh-html/w3c-charter-drafts-773-init.html"></section>
+    </section><!-- h3 add-three-mozilla-original -->
+
+    <section id="add-three-mozilla-concerns">
+      <h3>Unresolved concerns provided to this set of proposals</h3>
+      <p>
+        While the draft DAS charter has been updated to include three specifications as tentative deliverables, 
+        unresolved concerns provided during discussions, 
+        and specifically mentioned as unaddressed.
+      </p>
+      <ul>
+        <li><a href="#add-three-mozilla-concerns-771-unresolved">w3c/charter-drafts #771</a></li>
+        <li><a href="#add-three-mozilla-concerns-772-unresolved">w3c/charter-drafts #772</a></li>
+        <li><a href="#add-three-mozilla-concerns-773-unresolved">w3c/charter-drafts #773</a></li>
+        <li><a href="#add-three-mozilla-concerns-pr-786-unresolved">w3c/charter-drafts #786</a></li>
+        <li><a href="#add-three-mozilla-concerns-783-unresolved">w3c/charter-drafts #783</a></li>
+      </ul>
+      <p>
+        Also three specifications have been mentioned in issues newly opened issues, such as 
+        <a href="https://github.com/w3c/charter-drafts/issues/798">[wg/das] Security: peer-reviewed research demonstrates browser sandbox escapes via device APIs (charter-drafts #798)</a>
+        and 
+        <a href="https://github.com/w3c/charter-drafts/issues/799">[wg/das] Portability: charter does not address whether device APIs are expected to work across platform families (charter-drafts #799)</a>
+        both by Marcos Cáceres at 2025-04-30 (UTC).
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4380513758">Comment to charter-drafts #530 by Marcos Cáceres at 2025-05-05 (UTC)</a> as 
+          <q>
+            The wide review concerns listed above (<a href="https://github.com/w3c/charter-drafts/issues/798" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/798/hovercard" aria-keyshortcuts="Alt+ArrowUp">#798</a>, <a href="https://github.com/w3c/charter-drafts/issues/799" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/799/hovercard" aria-keyshortcuts="Alt+ArrowUp">#799</a>, <a href="https://github.com/w3c/charter-drafts/issues/771" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/771/hovercard" aria-keyshortcuts="Alt+ArrowUp">#771</a>, <a href="https://github.com/w3c/charter-drafts/issues/772" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/772/hovercard" aria-keyshortcuts="Alt+ArrowUp">#772</a>, <a href="https://github.com/w3c/charter-drafts/issues/773" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/773/hovercard" aria-keyshortcuts="Alt+ArrowUp">#773</a>) and the TAG's open review (<a href="https://github.com/w3ctag/design-reviews/issues/1187" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard" aria-keyshortcuts="Alt+ArrowUp">design-reviews#1187</a>) remain unaddressed.
+          </q>
+        </li>
+        <li>
+          <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4397542820">Comment to charter-drafts #530 by Marcos Cáceres at 2025-05-07 (UTC)</a> as 
+          <q>
+            Also: <a href="https://github.com/w3c/charter-drafts/issues/798" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/798/hovercard" aria-keyshortcuts="Alt+ArrowUp">#798</a> and <a href="https://github.com/w3c/charter-drafts/issues/799" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/799/hovercard" aria-keyshortcuts="Alt+ArrowUp">#799</a> are W3C Member wide review concerns grounded in peer-reviewed security research, cross-engine implementation data, and WebKit's published <a href="https://github.com/WebKit/standards-positions/issues/199" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/199/hovercard" aria-keyshortcuts="Alt+ArrowUp">community positions</a>. "One individual" is not an accurate characterization of concerns backed by a collective TAG review, a browser engine's community positions, and an academic paper from CISPA.
+          </q>
+        </li>
+      </ul>
+    </section><!-- h3 add-three-mozilla-concerns -->
+
+    <section id="add-three-mozilla-wg-resolved">
+      <h3>Comments and discussion by the DAS WG participants and the Team to include changes into draft charter</h3>
+      <p>
+        Follwoing conversation held by WG participants and the Team to merge proposed change to draft DAS WG charter.
+      </p>
+      <ul>
+        <li><a href="#add-three-mozilla-concerns-pr-786-wg">w3c/charter-drafts #786</a></li>
+        <li><a href="#add-three-mozilla-concerns-771-wg">w3c/charter-drafts #771</a></li>
+      </ul>
+    </section><!-- h3 add-three-mozilla-wg-resolved -->
+
+  </section><!-- h2 add-three-mozilla -->
+
+  <section id="add-webhaptics">
+    <h2>Add Web Haptics API specification</h2>
+
+    <section id="add-webhaptics-history">
+      <h3>Procedural History</h3>
+      <p>
+        Anssi Kostiainen as the DAS WG co-chair opened a PR 
+        <a href="https://github.com/w3c/charter-drafts/pull/795">Revise DAS WG charter with a new deliverable proposed by Microsoft (charter-drafts PR #795)</a> 
+        on 2026-04-27 (UTC) to add the <a href="https://github.com/wicg/web-haptics">Web Haptics API</a> specification 
+        as a tentative deliverable in the draft DAS WG charter, 
+        with comment as "<q>As discussed with key stakeholders.</q>" without further detail nor reference. 
+      </p>
+      <p>
+        Anssi Kostiainen as the DAS WG co-chair started a call for consensus on 2026-04-27 (UTC) 
+        (<a href="https://lists.w3.org/Archives/Public/public-device-apis/2026Apr/0005.html">CfC to add Web Haptics API to the DAS WG Charter - review by 7 May 2026</a>), 
+        but no comment registered to the PR (<a href="https://github.com/w3c/charter-drafts/pull/795">charter-drafts PR #795</a>) 
+        to inform that the DAS WG is running a CfC on the proposed addition of the Web Haptics API specification as a tentative deliverable in the draft DAS WG charter. 
+        Philippe Le Hegaret as the W3C Team posted concern to the PR (charter-drafts PR #795) 
+        on <a href="https://github.com/w3c/charter-drafts/pull/795#issuecomment-4389047656">2026-05-06 (UTC)</a> 
+        that 
+        <q>
+          I concur that it's not clear why the deliverable is added in the DAS charter. What expertise do we expect from DAS that is not available in the WebApps group ?
+        </q>.
+      </p>
+      <p>
+        Anssi Kostiainen as the DAS WG co-chair replied to the question by Philippe Le Hegaret on 
+        <a href="https://github.com/w3c/charter-drafts/pull/795#issuecomment-4391201564">2026-05-06 (UTC) </a>
+      <p>
+      <blockquote>
+<p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/plehegar/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/plehegar" aria-keyshortcuts="Alt+ArrowUp">@plehegar</a>, you can think of this API as a higher-level abstraction built on top of the Vibration API. As an example, <a href="https://github.com/lochie/web-haptics">https://github.com/lochie/web-haptics</a> is a polyfill on top of the Vibration API. The required technical coordination between the two APIs is facilitated by the proposed setup.</p>
+<p dir="auto">WebApps WG has worked on gamepad-specific haptics, but that’s an explicit non-goal for this deliverable.</p>
+<p dir="auto">CSS WG coordination has been agreed with that group’s leadership and team.</p>
+<p dir="auto">Happy to tweak the text further based on your suggestions.</p>
+      </blockquote>
+      <p>
+        but no further reply, agreement nor disagreement provided until the end of the CfC period on 2026-05-07 (UTC). 
+        Anssi Kostiainen as the DAS WG co-chair resolved the CfC on 2026-05-08 (UTC) 
+        with "<q>This CfC passes with no objections.</q>"
+        (<a href="https://lists.w3.org/Archives/Public/public-device-apis/2026May/0000.html">Re: CfC to add Web Haptics API to the DAS WG Charter - review by 7 May 2026</a>).
+      </p>
+      <p>
+        The <a href="https://github.com/w3c/charter-drafts/pull/795">PR</a> to add the Web Haptics API specification as a tentative deliverable 
+        in the draft DAS WG charter has not been merged as for 2026-05-13 (UTC). 
+      </p>
+      <p>
+        Related question has been raised by Marcos Cáceres on 2026-05-06 (UTC) as an issue 
+        <a href="https://github.com/w3c/charter-drafts/issues/802">Venue and scope: Web Haptics API (charter-drafts #802)</a>.
+      </p>
+      <p>
+        Related PR has been opened by Reilly Grant on 2026-05-12 (UTC) to remove mention of Haptics in 
+        description for Vibration API in the DAS WG charter
+        (<a href="https://github.com/w3c/charter-drafts/pull/807">Remove haptics from DAS charter draft (charter-drafts PR #807)</a>).
+      </p>
+    </section><!-- h3 add-webhaptics-history -->
+
+    <section id="add-webhaptics-comments">
+      <h3>Unresolved concerns provided to this proposal</h3>
+      <ul>
+        <li><a href="#add-webhaptics-comments-795">w3c/charter-drafts #795</a></li>
+        <li><a href="#add-webhaptics-comments-802">w3c/charter-drafts #802</a></li>
+      </ul>
+    </section><!-- h3 add-webhaptics-comments -->
+
+  </section><!-- h2 add-webhaptics -->
+
+  <section id="pr-tag-comments">
+    <h2>Issues and changes proposed to address TAG concerns to w3c/charter drafts repository</h2>
+    <section id="pr-tag-comments-history">
+      <h3>List of unresolved concerns</h3>
+      <p>
+        During conversations in the strategy issue 
+        (<a href="https://github.com/w3c/strategy/issues/530">Devices and Sensors Working Group 2026 Charter (strategy #530)</a>), 
+        several PRs have been proposed by TAG members to address the TAG concerns raised in the design review of the draft DAS WG charter:
+      </p>
+      <ul>
+        <li><a href="https://github.com/w3c/charter-drafts/pull/770">Revise DAS WG charter with clearer implementation status (charter-drafts PR #770; opened by Reilly Grant on <time datetime="2026-02-28T05:41:51Z">2026-02-28</time>)</a>
+          (closed <a href="#pr-tag-comments-770">by merged</a>; with <a href="#pr-tag-comments-comments-770">remaining unresolved comments</a>)</li>
+        <li><a href="#pr-tag-comments-comments-784">Address TAG review and Council recommendation feedback</a> (<a href="https://github.com/w3c/charter-drafts/pull/784">charter-drafts PR #784; opened by  Marcos Cáceres on 2026-03-31 (UTC)</a>)
+          (closed by Marcos Cáceres at <a href="https://github.com/w3c/charter-drafts/pull/784#event-25729222446">2026-05-19</a> as <i>This is superseded by the newer PRs.</i>)</li>
+        <li><a href="#pr-tag-comments-comments-806">Adjust expected progress wording (resolves TAG feedback bullet point 1)</a> (<a href="https://github.com/w3c/charter-drafts/pull/806">charter-drafts PR #806; opened by Christian Liebel on <time datetime="2026-05-08T16:56:39Z">2026-05-08</time></a>)</li>
+        <li><a href="#pr-tag-comments-comments-808">[wg/das] Add standards position commitment (resolves TAG feedback bullet point 2)</a> (<a href="https://github.com/w3c/charter-drafts/pull/808">charter-drafts PR #808; opened by Christian Liebel on <time datetime="2026-05-14T05:53:32Z">2026-05-14</time></a>)</li>
+        <li><a href="#pr-tag-comments-comments-809">[wg/das] Add per-spec plans (resolves TAG feedback bullet point 3)</a> (<a href="https://github.com/w3c/charter-drafts/pull/809">charter-drafts PR #809; opened by Christian Liebel on <time datetime="2026-05-14T05:57:18Z">2026-05-14</time></a>)</li>
+        <li><a href="#pr-tag-comments-780">Charter must commit to signaling implementation status in specifications, not only in the charter</a> (<a href="https://github.com/w3c/charter-drafts/issues/780">charter-drafts #780</a>) by Marcos Cáceres on 2026-03-31
+          (has been marked as resolved following <a href="#tag-concerns-p4-pr">PRs opened</a> against <a href="#tag-concerns-5points">TAG concern point 4</a> have been merged.)</li>
+        <li><a href="#pr-tag-comments-comments-798">Security: peer-reviewed research demonstrates browser sandbox escapes via device APIs</a> (<a href="https://github.com/w3c/charter-drafts/issues/798">charter-drafts #798</a>) by Marcos Cáceres on 2026-04-30</li>
+        <li><a href="#pr-tag-comments-comments-799">Portability: charter does not address whether device APIs are expected to work across platform families</a> (<a href="https://github.com/w3c/charter-drafts/issues/799">charter-drafts #799</a>) by Marcos Cáceres on 2026-04-30</li>
+      </ul>
+    </section><!-- h3 pr-tag-comments-history -->
+
+    <section id="pr-tag-comments-20260331">
+      <h3>Unresolved and closed PRs opened at 2026-03-31 following comment to w3c/strategy #530</h3>
+      <p>
+        Following 
+        <a href="https://github.com/w3c/strategy/issues/530#issuecomment-4159912174">comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-31T05:06:00+00:00">2026-03-31</time>, 
+        PRs have been opened for following up on the TAG's request <i>"each document's support level should be in its SotD section,"</i>, 
+        and all closed without merged.
+      </p>
+<blockquote>
+<p dir="auto">Following up on the TAG's request (<a href="https://github.com/w3ctag/design-reviews/issues/1187#issuecomment-3889788860" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard">w3ctag/design-reviews#1187</a>) that "each document's support level should be in its SotD section," I've opened PRs adding a <code class="notranslate">.advisement</code> box to the Status of This Document section for 11 DAS WG specs:</p>
+<ul dir="auto">
+<li><a href="https://github.com/w3c/sensors/pull/492" data-hovercard-type="pull_request" data-hovercard-url="/w3c/sensors/pull/492/hovercard">w3c/sensors#492</a> — Generic Sensor API</li>
+<li><a href="https://github.com/w3c/accelerometer/pull/84" data-hovercard-type="pull_request" data-hovercard-url="/w3c/accelerometer/pull/84/hovercard">w3c/accelerometer#84</a></li>
+<li><a href="https://github.com/w3c/gyroscope/pull/65" data-hovercard-type="pull_request" data-hovercard-url="/w3c/gyroscope/pull/65/hovercard">w3c/gyroscope#65</a></li>
+<li><a href="https://github.com/w3c/magnetometer/pull/77" data-hovercard-type="pull_request" data-hovercard-url="/w3c/magnetometer/pull/77/hovercard">w3c/magnetometer#77</a></li>
+<li><a href="https://github.com/w3c/ambient-light/pull/92" data-hovercard-type="pull_request" data-hovercard-url="/w3c/ambient-light/pull/92/hovercard">w3c/ambient-light#92</a></li>
+<li><a href="https://github.com/w3c/orientation-sensor/pull/86" data-hovercard-type="pull_request" data-hovercard-url="/w3c/orientation-sensor/pull/86/hovercard">w3c/orientation-sensor#86</a></li>
+<li><a href="https://github.com/w3c/proximity/pull/62" data-hovercard-type="pull_request" data-hovercard-url="/w3c/proximity/pull/62/hovercard">w3c/proximity#62</a></li>
+<li><a href="https://github.com/w3c/compute-pressure/pull/318" data-hovercard-type="pull_request" data-hovercard-url="/w3c/compute-pressure/pull/318/hovercard">w3c/compute-pressure#318</a></li>
+<li><a href="https://github.com/w3c/battery/pull/70" data-hovercard-type="pull_request" data-hovercard-url="/w3c/battery/pull/70/hovercard">w3c/battery#70</a></li>
+<li><a href="https://github.com/w3c/device-posture/pull/172" data-hovercard-type="pull_request" data-hovercard-url="/w3c/device-posture/pull/172/hovercard">w3c/device-posture#172</a></li>
+<li><a href="https://github.com/w3c/vibration/pull/57" data-hovercard-type="pull_request" data-hovercard-url="/w3c/vibration/pull/57/hovercard">w3c/vibration#57</a></li>
+</ul>
+<p dir="auto">Each advisement is tailored to the spec's situation (migration-mode, single-engine, flag-only, or unimplemented) and links to implementer standards positions without summarizing them.</p>
+</blockquote>
+      <p>
+        Followings are links to unresolved comments archived.
+      </p>
+      <ul>
+        <li><a href="#pr-tag-comments-20260331-sensors">w3c/sensors #492</a></li>
+        <li><a href="#pr-tag-comments-20260331-accelerometer">w3c/accelerometer #84</a></li>
+        <li><a href="#pr-tag-comments-20260331-gyroscope">w3c/gyroscope #65</a></li>
+        <li><a href="#pr-tag-comments-20260331-magnetometer">w3c/magnetometer #77</a></li>
+        <li><a href="#pr-tag-comments-20260331-ambient-light">w3c/ambient-light #92</a></li>
+        <li><a href="#pr-tag-comments-20260331-orientation-sensor">w3c/orientation-sensor #86</a></li>
+        <li><a href="#pr-tag-comments-20260331-proximity">w3c/proximity #62</a></li>
+        <li><a href="#pr-tag-comments-20260331-compute-pressure">w3c/compute-pressure #318</a></li>
+        <li><a href="#pr-tag-comments-20260331-battery">w3c/battery #70</a></li>
+        <li><a href="#pr-tag-comments-20260331-device-posture">w3c/device-posture #172</a></li>
+        <li><a href="#pr-tag-comments-20260331-vibration">w3c/vibration #57</a></li>
+      </ul>
+    </section><!-- h3 pr-tag-comments-20260331 -->
+  </section><!-- h2 pr-tag-comments -->
+
+  <section id="vibrationapi">
+    <h2>Vibration API</h2>
+    <section>
+      <h3>Unresolved concerns raised against Vibration API</h3>
+      <p>
+        Several unresolved issues have been filed to w3c/charter-drafts repository for additional discussions on TAG concerns.
+      </p>
+      <ul>
+        <li><a href="#vibrationapi-comments-781">Vibration: charter must reference the Council-recommended plan before AC review</a> (<a href="https://github.com/w3c/charter-drafts/issues/781">charter-drafts #781</a> by Marcos Cáceres at 2025-03-31 (UTC)</a>)</li>
+        <li><a href="#vibrationapi-comments-782">Vibration: "device haptics capabilities" language creates unresolved scope conflict with Web Applications WG</a> (<a href="https://github.com/w3c/charter-drafts/issues/782">charter-drafts #782 by Marcos Cáceres at 2025-03-31 (UTC)</a>)</li>
+        <li><a href="#vibrationapi-comments-807">Remove haptics from DAS charter draft</a> (<a href="https://github.com/w3c/charter-drafts/pull/807">charter-drafts PR #807 by Reilly Grant on 2026-05-12 (UTC)</a>)</li>
+      </ul>
+    </section><!-- h3 vibrationapi-comments -->
+
+    <section id="vibrationapi-ir-resolved">
+      <h3>Resolved discussions for Vibration API Implementation Report</h3>
+      <p>
+        A PR <a href="https://github.com/w3c/vibration/pull/55">Add implementation report (vibration #55)</a> has opened 
+        by Marcos Cáceres on 2026-03-31 (UTC) to add implementation report file into the repository, 
+        closed by Anssi Kostiainen on 2026-04-08 (UTC) without merging, 
+        but reopened by Reilly Grant on 2026-04-10 (UTC) and merged by Reilly Grant on 2026-05-01 (UTC) 
+        after some discussions and updates made to the PR. 
+      </p>
+      <ul>
+        <li><a href="#vibrationapi-ir-resolved-55">w3c/vibration #55</a> Add implementation report</li>
+        <li><a href="#vibrationapi-ir-resolved-61">w3c/vibration #61</a> Set Reilly as editor of implementation report</li>
+        <li><a href="#vibrationapi-ir-resolved-63">w3c/vibration #63</a> Add baseline logos?</li>
+        <li><a href="#vibrationapi-ir-resolved-64">w3c/vibration #64</a> Add Baseline implementation status to spec header</li>
+      </ul>
+    </section>
+
+  </section><!-- h2 vibrationapi -->
+
+
+  <section id="addressed-concerns">
+    <h2>Raised concerns addressed during charter refinment phase</h2>
+    <p>
+      Following points were raised against draft charter of the DAS WG, and resolved during charter refinement 
+      phase with changes or discussions.
+    </p>
+    <ul>
+      <li>Issue pointed from internationalization (i18n) horizontal review, to include i18n WG into Coordinations section</li>
+    </ul>
+
+    <section id="addressed-concerns-i18n">
+      <h3>Issue pointed from internationalization (i18n) horizontal review</h3>
+      <p>
+        Following comment has been provided by the Internationalization WG, and resolved by <a href="#addressed-concerns-i18n-pr">a PR w3c/charter-drafts #804</a>.
+      </p>
+      <section id="addressed-concerns-i18n-concern">
+        <h4>Comments provided from i18n group to issue <a href="https://github.com/w3c/strategy/issues/530">w3c/strategy #530: [wg/das] Devices and Sensors Working Group 2026 Charter</a></h4>
+<section>
+<h5><a href="https://github.com/w3c/strategy/issues/530#issuecomment-4153917428">Comment by himorin / Atsushi Shimono</a> (<a href="https://github.com/himorin">@himorin</a>) at <time datetime="2026-03-30T10:24:45+00:00">2026-03-30</time> </h5>
+<blockquote><p dir="auto"><a href="https://lists.w3.org/Archives/Team/w3t-archive/2026Feb/0016.html" rel="nofollow">from i18n WG</a></p>
+<p dir="auto"><a href="https://www.w3.org/TR/contact-picker/" rel="nofollow">Contact Picker API</a> potentially has scary I18N monsters in it (e.g. <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1611246368" data-permission-text="Title is private" data-url="https://github.com/w3c/contact-picker/issues/63" data-hovercard-type="issue" data-hovercard-url="/w3c/contact-picker/issues/63/hovercard" href="https://github.com/w3c/contact-picker/issues/63">w3c/contact-picker#63</a> as i18n-needs-resolution) because it will necessarily deal with personal names and might include sorting (including using pronunciation data e.g. yomi) and searching, transliteration, and the like. If physical address fields are included, that draws in that further level of complexity.<br>
+For the charter, if i18n WG can ask for early engagement/review and cite the additional need for coordination for the spec somewhere in section 5 that would probably be wise.<br>
+Since the Contact Picker API specification is a joint deliverable between the DAS WG and the <a href="https://www.w3.org/groups/wg/webapps" rel="nofollow">WebApps WG</a>, so this comment should be applicable also to the WebApps WG charter.</p></blockquote>
+</section>
+      </section>
+    </section><!-- h3 addressed-concerns-i18n -->
+
+    <section id="addressed-concerns-geolocation">
+      <h3>Geolocation specification was listed as maintenance Recommendation</h3>
+      <p>
+        During charter refinement phase, <a href="#issues-tag-concerns-comments-811">Léonie Watson pointed (w3c/charter-drafts #811)</a> 
+        that the <a href="https://www.w3.org/TR/geolocation/">Geolocation</a> specification 
+        is wrongly listed as maintenance Recommendation, which is under active developmernt as Candidate Recommendation phase, 
+        and has been resolved by <a href="#issues-tag-concerns-comments-813">a PR w3c/charter-drafts #813</a>.
+      </p>
+    </section><!-- h3 addressed-concerns-geolocation -->
+  </section>
+
+  <section id="all-capture-conversations">
+    <h2>Archive of all comments provided to conversations</h2>
+    <p>
+      This section captures every comments provided to issues or PRs during charter refinement phase of draft DAS WG 
+      charter of 2026.
+    </p>
+    <p>
+      Some of conversations in a single issue or PR may have been separated into resolved and unresolved parts, 
+      such as when the PR merged with unresolved concerns kept open.
+    </p>
+    <section id="all-capture-conversations-original">
+      <h3>Original strategy and horizontal review issues</h3>
+      <section id="tag-concerns-comments-tagdr" data-include="gh-html/w3ctag-design-reviews-1187-after5points.html"></section>
+      <section id="tag-concerns-comments-strat" data-include="gh-html/w3c-strategy-530-afterhr.html"></section>
+    </section>
+    <section id="all-capture-conversations-email-unresolved">
+      <h3>Unresolved concerns and comments provided by email</h3>
+      <section id="tag-concerns-p5-email" data-include="202605-tag-concerns-p5-thread.html"></section>
+    </section>
+    <section id="all-capture-conversations-unresolved">
+      <h3>Unresolved concerns and comments</h3>
+      <section id="tag-concerns-comments-cd-806" data-include="gh-html/w3c-charter-drafts-806-whole.html"></section>
+      <section id="tag-concerns-comments-cd-808" data-include="gh-html/w3c-charter-drafts-808-whole.html"></section>
+      <section id="tag-concerns-comments-cd-809" data-include="gh-html/w3c-charter-drafts-809-whole.html"></section>
+      <section id="add-three-mozilla-concerns-771-unresolved" data-include="gh-html/w3c-charter-drafts-771-whole.html"></section>
+      <section id="add-three-mozilla-concerns-772-unresolved" data-include="gh-html/w3c-charter-drafts-772-whole.html"></section>
+      <section id="add-three-mozilla-concerns-773-unresolved" data-include="gh-html/w3c-charter-drafts-773-whole.html"></section>
+      <section id="add-three-mozilla-concerns-pr-786-unresolved" data-include="gh-html/w3c-charter-drafts-786-unresolved.html"></section>
+      <section id="add-three-mozilla-concerns-783-unresolved" data-include="gh-html/w3c-charter-drafts-783-whole.html"></section>
+      <section id="add-webhaptics-comments-795" data-include="gh-html/w3c-charter-drafts-795-whole.html"></section>
+      <section id="add-webhaptics-comments-802" data-include="gh-html/w3c-charter-drafts-802-whole.html"></section>
+      <section id="pr-tag-comments-comments-770" data-include="gh-html/w3c-charter-drafts-770-unresolved.html"></section>
+      <section id="pr-tag-comments-comments-784" data-include="gh-html/w3c-charter-drafts-784-whole.html"></section>
+      <section id="pr-tag-comments-comments-798" data-include="gh-html/w3c-charter-drafts-798-whole.html"></section>
+      <section id="pr-tag-comments-comments-799" data-include="gh-html/w3c-charter-drafts-799-whole.html"></section>
+      <section id="pr-tag-comments-comments-806" data-include="gh-html/w3c-charter-drafts-806-whole.html"></section>
+      <section id="pr-tag-comments-comments-808" data-include="gh-html/w3c-charter-drafts-808-whole.html"></section>
+      <section id="pr-tag-comments-comments-809" data-include="gh-html/w3c-charter-drafts-809-whole.html"></section>
+      <section id="pr-tag-comments-780" data-include="gh-html/w3c-charter-drafts-780-whole.html"></section>
+      <section id="pr-tag-comments-20260331-sensors" data-include="gh-html/w3c-sensors-492-whole.html"></section>
+      <section id="pr-tag-comments-20260331-accelerometer" data-include="gh-html/w3c-accelerometer-84-whole.html"></section>
+      <section id="pr-tag-comments-20260331-gyroscope" data-include="gh-html/w3c-gyroscope-65-whole.html"></section>
+      <section id="pr-tag-comments-20260331-magnetometer" data-include="gh-html/w3c-magnetometer-77-whole.html"></section>
+      <section id="pr-tag-comments-20260331-ambient-light" data-include="gh-html/w3c-ambient-light-92-whole.html"></section>
+      <section id="pr-tag-comments-20260331-orientation-sensor" data-include="gh-html/w3c-orientation-sensor-86-whole.html"></section>
+      <section id="pr-tag-comments-20260331-proximity" data-include="gh-html/w3c-proximity-62-whole.html"></section>
+      <section id="pr-tag-comments-20260331-compute-pressure" data-include="gh-html/w3c-compute-pressure-318-whole.html"></section>
+      <section id="pr-tag-comments-20260331-battery" data-include="gh-html/w3c-battery-70-whole.html"></section>
+      <section id="pr-tag-comments-20260331-device-posture" data-include="gh-html/w3c-device-posture-172-whole.html"></section>
+      <section id="pr-tag-comments-20260331-vibration" data-include="gh-html/w3c-vibration-57-whole.html"></section>
+      <section id="vibrationapi-comments-781" data-include="gh-html/w3c-charter-drafts-781-whole.html"></section>
+      <section id="vibrationapi-comments-782" data-include="gh-html/w3c-charter-drafts-782-whole.html"></section>
+      <section id="vibrationapi-comments-807" data-include="gh-html/w3c-charter-drafts-807-whole.html"></section>
+    </section>
+    <section id="all-capture-conversations-resolved">
+      <h3>Resolved concerns and comments</h3>
+      <section id="tag-concerns-p4-pr-sensors" data-include="gh-html/w3c-sensors-494-whole.html"></section>
+      <section id="tag-concerns-p4-pr-magnetometer" data-include="gh-html/w3c-magnetometer-78-whole.html"></section>
+      <section id="tag-concerns-p4-pr-device-posture" data-include="gh-html/w3c-device-posture-173-whole.html"></section>
+      <section id="tag-concerns-p4-pr-proximity" data-include="gh-html/w3c-proximity-63-whole.html"></section>
+      <section id="tag-concerns-p4-pr-compute-pressure" data-include="gh-html/w3c-compute-pressure-319-whole.html"></section>
+      <section id="tag-concerns-p4-pr-accelerometer" data-include="gh-html/w3c-accelerometer-85-whole.html"></section>
+      <section id="tag-concerns-p4-pr-vibration" data-include="gh-html/w3c-vibration-65-whole.html"></section>
+      <section id="tag-concerns-p4-pr-gyroscope" data-include="gh-html/w3c-gyroscope-66-whole.html"></section>
+      <section id="tag-concerns-p4-pr-orientation-sensor" data-include="gh-html/w3c-orientation-sensor-87-whole.html"></section>
+      <section id="tag-concerns-p4-pr-ambient-light" data-include="gh-html/w3c-ambient-light-93-whole.html"></section>
+      <section id="tag-concerns-p5-810" data-include="gh-html/w3c-charter-drafts-810-whole.html"></section>
+      <section id="tag-concerns-p5-812" data-include="gh-html/w3c-charter-drafts-812-whole.html"></section>
+      <section id="add-three-mozilla-concerns-pr-786-wg" data-include="gh-html/w3c-charter-drafts-786-wg.html"></section>
+      <section id="add-three-mozilla-concerns-771-wg" data-include="gh-html/w3c-charter-drafts-771-wg.html"></section>
+      <section id="pr-tag-comments-770" data-include="gh-html/w3c-charter-drafts-770-resolved.html"></section>
+      <section id="vibrationapi-ir-resolved-55" data-include="gh-html/w3c-vibration-55-whole.html"></section>
+      <section id="vibrationapi-ir-resolved-61" data-include="gh-html/w3c-vibration-61-whole.html"></section>
+      <section id="vibrationapi-ir-resolved-63" data-include="gh-html/w3c-vibration-63-whole.html"></section>
+      <section id="vibrationapi-ir-resolved-64" data-include="gh-html/w3c-vibration-64-whole.html"></section>
+      <section id="addressed-concerns-i18n-pr" data-include="gh-html/w3c-charter-drafts-804-whole.html"></section>
+      <section id="issues-tag-concerns-comments-811" data-include="gh-html/w3c-charter-drafts-811-whole.html"></section>
+      <section id="issues-tag-concerns-comments-813" data-include="gh-html/w3c-charter-drafts-813-whole.html"></section>
+    </section>
+  </section><!-- h2 all-capture-conversations -->
+
+</body>
+</html>
+

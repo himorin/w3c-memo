@@ -1,0 +1,780 @@
+
+<!--
+https://github.com/w3c/charter-drafts/pull/770
+770
+closed
+Revise DAS WG charter with clearer implementation status
+reillyeon
+2026-02-28 05:41:51+00:00
+2026-03-31 16:26:42+00:00
+2026-03-31 16:26:42+00:00
+-->
+
+
+<h4>Comments provided to PR <a href="https://github.com/w3c/charter-drafts/pull/770">w3c/charter-drafts #770: Revise DAS WG charter with clearer implementation status</a></h4>
+<ul><li>Status: closed</li><li>Created: <time datetime="2026-02-28T05:41:51+00:00">2026-02-28</time></li><li>Closed: <time datetime="2026-03-31T16:26:42+00:00">2026-03-31</time> </li><li>PR Merged: <time datetime="2026-03-31T16:26:42+00:00">2026-03-31</time> by himorin / Atsushi Shimono (@<a href="https://github.com/himorin">himorin</a>)</li><li>Reviews provided:<ul><li>APPROVED<ul><li>Jeffrey Yasskin (@<a href="https://github.com/jyasskin">jyasskin</a>) at <time datetime="2026-03-03T08:34:28+00:00">2026-03-03</time><ul><li><p dir="auto">I think it's worth merging this PR at this point. It's a clear improvement over the previous state, and we can keep discussing the issues in further PRs.</p>
+<p dir="auto">On <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/marcoscaceres/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/marcoscaceres">@marcoscaceres</a>' later 2 comments:</p>
+<ol start="2" dir="auto">
+<li>Haptics has been in the <a href="https://www.w3.org/2019/05/webapps-charter.html" rel="nofollow">WebApps charter since that WG's creation in 2019</a>. The <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/HapticsDevice/explainer.md">Haptics explainer</a> in the <a href="https://www.w3.org/2022/04/webapps-wg-charter.html#wicgspecs" rel="nofollow">2022 charter's WICG specifications section</a> hasn't been touched since 2021. It doesn't make sense to let WebApps lick that cookie indefinitely if there's another WG interested in making progress.</li>
+<li>While I think the WG should write the plan requested by the Vibration Council before sending the new charter to the AC, I don't think it should actually appear in the charter.</li>
+</ol></li></ul></li><li>Anssi Kostiainen (@<a href="https://github.com/anssiko">anssiko</a>) at <time datetime="2026-03-03T10:47:13+00:00">2026-03-03</time></li><li>Marcos Cáceres (@<a href="https://github.com/marcoscaceres">marcoscaceres</a>) at <time datetime="2026-03-31T15:44:11+00:00">2026-03-31</time><ul><li><p dir="auto">Removing block. <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a> see my comment and let me know what you prefer (PRs and/or new Issues)?</p></li></ul></li></ul></li><li>CHANGES_REQUESTED<ul><li>Marcos Cáceres (@<a href="https://github.com/marcoscaceres">marcoscaceres</a>) at <time datetime="2026-03-03T21:04:34+00:00">2026-03-03</time><ul><li><p dir="auto">Would be great if to see the comments TAG made better addressed. Definitely an improvement over the original charter, but some ways to go.</p></li></ul></li></ul></li></ul></li></ul>
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770">Initial comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-02-28T05:41:51+00:00">2026-02-28</time> (edited in <time datetime="2026-03-31T16:26:42+00:00">2026-03-31</time>)</h5>
+<blockquote><p dir="auto">Each deliverable gets an "implementation status" and "expected progress" section to document the current state as of the time of chartering and the work the group will do to advance each deliverable.</p></blockquote>
+
+</section>
+
+
+
+
+<!-- get_issue_comments -->
+
+
+
+
+<!--
+3976447906
+reillyeon
+2026-02-28 05:43:00+00:00
+2026-02-28 05:43:00+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-3976447906">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-02-28T05:43:00+00:00">2026-02-28</time> </h5>
+<blockquote><p dir="auto">CC <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/christianliebel/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/christianliebel">@christianliebel</a> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a></p>
+<p dir="auto">Apologies for the messy diff. To clean up the organization I had to reorder the deliverables significantly.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+3988843997
+marcoscaceres
+2026-03-03 06:00:27+00:00
+2026-03-12 04:22:45+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-3988843997">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-03T06:00:27+00:00">2026-03-03</time> (edited in <time datetime="2026-03-12T04:22:45+00:00">2026-03-12</time>)</h5>
+<blockquote><p dir="auto">Thanks for the updates, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a>. The clearer implementation status and expected progress sections are a meaningful improvement. Thank you for the work on this.</p>
+<p dir="auto">Stepping back, however, I think there remain several structural gaps that prevent the charter from fully addressing the TAG review and Council recommendations.</p>
+<h2 dir="auto">1. Trajectory clarity for single-engine specifications</h2>
+<p dir="auto">For Generic Sensor and Compute Pressure, the charter signals continued evolution but does not define:</p>
+<ul dir="auto">
+<li>The interoperability objective during this charter;</li>
+<li>The expected timeline for achieving multi-engine support;</li>
+<li>Or what happens if sustained barriers remain.</li>
+</ul>
+<p dir="auto">Without explicit criteria or review checkpoints, CR risks becoming an open-ended resting state rather than a convergence mechanism. Clarifying the validation and reassessment model would go a long way toward addressing the TAG’s signaling concerns.</p>
+<p dir="auto">Additionally, it would be helpful to explicitly commit that specifications with limited implementation support will clearly reflect that status in their <strong>Status of This Document</strong> (or similar <a href="https://www.w3.org/StyleSheets/TR/2021/README#annoying" rel="nofollow">prominent signaling</a>). Developers read the specification itself, not the charter, and support level and intended trajectory should be visible there as well.</p>
+<h2 dir="auto">2. Vibration and scope/coordination with Web Apps</h2>
+<p dir="auto">The Vibration text now references evolving toward “device haptics capabilities.” However, haptics are explicitly in scope of the Web Applications WG, which also has an incubated Haptics proposal.</p>
+<p dir="auto">If the intent is to:</p>
+<ul dir="auto">
+<li>Maintain Vibration as a minimal primitive, that should be stated.</li>
+<li>Expand toward richer haptics capabilities, explicit coordination or a joint deliverable model with Web Apps would seem necessary.</li>
+</ul>
+<p dir="auto">As written, the abstraction boundary and coordination model are unclear.</p>
+<h2 dir="auto">3. Response to the Council recommendation (Vibration in particular)</h2>
+<p dir="auto">The Council asked the WG to document the plan it believes is best, including rationale. The current charter text signals ongoing maintenance but does not clearly articulate:</p>
+<ul dir="auto">
+<li>Whether the WG has re-evaluated the API’s continued fitness for purpose;</li>
+<li>What criteria would lead to redesign, transition, or discontinuation;</li>
+<li>Or what the long-term trajectory is during this charter.</li>
+</ul>
+<p dir="auto">Making that plan explicit would close the loop cleanly.</p>
+<p dir="auto">I’m raising these points constructively and would be happy to help draft language that tightens these areas. The improvements so far are appreciated; I think we’re close, but these structural clarifications would make the charter clearly responsive and reduce the likelihood of objections later.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+3993370070
+marcoscaceres
+2026-03-03 20:30:55+00:00
+2026-03-03 20:31:25+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-3993370070">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-03T20:30:55+00:00">2026-03-03</time> (edited in <time datetime="2026-03-03T20:31:25+00:00">the same day</time>)</h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a> i think then you have misunderstood some of the TAG’s feedback yourself.</p>
+<p dir="auto">I’d ask that we hold merging until we have a chance to discuss as there some misrepresentation of WebApps WG’s work and a misunderstanding of what we discussed in the TAG.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+3993731023
+jyasskin
+2026-03-03 21:44:47+00:00
+2026-03-03 21:44:47+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-3993731023">Comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-03T21:44:47+00:00">2026-03-03</time> </h5>
+<blockquote><p dir="auto">I wasn't aware of the more recent work on <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Haptics/explainer.md">navigator.playHaptics()</a>. If DAS wants to work on adding haptics to the Vibration API (which I wouldn't insist on), I think you should commit to coordinating with WebApps, and explain how this WG's effort would differ from theirs.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+3994778496
+marcoscaceres
+2026-03-04 02:08:59+00:00
+2026-03-04 02:08:59+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-3994778496">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-04T02:08:59+00:00">2026-03-04</time> </h5>
+<blockquote><blockquote>
+<p dir="auto">While I think the WG should write the plan requested by the Vibration Council before sending the new charter to the AC, I don't think it should actually appear in the charter.</p>
+</blockquote>
+<p dir="auto">That makes sense to me. I agree the plan itself probably shouldn't live directly in the charter.</p>
+<p dir="auto">However, the charter should reference a publicly accessible document describing that plan. Otherwise readers of the charter would have no visibility into how the Council recommendation was addressed.</p>
+<p dir="auto">Because the Council asked the WG to document the plan it believes is best, that document needs to be available during the charter review period so AC participants and others can evaluate it. The charter can simply point to it, but the plan itself needs be made publicly available before the charter proceeds to AC review.</p>
+<p dir="auto">cc <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/plehegar/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/plehegar">@plehegar</a> 👆</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+3995029147
+marcoscaceres
+2026-03-04 03:33:08+00:00
+2026-03-04 03:52:50+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-3995029147">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-04T03:33:08+00:00">2026-03-04</time> (edited in <time datetime="2026-03-04T03:52:50+00:00">the same day</time>)</h5>
+<blockquote><p dir="auto">Just to be clear, I'm ok if this PR doesn't address all the TAG feedback at once and only focuses on the "clearer implementation status", but it should include something like I proposed (i.e., "at a minimum", but hopefully DAS can do better): <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4003969457" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/770" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/770/hovercard?comment_id=2881370853&amp;comment_type=review_comment" href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2881370853">#770 (comment)</a></p>
+<p dir="auto">Unless folks prefer another approach, I'm happy to spin up individual issues for the remaining TAG feedback so we can track them and address them in small pull requests.</p>
+<p dir="auto">The remaining items I’m thinking of tracking would be roughly:</p>
+<ul dir="auto">
+<li>Define a lifecycle/evaluation process for long-standing deliverables without implementation progress (e.g., criteria and process for continuing, redesigning, or discontinuing work).</li>
+<li>Reference the public document responding to the Vibration Council recommendation, and ensure that document is published during charter review.</li>
+<li>Clarify scope/coordination for haptics work with the Web Apps WG.</li>
+<li>Document how feedback from non-participating implementers is actively solicited, publicly recorded, and addressed by the WG.</li>
+<li>Clarify the charter’s approach to overlapping APIs (e.g., committing to extend consensus APIs where appropriate rather than evolving parallel ones).</li>
+<li>Clarify the intended venue for Web Serial given the TAG feedback about its appearance in tentative deliverables.</li>
+</ul>
+<p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a>, did I miss anything?</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4157123252
+himorin
+2026-03-30 18:15:10+00:00
+2026-03-30 18:15:10+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-4157123252">Comment by himorin / Atsushi Shimono</a> (<a href="https://github.com/himorin">@himorin</a>) at <time datetime="2026-03-30T18:15:10+00:00">2026-03-30</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a> thank you for pushing restrained and well considered discussion here, and sorry for slow jumping in while waiting (desiring?) some comment from Reilly on stating (even not well documented one, but just what in mind or naive thought?) something here for comments of <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/marcoscaceres/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/marcoscaceres">@marcoscaceres</a> ... incl.:</p>
+<blockquote>
+<p dir="auto">CR risks becoming an open-ended resting state rather than a convergence mechanism. Clarifying the validation and reassessment model would go a long way toward addressing the TAG’s signaling concerns.</p>
+</blockquote>
+<p dir="auto">Actually this discussion remineded me several comments during last round (both charter and obsoletion), e.g. from cwilso (not adding @ intentionally) 's comment to other spec <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2307258382" data-permission-text="Title is private" data-url="https://github.com/w3c/battery/issues/64" data-hovercard-type="issue" data-hovercard-url="/w3c/battery/issues/64/hovercard?comment_id=2135682299&amp;comment_type=issue_comment" href="https://github.com/w3c/battery/issues/64#issuecomment-2135682299">w3c/battery#64 (comment)</a>, and I really agree with taking such unclear standing base over ones that there could not be/exist clear and widely agreed standing point around implementor support and maturity level. Of course, I really would notice that feedback at strategy issue that more (I would not say with 'better' - which is quite difficult to be defined on this front) communication with wider community on this point like <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a> pointed as publicly accessible document (not sure whether charter is a suitable place to refer directly, but linked document(s) from ready made <a href="https://www.w3.org/groups/wg/das/publications/" rel="nofollow">WG publication page</a> or else.).</p>
+<blockquote>
+<p dir="auto">However, the charter should reference a publicly accessible document describing that plan. Otherwise readers of the charter would have no visibility into how the Council recommendation was addressed.</p>
+</blockquote>
+<p dir="auto">Or, if we want to mention that <code class="notranslate">(Developers/Implementers read specs, not Charters)</code>, I'd rather state that such front should be more marketing side matter like periodically issued (in past!) strategic highlight for wider community to give recent updates (which were great materials of summarized status snapshot for wider community, or even colleagues of W3C members without group participation, I still believe), or Process requirement that required maximum duration without re-publication (of course, I understand that I shall be noticed from someone that Process places <a href="https://www.w3.org/2021/Process-20211102/#revising-wd" rel="nofollow">maximum 6 month for WG</a> but not for <a href="https://www.w3.org/2021/Process-20211102/#publishing-crrs" rel="nofollow">CRS without any substantive change</a>,,, rather than quite narrow community within whom closely looking into change of specifications or chartering process incl. members.<br>
+Ah, to be honest, if I need to supply similar level of consideration, I actually need to go back to another WG and say like, hey immersive-web, your CRs have not got multiple-implementor nor no CRS updated over years, so continue to be there, DISC or back to CG,,, or something... (and suppose we could find more examples around..) Yes, of course, length differ like single decade or more and I agree it's one of impact factor for how people feels...</p>
+<p dir="auto">For getting further,,,<br>
+It seems, I suppose there could be no more comment here, specifically over this specific change on short notes over each specification for current implementation status and 'expected' progress, and also I would take comment of <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a> for having further discussion at another new PR or somewhere else, with mergeing this in near future.</p>
+<blockquote>
+<p dir="auto">I think it's worth merging this PR at this point. It's a clear improvement over the previous state, and we can keep discussing the issues in further PRs.</p>
+</blockquote>
+<p dir="auto">Thank all both WG co-chairs/participants and whom kindly giving reviews, and please let me propose to continue more charter general topics at the strategy issue, rather than continue here.</p>
+<p dir="auto">Also thank you all for picking 'Response to the Council recommendation (Vibration in particular)' here, and I'm quite deeply regret that I have not objected to start process of obsoletion just by the Team (initialized by myself) without including the WG (as joint proposer), even which actually was a suggestion (or I shall say pushed back without any conclusion nor forming formal council) from pre-council for 1st formal objection. At that point, I (somehow? strongly?) felt starting AC review would result into another formal objection and cause more and more messy situation, also processing of obsoletion procedure independent from the WG close in discussion loop would easily result into a situation that the WG may not seriously take/consider about council discussion or recommendation,, but should be totally another story from this PR topic..</p>
+<p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/tidoust/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/tidoust">@tidoust</a> how do you think on just merging this now (or in short time), and continue evaluating comments, (of course) both having another document in general about clearer position statement of the WG and seeking some additional text in charter... (/cc <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/plehegar/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/plehegar">@plehegar</a> ?)<br>
+I'd agree and state both this PR well summarize and extend draft charter on clarifying implementation status or rough estimation, and also some additional text describing further plan forward should be important to be prepared whether it stands as one document or is short text within charter (also lacking such 'something' could make AC and wide reviewer confused on how they could evaluate potential outcome from target chartered period).</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4158782519
+marcoscaceres
+2026-03-30 23:27:14+00:00
+2026-03-30 23:27:14+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-4158782519">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-30T23:27:14+00:00">2026-03-30</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a> .. update on haptics, see also <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4067950465" data-permission-text="Title is private" data-url="https://github.com/immersive-web/proposals/issues/92" data-hovercard-type="issue" data-hovercard-url="/immersive-web/proposals/issues/92/hovercard" href="https://github.com/immersive-web/proposals/issues/92">immersive-web/proposals#92</a> ... WebApps and Immersive Web are trying to establish a joint work item (we had productive meeting with <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/cabanier/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cabanier">@cabanier</a> and folks working on Gamepad on the Web Apps side). Would love <a class="team-mention js-team-mention notranslate" data-error-text="Failed to load team members" data-id="3283826" data-permission-text="Team members are private" data-url="/orgs/w3c/teams/das-wg/members" data-hovercard-type="team" data-hovercard-url="/orgs/w3c/teams/das-wg/hovercard" href="https://github.com/orgs/w3c/teams/das-wg">@w3c/das-wg</a> input there too.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4159123059
+marcoscaceres
+2026-03-31 01:05:25+00:00
+2026-03-31 01:05:25+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-4159123059">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-31T01:05:25+00:00">2026-03-31</time> </h5>
+<blockquote><p dir="auto">Thanks for the work on this PR. To make it possible for me to approve, here are concrete text suggestions for the sections that need changes, along with tracking issues for anything that can't be resolved in this PR alone.</p>
+<hr>
+<h3 dir="auto">Suggested charter text</h3>
+<p dir="auto"><strong>1. Add to the Deliverables preamble or Success Criteria section</strong><br>
+<em>(Addresses TAG concern: developer SotD signaling; source: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3868872437" data-permission-text="Title is private" data-url="https://github.com/w3ctag/design-reviews/issues/1187" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard" href="https://github.com/w3ctag/design-reviews/issues/1187">w3ctag/design-reviews#1187</a>)</em></p>
+<blockquote>
+<p dir="auto">The Working Group will ensure that each specification clearly communicates both its implementation status and its intended trajectory along the W3C Recommendation Track. At a minimum, the Status of This Document section of each specification will describe the current level of implementation support and whether the specification is expected to advance toward widely implemented Recommendation status.</p>
+<p dir="auto">For specifications with limited or single-engine deployment, the specification will clearly signal its role and intended direction — for example, whether it is an experimental abstraction, a transitional design pointing developers toward a consensus alternative, or work with limited deployment serving as documentation.</p>
+<p dir="auto">The Working Group will review specifications with limited implementation support at least annually, document the outcomes publicly, and adjust the trajectory of each deliverable accordingly.</p>
+</blockquote>
+<p dir="auto">Tracked in: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174961603" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/780" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/780/hovercard" href="https://github.com/w3c/charter-drafts/issues/780">#780</a></p>
+<hr>
+<p dir="auto"><strong>2. Vibration — replace current "Expected progress" text</strong><br>
+<em>(Addresses TAG concern + Council recommendation; sources: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3868872437" data-permission-text="Title is private" data-url="https://github.com/w3ctag/design-reviews/issues/1187" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard" href="https://github.com/w3ctag/design-reviews/issues/1187">w3ctag/design-reviews#1187</a>, <a href="https://www.w3.org/2025/08/vibration2-council-report.html#recommendations" rel="nofollow">https://www.w3.org/2025/08/vibration2-council-report.html#recommendations</a>)</em></p>
+<p dir="auto">Current text: <em>"The Working Group will update the specification to modern web platform design principles and device haptics capabilities and continue to solicit feedback."</em></p>
+<p dir="auto">Suggested replacement:</p>
+<blockquote>
+<p dir="auto">Before this charter proceeds to AC review, the Working Group will publish a document describing its plan for the Vibration API — including its rationale and the criteria it will use to evaluate whether to continue, redesign, or transition this work — as recommended by the W3C Council (<a href="https://www.w3.org/2025/08/vibration2-council-report.html#recommendations" rel="nofollow">https://www.w3.org/2025/08/vibration2-council-report.html#recommendations</a>). The Working Group will also update the implementation report (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2303309227" data-permission-text="Title is private" data-url="https://github.com/w3c/vibration/issues/33" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/33/hovercard" href="https://github.com/w3c/vibration/issues/33">w3c/vibration#33</a>) to accurately reflect current browser support. Any work touching haptics capabilities will be conducted in coordination with the Web Applications Working Group.</p>
+</blockquote>
+<p dir="auto">Tracked in: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174962736" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard" href="https://github.com/w3c/charter-drafts/issues/781">#781</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174963699" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/782" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/782/hovercard" href="https://github.com/w3c/charter-drafts/issues/782">#782</a></p>
+<hr>
+<p dir="auto"><strong>3. Proximity Sensor and Ambient Light — replace vague "Expected progress" text</strong><br>
+<em>(Personal concern: no actionable plan or timeline)</em></p>
+<p dir="auto">Current text (both): <em>"The Working Group will continue to collect feedback from the community on the use cases for this API and may publish a new Working Draft."</em></p>
+<p dir="auto">Suggested replacement:</p>
+<blockquote>
+<p dir="auto">The Working Group will proactively seek published implementer positions from browser engines not currently participating in the WG. By [WG to specify date], the Working Group will publish a summary of responses — including any non-responses — and use these to inform a decision on whether to continue, redesign, or discontinue this work on the Recommendation track. The Working Group will document that decision publicly.</p>
+</blockquote>
+<hr>
+<p dir="auto"><strong>4. Generic Sensor — replace "infrastructure for future sensor APIs"</strong><br>
+<em>(Personal concern: the framing conflicts with the TAG's stated skepticism about the Generic Sensor architecture in future design reviews; source: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3868872437" data-permission-text="Title is private" data-url="https://github.com/w3ctag/design-reviews/issues/1187" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard" href="https://github.com/w3ctag/design-reviews/issues/1187">w3ctag/design-reviews#1187</a>)</em></p>
+<p dir="auto">Current text: <em>"The Working Group will continue to maintain the specification as infrastructure for future sensor APIs."</em></p>
+<p dir="auto">Suggested replacement:</p>
+<blockquote>
+<p dir="auto">The Working Group will continue to maintain the specification. The Working Group will not charter new Generic Sensor-derived deliverables without first documenting the architectural rationale relative to single-layer API alternatives.</p>
+</blockquote>
+<hr>
+<h3 dir="auto">Tracking issues filed</h3>
+<p dir="auto">The following issues track the concerns that need to be resolved before AC review, whether in this PR or separately:</p>
+<ul dir="auto">
+<li><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174961603" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/780" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/780/hovercard" href="https://github.com/w3c/charter-drafts/issues/780">#780</a> — Charter must commit to SotD signaling (TAG concern)</li>
+<li><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174962736" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard" href="https://github.com/w3c/charter-drafts/issues/781">#781</a> — Vibration: Council-recommended plan must be published before AC review (Council + TAG concern)</li>
+<li><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174963699" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/782" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/782/hovercard" href="https://github.com/w3c/charter-drafts/issues/782">#782</a> — Vibration: "device haptics capabilities" scope conflict with WebApps WG</li>
+<li><a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174964516" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/783" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/783/hovercard" href="https://github.com/w3c/charter-drafts/issues/783">#783</a> — Web Serial: resolve TAG's venue concern before AC review (TAG concern)</li>
+</ul>
+<p dir="auto">Once suggestions 1 and 2 above are incorporated and issues <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174962736" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard" href="https://github.com/w3c/charter-drafts/issues/781">#781</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174964516" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/783" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/783/hovercard" href="https://github.com/w3c/charter-drafts/issues/783">#783</a> have a clear path to resolution before AC review, I'm happy to update my review.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4159123925
+marcoscaceres
+2026-03-31 01:05:44+00:00
+2026-03-31 01:05:44+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-4159123925">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-31T01:05:44+00:00">2026-03-31</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a> thank you for the thoughtful summary and for your patience here.</p>
+<p dir="auto">I want to be clear about where I stand: I appreciate the work <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> has done and agree this PR is a genuine improvement. My hold is not about blocking progress — it is about making sure we arrive at AC review without the gaps that caused the last round of objections.</p>
+<p dir="auto">I've just filed four tracking issues (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174961603" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/780" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/780/hovercard" href="https://github.com/w3c/charter-drafts/issues/780">#780</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174962736" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard" href="https://github.com/w3c/charter-drafts/issues/781">#781</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174963699" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/782" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/782/hovercard" href="https://github.com/w3c/charter-drafts/issues/782">#782</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174964516" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/783" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/783/hovercard" href="https://github.com/w3c/charter-drafts/issues/783">#783</a>) covering the unresolved TAG and Council concerns, and posted concrete text suggestions above. For me to lift CHANGES_REQUESTED, I need either:</p>
+<ol dir="auto">
+<li>The suggested text incorporated into this PR (particularly the SotD commitment and a corrected Vibration section), or</li>
+<li>A clear commitment that issues <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174962736" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard" href="https://github.com/w3c/charter-drafts/issues/781">#781</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174964516" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/783" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/783/hovercard" href="https://github.com/w3c/charter-drafts/issues/783">#783</a> will be resolved before this charter proceeds to AC review.</li>
+</ol>
+<p dir="auto">The Vibration Council recommendation in particular has a hard dependency: the plan document must be publicly available during the AC review period for members to evaluate it. That is a process requirement, not a stylistic preference.</p>
+<p dir="auto">Happy to discuss on a call if that would help move things faster.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4159124442
+marcoscaceres
+2026-03-31 01:05:55+00:00
+2026-03-31 01:05:55+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-4159124442">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-31T01:05:55+00:00">2026-03-31</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a> following up on my earlier question — I had asked whether my list of remaining items missed anything. I filed those as issues now: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174961603" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/780" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/780/hovercard" href="https://github.com/w3c/charter-drafts/issues/780">#780</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174962736" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard" href="https://github.com/w3c/charter-drafts/issues/781">#781</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174963699" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/782" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/782/hovercard" href="https://github.com/w3c/charter-drafts/issues/782">#782</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174964516" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/783" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/783/hovercard" href="https://github.com/w3c/charter-drafts/issues/783">#783</a>. Would appreciate your view on whether any of those should be treated differently, particularly <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174962736" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard" href="https://github.com/w3c/charter-drafts/issues/781">#781</a> (Vibration plan) and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4174964516" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/783" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/783/hovercard" href="https://github.com/w3c/charter-drafts/issues/783">#783</a> (Web Serial venue), which I consider blockers for AC review.</p>
+<p dir="auto">On the merge question: I'm not opposed to merging this PR once the Vibration "Expected progress" text is corrected and the SotD commitment is added. The remaining items can be tracked in the issues. I've posted specific suggested text above.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4161407391
+tidoust
+2026-03-31 09:58:01+00:00
+2026-03-31 09:58:01+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-4161407391">Comment by François Daoust</a> (<a href="https://github.com/tidoust">@tidoust</a>) at <time datetime="2026-03-31T09:58:01+00:00">2026-03-31</time> </h5>
+<blockquote><blockquote>
+<p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/tidoust/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/tidoust">@tidoust</a> how do you think on just merging this now (or in short time), and continue evaluating comments, (of course) both having another document in general about clearer position statement of the WG and seeking some additional text in charter...</p>
+</blockquote>
+<p dir="auto">The approach you take to updating the draft charter is essentially up to you, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a>. Whatever makes the work of preparing the draft charter easier for you. What matters is that there are answers to the points and concerns raised (regardless of how they are resolved, the call for review will need to include a disposition of comments received during the charter refinement process, <a href="https://www.w3.org/policies/process/#charter-major-changes" rel="nofollow">per the W3C Process</a>).</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4163587377
+marcoscaceres
+2026-03-31 15:41:06+00:00
+2026-03-31 15:41:06+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-4163587377">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-31T15:41:06+00:00">2026-03-31</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a> I’m ok if you merge too, and can recreate all the feedback against additional issues or PRs. Whatever would be most helpful to you. Let me know what you prefer.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4163881247
+himorin
+2026-03-31 16:26:28+00:00
+2026-03-31 16:26:28+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/770#issuecomment-4163881247">Comment by himorin / Atsushi Shimono</a> (<a href="https://github.com/himorin">@himorin</a>) at <time datetime="2026-03-31T16:26:28+00:00">2026-03-31</time> </h5>
+<blockquote><blockquote>
+<p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a> I’m ok if you merge too, and can recreate all the feedback against additional issues or PRs. Whatever would be most helpful to you. Let me know what you prefer.</p>
+</blockquote>
+<p dir="auto">I'm not saying to reject any feedback on items in draft charter themselves (or overall) by closing this PR (pls read my text well, I may told before at other places...), but I felt and believed that mixing non target (like adding new text for success criteria or else) of this PR (at its original) which limits scope to updating status text of deliverables, into discussion of the single PR would everything messy, incl. resulting into jump-and-jump discussion thread  (also possibly,, blocking whole insertion just with small portion, comapired to number in list of deliverables, of PR could block deeper consideration per each single topic).<br>
+So, I've proposed to close PR over entire deliverables at this point, and continue at the main strategy issue for topics over whole charter, of course with adding sub-issues per single topic...</p>
+<p dir="auto">Again, thank <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/marcoscaceres/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/marcoscaceres">@marcoscaceres</a>  for filing tracker issues individually over points you wrote up several times, and let us, individual, WG, or whole TAG, move there with merging this PR at this point.</p></blockquote>
+
+</section>
+
+
+
+
+<!-- get_review_comments -->
+
+
+<section>
+<h5>Code review comment on original line 343 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -288,7 +297,140 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+             &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2016/03/device-sensors-wg-charter.html&quot;&gt;https://www.w3.org/2016/03/device-sensors-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+           &lt;/dd&gt;
+           &lt;dt&gt;
+-            &lt;a href=&quot;https://www.w3.org/TR/wake-lock/&quot;&gt;Screen Wake Lock API&lt;/a&gt;
++            &lt;a href=&quot;https://www.w3.org/TR/compute-pressure/&quot;&gt;Compute Pressure
++            &lt;/a&gt;
++          &lt;/dt&gt;
++          &lt;dd&gt;
++            &lt;p&gt;
++              An API that conveys the utilization of CPU resources on the user&#x27;s device
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Draft state:&lt;/b&gt; Candidate Recommendation Draft
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Shipping in a single browser engine.
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Expected progress:&lt;/b&gt;
++              The Working Group will continue to maintain the specification.
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Adopted Draft&lt;/b&gt;: &lt;a href=
++              &quot;https://www.w3.org/TR/2025/CRD-compute-pressure-20250521/&quot;&gt;https://www.w3.org/TR/2025/CRD-compute-pressure-20250521/&lt;/a&gt;
++            &lt;/p&gt;
++            &lt;p&gt;Produced under &lt;b&gt;Working Group Charter:&lt;/b&gt; &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Exclusion Draft:&lt;/b&gt;
++                &lt;a href=&quot;https://www.w3.org/TR/2025/CR-compute-pressure-20250424/&quot;&gt;https://www.w3.org/TR/2025/CR-compute-pressure-20250424/&lt;/a&gt; (24 April 2025)&lt;br&gt;
++                associated &lt;a href=&quot;https://www.w3.org/mid/cfe-15387-50fe7fd7a9ed069eeb61b2f1c8c71418ddd5493f@w3.org&quot;&gt;Call for Exclusion&lt;/a&gt; on 2025-04-24, opportunity until 2025-06-23
++            &lt;/p&gt;
++            &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
++          &lt;/dd&gt;
++          &lt;dt&gt;
++            &lt;a href=&quot;https://www.w3.org/TR/contact-picker/&quot;&gt;Contact Picker API
++            &lt;/a&gt;
++          &lt;/dt&gt;
++          &lt;dd&gt;
++            &lt;p&gt;
++              An API to give one-off access to a user’s contact information with full control over the shared data
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Draft state:&lt;/b&gt; Working Draft
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Implemented in a two browser engines, enabled by default in one.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2873431492">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-02T16:36:47+00:00">2026-03-02</time> (edited in <time datetime="2026-03-02T18:51:36+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">Nit:</p>
+<pre lang="suggestion" class="notranslate"><code class="notranslate">              Implemented in two browser engines, enabled by default in one.
+</code></pre></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 444 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -297,7 +439,14 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+             &lt;p class=&quot;draft-status&quot;&gt;
+               &lt;b&gt;Draft state:&lt;/b&gt; Working Draft
+             &lt;/p&gt;
+-            &lt;p class=&quot;milestone&quot;&gt;&lt;b&gt;Expected completion:&lt;/b&gt; &lt;i class=&quot;todo&quot;&gt;[Q1–4 yyyy]&lt;/i&gt;&lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Shipping in a all major browser engines.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2873439275">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-02T16:38:11+00:00">2026-03-02</time> (edited in <time datetime="2026-03-02T18:51:36+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">Nit:</p>
+<pre lang="suggestion" class="notranslate"><code class="notranslate">              Shipping in all major browser engines.
+</code></pre></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 483 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -321,9 +470,18 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+               An API to prevent the CPU from entering a deep power state
+             &lt;/p&gt;
+             &lt;p class=&quot;draft-status&quot;&gt;
+-              &lt;b&gt;Draft state:&lt;/b&gt; ED
++              &lt;b&gt;Draft state:&lt;/b&gt; Editor&#x27;s Draft
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Prototyped in one browser engine, shipping in none.
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Expected progress:&lt;/b&gt;
++              The Working Group will continue to collect feedback from the
++              community on the use cases for this API and may publish a new
++              Editor&#x27;s Draft.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2873481524">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-02T16:45:27+00:00">2026-03-02</time> (edited in <time datetime="2026-03-02T18:51:36+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">This seems like it might still be an incubation, especially since <a href="https://github.com/w3c/system-wake-lock">https://github.com/w3c/system-wake-lock</a> doesn't contain a specification yet. Maybe move it to the "things we might adopt" section?</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2875403331">Added comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-03-03T00:28:13+00:00">2026-03-03</time> </h[LHS]><blockquote><p dir="auto">It is not in incubation, but the last published specification for the system wake lock capability was part of the original Wake Lock specification. I've updated the status to reflect that when the split happened a separate "System Wake Lock" specification was never published.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 513 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -336,6 +494,35 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+             &lt;/p&gt;
+             &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2016/03/device-sensors-wg-charter.html&quot;&gt;https://www.w3.org/2016/03/device-sensors-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+           &lt;/dd&gt;
++          &lt;dt&gt;&lt;a href=&quot;https://www.w3.org/TR/vibration/&quot;&gt;Vibration API&lt;/a&gt;&lt;/dt&gt;
++          &lt;dd&gt;
++            &lt;p&gt;
++              An API that provides access to the vibration mechanism of the
++              hosting device. Vibration is a form of tactile feedback.
++            &lt;/p&gt;
++            &lt;p class=&quot;draft-status&quot;&gt;
++              &lt;b&gt;Draft state:&lt;/b&gt; Candidate Recommendation Draft
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Shipping in a single browser engine.
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Expected progress:&lt;/b&gt;
++              The Working Group will update the specification to modern web
++              platform design principles and continue to solicit feedback.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2873490538">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-02T16:46:56+00:00">2026-03-02</time> (edited in <time datetime="2026-03-02T18:51:36+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">I saw a concern that the current API shape isn't aligned with modern haptics design. Should modernizing it be in scope?</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2875405207">Added comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-03-03T00:28:59+00:00">2026-03-03</time> </h[LHS]><blockquote><p dir="auto">Added a note on that.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 577 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -362,28 +557,38 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+             &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2019/03/devices-sensors-wg-charter.html&quot;&gt;https://www.w3.org/2019/03/devices-sensors-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+           &lt;/dd&gt;
+           &lt;dt&gt;
+-            &lt;a href=&quot;https://www.w3.org/TR/proximity/&quot;&gt;Proximity Sensor&lt;/a&gt;
++            &lt;a href=&quot;https://www.w3.org/TR/accelerometer/&quot;&gt;Accelerometer&lt;/a&gt;
+           &lt;/dt&gt;
+           &lt;dd&gt;
+             &lt;p&gt;
+-              An API to monitor the presence of nearby objects without physical
+-              contact
++              An API to monitor acceleration in the device&#x27;s three
++              primary axes
+             &lt;/p&gt;
+             &lt;p class=&quot;draft-status&quot;&gt;
+-              &lt;b&gt;Draft state:&lt;/b&gt; Working Draft
++              &lt;b&gt;Draft state:&lt;/b&gt; Candidate Recommendation Draft
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Shipping in a single browser engine.
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Expected progress:&lt;/b&gt;
++              The Working Group will continue to maintain the specification
++              however it will prefer to add new features to the</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2873495081">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-02T16:47:43+00:00">2026-03-02</time> (edited in <time datetime="2026-03-02T18:51:36+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">Nit:</p>
+<pre lang="suggestion" class="notranslate"><code class="notranslate">              The Working Group will continue to maintain the specification;
+              however it will prefer to add new features to the
+</code></pre></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 645 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -411,41 +625,27 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+             &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2016/03/device-sensors-wg-charter.html&quot;&gt;https://www.w3.org/2016/03/device-sensors-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+           &lt;/dd&gt;
+           &lt;dt&gt;
+-            &lt;a href=&quot;https://www.w3.org/TR/accelerometer/&quot;&gt;Accelerometer&lt;/a&gt;
++            &lt;a href=&quot;https://www.w3.org/TR/gyroscope/&quot;&gt;Gyroscope&lt;/a&gt;
+           &lt;/dt&gt;
+           &lt;dd&gt;
+             &lt;p&gt;
+-              An API to monitor acceleration in the device&#x27;s three
++              An API to monitor the rate of rotation around the device’s three
+               primary axes
+             &lt;/p&gt;
+             &lt;p class=&quot;draft-status&quot;&gt;
+-              &lt;b&gt;Draft state:&lt;/b&gt; Candidate Recommendation
+-            &lt;/p&gt;
+-            &lt;p class=&quot;milestone&quot;&gt;&lt;b&gt;Expected completion:&lt;/b&gt; &lt;i class=&quot;todo&quot;&gt;[Q1–4 yyyy]&lt;/i&gt;&lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Adopted Draft&lt;/b&gt;: &lt;a href=
+-              &quot;https://www.w3.org/TR/2025/CRD-accelerometer-20250212/&quot;&gt;https://www.w3.org/TR/2025/CRD-accelerometer-20250212/&lt;/a&gt;
++              &lt;b&gt;Draft state:&lt;/b&gt; Candidate Recommendation Draft
+             &lt;/p&gt;
+-            &lt;p&gt;Produced under &lt;b&gt;Working Group Charter:&lt;/b&gt; &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+             &lt;p&gt;
+-              &lt;b&gt;Exclusion Draft:&lt;/b&gt;
+-                &lt;a href=&quot;https://www.w3.org/TR/2019/CR-accelerometer-20191212/&quot;&gt;https://www.w3.org/TR/2019/CR-accelerometer-20191212/&lt;/a&gt; (12 December 2019)&lt;br&gt;
+-                associated &lt;a href=&quot;https://www.w3.org/mid/cfe-7282-088fbdf0be09f2b57f797db06f694f1729caf35d@w3.org&quot;&gt;Call for Exclusion&lt;/a&gt; 2019-12-12, opportunity until 2020-02-10
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Shipping in a single browser engine.
+             &lt;/p&gt;
+-            &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2019/03/devices-sensors-wg-charter.html&quot;&gt;https://www.w3.org/2019/03/devices-sensors-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+-          &lt;/dd&gt;
+-          &lt;dt&gt;
+-            &lt;a href=&quot;https://www.w3.org/TR/gyroscope/&quot;&gt;Gyroscope&lt;/a&gt;
+-          &lt;/dt&gt;
+-          &lt;dd&gt;
+             &lt;p&gt;
+-              An API to monitor the rate of rotation around the device’s three
+-              primary axes
+-            &lt;/p&gt;
+-            &lt;p class=&quot;draft-status&quot;&gt;
+-              &lt;b&gt;Draft state:&lt;/b&gt; Candidate Recommendation
++              &lt;b&gt;Expected progress:&lt;/b&gt;
++              The Working Group will continue to maintain the specification
++              however it will prefer to add new features to the</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2873499728">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-02T16:48:35+00:00">2026-03-02</time> (edited in <time datetime="2026-03-02T18:51:36+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">Nit:</p>
+<pre lang="suggestion" class="notranslate"><code class="notranslate">              The Working Group will continue to maintain the specification;
+              however it will prefer to add new features to the
+</code></pre></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 713 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -494,7 +703,17 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+             &lt;p class=&quot;draft-status&quot;&gt;
+               &lt;b&gt;Draft state:&lt;/b&gt; Working Draft
+             &lt;/p&gt;
+-            &lt;p class=&quot;milestone&quot;&gt;&lt;b&gt;Expected completion:&lt;/b&gt; &lt;i class=&quot;todo&quot;&gt;[Q1–4 yyyy]&lt;/i&gt;&lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Shipping in a single browser engine.
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Expected progress:&lt;/b&gt;
++              The Working Group will continue to maintain the specification
++              however it will prefer to add new features to the</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2873504415">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-02T16:49:23+00:00">2026-03-02</time> (edited in <time datetime="2026-03-02T18:51:36+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">Nit:</p>
+<pre lang="suggestion" class="notranslate"><code class="notranslate">              The Working Group will continue to maintain the specification;
+              however it will prefer to add new features to the
+</code></pre></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 748 / line 751</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -508,121 +727,37 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+             &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2019/03/devices-sensors-wg-charter.html&quot;&gt;https://www.w3.org/2019/03/devices-sensors-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+           &lt;/dd&gt;
+           &lt;dt&gt;
+-            &lt;a href=
+-            &quot;https://www.w3.org/TR/orientation-event/&quot;&gt;Device Orientation and Motion&lt;/a&gt;
+-          &lt;/dt&gt;
+-          &lt;dd&gt;
+-            &lt;p&gt;
+-              An event-based API that provides information about the physical
+-              orientation and motion of a hosting device
+-            &lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Draft state&lt;/b&gt;: Candidate Recommendation
+-            &lt;/p&gt;
+-            &lt;p class=&quot;milestone&quot;&gt;&lt;b&gt;Expected completion:&lt;/b&gt; &lt;i class=&quot;todo&quot;&gt;[Q1–4 yyyy]&lt;/i&gt;&lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Adopted Draft&lt;/b&gt;: &lt;a href=
+-              &quot;https://www.w3.org/TR/2025/CRD-orientation-event-20250212/&quot;&gt;https://www.w3.org/TR/2025/CRD-orientation-event-20250212/&lt;/a&gt;
+-            &lt;/p&gt;
+-            &lt;p&gt;Produced under &lt;b&gt;Working Group Charter:&lt;/b&gt; &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Exclusion Draft:&lt;/b&gt;
+-                &lt;a href=&quot;https://www.w3.org/TR/2024/CR-orientation-event-20241121/&quot;&gt;https://www.w3.org/TR/2024/CR-orientation-event-20241121/&lt;/a&gt; (21 November 2024)&lt;br&gt;
+-                associated &lt;a href=&quot;https://www.w3.org/mid/cfe-14759-cde267815424afecf19a2b3ebcb768d7c4114106@w3.org&quot;&gt;Call for Exclusion&lt;/a&gt; on 2024-11-21, opportunity until 2025-01-20
+-            &lt;/p&gt;
+-            &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+-            &lt;p class=&quot;issue&quot;&gt;
+-              &lt;b&gt;Note:&lt;/b&gt; This work is a joint deliverable with the &lt;a href=&quot;https://www.w3.org/groups/wg/webapps&quot;&gt;Web Applications Working Group&lt;/a&gt;.
+-            &lt;/p&gt;
+-          &lt;/dd&gt;
+-          &lt;dt&gt;
+-            &lt;a href=&quot;https://www.w3.org/TR/device-posture/&quot;&gt;Device Posture API&lt;/a&gt;
+-          &lt;/dt&gt;
+-          &lt;dd&gt;
+-            &lt;p&gt;
+-              An API that allows web applications to request and be notified of changes of the posture of a foldable device. (Formerly the Fold Angle Sensor API.)
+-            &lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Draft state&lt;/b&gt;: Candidate Recommendation
+-            &lt;/p&gt;
+-            &lt;p class=&quot;milestone&quot;&gt;&lt;b&gt;Expected completion:&lt;/b&gt; &lt;i class=&quot;todo&quot;&gt;[Q1–4 yyyy]&lt;/i&gt;&lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Adopted Draft&lt;/b&gt;: &lt;a href=
+-              &quot;https://www.w3.org/TR/2024/CR-device-posture-20241126/&quot;&gt;https://www.w3.org/TR/2024/CR-device-posture-20241126/&lt;/a&gt;
+-            &lt;/p&gt;
+-            &lt;p&gt;Produced under &lt;b&gt;Working Group Charter:&lt;/b&gt; &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Exclusion Draft:&lt;/b&gt;
+-                &lt;a href=&quot;https://www.w3.org/TR/2024/CR-device-posture-20241126/&quot;&gt;https://www.w3.org/TR/2024/CR-device-posture-20241126/&lt;/a&gt; (26 November 2024)&lt;br&gt;
+-                associated &lt;a href=&quot;https://www.w3.org/mid/cfe-14777-d9199c607779991718e074ac9163efb8d7c9ad2c@w3.org&quot;&gt;Call for Exclusion&lt;/a&gt;  on 2024-11-26, opportunity until 2025-01-25
+-            &lt;/p&gt;
+-            &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+-          &lt;/dd&gt;
+-          &lt;dt&gt;
+-            &lt;a href=&quot;https://www.w3.org/TR/contact-picker/&quot;&gt;Contact Picker API
+-            &lt;/a&gt;
++            &lt;a href=&quot;https://www.w3.org/TR/proximity/&quot;&gt;Proximity Sensor&lt;/a&gt;
+           &lt;/dt&gt;
+           &lt;dd&gt;
+             &lt;p&gt;
+-              An API to give one-off access to a user’s contact information with full control over the shared data
+-            &lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Draft state&lt;/b&gt;: Working Draft
+-            &lt;/p&gt;
+-            &lt;p class=&quot;milestone&quot;&gt;&lt;b&gt;Expected completion:&lt;/b&gt; &lt;i class=&quot;todo&quot;&gt;[Q1–4 yyyy]&lt;/i&gt;&lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Adopted Draft&lt;/b&gt;: &lt;a href=
+-              &quot;https://www.w3.org/TR/2024/WD-contact-picker-20240708/&quot;&gt;https://www.w3.org/TR/2024/WD-contact-picker-20240708/&lt;/a&gt;
+-            &lt;/p&gt;
+-            &lt;p&gt;Produced under &lt;b&gt;Working Group Charter:&lt;/b&gt; &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+-            &lt;p&gt;
+-              &lt;b&gt;Exclusion Draft:&lt;/b&gt;
+-                &lt;a href=&quot;https://www.w3.org/TR/2022/WD-contact-picker-1-20221220/&quot;&gt;https://www.w3.org/TR/2022/WD-contact-picker-1-20221220/&lt;/a&gt; (20 December 2022)&lt;br&gt;
+-                associated &lt;a href=&quot;https://www.w3.org/mid/cfe-10967-4d942ed10f0be0cdaf52ca96068d4d43697c0943@w3.org&quot;&gt;Call for Exclusion&lt;/a&gt; on 2022-12-20, opportunity until 2023-05-19
++              An API to monitor the presence of nearby objects without physical
++              contact
+             &lt;/p&gt;
+-            &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2022/11/das-wg-charter.html&quot;&gt;https://www.w3.org/2022/11/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+-            &lt;p class=&quot;issue&quot;&gt;
+-              &lt;b&gt;Note:&lt;/b&gt; This work is a joint deliverable with the &lt;a href=&quot;https://www.w3.org/groups/wg/webapps&quot;&gt;Web Applications Working Group&lt;/a&gt;.
++            &lt;p class=&quot;draft-status&quot;&gt;
++              &lt;b&gt;Draft state:&lt;/b&gt; Working Draft
+             &lt;/p&gt;
+-          &lt;/dd&gt;
+-          &lt;dt&gt;
+-            &lt;a href=&quot;https://www.w3.org/TR/compute-pressure/&quot;&gt;Compute Pressure
+-            &lt;/a&gt;
+-          &lt;/dt&gt;
+-          &lt;dd&gt;
+             &lt;p&gt;
+-              An API that conveys the utilization of CPU resources on the user&#x27;s device
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Not implemented in any browser engine.
+             &lt;/p&gt;
+             &lt;p&gt;
+-              &lt;b&gt;Draft state&lt;/b&gt;: Candidate Recommendation
++              &lt;b&gt;Expected progress:&lt;/b&gt;
++              The Working Group will continue to collect feedback from the
++              community on the use cases for this API and may publish a new
++              Working Draft.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2874100097">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-02T18:51:21+00:00">2026-03-02</time> (edited in <time datetime="2026-03-02T18:51:36+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">I see that this work has been around since <a href="https://www.w3.org/TR/2012/WD-proximity-20121206/" rel="nofollow">2012</a>, without any (merged?) implementations so far. Do y'all have an idea of what would justify transitioning it to be a Discontinued Draft?</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2875661396">Added comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-03-03T02:12:24+00:00">2026-03-03</time> </h[LHS]><blockquote><p dir="auto">If the group chooses to do that I think it would make sense to do so outside of the re-chartering process.</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2876227557">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-03T05:50:41+00:00">2026-03-03</time> </h[LHS]><blockquote><p dir="auto">Right, but to <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a> point, it would be good to explain a process to make that decision. Having it out there adds to the confusion, so what can we do to help either keep on the Rec Track or move it to Discontinued Draft. Would be very helpful to outline what the process will be (e.g., "The Working Group will meet with other stake holders within 2 months and determine if work on this item should continue or otherwise transition to a Discontinued Draft.").</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2876294824">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-03T06:11:39+00:00">2026-03-03</time> </h[LHS]><blockquote><p dir="auto">To build on this thread (and in the spirit of making expectations clearer going forward) I’m not suggesting that the decision itself be made during rechartering. But the charter is precisely where we describe how lifecycle decisions are handled.</p>
+<p dir="auto">For long-standing specifications without interoperable implementation, it would be helpful for the charter to explicitly describe:</p>
+<ul dir="auto">
+<li>What triggers a formal evaluation (e.g., duration without implementation progress);</li>
+<li>What the evaluation process looks like (stakeholder consultation, implementer outreach, TAG input, etc.);</li>
+<li>And what the possible outcomes are (continue, redesign, transition, Discontinued Draft).</li>
+</ul>
+<p dir="auto">Without documenting that model somewhere, the default can appear to be indefinite maintenance, which is part of the confusion the TAG review was trying to address.</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2876831546">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-03-03T08:24:05+00:00">2026-03-03</time> (edited in <time datetime="2026-03-03T08:34:28+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/marcoscaceres/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/marcoscaceres">@marcoscaceres</a>, I think you're mixing two kinds of specs here. Proximity Sensor has <em>no</em> shipped implementation, interoperable or not. For that kind of spec, I think WGs should, after a while, be willing to declare them either failed experiments or insufficiently incubated, and discontinue WG-level work on them. Incubation can, of course continue.</p>
+<p dir="auto">Other specs in this charter have a shipped implementation, but they're not interoperable across browser engines. For those, I'm pretty sure that indefinite maintenance at the CR level <em>is</em> appropriate. We certainly don't have TAG consensus that it's a problem if "CR risks becoming an open-ended resting state rather than a convergence mechanism" (or that it's not a problem).</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/770#discussion_r2881370853">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-04T01:47:54+00:00">2026-03-04</time> </h[LHS]><blockquote><p dir="auto">Thanks <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jyasskin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jyasskin">@jyasskin</a>, that's a valid distinction.</p>
+<p dir="auto">I agree that the two cases are different. My earlier comment about lifecycle clarity was aimed at making sure the charter explains how the WG evaluates long-standing items without interoperable adoption and how that decision-making process works.</p>
+<p dir="auto">For CR-level specs with single-engine support, my main concern is ensuring the signaling to developers is clear (both in the charter and in the spec itself) and that the WG's expectations and evaluation process are documented.</p>
+<p dir="auto">This bit of the TAG feedback:</p>
+<blockquote>
+<p dir="auto">"At a minimum, each document's support level should be in its SotD section, but ideally the WG would find a way to ensure that developers reading a specification can tell at a glance which kind of document they're reading."</p>
+</blockquote>
+<p dir="auto">(Developers/Implementers read specs, not Charters)</p>
+<p dir="auto">I think that would address much of the confusion the TAG review was trying to highlight without constraining the incubation or experimentation model.</p>
+<p dir="auto">So, it would be great if the Charter would say something like:</p>
+<blockquote>
+<p dir="auto">The Working Group will ensure that each specification clearly communicates both its implementation status and its intended trajectory along the W3C Recommendation Track. At a minimum, the Status of This Document section of each specification will describe the current level of implementation support and whether the specification is expected to advance toward widely implemented Recommendation status.</p>
+<p dir="auto">For specifications with limited or single-engine deployment, the Working Group will ensure that the specification clearly signals its role and intended direction (for example, whether it is an experimental abstraction, a transitional design that points developers toward other specifications, or work with limited deployment that is serving as documentation). Where appropriate, the specification should guide developers toward the APIs that are expected to become the primary interoperable solution.</p>
+<p dir="auto">The Working Group will review specifications with limited implementation support at least annually to evaluate their progress, relevance, and intended trajectory, and will document the outcome of those evaluations publicly.</p>
+</blockquote></blockquote></section>
+
+</section>
+
+

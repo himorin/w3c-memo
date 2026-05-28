@@ -1,0 +1,136 @@
+
+<!--
+https://github.com/w3c/charter-drafts/pull/806
+806
+open
+[wg/das] Adjust expected progress wording (resolves TAG feedback bullet point 1)
+christianliebel
+2026-05-08 16:56:39+00:00
+2026-05-22 08:11:29+00:00
+None
+-->
+
+
+<h4>Comments provided to PR <a href="https://github.com/w3c/charter-drafts/pull/806">w3c/charter-drafts #806: [wg/das] Adjust expected progress wording (resolves TAG feedback bullet point 1)</a></h4>
+<ul><li>Status: open</li><li>Created: <time datetime="2026-05-08T16:56:39+00:00">2026-05-08</time></li><li>Not yet closed</li><li>PR not yet merged</li><li>Reviews provided:<ul><li>APPROVED<ul><li>Reilly Grant (@<a href="https://github.com/reillyeon">reillyeon</a>) at <time datetime="2026-05-13T20:17:26+00:00">2026-05-13</time></li></ul></li></ul></li></ul>
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/806">Initial comment by Christian Liebel</a> (<a href="https://github.com/christianliebel">@christianliebel</a>) at <time datetime="2026-05-08T16:56:39+00:00">2026-05-08</time> (edited in <time datetime="2026-05-22T08:11:29+00:00">2026-05-22</time>)</h5>
+<blockquote><p dir="auto">Addresses <a href="https://github.com/w3ctag/design-reviews/issues/1187" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard">TAG concern</a>:</p>
+<blockquote>
+<p dir="auto">We're concerned to see the Chromium-only Accelerometer, Gyroscope, and Orientation Sensor specifications in the charter, now that the Device Orientation and Motion spec is in Baseline. It makes sense to maintain non-consensus specifications while websites switch over to equivalent consensus APIs, but the charter should commit to only adding new features to the consensus versions. If there's not enough consensus on the new features to incorporate them into the core Device Orientation and Motion spec, this WG could develop an extension specification that allows websites to mostly use the Baseline feature, with a few engine-specific extensions.</p>
+</blockquote></blockquote>
+
+</section>
+
+
+
+
+<!-- get_issue_comments -->
+
+
+
+
+<!--
+4441918242
+himorin
+2026-05-13 14:16:04+00:00
+2026-05-13 14:16:04+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/806#issuecomment-4441918242">Comment by himorin / Atsushi Shimono</a> (<a href="https://github.com/himorin">@himorin</a>) at <time datetime="2026-05-13T14:16:04+00:00">2026-05-13</time> </h5>
+<blockquote><p dir="auto">ping <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a></p>
+<p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/christianliebel/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/christianliebel">@christianliebel</a> I'm afraid that I could not see any change than line break,, it this intentional? or do I miss some change?</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4443402656
+christianliebel
+2026-05-13 16:58:57+00:00
+2026-05-13 16:58:57+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/806#issuecomment-4443402656">Comment by Christian Liebel</a> (<a href="https://github.com/christianliebel">@christianliebel</a>) at <time datetime="2026-05-13T16:58:57+00:00">2026-05-13</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a> You are right. I've updated the PR with the wording found in my email. Thank you.</p></blockquote>
+
+</section>
+
+
+
+
+<!-- get_review_comments -->
+
+
+<section>
+<h5>Code review comment on original line 583 / line 583</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -576,10 +576,11 @@ &lt;h4&gt;Generic Sensor-derived Specifications&lt;/h4&gt;
+             &lt;/p&gt;
+             &lt;p&gt;
+               &lt;b&gt;Expected progress:&lt;/b&gt;
+-              The Working Group will continue to maintain the specification;
+-              however it will prefer to add new features to the
+-              &lt;a href=&quot;#device-orientation-and-motion&quot;&gt;Device Orientation and Motion&lt;/a&gt;
+-              specification.
++              The Working Group will continue to
++              maintain the specification, but not add new features to it.
++              Instead, the Working Group will add new features to the
++              &lt;a href=&quot;#device-orientation-and-motion&quot;&gt;Device Orientation and
++              Motion&lt;/a&gt; specification.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/806#discussion_r3261048473">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-05-18T18:11:40+00:00">2026-05-18</time> </h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">              Motion&lt;/a&gt; specification or to an extension specification.
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/806#discussion_r3284490111">Added comment by Jeffrey Yasskin</a> (<a href="https://github.com/jyasskin">@jyasskin</a>) at <time datetime="2026-05-21T21:33:58+00:00">2026-05-21</time> </h[LHS]><blockquote><p dir="auto">Individual (non-TAG, non-Google) question: do you have a sense of what features are likely to need to go into an extension specification, for any of these 3 specs? Is there a list of nearly-graduated incubations anywhere, with features marked as likely to only get agreement from Chromium?</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/806#discussion_r3286927448">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-05-22T08:11:29+00:00">2026-05-22</time> (edited in <time datetime="2026-05-22T08:11:30+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">As discussed, we cannot make the legacy architecture generalizable and scalable programming interface, but we can improve certain aspects.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 652 / line 652</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -644,10 +645,11 @@ &lt;h4&gt;Generic Sensor-derived Specifications&lt;/h4&gt;
+             &lt;/p&gt;
+             &lt;p&gt;
+               &lt;b&gt;Expected progress:&lt;/b&gt;
+-              The Working Group will continue to maintain the specification;
+-              however it will prefer to add new features to the
+-              &lt;a href=&quot;#device-orientation-and-motion&quot;&gt;Device Orientation and Motion&lt;/a&gt;
+-              specification.
++              The Working Group will continue to
++              maintain the specification, but not add new features to it.
++              Instead, the Working Group will add new features to the
++              &lt;a href=&quot;#device-orientation-and-motion&quot;&gt;Device Orientation and
++              Motion&lt;/a&gt; specification.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/806#discussion_r3261048842">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-05-18T18:11:43+00:00">2026-05-18</time> </h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">              Motion&lt;/a&gt; specification or to an extension specification.
+</code></pre></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 721 / line 721</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -712,10 +714,11 @@ &lt;h4&gt;Generic Sensor-derived Specifications&lt;/h4&gt;
+             &lt;/p&gt;
+             &lt;p&gt;
+               &lt;b&gt;Expected progress:&lt;/b&gt;
+-              The Working Group will continue to maintain the specification;
+-              however it will prefer to add new features to the
+-              &lt;a href=&quot;#device-orientation-and-motion&quot;&gt;Device Orientation and Motion&lt;/a&gt;
+-              specification.
++              The Working Group will continue to
++              maintain the specification, but not add new features to it.
++              Instead, the Working Group will add new features to the
++              &lt;a href=&quot;#device-orientation-and-motion&quot;&gt;Device Orientation and
++              Motion&lt;/a&gt; specification.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/806#discussion_r3261049179">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-05-18T18:11:46+00:00">2026-05-18</time> </h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">              Motion&lt;/a&gt; specification or to an extension specification.
+</code></pre></blockquote></section>
+
+</section>
+
+

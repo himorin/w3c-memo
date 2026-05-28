@@ -1,0 +1,81 @@
+
+<!--
+https://github.com/w3c/charter-drafts/pull/813
+813
+open
+[wg/das] moved geolocation to normative
+himorin
+2026-05-21 11:59:16+00:00
+2026-05-21 17:29:28+00:00
+None
+-->
+
+
+<h4>Comments provided to PR <a href="https://github.com/w3c/charter-drafts/pull/813">w3c/charter-drafts #813: [wg/das] moved geolocation to normative</a></h4>
+<ul><li>Status: open</li><li>Created: <time datetime="2026-05-21T11:59:16+00:00">2026-05-21</time></li><li>Not yet closed</li><li>PR not yet merged</li><li>Reviews provided:<ul><li>CHANGES_REQUESTED<ul><li>Anssi Kostiainen (@<a href="https://github.com/anssiko">anssiko</a>) at <time datetime="2026-05-21T12:39:45+00:00">2026-05-21</time><ul><li><p dir="auto">I believe also WebApps WG is still interested in working on new features for this API.</p></li></ul></li></ul></li><li>APPROVED<ul><li>Anssi Kostiainen (@<a href="https://github.com/anssiko">anssiko</a>) at <time datetime="2026-05-21T16:53:47+00:00">2026-05-21</time></li><li>Reilly Grant (@<a href="https://github.com/reillyeon">reillyeon</a>) at <time datetime="2026-05-21T17:29:28+00:00">2026-05-21</time></li></ul></li></ul></li></ul>
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/pull/813">Initial comment by himorin / Atsushi Shimono</a> (<a href="https://github.com/himorin">@himorin</a>) at <time datetime="2026-05-21T11:59:16+00:00">2026-05-21</time> (edited in <time datetime="2026-05-21T17:29:28+00:00">the same day</time>)</h5>
+<blockquote><p dir="auto">closes <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4484312967" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/811" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/811/hovercard" href="https://github.com/w3c/charter-drafts/issues/811">#811</a></p>
+<p dir="auto">/cc <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a>, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a></p>
+<p dir="auto">for info <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/LJWatson/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/LJWatson">@LJWatson</a> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/plehegar/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/plehegar">@plehegar</a> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/tidoust/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/tidoust">@tidoust</a></p></blockquote>
+
+</section>
+
+
+
+
+<!-- get_issue_comments -->
+
+
+
+
+<!-- get_review_comments -->
+
+
+<section>
+<h5>Code review comment on original line 461 / line 465</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -429,6 +429,36 @@ &lt;h3 id=&quot;rec-track&quot;&gt;
+             &lt;/p&gt;
+             &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
+           &lt;/dd&gt;
++          &lt;dt&gt;
++            &lt;a href=&quot;https://www.w3.org/TR/geolocation/&quot;&gt;Geolocation&lt;/a&gt;
++          &lt;/dt&gt;
++          &lt;dd&gt;
++            &lt;p&gt;
++              Geolocation provides access to geographical location information associated with the hosting device. 
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Draft state:&lt;/b&gt; Candidate Recommendation Snapshot
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Implementation status:&lt;/b&gt;
++              Shipping in all major browser engines. 
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Expected progress:&lt;/b&gt;
++              The Working Group will continue to develop and add new features to the specification.
++            &lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Adopted Draft&lt;/b&gt;: &lt;a href=
++              &quot;https://www.w3.org/TR/2026/CR-geolocation-20260326/&quot;&gt;https://www.w3.org/TR/2026/CR-geolocation-20260326/&lt;/a&gt;
++            &lt;/p&gt;
++            &lt;p&gt;Produced under &lt;b&gt;Working Group Charter:&lt;/b&gt; &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
++            &lt;p&gt;
++              &lt;b&gt;Exclusion Draft:&lt;/b&gt;
++                &lt;a href=&quot;https://www.w3.org/TR/2026/CR-geolocation-20260326/&quot;&gt;https://www.w3.org/TR/2026/CR-geolocation-20260326/&lt;/a&gt; (26 March 2026)&lt;br&gt;
++                associated &lt;a href=&quot;https://www.w3.org/mid/cfe-16939-2ee8f734456eeec6f1528c29e7b9dd676c82ba5c@w3.org&quot;&gt;Call for Exclusion&lt;/a&gt; started on 2026-03-26, opportunity until 2026-05-25 
++            &lt;/p&gt;
++            &lt;p&gt;&lt;b&gt;Exclusion Draft Charter:&lt;/b&gt; Produced under Working Group Charter: &lt;a href=&quot;https://www.w3.org/2024/02/das-wg-charter.html&quot;&gt;https://www.w3.org/2024/02/das-wg-charter.html&lt;/a&gt;&lt;/p&gt;
++          &lt;/dd&gt;</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/charter-drafts/pull/813#discussion_r3281184779">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-05-21T12:38:37+00:00">2026-05-21</time> (edited in <time datetime="2026-05-21T12:39:45+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">          &lt;p class="issue"&gt;
+          &lt;b&gt;Note:&lt;/b&gt; This work is a joint deliverable with the &lt;a           
+          href="https://www.w3.org/groups/wg/webapps"&gt;Web Applications Working Group&lt;/a&gt;.
+          &lt;/p&gt;
+          &lt;/dd&gt;
+</code></pre></blockquote></section>
+
+</section>
+
+

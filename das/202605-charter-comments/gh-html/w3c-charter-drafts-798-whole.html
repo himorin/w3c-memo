@@ -1,0 +1,71 @@
+
+<!--
+https://github.com/w3c/charter-drafts/issues/798
+798
+open
+[wg/das] Security: peer-reviewed research demonstrates browser sandbox escapes via device APIs
+marcoscaceres
+2026-04-30 00:38:12+00:00
+2026-05-12 00:42:25+00:00
+None
+-->
+
+
+<h4>Comments provided to issue <a href="https://github.com/w3c/charter-drafts/issues/798">w3c/charter-drafts #798: [wg/das] Security: peer-reviewed research demonstrates browser sandbox escapes via device APIs</a></h4>
+<ul><li>Status: open</li><li>Created: <time datetime="2026-04-30T00:38:12+00:00">2026-04-30</time></li><li>Not yet closed</li></ul>
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/798">Initial comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-30T00:38:12+00:00">2026-04-30</time> (edited in <time datetime="2026-05-12T00:42:25+00:00">2026-05-12</time>)</h5>
+<blockquote><p dir="auto">Posting as W3C Member (not TAG Member).</p>
+<p dir="auto">The <a href="https://w3c.github.io/charter-drafts/2026/das-wg-charter.html" rel="nofollow">DAS WG 2026 charter</a> states the WG is committed to "security and privacy focused" specification development and that:</p>
+<blockquote>
+<p dir="auto">"APIs in scope that expose sensitive data will define normative mitigations to address any known security and privacy threats."</p>
+</blockquote>
+<p dir="auto"><a href="https://misc0110.net/web/files/peripheralinstinct_www25.pdf" rel="nofollow">"Peripheral Instinct: How External Devices Breach Browser Sandboxes"</a> (Trampert et al., CISPA Helmholtz Center for Information Security and Universität des Saarlandes; WWW '25, ACM ISBN 979-8-4007-1274-6/25/04) is a peer-reviewed paper studying WebHID, WebUSB, Web Serial, and Web MIDI. From the abstract:</p>
+<blockquote>
+<p dir="auto">"we build several full-chain exploits, leading to arbitrary code execution on the victim system, circumventing the browser sandbox."</p>
+</blockquote>
+<p dir="auto">Of the four APIs studied, Web Serial is a tentative deliverable of this WG, and WebUSB is proposed as a tentative deliverable via <a href="https://github.com/w3c/charter-drafts/pull/786" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/786/hovercard">PR #786</a>. WebHID and Web MIDI are not in the charter but belong to the same class of device browser APIs.</p>
+<p dir="auto">Findings relevant to this charter:</p>
+<p dir="auto"><strong>Web Serial</strong> (tentative deliverable): the paper identifies "several potential threats that can be exploited by a malicious actor that can control a modem via the Web Serial API" (§7). These include: dialing or sending SMS to premium-rate numbers; accessing "sensitive information such as two-factor authentication codes or passwords" contained in SMS messages which "can even be intercepted by forwarding SMS messages and calls to the attacker's number" (§7); GPS tracking ("many modems contain a GPS module that allows the modem to determine its location, which allows tracking a user's location"); and permanent SIM card lockout ("PIN and PUK are entered using AT commands, which allows an attacker to perform a permanent DoS that locks the SIM card").</p>
+<p dir="auto"><strong>WebHID</strong>: "We investigate the features of 22 devices from 15 vendors" and found "reprogrammable on-board macro functionality supported by 14 devices" (§5.1.1). Configuration of the shortest malicious payload takes as little as ~20 ms (Table 2, Logitech G500s). The researchers built full exploit chains achieving arbitrary code execution on Windows (§6.1), macOS (Appendix D.2), and Linux (Appendix D.1).</p>
+<p dir="auto"><strong>WebUSB</strong>: the researchers "flash custom firmware on peripheral devices, such as the blink(1)" (a USB RGB LED notification light), "completely overtaking and repurposing the device" (§4.1). The paper describes the general attack pattern: "a non-input device can be maliciously repurposed as a keyboard, allowing attackers to inject arbitrary keystrokes into the system."</p>
+<p dir="auto"><strong>Web MIDI</strong>: "we can flash firmware on MIDI devices to repurpose them for malicious use cases" (abstract), demonstrated on the Launchpad MK2 MIDI controller where they "successfully patch the firmware achieving arbitrary code execution on the device" (§4.1).</p>
+<p dir="auto"><strong>Permission model</strong>: the paper cites Hazhirpasand et al. (2020), who "convinced up to 95 % of users into granting permissions leveraging a browser game" (§3.3). The paper notes: "Once permitted, the site can interact with the device without further consent on future visits" and that "an attacker can leverage permissions granted to another site via a Cross-Site Scripting (XSS), website compromise, or domain re-registration" (§3.3).</p>
+<p dir="auto">The paper concludes:</p>
+<blockquote>
+<p dir="auto">"browser security should not rely on the secure implementation of third-party hardware"</p>
+</blockquote>
+<p dir="auto">and notes that the API specifications:</p>
+<blockquote>
+<p dir="auto">"shift the responsibility to (unprepared) device vendors"</p>
+</blockquote>
+<p dir="auto">These findings suggest the current mitigation approach (permission prompts and blocklists) is insufficient for the threat model these APIs create, in which the host is a potentially malicious website rather than a trusted operating system. The charter does not acknowledge this changed threat model or explain how the WG's security approach addresses the class of attacks described above.</p>
+<p dir="auto">For reference, WebKit's published positions on the affected APIs:</p>
+<ul dir="auto">
+<li>WebUSB: <a href="https://github.com/WebKit/standards-positions/issues/68" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/68/hovercard">oppose</a> (privacy, security, device independence)</li>
+<li>Web Bluetooth: <a href="https://github.com/WebKit/standards-positions/issues/570" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/570/hovercard">oppose</a> (privacy, security, device independence)</li>
+<li>Web Serial: <a href="https://github.com/WebKit/standards-positions/issues/199" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/199/hovercard">oppose</a> (privacy, security, device independence, use cases, venue)</li>
+<li>WebHID: <a href="https://github.com/WebKit/standards-positions/issues/510" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/510/hovercard">no position issued</a> (venue concern noted)</li>
+</ul></blockquote>
+
+</section>
+
+
+
+
+<!--
+4426307451
+reillyeon
+2026-05-12 00:42:25+00:00
+2026-05-12 00:42:25+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/798#issuecomment-4426307451">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-05-12T00:42:25+00:00">2026-05-12</time> </h5>
+<blockquote><p dir="auto">Without dismissing the value of this research work I'll note that these attack scenarios are largely acknowledged by the "Security Considerations" sections of these specifications.</p></blockquote>
+
+</section>
+
+

@@ -1,0 +1,3433 @@
+
+<!--
+https://github.com/w3c/vibration/pull/55
+55
+closed
+Add implementation report
+marcoscaceres
+2026-03-31 02:20:35+00:00
+2026-05-11 02:46:53+00:00
+2026-05-01 22:46:42+00:00
+-->
+
+
+<h4>Comments provided to PR <a href="https://github.com/w3c/vibration/pull/55">w3c/vibration #55: Add implementation report</a></h4>
+<ul><li>Status: closed</li><li>Created: <time datetime="2026-03-31T02:20:35+00:00">2026-03-31</time></li><li>Closed: <time datetime="2026-05-01T22:46:42+00:00">2026-05-01</time> </li><li>PR Merged: <time datetime="2026-05-01T22:46:42+00:00">2026-05-01</time> by Reilly Grant (@<a href="https://github.com/reillyeon">reillyeon</a>)</li><li>Reviews provided:<ul><li>DISMISSED<ul><li>Anssi Kostiainen (@<a href="https://github.com/anssiko">anssiko</a>) at <time datetime="2026-04-13T17:28:17+00:00">2026-04-13</time><ul><li><p dir="auto">Certain aspects of this document require further work. I have done a human review and provided suggestions.</p>
+<p dir="auto">As for the file organization, <code class="notranslate">reports/implementation.html</code> should be placed in <code class="notranslate">docs/vibration2-council-report-response.html</code> to position this document appropriately as a response to <a href="https://www.w3.org/2025/08/vibration2-council-report.html#recommendations" rel="nofollow">https://www.w3.org/2025/08/vibration2-council-report.html#recommendations</a></p>
+<p dir="auto">We don't want to add a new workflow for this document.</p></li></ul></li></ul></li><li>APPROVED<ul><li>Reilly Grant (@<a href="https://github.com/reillyeon">reillyeon</a>) at <time datetime="2026-05-01T22:42:34+00:00">2026-05-01</time><ul><li><p dir="auto">Thank you <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/marcoscaceres/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/marcoscaceres">@marcoscaceres</a> for preparing this report.</p></li></ul></li></ul></li></ul></li></ul>
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55">Initial comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-31T02:20:35+00:00">2026-03-31</time> (edited in <time datetime="2026-05-11T02:46:53+00:00">2026-05-11</time>)</h5>
+<blockquote><h2 dir="auto">Summary</h2>
+<p dir="auto">Adds <code class="notranslate">reports/implementation.html</code> — an implementation report for the Vibration API covering:</p>
+<ul dir="auto">
+<li>Browser engine support (Blink: implemented; Gecko: removed v129 August 2024; WebKit: never shipped, formally opposes)</li>
+<li>Automated WPT results (4 tests via wpt.fyi)</li>
+<li>Manual test results (10 tests, conducted 2024-06-08)</li>
+<li>W3C Process implementation experience Q&amp;A</li>
+<li>Conclusion: single-engine implementation, does not currently meet W3C REC criteria</li>
+</ul>
+<p dir="auto">Also links the report from the spec via ReSpec <code class="notranslate">implementationReportURI</code>.</p>
+<h2 dir="auto">Background</h2>
+<p dir="auto">This fulfils the W3C Council recommendation (<a href="https://www.w3.org/2025/08/vibration2-council-report.html#recommendations" rel="nofollow">Vibration API Council Report, August 2025</a>) that the WG document what implementation experience the API currently has.</p>
+<p dir="auto">The underlying test data was collected and reported in <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2303309227" data-permission-text="Title is private" data-url="https://github.com/w3c/vibration/issues/33" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/33/hovercard" href="https://github.com/w3c/vibration/issues/33">#33</a> (June 2024). This PR formalises that data into a proper implementation report file.</p>
+<p dir="auto">Closes <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2303309227" data-permission-text="Title is private" data-url="https://github.com/w3c/vibration/issues/33" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/33/hovercard" href="https://github.com/w3c/vibration/issues/33">#33</a>.</p>
+<p dir="auto">🤖 Generated with <a href="https://claude.com/claude-code" rel="nofollow">Claude Code</a></p>
+
+<hr>
+<p dir="auto"><a href="https://pr-preview.s3.amazonaws.com/marcoscaceres/vibration/pull/55.html" title="Last updated on Apr 14, 2026, 10:50 PM UTC (3837418)" rel="nofollow">Preview</a> | <a href="https://pr-preview.s3.amazonaws.com/w3c/vibration/55/baf3eb2...marcoscaceres:3837418.html" title="Last updated on Apr 14, 2026, 10:50 PM UTC (3837418)" rel="nofollow">Diff</a></p></blockquote>
+
+</section>
+
+
+
+
+<!-- get_issue_comments -->
+
+
+
+
+<!--
+4163235025
+marcoscaceres
+2026-03-31 14:49:58+00:00
+2026-03-31 14:49:58+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4163235025">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-31T14:49:58+00:00">2026-03-31</time> </h5>
+<blockquote><p dir="auto">The blog post you linked says <a href="https://webkit.org/blog/1828/last-week-in-webkit-vibration-api-and-compressed-websockets/" rel="nofollow">"Samsung's Kihong Kwon landed initial support for the Vibration API"</a> — a code landing, not a shipped implementation. <a href="https://bugs.webkit.org/show_bug.cgi?id=171766" rel="nofollow">WebKit Bug 171766</a> ("Remove Vibration API", filed 2017-05-06) notes the code was "not enabled by any ports / Tests are skipped by all ports / Unmaintained code" and was removed in <a href="https://trac.webkit.org/changeset/216696/webkit" rel="nofollow">changeset 216696</a>. The current WebKit repository has no Vibration API code.</p>
+<p dir="auto">If you're aware of a specific port that shipped the API to users, I'd be glad to update the report.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4163890875
+anssiko
+2026-03-31 16:28:11+00:00
+2026-03-31 16:28:11+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4163890875">Comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-03-31T16:28:11+00:00">2026-03-31</time> </h5>
+<blockquote><p dir="auto">I worked with Kihong a long time ago. Based on what I recall, multiple Samsung products have been developed using EFL and shipped with EFL WebKit over the years.</p>
+<p dir="auto">The EFL WebKit port includes an implementation of the Vibration API. For more information and the source code of this port, see <a href="https://trac.webkit.org/wiki/EFLWebKit" rel="nofollow">https://trac.webkit.org/wiki/EFLWebKit</a></p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4173033183
+marcoscaceres
+2026-04-01 21:20:04+00:00
+2026-04-01 21:20:04+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4173033183">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-01T21:20:04+00:00">2026-04-01</time> </h5>
+<blockquote><p dir="auto">Thanks for the context, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a>.</p>
+<p dir="auto">To be clear about what the claim in question is:</p>
+<blockquote>
+<p dir="auto">"The EFL WebKit port includes an implementation of the Vibration API."</p>
+</blockquote>
+<p dir="auto">A few points about the evidence:</p>
+<p dir="auto"><strong>The source linked doesn't support the claim.</strong> The trac.webkit.org/wiki/EFLWebKit page (last modified October 2015) makes no mention of Vibration API support. It describes the port's features generally but does not document Vibration as an enabled capability.</p>
+<p dir="auto"><strong>The EFL port was removed from WebKit in February 2017.</strong> Commits from 2017-02-16 and 2017-02-17 removed EFL-specific files from Source, WebKit2, and Tools. The port was already gone three months before the Vibration API removal.</p>
+<p dir="auto"><strong>Bug 171766 is the authoritative primary source.</strong> Filed 2017-05-06 by WebKit engineers, RESOLVED FIXED 2017-05-11, the rationale states verbatim: "Not enabled by any ports / Tests are skipped by all ports / Unmaintained code." The phrase "any ports" is inclusive — it covers EFL and every other port that existed at or before that point.</p>
+<p dir="auto"><strong>Code landing vs. shipped implementation.</strong> Even setting the above aside, the standard for this implementation report is whether the API was shipped and interoperable — not whether code was landed. The 2013 blog post ("Samsung's Kihong Kwon landed initial support") describes a code landing. Bug 171766 explicitly records the outcome: that code was never enabled by any port before being removed.</p>
+<p dir="auto">The implementation report's conclusion — single-engine (Chromium/Blink only) — is grounded in the primary sources above. If there is verifiable evidence that the Vibration API was enabled and passing tests in a shipped EFL product, please share the specific source. Personal recollection is a useful starting point but not sufficient for an implementation report that will inform W3C REC advancement criteria.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4203833303
+marcoscaceres
+2026-04-08 04:25:27+00:00
+2026-04-08 04:26:26+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4203833303">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-08T04:25:27+00:00">2026-04-08</time> (edited in <time datetime="2026-04-08T04:26:26+00:00">the same day</time>)</h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> — flagging this PR for your attention (i.e., can you please review it or put it on the WG agenda for the WG to review it?). It's the implementation report referenced in <a href="https://github.com/w3c/charter-drafts/issues/781#issuecomment-4203824953" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard">charter-drafts#781</a>.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4204329067
+anssiko
+2026-04-08 06:42:31+00:00
+2026-04-08 06:42:31+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4204329067">Comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-08T06:42:31+00:00">2026-04-08</time> </h5>
+<blockquote><p dir="auto">The EFL WebKit port contains implementation experience for the Vibration API. The source code is at <a href="https://github.com/ewebkit/webkit">https://github.com/ewebkit/webkit</a> This is important information for this consideration.</p>
+<p dir="auto">The WG maintain snapshots of wpt results at <a href="https://github.com/w3c/test-results/">https://github.com/w3c/test-results/</a> To that end, I will proceed to close this PR as misplaced. Thank you for your understanding.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4205989183
+marcoscaceres
+2026-04-08 11:44:37+00:00
+2026-04-08 11:44:37+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4205989183">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-08T11:44:37+00:00">2026-04-08</time> </h5>
+<blockquote><p dir="auto">Thanks for the pointer to ewebkit/webkit, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a>. I've looked at it carefully.</p>
+<hr>
+<h3 dir="auto">On the EFL implementation</h3>
+<p dir="auto">You're right that the ewebkit/webkit repository has <code class="notranslate">Source/WebCore/Modules/vibration/</code> and that <code class="notranslate">Source/cmake/OptionsEfl.cmake</code> sets <code class="notranslate">ENABLE_VIBRATION PUBLIC ON</code> for the EFL port. That is code, and I don't dispute it.</p>
+<p dir="auto">However, several facts bear on whether it constitutes <em>implementation experience</em> in the sense the Council recommendation uses that phrase:</p>
+<ol dir="auto">
+<li>
+<p dir="auto"><strong>ewebkit/webkit is a snapshot of a discontinued port, last updated 3 July 2017.</strong> It is not a maintained implementation.</p>
+</li>
+<li>
+<p dir="auto"><strong>Bug 171766</strong> (filed 2017-05-05, RESOLVED FIXED), which removed Vibration from the canonical WebKit tree, gives the rationale verbatim:</p>
+<blockquote>
+<p dir="auto">"Not enabled by any ports / Tests are skipped by all ports / Unmaintained code"</p>
+</blockquote>
+<p dir="auto">The ewebkit fork and the canonical WebKit tree had diverged by this point, and the bug describes the state of the canonical tree. That said, the fork has not received updates since July 2017 either, and is not a currently maintained implementation.</p>
+</li>
+<li>
+<p dir="auto"><strong>No WPT test results for EFL WebKit exist anywhere.</strong> The w3c/test-results/vibration folder contains results from November 2014 for Chrome Beta 40 and Firefox Nightly 36. There are no EFL/Samsung/Tizen results.</p>
+</li>
+<li>
+<p dir="auto"><strong>The devices are gone.</strong> EFL WebKit targeted Samsung Tizen phones from approximately 2012–2017. Even if the Vibration API shipped on those devices, they are end-of-life hardware running software that has not received updates in nearly a decade. The Council asked the WG to document what experience "the API <em>currently</em> has" — the word "currently" matters. A defunct port on discontinued hardware does not represent current implementation experience, any more than a removed Gecko implementation would.</p>
+</li>
+</ol>
+<p dir="auto">The implementation report accurately reflects the current state: single-engine (Blink/Chromium). If there is verifiable evidence that the EFL Vibration implementation passed WPT tests and shipped in a product still available to users, I would update the report to include it.</p>
+<hr>
+<h3 dir="auto">On the "misplaced" procedural reason</h3>
+<p dir="auto">The w3c/test-results/vibration folder contains raw test-result snapshots from 2014 — <code class="notranslate">CH39.json</code>, <code class="notranslate">FF36.json</code>, <code class="notranslate">ZC40.json</code>, <code class="notranslate">ZF36.json</code> — all of which are Chrome and Firefox variants. That format is a data dump, not an implementation report.</p>
+<p dir="auto">An implementation report is a document that addresses W3C Process requirements for advancing to Recommendation: it explains what tests exist, who ran them, what the results were, and what conclusions follow for REC advancement. The Council specifically asked the WG to <em>document</em> what implementation experience the API has. That is an authored document, not a JSON snapshot. The spec links to it via <code class="notranslate">implementationReportURI</code>.</p>
+<hr>
+<h3 dir="auto">Request</h3>
+<p dir="auto">Closing the PR without merging leaves <a href="https://github.com/w3c/vibration/issues/33" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/33/hovercard">vibration#33</a> open and the Council's condition unmet, which is a gate item for the charter in <a href="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard">charter-drafts#781</a>.</p>
+<p dir="auto">If there are review concerns about the <em>content</em> of the report, I welcome them as review comments. But closing as "misplaced" on grounds that don't hold forecloses the review the WG needs to do. I'd ask that the PR be reopened — <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> has been pinged as a reviewer.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4206436467
+anssiko
+2026-04-08 13:05:35+00:00
+2026-04-08 13:05:35+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4206436467">Comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-08T13:05:35+00:00">2026-04-08</time> </h5>
+<blockquote><p dir="auto">Before you submit a PR to the w3c/test-results repo, here's an example of the expected implementation report format: <a href="https://w3c.github.io/test-results/vibration/20141118.html" rel="nofollow">https://w3c.github.io/test-results/vibration/20141118.html</a></p>
+<p dir="auto">Instructions: <a href="https://github.com/w3c/test-results/blob/gh-pages/README.md">https://github.com/w3c/test-results/blob/gh-pages/README.md</a></p>
+<p dir="auto">Notes on the toolchain:</p>
+<ul dir="auto">
+<li>The runner is now at <a href="https://wpt.live/tools/runner/index.html" rel="nofollow">https://wpt.live/tools/runner/index.html</a></li>
+<li>For any w3c-test.org -&gt; wpt.live</li>
+</ul>
+<p dir="auto">Let us know if you run into issues producing the report. Thank you for your support.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4210563389
+marcoscaceres
+2026-04-09 00:17:31+00:00
+2026-04-09 00:17:31+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4210563389">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-09T00:17:31+00:00">2026-04-09</time> </h5>
+<blockquote><p dir="auto">Thanks for the pointer to the toolchain, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a>. I've read the README and the 2014 report carefully.</p>
+<p dir="auto">I could regenerate a report using wpt.live and submit it to w3c/test-results. But I don't think that would meet the Council's requirement — and the 2014 report in that repository illustrates the limitation of the generated format.</p>
+<h3 dir="auto">The problem with the generated format</h3>
+<p dir="auto">A new run today via wpt.live would produce the same kind of output as the <a href="https://w3c.github.io/test-results/vibration/20141118.html" rel="nofollow">2014 snapshot</a>: pass/fail percentages across whatever browsers were tested. That format is designed for checking test conformance. It is not designed to answer the questions <a href="https://www.w3.org/policies/process/#implementation-experience" rel="nofollow">W3C Process §6.3.2</a> requires the Team to consider when assessing adequate implementation experience.</p>
+<p dir="auto">That format doesn't answer any of those questions. A score on a given date doesn't capture that Firefox later removed support entirely on desktop, or that its Android implementation was a stub returning <code class="notranslate">true</code> without performing vibration (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1653318" rel="nofollow">Bug 1653318</a>). Regenerating that format now would repeat the same structural limitation.</p>
+<h3 dir="auto">What an implementation report actually needs to do</h3>
+<p dir="auto">The <a href="https://www.w3.org/2025/08/vibration2-council-report.html#recommendations" rel="nofollow">Council Report</a> asked the WG to <em>document</em> what implementation experience the API <strong>currently</strong> has (verbatim: "document what implementation experience the API currently has (issue 33)"). The Process's §6.3.2 criteria require an authored document that addresses each of those questions — not a snapshot of test pass rates.</p>
+<p dir="auto">PR <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4175216019" data-permission-text="Title is private" data-url="https://github.com/w3c/vibration/issues/55" data-hovercard-type="pull_request" data-hovercard-url="/w3c/vibration/pull/55/hovercard" href="https://github.com/w3c/vibration/pull/55">#55</a> addresses each §6.3.2 question directly, with a dedicated section for each:</p>
+<ul dir="auto">
+<li><em>Is each feature of the current specification implemented, and how is this demonstrated?</em> — yes, with automated and manual WPT results against the current spec.</li>
+<li><em>Are there independent interoperable implementations?</em> — answered honestly: no, single engine (Blink).</li>
+<li><em>Are implementations created by people other than the authors?</em> — yes, addressed.</li>
+<li><em>Are implementations publicly deployed?</em> — yes, addressed.</li>
+<li><em>Are there reports of difficulties or problems?</em> — yes, addressed.</li>
+</ul>
+<p dir="auto">The <a href="https://w3c.github.io/geolocation/reports/implementation.html" rel="nofollow">Geolocation implementation report</a> uses the same structure — a DAS + WebApps joint deliverable published 27 February 2026 for the October 2025 Recommendation. If that is adequate for Geolocation, it is the right model for Vibration.</p>
+<h3 dir="auto">The charter gate</h3>
+<p dir="auto">Closing this PR without merging leaves <a href="https://github.com/w3c/vibration/issues/33" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/33/hovercard">vibration#33</a> open and the Council's condition unmet — a gate item for <a href="https://github.com/w3c/charter-drafts/issues/781" data-hovercard-type="issue" data-hovercard-url="/w3c/charter-drafts/issues/781/hovercard">charter-drafts#781</a>. Submitting a pass/fail snapshot to w3c/test-results would not close that gate, because it does not answer what the Council asked.</p>
+<p dir="auto">If there are concerns about the <em>content</em> of the report, those should be raised as review comments. I'd ask that the PR be reopened for content review. <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> has been pinged.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4227259909
+reillyeon
+2026-04-10 23:07:47+00:00
+2026-04-10 23:07:47+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4227259909">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-04-10T23:07:47+00:00">2026-04-10</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a>, I am re-opening this PR and asking that you engage in good faith to document the past and current implementation experience for this API. Linking to test results is insufficient given the complex history. The purpose here is not to judge the validity of any particular implementation but simply to document those that have previously or currently exist.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4231229245
+marcoscaceres
+2026-04-12 09:41:46+00:00
+2026-04-12 09:41:46+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4231229245">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-12T09:41:46+00:00">2026-04-12</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a> I've updated the implementation report based on the discussion. The main changes:</p>
+<p dir="auto"><strong>New: Historical implementation experience section</strong></p>
+<p dir="auto">In response to <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a>'s feedback about the EFL WebKit port, the report now documents the full history:</p>
+<ul dir="auto">
+<li>Samsung's EFL port had Vibration API code from 2012, enabled via <code class="notranslate">ENABLE_VIBRATION</code> in <code class="notranslate">OptionsEfl.cmake</code></li>
+<li>The EFL port was removed from WebKit mainline in February 2017; the Vibration API code was removed in May 2017 (<a href="https://webkit.org/b/171766" rel="nofollow">Bug 171766</a>)</li>
+<li>The <a href="https://github.com/ewebkit/webkit">ewebkit/webkit</a> fork retains the code but hasn't been updated since July 2017</li>
+<li>No WPT results exist for any EFL WebKit-based browser</li>
+</ul>
+<p dir="auto">The Gecko (Firefox) lifecycle is also documented: supported from v16 (2012), disabled on Android from v79 (2020), removed on Desktop in v129 (August 2024).</p>
+<p dir="auto"><strong>New: Source code verification (April 2026)</strong></p>
+<p dir="auto">All three engines verified directly in source, with repository links and specific file paths included so anyone can independently reproduce the findings:</p>
+<ul dir="auto">
+<li><strong>Blink</strong> (<a href="https://chromium.googlesource.com/chromium/src/" rel="nofollow">chromium/src</a>): <code class="notranslate">VibrationController</code> active in <code class="notranslate">vibration_controller.cc</code>, with user activation and cross-origin iframe guards</li>
+<li><strong>Gecko</strong> (<a href="https://searchfox.org/mozilla-central/source" rel="nofollow">mozilla-central</a>): WebIDL and HAL code remain in tree, but gated on <code class="notranslate">dom.vibrator.enabled</code> which defaults to <code class="notranslate">false</code> in <code class="notranslate">StaticPrefList.yaml</code> on all platforms (including Android) since Firefox 129. No platform-specific override in <code class="notranslate">geckoview-prefs.yaml</code> or elsewhere.</li>
+<li><strong>WebKit</strong> (<a href="https://github.com/WebKit/WebKit">WebKit/WebKit</a>): Zero vibration-related code in any IDL file, no <code class="notranslate">VibrationController</code>, no <code class="notranslate">ENABLE_VIBRATION</code> flag. Entirely absent.</li>
+</ul>
+<p dir="auto"><strong>Updated: Automated test results</strong></p>
+<p dir="auto">Updated to match <a href="https://wpt.fyi/results/vibration?label=experimental&amp;label=master&amp;aligned" rel="nofollow">current wpt.fyi results</a> (April 9, 2026). Firefox now shows FAIL (not STUB) since the API is no longer exposed on any platform.</p>
+<p dir="auto"><strong>Other fixes</strong></p>
+<ul dir="auto">
+<li>Chrome use counter data now cites the <a href="https://chromestatus.com/metrics/feature/timeline/popularity/850" rel="nofollow">actual source</a> (bucket 850, 0.05–0.13% of page loads, 2022–2026) and links to <a href="https://github.com/w3c/vibration/issues/33" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/33/hovercard">issue #33</a> for the abuse investigation</li>
+<li>Firefox Android citation corrected to reference <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#browser_compatibility" rel="nofollow">MDN compatibility data</a> as primary source</li>
+<li>WebKit concerns list updated to include "unclear use cases"</li>
+</ul></blockquote>
+
+</section>
+
+
+
+
+<!--
+4240316309
+reillyeon
+2026-04-13 23:44:27+00:00
+2026-04-13 23:44:27+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4240316309">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-04-13T23:44:27+00:00">2026-04-13</time> </h5>
+<blockquote><blockquote>
+<p dir="auto">As for the file organization, <code class="notranslate">reports/implementation.html</code> should be placed in <code class="notranslate">docs/vibration2-council-report-response.html</code> to position this document appropriately as a response to <a href="https://www.w3.org/2025/08/vibration2-council-report.html#recommendations" rel="nofollow">https://www.w3.org/2025/08/vibration2-council-report.html#recommendations</a></p>
+</blockquote>
+<p dir="auto">Can you explain why you don't want to consider this document an "implementation report"? This isn't just a response to the recommendations of the council but an attempt to document for anyone looking at the specification what is going on.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4247707922
+marcoscaceres
+2026-04-14 22:50:30+00:00
+2026-04-14 22:50:30+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4247707922">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T22:50:30+00:00">2026-04-14</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a> That's a good suggestion. I've updated the PR to make the document publishable to /TR/ as a Group Note Draft (DNOTE):</p>
+<ul dir="auto">
+<li><code class="notranslate">specStatus</code> changed from <code class="notranslate">"base"</code> to <code class="notranslate">"DNOTE"</code></li>
+<li>Added <code class="notranslate">group: "das"</code> and <code class="notranslate">shortName: "vibration-implementation-report"</code></li>
+<li>Workflow updated with <code class="notranslate">W3C_ECHIDNA_TOKEN</code> and <code class="notranslate">W3C_WG_DECISION_URL</code> for automated /TR/ publication</li>
+</ul>
+<p dir="auto">The existing <a href="https://lists.w3.org/Archives/Public/public-device-apis/2021May/0008.html" rel="nofollow">WG decision</a> authorizes Echidna for specs that have "reached First Public Working Draft or later maturity level." Since this is a new document on the Note track, the WG would need to authorize its publication. Once the WG agrees, this is ready to go.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4361949009
+marcoscaceres
+2026-05-01 22:32:48+00:00
+2026-05-01 22:32:48+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4361949009">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-05-01T22:32:48+00:00">2026-05-01</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a> all the feedback has been addressed. Can this be merged?</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4381113134
+anssiko
+2026-05-05 16:24:55+00:00
+2026-05-05 16:24:55+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4381113134">Comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-05-05T16:24:55+00:00">2026-05-05</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/marcoscaceres/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/marcoscaceres">@marcoscaceres</a> thank you for considering my comments.</p>
+<p dir="auto">Special thanks to <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> for stepping in to edit this while I was vacationing. I owe you one.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4417184090
+marcoscaceres
+2026-05-11 02:46:53+00:00
+2026-05-11 02:46:53+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/vibration/pull/55#issuecomment-4417184090">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-05-11T02:46:53+00:00">2026-05-11</time> </h5>
+<blockquote><p dir="auto">No problem. Thanks for the discussion <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/anssiko/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/anssiko">@anssiko</a>. It was a good walk down memory lane.</p>
+<p dir="auto">Let me know if I can be of any more help here or if you'd like me to periodically update this.</p></blockquote>
+
+</section>
+
+
+
+
+<!-- get_review_comments -->
+
+
+<section>
+<h5>Code review comment on original line 66 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,388 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail,
++      .stub {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .stub {
++        background-color: #795548;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited,
++      .stub a,
++      .stub a:link,
++      .stub a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never implemented the API and formally opposes it.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3014073110">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-03-31T07:35:17+00:00">2026-03-31</time> </h[LHS]><blockquote><p dir="auto">WebKit has supported the Vibration API in one of its ports. See <a href="https://webkit.org/blog/1828/last-week-in-webkit-vibration-api-and-compressed-websockets/" rel="nofollow">https://webkit.org/blog/1828/last-week-in-webkit-vibration-api-and-compressed-websockets/</a></p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 44 / line 45</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074527250">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T16:55:00+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">      Vibration API - Implementation Experience Response to W3C Council Report on the
+      Formal Objection Against Vibration API Obsoletion (Round 2)
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077064610">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:00:46+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">The Council recommendation explicitly links "<a href="https://www.w3.org/policies/process/#implementation-experience" rel="nofollow">implementation experience</a>" to <a href="https://www.w3.org/policies/process/#implementation-experience" rel="nofollow">W3C Process §6.3.2</a>, and the document answers each §6.3.2 question in a dedicated section. The title "Vibration API - Implementation Report" accurately describes that structure and follows the Geolocation implementation report convention (<code class="notranslate">reports/implementation.html</code>, title "Geolocation - Implementation Report"). Renaming to a "council report response" would reframe a standing implementation report as a one-off administrative document.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 10 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074527407">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T16:55:03+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">        publishDate: "2026-04-12",
+        specStatus: "base",
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3082994263">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T22:58:22+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">Updated per <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a>'s <a href="https://github.com/w3c/vibration/pull/55#issuecomment-4247707922" data-hovercard-type="pull_request" data-hovercard-url="/w3c/vibration/pull/55/hovercard">suggestion</a> to <code class="notranslate">specStatus: "DNOTE"</code> for /TR/ publication as a Group Note Draft. This also adds <code class="notranslate">group: "das"</code> and <code class="notranslate">shortName: "vibration-implementation-report"</code>.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 47 / line 48</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074531423">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T16:55:55+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">  &lt;body&gt;
+    &lt;section id="sotd"&gt;
+      &lt;div class="advisement"&gt;
+        This document is provided for discussion only and may change at any moment.
+        Its publication here does not imply endorsement of its contents by W3C.
+        Don’t cite this document other than as work in progress.
+        Developers should refer to
+        &lt;a href="https://wpt.fyi/results/vibration"&gt;wpt.fyi/results/vibration&lt;/a&gt;
+        for the latest automated test results.
+      &lt;/div&gt;
+    &lt;/section&gt;
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077064736">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:00:50+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">With <code class="notranslate">specStatus: "base"</code>, ReSpec already generates a SotD that says the document has "no official standing of any kind" (via <code class="notranslate">renderIsNoTrack</code>). The "Don't cite this document other than as work in progress" language comes from a different code path (<code class="notranslate">renderNotRec</code>) intended for rec-track drafts, not <code class="notranslate">base</code> documents. Adding it here would contradict the spec's <code class="notranslate">implementationReportURI</code> link, which exists so the report can be cited.</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3082994897">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T22:58:35+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">With the change to <code class="notranslate">specStatus: "DNOTE"</code>, ReSpec now generates the standard W3C boilerplate for Status of This Document, which includes "Group Note Drafts are not endorsed by W3C nor its Members" and "It is inappropriate to cite this document as other than a work in progress." I've added a custom paragraph referencing the Council recommendation. The ad-hoc advisement box is no longer needed since the DNOTE boilerplate covers this.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 51 / line 52</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074553292">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T16:59:44+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">        This document summarizes information about well-known implementation
+        experience for the [[vibration]] specification, produced merely in
+        response to satisfy the W3C Council recommendation
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077064957">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:00:54+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">The word "merely" does not appear in the Council recommendation and is not an accurate characterization of the document's purpose under <a href="https://www.w3.org/policies/process/#implementation-experience" rel="nofollow">W3C Process §6.3.2</a>.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 60 / line 61</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never shipped the API and formally opposes it.
++      &lt;/p&gt;</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074576727">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:03:39+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate"></code></pre>
+<p dir="auto">This does not belong the the abstract.</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077065118">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:00:59+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">This is a factual summary sourced from the <a href="https://github.com/WebKit/standards-positions/issues/267" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/267/hovercard">WebKit standards position (#267)</a>. It belongs in the abstract because it is central to understanding the API's current implementation status.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 73 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never shipped the API and formally opposes it.
++      &lt;/p&gt;
++    &lt;/section&gt;
++    &lt;h2&gt;
++      Browser engine support
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following table lists &lt;em&gt;browser engines&lt;/em&gt;, not individual
++      browsers. Chromium-based browsers (Chrome, Edge, Opera, Samsung Internet,
++      WebView Android, etc.) all share the Blink engine and are counted as a
++      single implementation.
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Browser engine implementation status for [[vibration]]</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074579572">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:04:11+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">        Browser engine implementation experience for [[vibration]]
+</code></pre></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 137 / line None</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never shipped the API and formally opposes it.
++      &lt;/p&gt;
++    &lt;/section&gt;
++    &lt;h2&gt;
++      Browser engine support
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following table lists &lt;em&gt;browser engines&lt;/em&gt;, not individual
++      browsers. Chromium-based browsers (Chrome, Edge, Opera, Samsung Internet,
++      WebView Android, etc.) all share the Blink engine and are counted as a
++      single implementation.
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Browser engine implementation status for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Engine&lt;/th&gt;
++        &lt;th&gt;Browsers&lt;/th&gt;
++        &lt;th&gt;Status&lt;/th&gt;
++        &lt;th&gt;Notes&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Blink&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Chrome, Edge, Opera, Samsung Internet, Chrome for Android,
++        WebView Android, and other Chromium-based browsers&lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;Implemented&lt;/td&gt;
++        &lt;td&gt;
++          Cross-origin iframe restrictions added in Chrome 55.
++          User gesture requirement added in Chrome 60.
++          See &lt;a href=&quot;https://chromestatus.com/feature/5698768766877696&quot;&gt;
++          Chrome Status&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Gecko&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Firefox&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Removed&lt;/td&gt;
++        &lt;td&gt;
++          Firefox Desktop: support removed in version 129 (August 6, 2024),
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++          1900037&lt;/a&gt;.
++          Firefox for Android: from version 79, the API is present but
++          vibration is disabled — &lt;code&gt;navigator.vibrate()&lt;/code&gt; returns
++          &lt;code&gt;true&lt;/code&gt; when the window is visible but produces no
++          haptic feedback (see
++          &lt;a href=
++          &quot;https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#browser_compatibility&quot;&gt;
++          MDN compatibility data&lt;/a&gt;,
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++          1653318&lt;/a&gt;).
++          Mozilla standards position: open, no position assigned,
++          &lt;a href=&quot;https://github.com/mozilla/standards-positions/issues/907&quot;&gt;
++          issue #907&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;WebKit&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Safari (macOS, iOS, iPadOS), all iOS/iPadOS browsers&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Not implemented&lt;/td&gt;
++        &lt;td&gt;
++          Never shipped in Safari or any current WebKit-based browser.
++          Code was present for the discontinued EFL port (2012–2017,
++          see &lt;a href=&quot;#historical&quot;&gt;Historical implementation
++          experience&lt;/a&gt;), then removed (changeset 216696,
++          &lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;).
++          WebKit formal standards position: &lt;strong&gt;Oppose&lt;/strong&gt;,
++          &lt;a href=&quot;https://github.com/WebKit/standards-positions/issues/267&quot;&gt;
++          issue #267&lt;/a&gt; (closed 2023-11-14). Concerns: device independence,
++          unclear use cases, portability, annoyance/abuse potential, power
++          consumption, integration infeasibility on Apple platforms.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2 id=&quot;historical&quot;&gt;
++      Historical implementation experience
++    &lt;/h2&gt;
++    &lt;p&gt;
++      In addition to the current implementation status above, the Vibration</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074581882">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:04:37+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">      In addition to the current implementation experience above, the Vibration
+</code></pre></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 448 / line 457</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never shipped the API and formally opposes it.
++      &lt;/p&gt;
++    &lt;/section&gt;
++    &lt;h2&gt;
++      Browser engine support
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following table lists &lt;em&gt;browser engines&lt;/em&gt;, not individual
++      browsers. Chromium-based browsers (Chrome, Edge, Opera, Samsung Internet,
++      WebView Android, etc.) all share the Blink engine and are counted as a
++      single implementation.
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Browser engine implementation status for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Engine&lt;/th&gt;
++        &lt;th&gt;Browsers&lt;/th&gt;
++        &lt;th&gt;Status&lt;/th&gt;
++        &lt;th&gt;Notes&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Blink&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Chrome, Edge, Opera, Samsung Internet, Chrome for Android,
++        WebView Android, and other Chromium-based browsers&lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;Implemented&lt;/td&gt;
++        &lt;td&gt;
++          Cross-origin iframe restrictions added in Chrome 55.
++          User gesture requirement added in Chrome 60.
++          See &lt;a href=&quot;https://chromestatus.com/feature/5698768766877696&quot;&gt;
++          Chrome Status&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Gecko&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Firefox&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Removed&lt;/td&gt;
++        &lt;td&gt;
++          Firefox Desktop: support removed in version 129 (August 6, 2024),
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++          1900037&lt;/a&gt;.
++          Firefox for Android: from version 79, the API is present but
++          vibration is disabled — &lt;code&gt;navigator.vibrate()&lt;/code&gt; returns
++          &lt;code&gt;true&lt;/code&gt; when the window is visible but produces no
++          haptic feedback (see
++          &lt;a href=
++          &quot;https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#browser_compatibility&quot;&gt;
++          MDN compatibility data&lt;/a&gt;,
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++          1653318&lt;/a&gt;).
++          Mozilla standards position: open, no position assigned,
++          &lt;a href=&quot;https://github.com/mozilla/standards-positions/issues/907&quot;&gt;
++          issue #907&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;WebKit&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Safari (macOS, iOS, iPadOS), all iOS/iPadOS browsers&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Not implemented&lt;/td&gt;
++        &lt;td&gt;
++          Never shipped in Safari or any current WebKit-based browser.
++          Code was present for the discontinued EFL port (2012–2017,
++          see &lt;a href=&quot;#historical&quot;&gt;Historical implementation
++          experience&lt;/a&gt;), then removed (changeset 216696,
++          &lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;).
++          WebKit formal standards position: &lt;strong&gt;Oppose&lt;/strong&gt;,
++          &lt;a href=&quot;https://github.com/WebKit/standards-positions/issues/267&quot;&gt;
++          issue #267&lt;/a&gt; (closed 2023-11-14). Concerns: device independence,
++          unclear use cases, portability, annoyance/abuse potential, power
++          consumption, integration infeasibility on Apple platforms.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2 id=&quot;historical&quot;&gt;
++      Historical implementation experience
++    &lt;/h2&gt;
++    &lt;p&gt;
++      In addition to the current implementation status above, the Vibration
++      API has a history of implementation in engines that no longer support it.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      WebKit (EFL port, 2012–2017)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Samsung engineer Kihong Kwon landed initial Vibration API support in
++      WebKit in 2012 for the EFL port, which was used on Samsung Tizen
++      devices. The EFL port enabled the feature
++      (&lt;code&gt;ENABLE_VIBRATION PUBLIC ON&lt;/code&gt; in
++      &lt;code&gt;Source/cmake/OptionsEfl.cmake&lt;/code&gt;) and received bug fixes
++      through 2015.
++    &lt;/p&gt;
++    &lt;p&gt;
++      The EFL port was removed from the WebKit mainline in February 2017.
++      In May 2017, the Vibration API code itself was removed
++      (&lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;, changeset
++      216696). The removal bug states: &quot;Not enabled by any ports. Tests
++      are skipped by all ports. Unmaintained code.&quot;
++    &lt;/p&gt;
++    &lt;p&gt;
++      A separate fork,
++      &lt;a href=&quot;https://github.com/ewebkit/webkit&quot;&gt;ewebkit/webkit&lt;/a&gt;,
++      retains the Vibration API code but has not been updated since July 3,
++      2017. The Tizen devices that used EFL WebKit are no longer in
++      production.
++    &lt;/p&gt;
++    &lt;p&gt;
++      No Web Platform Test results exist for any EFL WebKit-based browser.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Source code verification (April 2026)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      The following was verified by searching and reading the source code
++      of each engine. To reproduce, clone each repository and search for
++      the files and identifiers listed below (e.g., using &lt;code&gt;grep
++      -r&lt;/code&gt; or your editor&#x27;s search).
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Blink&lt;/strong&gt;
++        (&lt;a href=&quot;https://chromium.googlesource.com/chromium/src/&quot;&gt;chromium/src&lt;/a&gt;):
++        &lt;code&gt;VibrationController&lt;/code&gt; is implemented in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/vibration_controller.cc&lt;/code&gt;.
++        The &lt;code&gt;vibrate()&lt;/code&gt; method requires sticky user activation
++        (&lt;code&gt;HasStickyUserActivation()&lt;/code&gt;) and blocks calls from
++        cross-origin iframes
++        (&lt;code&gt;IsCrossOriginToNearestMainFrame()&lt;/code&gt;) and fenced
++        frames. The WebIDL is in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/navigator_vibration.idl&lt;/code&gt;.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Gecko&lt;/strong&gt;
++        (&lt;a href=&quot;https://searchfox.org/mozilla-central/source&quot;&gt;mozilla-central&lt;/a&gt;):
++        The &lt;code&gt;vibrate()&lt;/code&gt; WebIDL binding is in
++        &lt;code&gt;dom/webidl/Navigator.webidl&lt;/code&gt;, gated on the
++        &lt;code&gt;dom.vibrator.enabled&lt;/code&gt; preference. That preference
++        defaults to &lt;code&gt;false&lt;/code&gt; in
++        &lt;code&gt;modules/libpref/init/StaticPrefList.yaml&lt;/code&gt;.
++        No platform-specific override exists in
++        &lt;code&gt;mobile/android/app/geckoview-prefs.yaml&lt;/code&gt; or
++        elsewhere. The HAL implementation remains in
++        &lt;code&gt;hal/android/AndroidHal.cpp&lt;/code&gt; (&lt;code&gt;Vibrate()&lt;/code&gt;)
++        and &lt;code&gt;hal/fallback/FallbackVibration.cpp&lt;/code&gt; (no-op
++        stub for desktop), but is unreachable with the preference
++        disabled.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;WebKit&lt;/strong&gt;
++        (&lt;a href=&quot;https://github.com/WebKit/WebKit&quot;&gt;WebKit/WebKit&lt;/a&gt;):
++        No &lt;code&gt;vibrate()&lt;/code&gt; method in any IDL file. No
++        &lt;code&gt;VibrationController&lt;/code&gt;,
++        &lt;code&gt;NavigatorVibration&lt;/code&gt;, or &lt;code&gt;ENABLE_VIBRATION&lt;/code&gt;
++        flag anywhere in the source tree. The API is entirely absent.
++      &lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;h3&gt;
++      Gecko (Firefox, 2012–2024)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Firefox supported the Vibration API from version 16 (October 2012)
++      through version 128 (desktop). On Android, vibration was disabled
++      starting in version 79 (July 2020): the API remained present and
++      &lt;code&gt;navigator.vibrate()&lt;/code&gt; returned &lt;code&gt;true&lt;/code&gt; when the
++      window was visible, but no haptic feedback was produced
++      (&lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++      1653318&lt;/a&gt;). The feature was not re-enabled due to abuse concerns.
++    &lt;/p&gt;
++    &lt;p&gt;
++      Firefox Desktop removed the API entirely in version 129 (August 6,
++      2024,
++      &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++      1900037&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Test results
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following tests verify conformance to [[vibration]].
++    &lt;/p&gt;
++    &lt;p class=&quot;note&quot;&gt;
++      For the latest automated test results, visit
++      &lt;a href=&quot;https://wpt.fyi/results/vibration&quot;&gt;wpt.fyi/results/vibration&lt;/a&gt;.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Status legend
++    &lt;/h3&gt;
++    &lt;dl&gt;
++      &lt;dt&gt;PASS&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran successfully and the implementation conforms to the
++        specification.
++      &lt;/dd&gt;
++      &lt;dt&gt;FAIL&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran and the implementation does not conform to the
++        specification, or the API is not exposed.
++      &lt;/dd&gt;
++    &lt;/dl&gt;
++    &lt;h3&gt;
++      Automated test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Results from
++      &lt;a href=&quot;https://wpt.fyi/results/vibration?label=experimental&amp;label=master&amp;aligned&quot;&gt;
++      wpt.fyi&lt;/a&gt;, last verified April 9, 2026. Since Firefox 129
++      (August 2024), the API is no longer exposed on any Firefox platform
++      (see &lt;a href=&quot;#historical&quot;&gt;Historical implementation experience&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Automated WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome 149)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox 151)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari 240 preview)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/api-is-present.html&quot;&gt;
++          api-is-present.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/idlharness.window.js&quot;&gt;
++          idlharness.window.js&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (16/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/invalid-values.html&quot;&gt;
++          invalid-values.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (8/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/silent-ignore.html&quot;&gt;
++          silent-ignore.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h3&gt;
++      Manual test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Manual tests verify that the vibration mechanism is actually triggered
++      on the device. These tests cannot be automated. Tests were conducted on
++      2024-06-08 (see
++      &lt;a href=&quot;https://github.com/w3c/vibration/issues/33&quot;&gt;w3c/vibration#33&lt;/a&gt;)
++      against the following browser versions:
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;Chrome for Android 125.0.6422 (Blink engine)&lt;/li&gt;
++      &lt;li&gt;Firefox for Android 126.0.1 (Gecko engine)&lt;/li&gt;
++      &lt;li&gt;Safari on iOS 17.4.1 (WebKit engine)&lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Manual WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome for Android 125)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox for Android 126)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari iOS 17.4.1)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-when-hidden-manual.html&quot;&gt;
++          cancel-when-hidden-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-0-manual.html&quot;&gt;
++          cancel-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-array-0-manual.html&quot;&gt;
++          cancel-with-array-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/cancel-with-empty-array-manual.html&quot;&gt;
++          cancel-with-empty-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-new-manual.html&quot;&gt;
++          cancel-with-new-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-extra-manual.html&quot;&gt;
++          pattern-array-extra-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/pattern-array-manual.html&quot;&gt;
++          pattern-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-with-0-manual.html&quot;&gt;
++          pattern-array-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-array-manual.html&quot;&gt;
++          simple-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-scalar-manual.html&quot;&gt;
++          simple-scalar-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2&gt;
++      Is each feature of the current specification implemented, and how is
++      this demonstrated?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      All features of [[vibration]] are implemented in the Blink engine (Chrome
++      for Android, Chrome desktop, Edge, and other Chromium-based browsers).
++      This is demonstrated through the automated and manual WPT results above.
++      No other engine provides a functional implementation.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are there independent interoperable implementations of each feature?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      &lt;strong&gt;No.&lt;/strong&gt; Only one browser engine (Blink) provides a</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074584066">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:05:04+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">      No. Only one browser engine (Blink) provides a
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077065325">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:01:03+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">Keeping the emphasis. The answer to "Are there independent interoperable implementations?" is a direct "No" — the bold helps the reader locate the answer to each §6.3.2 question.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 461 / line 470</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never shipped the API and formally opposes it.
++      &lt;/p&gt;
++    &lt;/section&gt;
++    &lt;h2&gt;
++      Browser engine support
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following table lists &lt;em&gt;browser engines&lt;/em&gt;, not individual
++      browsers. Chromium-based browsers (Chrome, Edge, Opera, Samsung Internet,
++      WebView Android, etc.) all share the Blink engine and are counted as a
++      single implementation.
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Browser engine implementation status for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Engine&lt;/th&gt;
++        &lt;th&gt;Browsers&lt;/th&gt;
++        &lt;th&gt;Status&lt;/th&gt;
++        &lt;th&gt;Notes&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Blink&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Chrome, Edge, Opera, Samsung Internet, Chrome for Android,
++        WebView Android, and other Chromium-based browsers&lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;Implemented&lt;/td&gt;
++        &lt;td&gt;
++          Cross-origin iframe restrictions added in Chrome 55.
++          User gesture requirement added in Chrome 60.
++          See &lt;a href=&quot;https://chromestatus.com/feature/5698768766877696&quot;&gt;
++          Chrome Status&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Gecko&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Firefox&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Removed&lt;/td&gt;
++        &lt;td&gt;
++          Firefox Desktop: support removed in version 129 (August 6, 2024),
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++          1900037&lt;/a&gt;.
++          Firefox for Android: from version 79, the API is present but
++          vibration is disabled — &lt;code&gt;navigator.vibrate()&lt;/code&gt; returns
++          &lt;code&gt;true&lt;/code&gt; when the window is visible but produces no
++          haptic feedback (see
++          &lt;a href=
++          &quot;https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#browser_compatibility&quot;&gt;
++          MDN compatibility data&lt;/a&gt;,
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++          1653318&lt;/a&gt;).
++          Mozilla standards position: open, no position assigned,
++          &lt;a href=&quot;https://github.com/mozilla/standards-positions/issues/907&quot;&gt;
++          issue #907&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;WebKit&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Safari (macOS, iOS, iPadOS), all iOS/iPadOS browsers&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Not implemented&lt;/td&gt;
++        &lt;td&gt;
++          Never shipped in Safari or any current WebKit-based browser.
++          Code was present for the discontinued EFL port (2012–2017,
++          see &lt;a href=&quot;#historical&quot;&gt;Historical implementation
++          experience&lt;/a&gt;), then removed (changeset 216696,
++          &lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;).
++          WebKit formal standards position: &lt;strong&gt;Oppose&lt;/strong&gt;,
++          &lt;a href=&quot;https://github.com/WebKit/standards-positions/issues/267&quot;&gt;
++          issue #267&lt;/a&gt; (closed 2023-11-14). Concerns: device independence,
++          unclear use cases, portability, annoyance/abuse potential, power
++          consumption, integration infeasibility on Apple platforms.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2 id=&quot;historical&quot;&gt;
++      Historical implementation experience
++    &lt;/h2&gt;
++    &lt;p&gt;
++      In addition to the current implementation status above, the Vibration
++      API has a history of implementation in engines that no longer support it.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      WebKit (EFL port, 2012–2017)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Samsung engineer Kihong Kwon landed initial Vibration API support in
++      WebKit in 2012 for the EFL port, which was used on Samsung Tizen
++      devices. The EFL port enabled the feature
++      (&lt;code&gt;ENABLE_VIBRATION PUBLIC ON&lt;/code&gt; in
++      &lt;code&gt;Source/cmake/OptionsEfl.cmake&lt;/code&gt;) and received bug fixes
++      through 2015.
++    &lt;/p&gt;
++    &lt;p&gt;
++      The EFL port was removed from the WebKit mainline in February 2017.
++      In May 2017, the Vibration API code itself was removed
++      (&lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;, changeset
++      216696). The removal bug states: &quot;Not enabled by any ports. Tests
++      are skipped by all ports. Unmaintained code.&quot;
++    &lt;/p&gt;
++    &lt;p&gt;
++      A separate fork,
++      &lt;a href=&quot;https://github.com/ewebkit/webkit&quot;&gt;ewebkit/webkit&lt;/a&gt;,
++      retains the Vibration API code but has not been updated since July 3,
++      2017. The Tizen devices that used EFL WebKit are no longer in
++      production.
++    &lt;/p&gt;
++    &lt;p&gt;
++      No Web Platform Test results exist for any EFL WebKit-based browser.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Source code verification (April 2026)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      The following was verified by searching and reading the source code
++      of each engine. To reproduce, clone each repository and search for
++      the files and identifiers listed below (e.g., using &lt;code&gt;grep
++      -r&lt;/code&gt; or your editor&#x27;s search).
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Blink&lt;/strong&gt;
++        (&lt;a href=&quot;https://chromium.googlesource.com/chromium/src/&quot;&gt;chromium/src&lt;/a&gt;):
++        &lt;code&gt;VibrationController&lt;/code&gt; is implemented in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/vibration_controller.cc&lt;/code&gt;.
++        The &lt;code&gt;vibrate()&lt;/code&gt; method requires sticky user activation
++        (&lt;code&gt;HasStickyUserActivation()&lt;/code&gt;) and blocks calls from
++        cross-origin iframes
++        (&lt;code&gt;IsCrossOriginToNearestMainFrame()&lt;/code&gt;) and fenced
++        frames. The WebIDL is in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/navigator_vibration.idl&lt;/code&gt;.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Gecko&lt;/strong&gt;
++        (&lt;a href=&quot;https://searchfox.org/mozilla-central/source&quot;&gt;mozilla-central&lt;/a&gt;):
++        The &lt;code&gt;vibrate()&lt;/code&gt; WebIDL binding is in
++        &lt;code&gt;dom/webidl/Navigator.webidl&lt;/code&gt;, gated on the
++        &lt;code&gt;dom.vibrator.enabled&lt;/code&gt; preference. That preference
++        defaults to &lt;code&gt;false&lt;/code&gt; in
++        &lt;code&gt;modules/libpref/init/StaticPrefList.yaml&lt;/code&gt;.
++        No platform-specific override exists in
++        &lt;code&gt;mobile/android/app/geckoview-prefs.yaml&lt;/code&gt; or
++        elsewhere. The HAL implementation remains in
++        &lt;code&gt;hal/android/AndroidHal.cpp&lt;/code&gt; (&lt;code&gt;Vibrate()&lt;/code&gt;)
++        and &lt;code&gt;hal/fallback/FallbackVibration.cpp&lt;/code&gt; (no-op
++        stub for desktop), but is unreachable with the preference
++        disabled.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;WebKit&lt;/strong&gt;
++        (&lt;a href=&quot;https://github.com/WebKit/WebKit&quot;&gt;WebKit/WebKit&lt;/a&gt;):
++        No &lt;code&gt;vibrate()&lt;/code&gt; method in any IDL file. No
++        &lt;code&gt;VibrationController&lt;/code&gt;,
++        &lt;code&gt;NavigatorVibration&lt;/code&gt;, or &lt;code&gt;ENABLE_VIBRATION&lt;/code&gt;
++        flag anywhere in the source tree. The API is entirely absent.
++      &lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;h3&gt;
++      Gecko (Firefox, 2012–2024)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Firefox supported the Vibration API from version 16 (October 2012)
++      through version 128 (desktop). On Android, vibration was disabled
++      starting in version 79 (July 2020): the API remained present and
++      &lt;code&gt;navigator.vibrate()&lt;/code&gt; returned &lt;code&gt;true&lt;/code&gt; when the
++      window was visible, but no haptic feedback was produced
++      (&lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++      1653318&lt;/a&gt;). The feature was not re-enabled due to abuse concerns.
++    &lt;/p&gt;
++    &lt;p&gt;
++      Firefox Desktop removed the API entirely in version 129 (August 6,
++      2024,
++      &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++      1900037&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Test results
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following tests verify conformance to [[vibration]].
++    &lt;/p&gt;
++    &lt;p class=&quot;note&quot;&gt;
++      For the latest automated test results, visit
++      &lt;a href=&quot;https://wpt.fyi/results/vibration&quot;&gt;wpt.fyi/results/vibration&lt;/a&gt;.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Status legend
++    &lt;/h3&gt;
++    &lt;dl&gt;
++      &lt;dt&gt;PASS&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran successfully and the implementation conforms to the
++        specification.
++      &lt;/dd&gt;
++      &lt;dt&gt;FAIL&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran and the implementation does not conform to the
++        specification, or the API is not exposed.
++      &lt;/dd&gt;
++    &lt;/dl&gt;
++    &lt;h3&gt;
++      Automated test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Results from
++      &lt;a href=&quot;https://wpt.fyi/results/vibration?label=experimental&amp;label=master&amp;aligned&quot;&gt;
++      wpt.fyi&lt;/a&gt;, last verified April 9, 2026. Since Firefox 129
++      (August 2024), the API is no longer exposed on any Firefox platform
++      (see &lt;a href=&quot;#historical&quot;&gt;Historical implementation experience&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Automated WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome 149)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox 151)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari 240 preview)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/api-is-present.html&quot;&gt;
++          api-is-present.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/idlharness.window.js&quot;&gt;
++          idlharness.window.js&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (16/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/invalid-values.html&quot;&gt;
++          invalid-values.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (8/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/silent-ignore.html&quot;&gt;
++          silent-ignore.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h3&gt;
++      Manual test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Manual tests verify that the vibration mechanism is actually triggered
++      on the device. These tests cannot be automated. Tests were conducted on
++      2024-06-08 (see
++      &lt;a href=&quot;https://github.com/w3c/vibration/issues/33&quot;&gt;w3c/vibration#33&lt;/a&gt;)
++      against the following browser versions:
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;Chrome for Android 125.0.6422 (Blink engine)&lt;/li&gt;
++      &lt;li&gt;Firefox for Android 126.0.1 (Gecko engine)&lt;/li&gt;
++      &lt;li&gt;Safari on iOS 17.4.1 (WebKit engine)&lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Manual WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome for Android 125)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox for Android 126)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari iOS 17.4.1)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-when-hidden-manual.html&quot;&gt;
++          cancel-when-hidden-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-0-manual.html&quot;&gt;
++          cancel-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-array-0-manual.html&quot;&gt;
++          cancel-with-array-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/cancel-with-empty-array-manual.html&quot;&gt;
++          cancel-with-empty-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-new-manual.html&quot;&gt;
++          cancel-with-new-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-extra-manual.html&quot;&gt;
++          pattern-array-extra-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/pattern-array-manual.html&quot;&gt;
++          pattern-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-with-0-manual.html&quot;&gt;
++          pattern-array-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-array-manual.html&quot;&gt;
++          simple-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-scalar-manual.html&quot;&gt;
++          simple-scalar-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2&gt;
++      Is each feature of the current specification implemented, and how is
++      this demonstrated?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      All features of [[vibration]] are implemented in the Blink engine (Chrome
++      for Android, Chrome desktop, Edge, and other Chromium-based browsers).
++      This is demonstrated through the automated and manual WPT results above.
++      No other engine provides a functional implementation.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are there independent interoperable implementations of each feature?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      &lt;strong&gt;No.&lt;/strong&gt; Only one browser engine (Blink) provides a
++      functional implementation. Firefox removed support in version 129
++      (August 6, 2024); the API is now disabled on all Firefox platforms,
++      including Android (see &lt;a href=&quot;#historical&quot;&gt;Historical
++      implementation experience&lt;/a&gt;). WebKit has never shipped the API
++      and formally opposes it.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are the implementations by different, independent developers?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The Chromium-based implementations (Chrome, Edge, Opera, Samsung
++      Internet, etc.) share the same Blink engine codebase and are not
++      independent of each other. They represent a single implementation.</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074588674">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:06:00+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">      independent of each other. They represent a single implementation.
+      Additional historical implementation experience is provided by the
+      EFL WebKit port.
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077065491">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:01:07+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">The EFL port is documented in the <a href="#historical">Historical implementation experience</a> section. It would be inappropriate to add it to the active <a href="https://www.w3.org/policies/process/#implementation-experience" rel="nofollow">§6.3.2</a> assessment. The question asks about independent implementations; the EFL port has been discontinued since 2017 and does not represent current implementation experience.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 468 / line 477</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never shipped the API and formally opposes it.
++      &lt;/p&gt;
++    &lt;/section&gt;
++    &lt;h2&gt;
++      Browser engine support
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following table lists &lt;em&gt;browser engines&lt;/em&gt;, not individual
++      browsers. Chromium-based browsers (Chrome, Edge, Opera, Samsung Internet,
++      WebView Android, etc.) all share the Blink engine and are counted as a
++      single implementation.
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Browser engine implementation status for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Engine&lt;/th&gt;
++        &lt;th&gt;Browsers&lt;/th&gt;
++        &lt;th&gt;Status&lt;/th&gt;
++        &lt;th&gt;Notes&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Blink&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Chrome, Edge, Opera, Samsung Internet, Chrome for Android,
++        WebView Android, and other Chromium-based browsers&lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;Implemented&lt;/td&gt;
++        &lt;td&gt;
++          Cross-origin iframe restrictions added in Chrome 55.
++          User gesture requirement added in Chrome 60.
++          See &lt;a href=&quot;https://chromestatus.com/feature/5698768766877696&quot;&gt;
++          Chrome Status&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Gecko&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Firefox&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Removed&lt;/td&gt;
++        &lt;td&gt;
++          Firefox Desktop: support removed in version 129 (August 6, 2024),
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++          1900037&lt;/a&gt;.
++          Firefox for Android: from version 79, the API is present but
++          vibration is disabled — &lt;code&gt;navigator.vibrate()&lt;/code&gt; returns
++          &lt;code&gt;true&lt;/code&gt; when the window is visible but produces no
++          haptic feedback (see
++          &lt;a href=
++          &quot;https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#browser_compatibility&quot;&gt;
++          MDN compatibility data&lt;/a&gt;,
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++          1653318&lt;/a&gt;).
++          Mozilla standards position: open, no position assigned,
++          &lt;a href=&quot;https://github.com/mozilla/standards-positions/issues/907&quot;&gt;
++          issue #907&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;WebKit&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Safari (macOS, iOS, iPadOS), all iOS/iPadOS browsers&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Not implemented&lt;/td&gt;
++        &lt;td&gt;
++          Never shipped in Safari or any current WebKit-based browser.
++          Code was present for the discontinued EFL port (2012–2017,
++          see &lt;a href=&quot;#historical&quot;&gt;Historical implementation
++          experience&lt;/a&gt;), then removed (changeset 216696,
++          &lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;).
++          WebKit formal standards position: &lt;strong&gt;Oppose&lt;/strong&gt;,
++          &lt;a href=&quot;https://github.com/WebKit/standards-positions/issues/267&quot;&gt;
++          issue #267&lt;/a&gt; (closed 2023-11-14). Concerns: device independence,
++          unclear use cases, portability, annoyance/abuse potential, power
++          consumption, integration infeasibility on Apple platforms.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2 id=&quot;historical&quot;&gt;
++      Historical implementation experience
++    &lt;/h2&gt;
++    &lt;p&gt;
++      In addition to the current implementation status above, the Vibration
++      API has a history of implementation in engines that no longer support it.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      WebKit (EFL port, 2012–2017)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Samsung engineer Kihong Kwon landed initial Vibration API support in
++      WebKit in 2012 for the EFL port, which was used on Samsung Tizen
++      devices. The EFL port enabled the feature
++      (&lt;code&gt;ENABLE_VIBRATION PUBLIC ON&lt;/code&gt; in
++      &lt;code&gt;Source/cmake/OptionsEfl.cmake&lt;/code&gt;) and received bug fixes
++      through 2015.
++    &lt;/p&gt;
++    &lt;p&gt;
++      The EFL port was removed from the WebKit mainline in February 2017.
++      In May 2017, the Vibration API code itself was removed
++      (&lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;, changeset
++      216696). The removal bug states: &quot;Not enabled by any ports. Tests
++      are skipped by all ports. Unmaintained code.&quot;
++    &lt;/p&gt;
++    &lt;p&gt;
++      A separate fork,
++      &lt;a href=&quot;https://github.com/ewebkit/webkit&quot;&gt;ewebkit/webkit&lt;/a&gt;,
++      retains the Vibration API code but has not been updated since July 3,
++      2017. The Tizen devices that used EFL WebKit are no longer in
++      production.
++    &lt;/p&gt;
++    &lt;p&gt;
++      No Web Platform Test results exist for any EFL WebKit-based browser.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Source code verification (April 2026)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      The following was verified by searching and reading the source code
++      of each engine. To reproduce, clone each repository and search for
++      the files and identifiers listed below (e.g., using &lt;code&gt;grep
++      -r&lt;/code&gt; or your editor&#x27;s search).
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Blink&lt;/strong&gt;
++        (&lt;a href=&quot;https://chromium.googlesource.com/chromium/src/&quot;&gt;chromium/src&lt;/a&gt;):
++        &lt;code&gt;VibrationController&lt;/code&gt; is implemented in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/vibration_controller.cc&lt;/code&gt;.
++        The &lt;code&gt;vibrate()&lt;/code&gt; method requires sticky user activation
++        (&lt;code&gt;HasStickyUserActivation()&lt;/code&gt;) and blocks calls from
++        cross-origin iframes
++        (&lt;code&gt;IsCrossOriginToNearestMainFrame()&lt;/code&gt;) and fenced
++        frames. The WebIDL is in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/navigator_vibration.idl&lt;/code&gt;.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Gecko&lt;/strong&gt;
++        (&lt;a href=&quot;https://searchfox.org/mozilla-central/source&quot;&gt;mozilla-central&lt;/a&gt;):
++        The &lt;code&gt;vibrate()&lt;/code&gt; WebIDL binding is in
++        &lt;code&gt;dom/webidl/Navigator.webidl&lt;/code&gt;, gated on the
++        &lt;code&gt;dom.vibrator.enabled&lt;/code&gt; preference. That preference
++        defaults to &lt;code&gt;false&lt;/code&gt; in
++        &lt;code&gt;modules/libpref/init/StaticPrefList.yaml&lt;/code&gt;.
++        No platform-specific override exists in
++        &lt;code&gt;mobile/android/app/geckoview-prefs.yaml&lt;/code&gt; or
++        elsewhere. The HAL implementation remains in
++        &lt;code&gt;hal/android/AndroidHal.cpp&lt;/code&gt; (&lt;code&gt;Vibrate()&lt;/code&gt;)
++        and &lt;code&gt;hal/fallback/FallbackVibration.cpp&lt;/code&gt; (no-op
++        stub for desktop), but is unreachable with the preference
++        disabled.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;WebKit&lt;/strong&gt;
++        (&lt;a href=&quot;https://github.com/WebKit/WebKit&quot;&gt;WebKit/WebKit&lt;/a&gt;):
++        No &lt;code&gt;vibrate()&lt;/code&gt; method in any IDL file. No
++        &lt;code&gt;VibrationController&lt;/code&gt;,
++        &lt;code&gt;NavigatorVibration&lt;/code&gt;, or &lt;code&gt;ENABLE_VIBRATION&lt;/code&gt;
++        flag anywhere in the source tree. The API is entirely absent.
++      &lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;h3&gt;
++      Gecko (Firefox, 2012–2024)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Firefox supported the Vibration API from version 16 (October 2012)
++      through version 128 (desktop). On Android, vibration was disabled
++      starting in version 79 (July 2020): the API remained present and
++      &lt;code&gt;navigator.vibrate()&lt;/code&gt; returned &lt;code&gt;true&lt;/code&gt; when the
++      window was visible, but no haptic feedback was produced
++      (&lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++      1653318&lt;/a&gt;). The feature was not re-enabled due to abuse concerns.
++    &lt;/p&gt;
++    &lt;p&gt;
++      Firefox Desktop removed the API entirely in version 129 (August 6,
++      2024,
++      &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++      1900037&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Test results
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following tests verify conformance to [[vibration]].
++    &lt;/p&gt;
++    &lt;p class=&quot;note&quot;&gt;
++      For the latest automated test results, visit
++      &lt;a href=&quot;https://wpt.fyi/results/vibration&quot;&gt;wpt.fyi/results/vibration&lt;/a&gt;.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Status legend
++    &lt;/h3&gt;
++    &lt;dl&gt;
++      &lt;dt&gt;PASS&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran successfully and the implementation conforms to the
++        specification.
++      &lt;/dd&gt;
++      &lt;dt&gt;FAIL&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran and the implementation does not conform to the
++        specification, or the API is not exposed.
++      &lt;/dd&gt;
++    &lt;/dl&gt;
++    &lt;h3&gt;
++      Automated test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Results from
++      &lt;a href=&quot;https://wpt.fyi/results/vibration?label=experimental&amp;label=master&amp;aligned&quot;&gt;
++      wpt.fyi&lt;/a&gt;, last verified April 9, 2026. Since Firefox 129
++      (August 2024), the API is no longer exposed on any Firefox platform
++      (see &lt;a href=&quot;#historical&quot;&gt;Historical implementation experience&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Automated WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome 149)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox 151)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari 240 preview)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/api-is-present.html&quot;&gt;
++          api-is-present.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/idlharness.window.js&quot;&gt;
++          idlharness.window.js&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (16/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/invalid-values.html&quot;&gt;
++          invalid-values.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (8/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/silent-ignore.html&quot;&gt;
++          silent-ignore.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h3&gt;
++      Manual test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Manual tests verify that the vibration mechanism is actually triggered
++      on the device. These tests cannot be automated. Tests were conducted on
++      2024-06-08 (see
++      &lt;a href=&quot;https://github.com/w3c/vibration/issues/33&quot;&gt;w3c/vibration#33&lt;/a&gt;)
++      against the following browser versions:
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;Chrome for Android 125.0.6422 (Blink engine)&lt;/li&gt;
++      &lt;li&gt;Firefox for Android 126.0.1 (Gecko engine)&lt;/li&gt;
++      &lt;li&gt;Safari on iOS 17.4.1 (WebKit engine)&lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Manual WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome for Android 125)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox for Android 126)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari iOS 17.4.1)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-when-hidden-manual.html&quot;&gt;
++          cancel-when-hidden-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-0-manual.html&quot;&gt;
++          cancel-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-array-0-manual.html&quot;&gt;
++          cancel-with-array-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/cancel-with-empty-array-manual.html&quot;&gt;
++          cancel-with-empty-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-new-manual.html&quot;&gt;
++          cancel-with-new-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-extra-manual.html&quot;&gt;
++          pattern-array-extra-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/pattern-array-manual.html&quot;&gt;
++          pattern-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-with-0-manual.html&quot;&gt;
++          pattern-array-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-array-manual.html&quot;&gt;
++          simple-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-scalar-manual.html&quot;&gt;
++          simple-scalar-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2&gt;
++      Is each feature of the current specification implemented, and how is
++      this demonstrated?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      All features of [[vibration]] are implemented in the Blink engine (Chrome
++      for Android, Chrome desktop, Edge, and other Chromium-based browsers).
++      This is demonstrated through the automated and manual WPT results above.
++      No other engine provides a functional implementation.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are there independent interoperable implementations of each feature?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      &lt;strong&gt;No.&lt;/strong&gt; Only one browser engine (Blink) provides a
++      functional implementation. Firefox removed support in version 129
++      (August 6, 2024); the API is now disabled on all Firefox platforms,
++      including Android (see &lt;a href=&quot;#historical&quot;&gt;Historical
++      implementation experience&lt;/a&gt;). WebKit has never shipped the API
++      and formally opposes it.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are the implementations by different, independent developers?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The Chromium-based implementations (Chrome, Edge, Opera, Samsung
++      Internet, etc.) share the same Blink engine codebase and are not
++      independent of each other. They represent a single implementation.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are the implementations deployed on production systems?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      Yes, in Chromium-based browsers. Not in Firefox (removed) or Safari
++      (never shipped).</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074598841">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:08:04+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">      Yes, in Chromium-based browsers and on Samsung Tizen devices using
+      the EFL WebKit port. The latter devices are no longer in production
+      but may still be in use, while the former is widely deployed.
+
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077065666">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:01:11+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">Adding "Samsung Tizen devices using the EFL WebKit port. The latter devices are no longer in production but may still be in use" to the "publicly deployed" answer could mislead readers into thinking the API has broader current deployment than it does. The <a href="https://www.w3.org/policies/process/#implementation-experience" rel="nofollow">§6.3.2</a> questions inform the Team's assessment for Recommendation advancement; the EFL port has been discontinued since 2017 and does not represent current deployment. The EFL history is documented in the <a href="#historical">Historical section</a>.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 491 / line 500</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never shipped the API and formally opposes it.
++      &lt;/p&gt;
++    &lt;/section&gt;
++    &lt;h2&gt;
++      Browser engine support
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following table lists &lt;em&gt;browser engines&lt;/em&gt;, not individual
++      browsers. Chromium-based browsers (Chrome, Edge, Opera, Samsung Internet,
++      WebView Android, etc.) all share the Blink engine and are counted as a
++      single implementation.
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Browser engine implementation status for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Engine&lt;/th&gt;
++        &lt;th&gt;Browsers&lt;/th&gt;
++        &lt;th&gt;Status&lt;/th&gt;
++        &lt;th&gt;Notes&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Blink&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Chrome, Edge, Opera, Samsung Internet, Chrome for Android,
++        WebView Android, and other Chromium-based browsers&lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;Implemented&lt;/td&gt;
++        &lt;td&gt;
++          Cross-origin iframe restrictions added in Chrome 55.
++          User gesture requirement added in Chrome 60.
++          See &lt;a href=&quot;https://chromestatus.com/feature/5698768766877696&quot;&gt;
++          Chrome Status&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Gecko&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Firefox&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Removed&lt;/td&gt;
++        &lt;td&gt;
++          Firefox Desktop: support removed in version 129 (August 6, 2024),
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++          1900037&lt;/a&gt;.
++          Firefox for Android: from version 79, the API is present but
++          vibration is disabled — &lt;code&gt;navigator.vibrate()&lt;/code&gt; returns
++          &lt;code&gt;true&lt;/code&gt; when the window is visible but produces no
++          haptic feedback (see
++          &lt;a href=
++          &quot;https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#browser_compatibility&quot;&gt;
++          MDN compatibility data&lt;/a&gt;,
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++          1653318&lt;/a&gt;).
++          Mozilla standards position: open, no position assigned,
++          &lt;a href=&quot;https://github.com/mozilla/standards-positions/issues/907&quot;&gt;
++          issue #907&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;WebKit&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Safari (macOS, iOS, iPadOS), all iOS/iPadOS browsers&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Not implemented&lt;/td&gt;
++        &lt;td&gt;
++          Never shipped in Safari or any current WebKit-based browser.
++          Code was present for the discontinued EFL port (2012–2017,
++          see &lt;a href=&quot;#historical&quot;&gt;Historical implementation
++          experience&lt;/a&gt;), then removed (changeset 216696,
++          &lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;).
++          WebKit formal standards position: &lt;strong&gt;Oppose&lt;/strong&gt;,
++          &lt;a href=&quot;https://github.com/WebKit/standards-positions/issues/267&quot;&gt;
++          issue #267&lt;/a&gt; (closed 2023-11-14). Concerns: device independence,
++          unclear use cases, portability, annoyance/abuse potential, power
++          consumption, integration infeasibility on Apple platforms.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2 id=&quot;historical&quot;&gt;
++      Historical implementation experience
++    &lt;/h2&gt;
++    &lt;p&gt;
++      In addition to the current implementation status above, the Vibration
++      API has a history of implementation in engines that no longer support it.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      WebKit (EFL port, 2012–2017)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Samsung engineer Kihong Kwon landed initial Vibration API support in
++      WebKit in 2012 for the EFL port, which was used on Samsung Tizen
++      devices. The EFL port enabled the feature
++      (&lt;code&gt;ENABLE_VIBRATION PUBLIC ON&lt;/code&gt; in
++      &lt;code&gt;Source/cmake/OptionsEfl.cmake&lt;/code&gt;) and received bug fixes
++      through 2015.
++    &lt;/p&gt;
++    &lt;p&gt;
++      The EFL port was removed from the WebKit mainline in February 2017.
++      In May 2017, the Vibration API code itself was removed
++      (&lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;, changeset
++      216696). The removal bug states: &quot;Not enabled by any ports. Tests
++      are skipped by all ports. Unmaintained code.&quot;
++    &lt;/p&gt;
++    &lt;p&gt;
++      A separate fork,
++      &lt;a href=&quot;https://github.com/ewebkit/webkit&quot;&gt;ewebkit/webkit&lt;/a&gt;,
++      retains the Vibration API code but has not been updated since July 3,
++      2017. The Tizen devices that used EFL WebKit are no longer in
++      production.
++    &lt;/p&gt;
++    &lt;p&gt;
++      No Web Platform Test results exist for any EFL WebKit-based browser.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Source code verification (April 2026)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      The following was verified by searching and reading the source code
++      of each engine. To reproduce, clone each repository and search for
++      the files and identifiers listed below (e.g., using &lt;code&gt;grep
++      -r&lt;/code&gt; or your editor&#x27;s search).
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Blink&lt;/strong&gt;
++        (&lt;a href=&quot;https://chromium.googlesource.com/chromium/src/&quot;&gt;chromium/src&lt;/a&gt;):
++        &lt;code&gt;VibrationController&lt;/code&gt; is implemented in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/vibration_controller.cc&lt;/code&gt;.
++        The &lt;code&gt;vibrate()&lt;/code&gt; method requires sticky user activation
++        (&lt;code&gt;HasStickyUserActivation()&lt;/code&gt;) and blocks calls from
++        cross-origin iframes
++        (&lt;code&gt;IsCrossOriginToNearestMainFrame()&lt;/code&gt;) and fenced
++        frames. The WebIDL is in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/navigator_vibration.idl&lt;/code&gt;.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Gecko&lt;/strong&gt;
++        (&lt;a href=&quot;https://searchfox.org/mozilla-central/source&quot;&gt;mozilla-central&lt;/a&gt;):
++        The &lt;code&gt;vibrate()&lt;/code&gt; WebIDL binding is in
++        &lt;code&gt;dom/webidl/Navigator.webidl&lt;/code&gt;, gated on the
++        &lt;code&gt;dom.vibrator.enabled&lt;/code&gt; preference. That preference
++        defaults to &lt;code&gt;false&lt;/code&gt; in
++        &lt;code&gt;modules/libpref/init/StaticPrefList.yaml&lt;/code&gt;.
++        No platform-specific override exists in
++        &lt;code&gt;mobile/android/app/geckoview-prefs.yaml&lt;/code&gt; or
++        elsewhere. The HAL implementation remains in
++        &lt;code&gt;hal/android/AndroidHal.cpp&lt;/code&gt; (&lt;code&gt;Vibrate()&lt;/code&gt;)
++        and &lt;code&gt;hal/fallback/FallbackVibration.cpp&lt;/code&gt; (no-op
++        stub for desktop), but is unreachable with the preference
++        disabled.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;WebKit&lt;/strong&gt;
++        (&lt;a href=&quot;https://github.com/WebKit/WebKit&quot;&gt;WebKit/WebKit&lt;/a&gt;):
++        No &lt;code&gt;vibrate()&lt;/code&gt; method in any IDL file. No
++        &lt;code&gt;VibrationController&lt;/code&gt;,
++        &lt;code&gt;NavigatorVibration&lt;/code&gt;, or &lt;code&gt;ENABLE_VIBRATION&lt;/code&gt;
++        flag anywhere in the source tree. The API is entirely absent.
++      &lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;h3&gt;
++      Gecko (Firefox, 2012–2024)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Firefox supported the Vibration API from version 16 (October 2012)
++      through version 128 (desktop). On Android, vibration was disabled
++      starting in version 79 (July 2020): the API remained present and
++      &lt;code&gt;navigator.vibrate()&lt;/code&gt; returned &lt;code&gt;true&lt;/code&gt; when the
++      window was visible, but no haptic feedback was produced
++      (&lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++      1653318&lt;/a&gt;). The feature was not re-enabled due to abuse concerns.
++    &lt;/p&gt;
++    &lt;p&gt;
++      Firefox Desktop removed the API entirely in version 129 (August 6,
++      2024,
++      &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++      1900037&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Test results
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following tests verify conformance to [[vibration]].
++    &lt;/p&gt;
++    &lt;p class=&quot;note&quot;&gt;
++      For the latest automated test results, visit
++      &lt;a href=&quot;https://wpt.fyi/results/vibration&quot;&gt;wpt.fyi/results/vibration&lt;/a&gt;.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Status legend
++    &lt;/h3&gt;
++    &lt;dl&gt;
++      &lt;dt&gt;PASS&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran successfully and the implementation conforms to the
++        specification.
++      &lt;/dd&gt;
++      &lt;dt&gt;FAIL&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran and the implementation does not conform to the
++        specification, or the API is not exposed.
++      &lt;/dd&gt;
++    &lt;/dl&gt;
++    &lt;h3&gt;
++      Automated test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Results from
++      &lt;a href=&quot;https://wpt.fyi/results/vibration?label=experimental&amp;label=master&amp;aligned&quot;&gt;
++      wpt.fyi&lt;/a&gt;, last verified April 9, 2026. Since Firefox 129
++      (August 2024), the API is no longer exposed on any Firefox platform
++      (see &lt;a href=&quot;#historical&quot;&gt;Historical implementation experience&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Automated WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome 149)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox 151)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari 240 preview)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/api-is-present.html&quot;&gt;
++          api-is-present.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/idlharness.window.js&quot;&gt;
++          idlharness.window.js&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (16/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/invalid-values.html&quot;&gt;
++          invalid-values.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (8/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/silent-ignore.html&quot;&gt;
++          silent-ignore.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h3&gt;
++      Manual test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Manual tests verify that the vibration mechanism is actually triggered
++      on the device. These tests cannot be automated. Tests were conducted on
++      2024-06-08 (see
++      &lt;a href=&quot;https://github.com/w3c/vibration/issues/33&quot;&gt;w3c/vibration#33&lt;/a&gt;)
++      against the following browser versions:
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;Chrome for Android 125.0.6422 (Blink engine)&lt;/li&gt;
++      &lt;li&gt;Firefox for Android 126.0.1 (Gecko engine)&lt;/li&gt;
++      &lt;li&gt;Safari on iOS 17.4.1 (WebKit engine)&lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Manual WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome for Android 125)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox for Android 126)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari iOS 17.4.1)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-when-hidden-manual.html&quot;&gt;
++          cancel-when-hidden-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-0-manual.html&quot;&gt;
++          cancel-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-array-0-manual.html&quot;&gt;
++          cancel-with-array-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/cancel-with-empty-array-manual.html&quot;&gt;
++          cancel-with-empty-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-new-manual.html&quot;&gt;
++          cancel-with-new-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-extra-manual.html&quot;&gt;
++          pattern-array-extra-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/pattern-array-manual.html&quot;&gt;
++          pattern-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-with-0-manual.html&quot;&gt;
++          pattern-array-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-array-manual.html&quot;&gt;
++          simple-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-scalar-manual.html&quot;&gt;
++          simple-scalar-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2&gt;
++      Is each feature of the current specification implemented, and how is
++      this demonstrated?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      All features of [[vibration]] are implemented in the Blink engine (Chrome
++      for Android, Chrome desktop, Edge, and other Chromium-based browsers).
++      This is demonstrated through the automated and manual WPT results above.
++      No other engine provides a functional implementation.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are there independent interoperable implementations of each feature?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      &lt;strong&gt;No.&lt;/strong&gt; Only one browser engine (Blink) provides a
++      functional implementation. Firefox removed support in version 129
++      (August 6, 2024); the API is now disabled on all Firefox platforms,
++      including Android (see &lt;a href=&quot;#historical&quot;&gt;Historical
++      implementation experience&lt;/a&gt;). WebKit has never shipped the API
++      and formally opposes it.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are the implementations by different, independent developers?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The Chromium-based implementations (Chrome, Edge, Opera, Samsung
++      Internet, etc.) share the same Blink engine codebase and are not
++      independent of each other. They represent a single implementation.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are the implementations deployed on production systems?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      Yes, in Chromium-based browsers. Not in Firefox (removed) or Safari
++      (never shipped).
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are there reports of difficulties or problems with implementation?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      Yes. Chrome introduced cross-origin iframe restrictions (v55) and user
++      gesture requirements (v60) in response to widespread abuse of the API.
++      A &lt;a href=&quot;https://github.com/w3c/vibration/issues/33&quot;&gt;manual review
++      of sites calling &lt;code&gt;navigator.vibrate()&lt;/code&gt;&lt;/a&gt; found usage
++      dominated by notification emulation, ad-related scripts, and patterns
++      now blocked by Chrome&#x27;s mitigations.
++      &lt;a href=
++      &quot;https://chromestatus.com/metrics/feature/timeline/popularity/850&quot;&gt;Chrome
++      use counter data&lt;/a&gt; shows approximately 0.05–0.13% of page loads
++      invoke the API (2022–2026). Firefox disabled the API on Android
++      citing abuse concerns before removing it entirely from Firefox Desktop
++      in v129
++      (&lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++      1900037&lt;/a&gt;). WebKit&#x27;s opposition cites device independence, unclear
++      use cases, power consumption, annoyance/abuse potential, portability,
++      and infeasibility of integration on Apple platforms
++      (&lt;a href=&quot;https://github.com/WebKit/standards-positions/issues/267&quot;&gt;
++      WebKit standards position #267&lt;/a&gt;).</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074613169">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:10:55+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">      WebKit standards position #267&lt;/a&gt;), but lacks adequate details to
+      evaluate these implementation difficulties.
+      Chrome's mitigations have been effective at reducing abuse, and
+      the Working Group continues work to address abuse and other concerns.
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077065976">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:01:19+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">The current text reports what each engine's standards position and bug tracker say. "Lacks adequate details to evaluate these implementation difficulties" is an editorial characterization of the WebKit position, not what the position itself says. "Chrome's mitigations have been effective at reducing abuse" is a judgment not grounded in any cited source. An implementation report should document what sources say, not evaluate them.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 27 / line 26</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,27 @@
++name: Publish implementation report
++
++on:
++  push:
++    branches:
++      - gh-pages
++    paths:
++      - reports/implementation.html
++  pull_request:
++    paths:
++      - reports/implementation.html
++
++jobs:
++  generate-report:
++    name: Generate implementation report
++    runs-on: ubuntu-latest
++    permissions:
++      contents: write
++    steps:
++      - uses: actions/checkout@v4
++      - uses: w3c/spec-prod@v2
++        with:
++          SOURCE: reports/implementation.html
++          TOOLCHAIN: respec
++          VALIDATE_LINKS: false
++          VALIDATE_PUBRULES: false
++          GH_PAGES_BRANCH: gh-pages</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074654111">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:18:51+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate"></code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077066193">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:01:23+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">The existing <code class="notranslate">auto-publish.yml</code> uses <code class="notranslate">w3c/spec-prod</code> to build and deploy the main spec to GitHub Pages. This workflow follows the same pattern for the implementation report. Without it, the report source would still render client-side in browsers via the ReSpec script tag, but there would be no pre-built static output (which matters for search engines, tools, and accessibility), and no CI validation on PRs that modify the report. It is a lightweight addition that keeps the implementation report consistent with how the main spec is already published.</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077121185">Added comment by himorin / Atsushi Shimono</a> (<a href="https://github.com/himorin">@himorin</a>) at <time datetime="2026-04-14T04:24:05+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">I don't object to use spec-prod for publication of this (kind) of document, but I believe we shall consider more and well on strategy (with proper consideration, not just on impulse...), both where and how we publish (and use) this...<br>
+I believe we could have this sort of information within /TR/ publication material, which is not target for now... But considering recent discussion around ED provided at github.io (like moving to under xxxx.w3.org domain), although <a href="https://github.com/w3c/vibration/pull/55/changes#diff-0eb547304658805aad788d320f10bf1f292797b5e6d745a3bf617584da017051">link in metadata</a> could work with additional update to this PR for metadata modified with absolute url, I don't think it's good idea to have github.io link in metadata (since current one might not work for /TR/ publication via <a href="https://github.com/w3c/vibration/blob/gh-pages/.github/workflows/auto-publish.yml">streamlined publication</a>).</p></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3082995513">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T22:58:44+00:00">2026-04-14</time> (edited in <time datetime="2026-04-14T22:58:45+00:00">the same day</time>)</h[LHS]><blockquote><p dir="auto">Updated the workflow per <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/himorin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/himorin">@himorin</a>'s suggestion to include <code class="notranslate">W3C_ECHIDNA_TOKEN</code> and <code class="notranslate">W3C_WG_DECISION_URL</code> for automated /TR/ publication. See <a href="https://github.com/w3c/vibration/pull/55#issuecomment-4247707922" data-hovercard-type="pull_request" data-hovercard-url="/w3c/vibration/pull/55/hovercard">this comment</a> for details. The WG would need to authorize publication of this new document on the Note track.</p></blockquote></section>
+
+</section>
+
+
+<section>
+<h5>Code review comment on original line 478 / line 487</h5>
+<section><h[LHS]>Target diff</h[LHS]><blockquote><pre>@@ -0,0 +1,494 @@
++&lt;!DOCTYPE html&gt;
++&lt;html&gt;
++  &lt;head&gt;
++    &lt;meta charset=&quot;utf-8&quot;&gt;
++    &lt;script src=&quot;https://www.w3.org/Tools/respec/respec-w3c&quot; async class=
++    &quot;remove&quot;&gt;&lt;/script&gt;
++    &lt;script class=&quot;remove&quot;&gt;
++      // All config options at https://respec.org/docs/
++      var respecConfig = {
++        specStatus: &quot;base&quot;,
++        editors: [
++          {
++            name: &quot;Marcos Cáceres&quot;,
++            company: &quot;Apple&quot;,
++            w3cid: &quot;85615&quot;,
++          },
++        ],
++        latestVersion: null,
++        xref: &quot;web-platform&quot;,
++      };
++    &lt;/script&gt;
++    &lt;style&gt;
++      .pass,
++      .fail {
++        color: white;
++      }
++      .pass {
++        background-color: green;
++      }
++      .fail {
++        background-color: red;
++      }
++      .pass a,
++      .pass a:link,
++      .pass a:visited,
++      .fail a,
++      .fail a:link,
++      .fail a:visited {
++        color: white !important;
++        text-decoration: underline;
++      }
++    &lt;/style&gt;
++    &lt;title&gt;
++      Vibration API - Implementation Report
++    &lt;/title&gt;
++  &lt;/head&gt;
++  &lt;body&gt;
++    &lt;section id=&quot;abstract&quot;&gt;
++      &lt;p&gt;
++        This is an implementation report for the [[vibration]] specification,
++        produced in response to the W3C Council recommendation
++        (&lt;a href=&quot;https://www.w3.org/2025/08/vibration2-council-report.html#recommendations&quot;&gt;
++        Vibration API Council Report, August 2025&lt;/a&gt;) that the Working Group
++        document what implementation experience the API currently has.
++      &lt;/p&gt;
++      &lt;p&gt;
++        The Vibration API is implemented in a single browser engine (Blink).
++        Firefox (Gecko) removed support in version 129 (August 6, 2024).
++        WebKit has never shipped the API and formally opposes it.
++      &lt;/p&gt;
++    &lt;/section&gt;
++    &lt;h2&gt;
++      Browser engine support
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following table lists &lt;em&gt;browser engines&lt;/em&gt;, not individual
++      browsers. Chromium-based browsers (Chrome, Edge, Opera, Samsung Internet,
++      WebView Android, etc.) all share the Blink engine and are counted as a
++      single implementation.
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Browser engine implementation status for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Engine&lt;/th&gt;
++        &lt;th&gt;Browsers&lt;/th&gt;
++        &lt;th&gt;Status&lt;/th&gt;
++        &lt;th&gt;Notes&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Blink&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Chrome, Edge, Opera, Samsung Internet, Chrome for Android,
++        WebView Android, and other Chromium-based browsers&lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;Implemented&lt;/td&gt;
++        &lt;td&gt;
++          Cross-origin iframe restrictions added in Chrome 55.
++          User gesture requirement added in Chrome 60.
++          See &lt;a href=&quot;https://chromestatus.com/feature/5698768766877696&quot;&gt;
++          Chrome Status&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;Gecko&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Firefox&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Removed&lt;/td&gt;
++        &lt;td&gt;
++          Firefox Desktop: support removed in version 129 (August 6, 2024),
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++          1900037&lt;/a&gt;.
++          Firefox for Android: from version 79, the API is present but
++          vibration is disabled — &lt;code&gt;navigator.vibrate()&lt;/code&gt; returns
++          &lt;code&gt;true&lt;/code&gt; when the window is visible but produces no
++          haptic feedback (see
++          &lt;a href=
++          &quot;https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate#browser_compatibility&quot;&gt;
++          MDN compatibility data&lt;/a&gt;,
++          &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++          1653318&lt;/a&gt;).
++          Mozilla standards position: open, no position assigned,
++          &lt;a href=&quot;https://github.com/mozilla/standards-positions/issues/907&quot;&gt;
++          issue #907&lt;/a&gt;.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;&lt;strong&gt;WebKit&lt;/strong&gt;&lt;/td&gt;
++        &lt;td&gt;Safari (macOS, iOS, iPadOS), all iOS/iPadOS browsers&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;Not implemented&lt;/td&gt;
++        &lt;td&gt;
++          Never shipped in Safari or any current WebKit-based browser.
++          Code was present for the discontinued EFL port (2012–2017,
++          see &lt;a href=&quot;#historical&quot;&gt;Historical implementation
++          experience&lt;/a&gt;), then removed (changeset 216696,
++          &lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;).
++          WebKit formal standards position: &lt;strong&gt;Oppose&lt;/strong&gt;,
++          &lt;a href=&quot;https://github.com/WebKit/standards-positions/issues/267&quot;&gt;
++          issue #267&lt;/a&gt; (closed 2023-11-14). Concerns: device independence,
++          unclear use cases, portability, annoyance/abuse potential, power
++          consumption, integration infeasibility on Apple platforms.
++        &lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2 id=&quot;historical&quot;&gt;
++      Historical implementation experience
++    &lt;/h2&gt;
++    &lt;p&gt;
++      In addition to the current implementation status above, the Vibration
++      API has a history of implementation in engines that no longer support it.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      WebKit (EFL port, 2012–2017)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Samsung engineer Kihong Kwon landed initial Vibration API support in
++      WebKit in 2012 for the EFL port, which was used on Samsung Tizen
++      devices. The EFL port enabled the feature
++      (&lt;code&gt;ENABLE_VIBRATION PUBLIC ON&lt;/code&gt; in
++      &lt;code&gt;Source/cmake/OptionsEfl.cmake&lt;/code&gt;) and received bug fixes
++      through 2015.
++    &lt;/p&gt;
++    &lt;p&gt;
++      The EFL port was removed from the WebKit mainline in February 2017.
++      In May 2017, the Vibration API code itself was removed
++      (&lt;a href=&quot;https://webkit.org/b/171766&quot;&gt;Bug 171766&lt;/a&gt;, changeset
++      216696). The removal bug states: &quot;Not enabled by any ports. Tests
++      are skipped by all ports. Unmaintained code.&quot;
++    &lt;/p&gt;
++    &lt;p&gt;
++      A separate fork,
++      &lt;a href=&quot;https://github.com/ewebkit/webkit&quot;&gt;ewebkit/webkit&lt;/a&gt;,
++      retains the Vibration API code but has not been updated since July 3,
++      2017. The Tizen devices that used EFL WebKit are no longer in
++      production.
++    &lt;/p&gt;
++    &lt;p&gt;
++      No Web Platform Test results exist for any EFL WebKit-based browser.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Source code verification (April 2026)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      The following was verified by searching and reading the source code
++      of each engine. To reproduce, clone each repository and search for
++      the files and identifiers listed below (e.g., using &lt;code&gt;grep
++      -r&lt;/code&gt; or your editor&#x27;s search).
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Blink&lt;/strong&gt;
++        (&lt;a href=&quot;https://chromium.googlesource.com/chromium/src/&quot;&gt;chromium/src&lt;/a&gt;):
++        &lt;code&gt;VibrationController&lt;/code&gt; is implemented in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/vibration_controller.cc&lt;/code&gt;.
++        The &lt;code&gt;vibrate()&lt;/code&gt; method requires sticky user activation
++        (&lt;code&gt;HasStickyUserActivation()&lt;/code&gt;) and blocks calls from
++        cross-origin iframes
++        (&lt;code&gt;IsCrossOriginToNearestMainFrame()&lt;/code&gt;) and fenced
++        frames. The WebIDL is in
++        &lt;code&gt;third_party/blink/renderer/modules/vibration/navigator_vibration.idl&lt;/code&gt;.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;Gecko&lt;/strong&gt;
++        (&lt;a href=&quot;https://searchfox.org/mozilla-central/source&quot;&gt;mozilla-central&lt;/a&gt;):
++        The &lt;code&gt;vibrate()&lt;/code&gt; WebIDL binding is in
++        &lt;code&gt;dom/webidl/Navigator.webidl&lt;/code&gt;, gated on the
++        &lt;code&gt;dom.vibrator.enabled&lt;/code&gt; preference. That preference
++        defaults to &lt;code&gt;false&lt;/code&gt; in
++        &lt;code&gt;modules/libpref/init/StaticPrefList.yaml&lt;/code&gt;.
++        No platform-specific override exists in
++        &lt;code&gt;mobile/android/app/geckoview-prefs.yaml&lt;/code&gt; or
++        elsewhere. The HAL implementation remains in
++        &lt;code&gt;hal/android/AndroidHal.cpp&lt;/code&gt; (&lt;code&gt;Vibrate()&lt;/code&gt;)
++        and &lt;code&gt;hal/fallback/FallbackVibration.cpp&lt;/code&gt; (no-op
++        stub for desktop), but is unreachable with the preference
++        disabled.
++      &lt;/li&gt;
++      &lt;li&gt;
++        &lt;strong&gt;WebKit&lt;/strong&gt;
++        (&lt;a href=&quot;https://github.com/WebKit/WebKit&quot;&gt;WebKit/WebKit&lt;/a&gt;):
++        No &lt;code&gt;vibrate()&lt;/code&gt; method in any IDL file. No
++        &lt;code&gt;VibrationController&lt;/code&gt;,
++        &lt;code&gt;NavigatorVibration&lt;/code&gt;, or &lt;code&gt;ENABLE_VIBRATION&lt;/code&gt;
++        flag anywhere in the source tree. The API is entirely absent.
++      &lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;h3&gt;
++      Gecko (Firefox, 2012–2024)
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Firefox supported the Vibration API from version 16 (October 2012)
++      through version 128 (desktop). On Android, vibration was disabled
++      starting in version 79 (July 2020): the API remained present and
++      &lt;code&gt;navigator.vibrate()&lt;/code&gt; returned &lt;code&gt;true&lt;/code&gt; when the
++      window was visible, but no haptic feedback was produced
++      (&lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1653318&quot;&gt;Bug
++      1653318&lt;/a&gt;). The feature was not re-enabled due to abuse concerns.
++    &lt;/p&gt;
++    &lt;p&gt;
++      Firefox Desktop removed the API entirely in version 129 (August 6,
++      2024,
++      &lt;a href=&quot;https://bugzilla.mozilla.org/show_bug.cgi?id=1900037&quot;&gt;Bug
++      1900037&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Test results
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The following tests verify conformance to [[vibration]].
++    &lt;/p&gt;
++    &lt;p class=&quot;note&quot;&gt;
++      For the latest automated test results, visit
++      &lt;a href=&quot;https://wpt.fyi/results/vibration&quot;&gt;wpt.fyi/results/vibration&lt;/a&gt;.
++    &lt;/p&gt;
++    &lt;h3&gt;
++      Status legend
++    &lt;/h3&gt;
++    &lt;dl&gt;
++      &lt;dt&gt;PASS&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran successfully and the implementation conforms to the
++        specification.
++      &lt;/dd&gt;
++      &lt;dt&gt;FAIL&lt;/dt&gt;
++      &lt;dd&gt;
++        The test ran and the implementation does not conform to the
++        specification, or the API is not exposed.
++      &lt;/dd&gt;
++    &lt;/dl&gt;
++    &lt;h3&gt;
++      Automated test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Results from
++      &lt;a href=&quot;https://wpt.fyi/results/vibration?label=experimental&amp;label=master&amp;aligned&quot;&gt;
++      wpt.fyi&lt;/a&gt;, last verified April 9, 2026. Since Firefox 129
++      (August 2024), the API is no longer exposed on any Firefox platform
++      (see &lt;a href=&quot;#historical&quot;&gt;Historical implementation experience&lt;/a&gt;).
++    &lt;/p&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Automated WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome 149)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox 151)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari 240 preview)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/api-is-present.html&quot;&gt;
++          api-is-present.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/idlharness.window.js&quot;&gt;
++          idlharness.window.js&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (16/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (13/16)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/invalid-values.html&quot;&gt;
++          invalid-values.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (8/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/8)&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/silent-ignore.html&quot;&gt;
++          silent-ignore.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS (1/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL (0/1)&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h3&gt;
++      Manual test results
++    &lt;/h3&gt;
++    &lt;p&gt;
++      Manual tests verify that the vibration mechanism is actually triggered
++      on the device. These tests cannot be automated. Tests were conducted on
++      2024-06-08 (see
++      &lt;a href=&quot;https://github.com/w3c/vibration/issues/33&quot;&gt;w3c/vibration#33&lt;/a&gt;)
++      against the following browser versions:
++    &lt;/p&gt;
++    &lt;ul&gt;
++      &lt;li&gt;Chrome for Android 125.0.6422 (Blink engine)&lt;/li&gt;
++      &lt;li&gt;Firefox for Android 126.0.1 (Gecko engine)&lt;/li&gt;
++      &lt;li&gt;Safari on iOS 17.4.1 (WebKit engine)&lt;/li&gt;
++    &lt;/ul&gt;
++    &lt;table class=&quot;simple data&quot;&gt;
++      &lt;caption&gt;
++        Manual WPT results for [[vibration]]
++      &lt;/caption&gt;
++      &lt;tr&gt;
++        &lt;th&gt;Test&lt;/th&gt;
++        &lt;th&gt;Blink (Chrome for Android 125)&lt;/th&gt;
++        &lt;th&gt;Gecko (Firefox for Android 126)&lt;/th&gt;
++        &lt;th&gt;WebKit (Safari iOS 17.4.1)&lt;/th&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-when-hidden-manual.html&quot;&gt;
++          cancel-when-hidden-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-0-manual.html&quot;&gt;
++          cancel-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-array-0-manual.html&quot;&gt;
++          cancel-with-array-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/cancel-with-empty-array-manual.html&quot;&gt;
++          cancel-with-empty-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/cancel-with-new-manual.html&quot;&gt;
++          cancel-with-new-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-extra-manual.html&quot;&gt;
++          pattern-array-extra-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/pattern-array-manual.html&quot;&gt;
++          pattern-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=
++          &quot;https://wpt.live/vibration/pattern-array-with-0-manual.html&quot;&gt;
++          pattern-array-with-0-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-array-manual.html&quot;&gt;
++          simple-array-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++      &lt;tr&gt;
++        &lt;td&gt;
++          &lt;a href=&quot;https://wpt.live/vibration/simple-scalar-manual.html&quot;&gt;
++          simple-scalar-manual.html&lt;/a&gt;
++        &lt;/td&gt;
++        &lt;td class=&quot;pass&quot;&gt;PASS&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++        &lt;td class=&quot;fail&quot;&gt;FAIL&lt;/td&gt;
++      &lt;/tr&gt;
++    &lt;/table&gt;
++    &lt;h2&gt;
++      Is each feature of the current specification implemented, and how is
++      this demonstrated?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      All features of [[vibration]] are implemented in the Blink engine (Chrome
++      for Android, Chrome desktop, Edge, and other Chromium-based browsers).
++      This is demonstrated through the automated and manual WPT results above.
++      No other engine provides a functional implementation.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are there independent interoperable implementations of each feature?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      &lt;strong&gt;No.&lt;/strong&gt; Only one browser engine (Blink) provides a
++      functional implementation. Firefox removed support in version 129
++      (August 6, 2024); the API is now disabled on all Firefox platforms,
++      including Android (see &lt;a href=&quot;#historical&quot;&gt;Historical
++      implementation experience&lt;/a&gt;). WebKit has never shipped the API
++      and formally opposes it.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are the implementations by different, independent developers?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      The Chromium-based implementations (Chrome, Edge, Opera, Samsung
++      Internet, etc.) share the same Blink engine codebase and are not
++      independent of each other. They represent a single implementation.
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are the implementations deployed on production systems?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      Yes, in Chromium-based browsers. Not in Firefox (removed) or Safari
++      (never shipped).
++    &lt;/p&gt;
++    &lt;h2&gt;
++      Are there reports of difficulties or problems with implementation?
++    &lt;/h2&gt;
++    &lt;p&gt;
++      Yes. Chrome introduced cross-origin iframe restrictions (v55) and user
++      gesture requirements (v60) in response to widespread abuse of the API.
++      A &lt;a href=&quot;https://github.com/w3c/vibration/issues/33&quot;&gt;manual review
++      of sites calling &lt;code&gt;navigator.vibrate()&lt;/code&gt;&lt;/a&gt; found usage
++      dominated by notification emulation, ad-related scripts, and patterns</pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3074664282">Added comment by Anssi Kostiainen</a> (<a href="https://github.com/anssiko">@anssiko</a>) at <time datetime="2026-04-13T17:20:52+00:00">2026-04-13</time> (edited in <time datetime="2026-04-13T17:28:18+00:00">the same day</time>)</h[LHS]><blockquote><pre lang="suggestion" class="notranslate"><code class="notranslate">     by notification emulation, ad-related scripts, and patterns
+</code></pre></blockquote></section>
+<section><h[LHS]><a href="https://github.com/w3c/vibration/pull/55#discussion_r3077065816">Added comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T04:01:15+00:00">2026-04-14</time> </h[LHS]><blockquote><p dir="auto">The suggestion removes "dominated" but the resulting sentence ("found usage by notification emulation...") doesn't parse grammatically. The word "dominated" is also supported by the data: <a href="https://github.com/w3c/vibration/issues/33" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/33/hovercard">issue #33</a> documents that observed usage was primarily notification emulation, ad-related scripts, and patterns that Chrome had to mitigate via user activation requirements.</p></blockquote></section>
+
+</section>
+
+

@@ -1,0 +1,85 @@
+
+<!--
+https://github.com/w3c/charter-drafts/issues/773
+773
+open
+[wg/das] Add Web Bluetooth as "Tentative Deliverable"
+hafta
+2026-03-11 20:21:43+00:00
+2026-05-12 01:04:00+00:00
+None
+-->
+
+
+<h4>Comments provided to issue <a href="https://github.com/w3c/charter-drafts/issues/773">w3c/charter-drafts #773: [wg/das] Add Web Bluetooth as "Tentative Deliverable"</a></h4>
+<ul><li>Status: open</li><li>Created: <time datetime="2026-03-11T20:21:43+00:00">2026-03-11</time></li><li>Not yet closed</li></ul>
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/773">Initial comment by Haik Aftandilian</a> (<a href="https://github.com/hafta">@hafta</a>) at <time datetime="2026-03-11T20:21:43+00:00">2026-03-11</time> (edited in <time datetime="2026-05-12T01:04:00+00:00">2026-05-12</time>)</h5>
+<blockquote><p dir="auto">We (Mozilla Firefox) are considering the Web Bluetooth API (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2022433" rel="nofollow">Firefox bug 2022433</a>) and thus request adding the Web Bluetooth API in the DAS WG charter "Tentative Deliverables" as follows:</p>
+<p dir="auto"><a href="https://webbluetoothcg.github.io/web-bluetooth/" rel="nofollow">Web Bluetooth API</a><br>
+An API to discover and communicate with devices over the Bluetooth 4 wireless standard using the Generic Attribute Profile (GATT).<br>
+Draft state: Draft Community Group Report<br>
+Adopted Draft: <a href="https://webbluetoothcg.github.io/web-bluetooth/" rel="nofollow">Adopted from Web Bluetooth Community Group</a><br>
+Note: This work may turn into a joint deliverable with the <a href="https://www.w3.org/groups/wg/webapps" rel="nofollow">Web Applications Working Group</a>.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4203774669
+marcoscaceres
+2026-04-08 04:11:27+00:00
+2026-04-08 04:11:27+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/773#issuecomment-4203774669">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-08T04:11:27+00:00">2026-04-08</time> </h5>
+<blockquote><p dir="auto">WebKit's published position on Web Bluetooth is <a href="https://github.com/WebKit/standards-positions/issues/570" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/570/hovercard">oppose</a>. The rationale: "The low-level nature of this API means that it is insecure, has a massive privacy risk, and perhaps most importantly doesn't meet the web platform's device-independence bar."</p>
+<p dir="auto">As with WebUSB, the device-independence concern is the structural one. A permission model improvement can reduce security risk, but it cannot make an application work on a device that lacks the underlying Bluetooth hardware or where Bluetooth access is OS-mediated. That bar has not moved since the WICG incubation.</p>
+<p dir="auto">Adding this as a tentative deliverable implies a path to Recommendation, and the <a href="https://www.w3.org/policies/process/#implementation-experience" rel="nofollow">W3C Process</a> asks whether "there are independent interoperable implementations of the current specification" before a spec advances.</p>
+<p dir="auto">What has changed in the API design or permission model — relative to what the Web Bluetooth CG has been incubating — that would make standardization in DAS viable?</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4422086262
+himorin
+2026-05-11 15:23:13+00:00
+2026-05-11 15:23:13+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/773#issuecomment-4422086262">Comment by himorin / Atsushi Shimono</a> (<a href="https://github.com/himorin">@himorin</a>) at <time datetime="2026-05-11T15:23:13+00:00">2026-05-11</time> </h5>
+<blockquote><p dir="auto">draft charter revised by <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4224211732" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/786" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/786/hovercard" href="https://github.com/w3c/charter-drafts/pull/786">#786</a></p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4426394956
+reillyeon
+2026-05-12 01:03:59+00:00
+2026-05-12 01:03:59+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/773#issuecomment-4426394956">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-05-12T01:03:59+00:00">2026-05-12</time> </h5>
+<blockquote><blockquote>
+<p dir="auto">A permission model improvement can reduce security risk, but it cannot make an application work on a device that lacks the underlying Bluetooth hardware or where Bluetooth access is OS-mediated. That bar has not moved since the WICG incubation.</p>
+</blockquote>
+<p dir="auto">There are plenty of devices without underlying camera, audio or gamepad hardware and yet no such argument is leveled against those APIs. The fact is that the majority of consumer devices these days provide the necessary Bluetooth hardware and their operating systems provide applications with APIs at the same level of abstraction as Web Bluetooth. There is no implementability concern here.</p></blockquote>
+
+</section>
+
+

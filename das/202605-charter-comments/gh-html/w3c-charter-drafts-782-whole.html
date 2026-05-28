@@ -1,0 +1,61 @@
+
+<!--
+https://github.com/w3c/charter-drafts/issues/782
+782
+open
+[wg/das] Vibration: "device haptics capabilities" language creates unresolved scope conflict with Web Applications WG
+marcoscaceres
+2026-03-31 01:02:46+00:00
+2026-05-12 00:53:11+00:00
+None
+-->
+
+
+<h4>Comments provided to issue <a href="https://github.com/w3c/charter-drafts/issues/782">w3c/charter-drafts #782: [wg/das] Vibration: "device haptics capabilities" language creates unresolved scope conflict with Web Applications WG</a></h4>
+<ul><li>Status: open</li><li>Created: <time datetime="2026-03-31T01:02:46+00:00">2026-03-31</time></li><li>Not yet closed</li></ul>
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/782">Initial comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-03-31T01:02:46+00:00">2026-03-31</time> (edited in <time datetime="2026-05-12T00:53:11+00:00">2026-05-12</time>)</h5>
+<blockquote><p dir="auto"><strong>Note:</strong> This concern is raised by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/marcoscaceres/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/marcoscaceres">@marcoscaceres</a> in his personal capacity as a W3C member, not on behalf of the TAG. The TAG review (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3868872437" data-permission-text="Title is private" data-url="https://github.com/w3ctag/design-reviews/issues/1187" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard" href="https://github.com/w3ctag/design-reviews/issues/1187">w3ctag/design-reviews#1187</a>) was published before PR <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4003969457" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/770" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/770/hovercard" href="https://github.com/w3c/charter-drafts/pull/770">#770</a> introduced this specific language.</p>
+<p dir="auto">PR <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4003969457" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/770" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/770/hovercard" href="https://github.com/w3c/charter-drafts/pull/770">#770</a> adds the following "Expected progress" text for Vibration:</p>
+<blockquote>
+<p dir="auto">"The Working Group will update the specification to modern web platform design principles and <strong>device haptics capabilities</strong> and continue to solicit feedback."</p>
+</blockquote>
+<p dir="auto">The phrase "device haptics capabilities" is problematic. The current Web Applications WG 2026 charter (<a href="https://www.w3.org/2026/01/webappswg-charter-2026.html" rel="nofollow">https://www.w3.org/2026/01/webappswg-charter-2026.html</a>) explicitly includes in its scope:</p>
+<blockquote>
+<p dir="auto">"Haptic input devices and their emitted events and/or data."</p>
+</blockquote>
+<p dir="auto">And lists as a WICG deliverable:</p>
+<blockquote>
+<p dir="auto">"Haptics — An API allowing web applications to interface with haptic actuators, such as vibration motors found on gamepad controllers, and potentially other devices that provide haptic feedback."</p>
+</blockquote>
+<p dir="auto">Haptics is not listed as a joint deliverable between DAS and WebApps in either the current WebApps charter or the DAS draft charter. WebApps and the Immersive Web CG are also actively exploring related work (see <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4067950465" data-permission-text="Title is private" data-url="https://github.com/immersive-web/proposals/issues/92" data-hovercard-type="issue" data-hovercard-url="/immersive-web/proposals/issues/92/hovercard" href="https://github.com/immersive-web/proposals/issues/92">immersive-web/proposals#92</a>).</p>
+<p dir="auto">The DAS charter text must either:</p>
+<ol dir="auto">
+<li>Confirm that Vibration remains a minimal primitive and explicitly remove the "device haptics capabilities" language, or</li>
+<li>Explicitly establish a joint deliverable arrangement with the Web Applications WG for any haptics-related work, with a clear statement of scope differentiation.</li>
+</ol>
+<p dir="auto">As written, the language signals unilateral expansion into an area that is already in scope of another WG, without a coordination model.</p>
+<p dir="auto">Additionally, the TAG review (charter-affecting section) specifically called out Vibration for needing better documentation of user needs and tradeoffs, citing <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2561794288" data-permission-text="Title is private" data-url="https://github.com/w3c/vibration/issues/45" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/45/hovercard" href="https://github.com/w3c/vibration/issues/45">w3c/vibration#45</a>. That issue ("Create an explainer") remains open with no progress.</p>
+<p dir="auto">Related: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4003969457" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/770" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/770/hovercard" href="https://github.com/w3c/charter-drafts/pull/770">#770</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3868872437" data-permission-text="Title is private" data-url="https://github.com/w3ctag/design-reviews/issues/1187" data-hovercard-type="issue" data-hovercard-url="/w3ctag/design-reviews/issues/1187/hovercard" href="https://github.com/w3ctag/design-reviews/issues/1187">w3ctag/design-reviews#1187</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2561794288" data-permission-text="Title is private" data-url="https://github.com/w3c/vibration/issues/45" data-hovercard-type="issue" data-hovercard-url="/w3c/vibration/issues/45/hovercard" href="https://github.com/w3c/vibration/issues/45">w3c/vibration#45</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4067950465" data-permission-text="Title is private" data-url="https://github.com/immersive-web/proposals/issues/92" data-hovercard-type="issue" data-hovercard-url="/immersive-web/proposals/issues/92/hovercard" href="https://github.com/immersive-web/proposals/issues/92">immersive-web/proposals#92</a></p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4426350149
+reillyeon
+2026-05-12 00:53:11+00:00
+2026-05-12 00:53:11+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/782#issuecomment-4426350149">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-05-12T00:53:11+00:00">2026-05-12</time> </h5>
+<blockquote><p dir="auto">This scope conflict was not my intention: <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4425342782" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/807" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/807/hovercard" href="https://github.com/w3c/charter-drafts/pull/807">#807</a></p></blockquote>
+
+</section>
+
+

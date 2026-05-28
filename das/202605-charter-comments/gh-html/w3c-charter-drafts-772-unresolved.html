@@ -1,0 +1,209 @@
+
+<!--
+https://github.com/w3c/charter-drafts/issues/772
+772
+open
+[wg/das] Add WebUSB as "Tentative Deliverable"
+hafta
+2026-03-11 20:08:38+00:00
+2026-05-11 15:24:35+00:00
+None
+-->
+
+
+<h4>Unresolved comments provided to issue <a href="https://github.com/w3c/charter-drafts/issues/772">w3c/charter-drafts #772: [wg/das] Add WebUSB as "Tentative Deliverable"</a></h4>
+<ul><li>Status: open</li><li>Created: <time datetime="2026-03-11T20:08:38+00:00">2026-03-11</time></li></ul>
+
+
+
+
+<!--
+4203774565
+marcoscaceres
+2026-04-08 04:11:25+00:00
+2026-04-08 04:11:25+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/772#issuecomment-4203774565">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-08T04:11:25+00:00">2026-04-08</time> </h5>
+<blockquote><p dir="auto">WebKit's published position on the WebUSB API is <a href="https://github.com/WebKit/standards-positions/issues/68" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/68/hovercard">oppose</a>. The rationale: "This spec also depends on a specific hardware technology, and enables dependency on specific attached hardware accessories, which risks the device independence of the web" — alongside security and privacy concerns.</p>
+<p dir="auto">Worth noting that these concerns are not equivalent. The security concern is potentially addressable through permission model changes. The device-independence concern is structural: an application built to communicate with a specific USB device will only work on devices with that hardware attached. That's not addressable by changing the permission dialog.</p>
+<p dir="auto">Adding WebUSB as a tentative deliverable implies a path to Recommendation, and the <a href="https://www.w3.org/policies/process/#implementation-experience" rel="nofollow">W3C Process</a> asks whether "there are independent interoperable implementations of the current specification" before a spec advances. These APIs also face portability constraints on platforms where USB access is mediated by the OS rather than exposed directly to applications.</p>
+<p dir="auto">What has changed in the API's design or permission model since the WICG incubation that would make this appropriate to advance through DAS?</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4227239445
+reillyeon
+2026-04-10 23:00:44+00:00
+2026-04-10 23:00:44+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/772#issuecomment-4227239445">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-04-10T23:00:44+00:00">2026-04-10</time> </h5>
+<blockquote><p dir="auto">The device-independence concern has never made any sense to me. You might as well go after the Harley Davidson fan forums for not being "device-independent" by banning discussions about BMWs. There is nothing wrong with an application designed to support the features of a particular piece of hardware. Otherwise it would be impossible to design innovative hardware because it would be limited to the capabilities of existing software. Yes, applications designed for broad use should not depend on device-specific features, but the contrapositive is also true.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4231325382
+marcoscaceres
+2026-04-12 10:42:36+00:00
+2026-04-12 10:42:36+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/772#issuecomment-4231325382">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-12T10:42:36+00:00">2026-04-12</time> </h5>
+<blockquote><p dir="auto"><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a> You're right that device-independence doesn't mean "every web app must work on every device." The web already has APIs that only work with specific hardware (Gamepad, Geolocation). The <a href="https://www.w3.org/TR/design-principles/#devices-platforms" rel="nofollow">Design Principles §1.6</a> explicitly say <em>"this doesn't imply that features which don't work in every possible context should be excluded."</em> I agree.</p>
+<p dir="auto">The concern is about the <strong>level of abstraction</strong>, not the existence of hardware-specific apps. Consider Gamepad vs. WebUSB:</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th></th>
+<th>Gamepad API</th>
+<th>WebUSB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abstraction</td>
+<td>Capability: <code class="notranslate">buttons[0].pressed</code></td>
+<td>Transport: <code class="notranslate">transferOut(endpoint, bytes)</code></td>
+</tr>
+<tr>
+<td>Compatibility</td>
+<td>Any gamepad, normalized via <code class="notranslate">mapping: "standard"</code></td>
+<td>One specific <code class="notranslate">vendorId:productId</code></td>
+</tr>
+<tr>
+<td>Who writes the driver</td>
+<td>Browser vendor</td>
+<td>Web developer, in JavaScript</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">The Gamepad API abstracts hardware: write <code class="notranslate">gamepad.buttons[0].pressed</code> and it works across Xbox, PlayStation, Switch Pro, and generic HID controllers. WebUSB exposes raw USB transfers where the developer must parse byte buffers and implement the device protocol themselves. Every WebUSB app is effectively a bespoke USB driver. The most-used projects on GitHub confirm this: <a href="https://github.com/webusb/arduino">arduino</a>, <a href="https://github.com/webadb/webadb.js">webadb</a>, <a href="https://github.com/kdrag0n/fastboot.js">fastboot.js</a>, <a href="https://github.com/devanlai/webdfu">webdfu</a>, <a href="https://github.com/cybercase/webminidisc">webminidisc</a>. Each targets a single device or protocol.</p>
+<p dir="auto">This also affects portability: on platforms where USB access is mediated by the OS (iOS, iPadOS), WebUSB can't be implemented. The Gamepad API doesn't have this problem because the browser reads HID reports through the OS's existing gamepad stack.</p>
+<p dir="auto">As annevk noted on <a href="https://github.com/WebKit/standards-positions/issues/68#issuecomment-2841028669" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/68/hovercard">WebKit/standards-positions#68</a>: <em>"if the details of the connection are sufficiently abstracted such that they can change over time, there might be a way forward there."</em></p>
+<p dir="auto"><strong>A constructive path:</strong> those GitHub projects cluster around a few use cases: firmware updates, debug bridges, device configuration. Could the WG explore purpose-built APIs for those categories rather than standardizing raw USB access? The existing ecosystem is essentially telling us what the right abstractions would be.</p>
+<p dir="auto">More broadly: the web platform generally works at the level of capabilities (audio, video, input, storage), not hardware buses and wire protocols. Is there a reason USB warrants a different approach?</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4240422596
+reillyeon
+2026-04-14 00:14:43+00:00
+2026-04-14 00:14:43+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/772#issuecomment-4240422596">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-04-14T00:14:43+00:00">2026-04-14</time> </h5>
+<blockquote><blockquote>
+<p dir="auto">Gamepad API abstracts hardware</p>
+</blockquote>
+<p dir="auto">This is possible because "gamepad" is a category of device for which an abstraction already exists, similar to Keyboard Events or Pointer Events. The purpose of lower-level APIs such as WebUSB is to support devices for which no broadly-available abstraction yet exists. It is more similar to the Fetch API, which allows a site to make arbitrary (within limits) HTTP requests without requiring that the API provided by the server implements any kind of higher-level abstraction. The site must parse and interpret the JSON or XML response itself. There is no "Web Weather API" which provides a higher-level interface to a REST service providing meteorological forecasts.</p>
+<blockquote>
+<p dir="auto">[...]on platforms where USB access is mediated by the OS (iOS, iPadOS), WebUSB can't be implemented.</p>
+</blockquote>
+<p dir="auto">I don't consider this an implementation barrier as if Apple wanted to implement this API on iOS/iPadOS it could make the necessary changes (if any) to the OS as Google has done to enable browsers to implement WebUSB on Android and ChromeOS. The existence of a WebUSB implementation for macOS implies that it is possible on other Apple platforms.</p>
+<p dir="auto"><strong>An alternative path:</strong> if Apple's concern is building specific APIs for low-level transports such as USB, serial or Bluetooth I could see an alternative proposal, in the spirit of WebTransport, which specified a high-level bidirectional transport which could be implemented on top of these low-level protocols. The challenge for this approach and the reason it was rejected in favor of the existing proposals is that this would require buy-in from every hardware manufacturer to modify their device firmware or design the devices for this API from the beginning. An important benefit of WebUSB and related APIs which has been observed from their adoption is that it allows developers to build software for existing devices without the permission of the manufacturer.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4241477082
+marcoscaceres
+2026-04-14 05:25:07+00:00
+2026-04-14 05:25:07+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/772#issuecomment-4241477082">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T05:25:07+00:00">2026-04-14</time> </h5>
+<blockquote><p dir="auto">The Fetch analogy is interesting but I think it highlights the difference rather than closing it. A Fetch-based app depends on a server API, which is accessible from any networked platform via a standardized protocol. A WebUSB-based app depends on a specific attached hardware accessory using a vendor-specific device protocol. The first is a software dependency; the second is a hardware dependency. That distinction is what the <a href="https://github.com/WebKit/standards-positions/issues/68" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/68/hovercard">WebKit position</a> means by "enables dependency on specific attached hardware accessories, which risks the device independence of the web."</p>
+<p dir="auto">On iOS: the web's portability in practice comes from building on what platforms already provide, not from requiring platforms to change their security models. "Apple could make the necessary changes" is true of any API on any platform, which is why it doesn't resolve the portability concern.</p>
+<p dir="auto">Your alternative path proposal (a high-level bidirectional transport in the spirit of WebTransport) is the most interesting part of this thread to me. The manufacturer buy-in concern is real, but this is exactly the kind of question the charter should address: whether DAS pursues raw transport standardization or use-case abstractions. A tentative deliverable for WebUSB as-is already commits to one side of that question.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4242132790
+reillyeon
+2026-04-14 07:48:23+00:00
+2026-04-14 07:48:23+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/772#issuecomment-4242132790">Comment by Reilly Grant</a> (<a href="https://github.com/reillyeon">@reillyeon</a>) at <time datetime="2026-04-14T07:48:23+00:00">2026-04-14</time> </h5>
+<blockquote><blockquote>
+<p dir="auto">The Fetch analogy is interesting but I think it highlights the difference rather than closing it. A Fetch-based app depends on a server API, which is accessible from any networked platform via a standardized protocol. A WebUSB-based app depends on a specific attached hardware accessory using a vendor-specific device protocol. The first is a software dependency; the second is a hardware dependency. That distinction is what the <a href="https://github.com/WebKit/standards-positions/issues/68" data-hovercard-type="issue" data-hovercard-url="/WebKit/standards-positions/issues/68/hovercard">WebKit position</a> means by "enables dependency on specific attached hardware accessories, which risks the device independence of the web."</p>
+</blockquote>
+<p dir="auto">Device independence enables hardware diversity by allowing users to choose the hardware they use to browse the web but I think that goes hand-in-hand with also enabling hardware diversity by allowing developers to write software to power the features that make that hardware unique. We can have both and I don't think either diminishes the other.</p>
+<blockquote>
+<p dir="auto">On iOS: the web's portability in practice comes from building on what platforms already provide, not from requiring platforms to change their security models. "Apple could make the necessary changes" is true of any API on any platform, which is why it doesn't resolve the portability concern.</p>
+</blockquote>
+<p dir="auto">This argument would hold if iOS weren't the lone OS that did not support an open peripheral ecosystem. Apple doesn't get to decide to artificially constrain what developers can do and then claim a portability concern of its own making.</p>
+<blockquote>
+<p dir="auto">Your alternative path proposal (a high-level bidirectional transport in the spirit of WebTransport) is the most interesting part of this thread to me. The manufacturer buy-in concern is real, but this is exactly the kind of question the charter should address: whether DAS pursues raw transport standardization or use-case abstractions. A tentative deliverable for WebUSB as-is already commits to one side of that question.</p>
+</blockquote>
+<p dir="auto">The design decisions leading to WebUSB and related APIs are already well-covered in their explainers and specifications. If there's anything I've said here that you think is missing I'm happy to add it but I don't think it makes sense to rehash that discussion in the charter as well.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4242839681
+marcoscaceres
+2026-04-14 09:32:18+00:00
+2026-04-14 09:32:18+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/772#issuecomment-4242839681">Comment by Marcos Cáceres</a> (<a href="https://github.com/marcoscaceres">@marcoscaceres</a>) at <time datetime="2026-04-14T09:32:18+00:00">2026-04-14</time> </h5>
+<blockquote><p dir="auto">Thanks <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reillyeon/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reillyeon">@reillyeon</a>, I think we've laid out the different perspectives clearly. Appreciate the substantive exchange.</p></blockquote>
+
+</section>
+
+
+
+
+<!--
+4422098349
+himorin
+2026-05-11 15:24:35+00:00
+2026-05-11 15:24:35+00:00
+-->
+
+<section>
+
+<h5><a href="https://github.com/w3c/charter-drafts/issues/772#issuecomment-4422098349">Comment by himorin / Atsushi Shimono</a> (<a href="https://github.com/himorin">@himorin</a>) at <time datetime="2026-05-11T15:24:35+00:00">2026-05-11</time> </h5>
+<blockquote><p dir="auto">draft charter revised by <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4224211732" data-permission-text="Title is private" data-url="https://github.com/w3c/charter-drafts/issues/786" data-hovercard-type="pull_request" data-hovercard-url="/w3c/charter-drafts/pull/786/hovercard" href="https://github.com/w3c/charter-drafts/pull/786">#786</a></p></blockquote>
+
+</section>
+
+
