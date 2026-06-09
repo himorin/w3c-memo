@@ -4,7 +4,6 @@
 
 * [サンプルhtml](sample.html)をブラウザ(Windows上)で表示し、印刷から各種ツール経由でPDFにする
 * PDFをリーダーで開いてコピペで文字を抽出したもの、pdftotextでテキストデータにしたものを作成
-* [結果](20260609-results.md): 通常の文字の領域についてもかなりの文字が康煕部⾸の文字コードで出力された
 
 | browser | Adobe PDF | Microsoft print | PrimoPDF | PDFへ保存 |
 |---------|-----------|-----------------|----------|----------|
@@ -15,3 +14,11 @@
 
 * [サンプル2](sample-ja.html)を利用する、基本的にCJK統合漢字の範囲内の文字のみ
 
+| browser | Adobe PDF | Microsoft print | PrimoPDF | PDFへ保存 |
+|---------|-----------|-----------------|----------|----------|
+| chrome | [PDF](20260609b-chrome-adobepdf.pdf) / [text](20260609-chromeb-adobepdf.txt) | [PDF](20260609b-chrome-msprint.pdf) / [text](20260609b-chrome-msprint.txt) | [PDF](20260609b-chrome-primo.pdf) / [text](20260609b-chrome-primo.txt) | [PDF](20260609b-chrome-savetopdf.pdf) / [text](20260609b-chrome-savetopdf.txt) |
+| firefox | [PDF](20260609b-firefox-adobepdf.pdf) / [text](20260609b-firefox-adobepdf.txt) | [PDF](20260609b-firefox-msprint.pdf) / [text](20260609b-firefox-msprint.txt) | [PDF](20260609b-firefox-primo.pdf) / [text](20260609b-firefox-primo.txt) | [PDF](20260609b-firefox-savetopdf.pdf) / [text](20260609b-firefox-savetopdf.txt) |
+
+## 結果
+
+* [結果](20260609-results.md): 両方のサンプルについて通常の文字の領域についてもかなりの文字が康煕部⾸の文字コードで出力された
