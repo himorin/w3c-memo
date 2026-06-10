@@ -75,3 +75,20 @@
   * ブラウザのデフォルトフォントのデータを利用している可能性？: 他のPDF印刷ドライバを試す、デフォルトフォントを変更して試す、など
 * FirefoxのBIZ UDPで逆向きの置換が出た点について、PDFから文字をコピペして調査しても同様の結果が得られたのでpdftotext依存の問題ではない
   * Firefoxの結果を見る限りは、ToUnicode CMaps経由で漢字が康煕部首に置換されてしまうのは、フォントが持つ情報起因であることが推察される
+
+
+# 試験第2弾 - 追加
+
+Chromeでブラウザのデフォルトフォントを切り替えて結果がどうなるかを試してみる。
+PDFファイルの作成はallの4フォント向けファイルを利用、PDFファイルを生成する際にはChromeの設定からフォントの標準・Serif・Sans Serifの3つを変更し再起動してからPDFを生成する。
+
+| 既定フォント | Chrome NotoSans | Chrome M Plus | Chrome LINE | Chrome BIZ UDP |
+|---|---|---|---|---|
+| A-OTF UD Reimin Pr6N | 
+| Ahem |
+| BIZ UDPGothic | 
+| FOT UDMincho Pr6N | 
+| MS Gochic |
+| Meiryo | 
+| Yu Gochic | 
+
