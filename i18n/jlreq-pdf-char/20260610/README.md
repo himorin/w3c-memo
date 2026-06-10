@@ -19,7 +19,7 @@
 
 | フォント | HTML all | HTML limit | Chrome all | Chrome limit | Firefox all | Firefox limit |
 |---|---|---|---|---|---|---|
-| Noto Sans JP | [all](sample-noto-all.html) | [limit](sample-noto-limit.html) | [pdf]() [extract]() | [pdf]() [extract]() | [pdf]() [extract]() | [pdf]() [extract]() |
-| M Plus 1P | [all](sample-mplus-all.html) | [limit](sample-mplus-limit.html) | [pdf]() [extract]() | [pdf]() [extract]() | [pdf]() [extract]() | [pdf]() [extract]() |
-| LINE Seed JP | [all](sample-line-all.html) | [limit](sample-line-limit.html) | [pdf]() [extract]() | [pdf]() [extract]() | [pdf]() [extract]() | [pdf]() [extract]() |
-| BIZ UDPGothic | [all](sample-bizud-all.html) | [limit](sample-bizud-limit.html) | [pdf]() [extract]() | [pdf]() [extract]() | [pdf]() [extract]() | [pdf]() [extract]() |
+| Noto Sans JP | [all](sample-noto-all.html) | [limit](sample-noto-limit.html) | [pdf] [extract] | [pdf] [extract] | [pdf] [extract] | [pdf] [extract] |
+| M Plus 1P | [all](sample-mplus-all.html) | [limit](sample-mplus-limit.html) | [pdf] [extract] | [pdf] [extract] | [pdf] [extract] | [pdf] [extract] |
+| LINE Seed JP | [all](sample-line-all.html) | [limit](sample-line-limit.html) | [pdf] [extract] | [pdf] [extract] | [pdf] [extract] | [pdf] [extract] |
+| BIZ UDPGothic | [all](sample-bizud-all.html) | [limit](sample-bizud-limit.html) | [pdf] [extract] | [pdf] [extract] | [pdf] [extract] | [pdf] [extract] |
