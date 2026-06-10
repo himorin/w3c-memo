@@ -92,3 +92,8 @@ PDFファイルの作成はallの4フォント向けファイルを利用、PDF�
 | Meiryo | [PDF](font-chrome-meiryo-noto.pdf) [extract](font-chrome-meiryo-noto.txt) | [pdf](font-chrome-meiryo-mplus.pdf) [extract](font-chrome-meiryo-mplus.txt) | [pdf](font-chrome-meiryo-line.pdf) [extract](font-chrome-meiryo-line.txt) | [pdf](font-chrome-meiryo-bizud.pdf) [extract](font-chrome-meiryo-bizud.txt) |
 | Yu Gochic | [PDF](font-chrome-yug-noto.pdf) [extract](font-chrome-yug-noto.txt) | [pdf](font-chrome-yug-mplus.pdf) [extract](font-chrome-yug-mplus.txt) | [pdf](font-chrome-yug-line.pdf) [extract](font-chrome-yug-line.txt) | [pdf](font-chrome-yug-bizud.pdf) [extract](font-chrome-yug-bizud.txt) |
 
+## 結果
+
+* "Chrome NotoSans", "M Plus", "LINE"の行、NotoSansのWeb Fontを指定したhtmlから生成されたPDFは、pdftotextの結果は完全一致、康煕部首についてすべて問題なかった
+* "Chrome BIZ UDP"の行に対し、A-OTF, Ahem, BIZ UDMinchoにおいて、康煕部首の彐 (U+5F50)のみCJK Ideographに置き換わっていた（それ以外はすべて問題なし）
+
