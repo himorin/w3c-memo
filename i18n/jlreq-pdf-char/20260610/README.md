@@ -84,11 +84,11 @@ PDFファイルの作成はallの4フォント向けファイルを利用、PDF�
 
 | 既定フォント | Chrome NotoSans | Chrome M Plus | Chrome LINE | Chrome BIZ UDP |
 |---|---|---|---|---|
-| A-OTF UD Reimin Pr6N | 
-| Ahem |
-| BIZ UDPGothic | 
-| FOT UDMincho Pr6N | 
-| MS Gochic |
-| Meiryo | 
-| Yu Gochic | 
+| A-OTF UD Reimin Pr6N | [PDF](font-chrome-aotf-noto.pdf) [extract](font-chrome-aotf-noto.txt) | [pdf](font-chrome-aotf-mplus.pdf) [extract](font-chrome-aotf-mplus.txt) | [pdf](font-chrome-aotf-line.pdf) [extract](font-chrome-aotf-line.txt) | [pdf](font-chrome-aotf-bizud.pdf) [extract](font-chrome-aotf-bizud.txt) |
+| Ahem | [PDF](font-chrome-ahem-noto.pdf) [extract](font-chrome-ahem-noto.txt) | [pdf](font-chrome-ahem-mplus.pdf) [extract](font-chrome-ahem-mplus.txt) | [pdf](font-chrome-ahem-line.pdf) [extract](font-chrome-ahem-line.txt) | [pdf](font-chrome-ahem-bizud.pdf) [extract](font-chrome-ahem-bizud.txt) |
+| BIZ UDPGothic | [PDF](font-chrome-bizud-noto.pdf) [extract](font-chrome-bizud-noto.txt) | [pdf](font-chrome-bizud-mplus.pdf) [extract](font-chrome-bizud-mplus.txt) | [pdf](font-chrome-bizud-line.pdf) [extract](font-chrome-bizud-line.txt) | [pdf](font-chrome-bizud-bizud.pdf) [extract](font-chrome-bizud-bizud.txt) |
+| FOT UDMincho Pr6N | [PDF](font-chrome-fot-noto.pdf) [extract](font-chrome-fot-noto.txt) | [pdf](font-chrome-fot-mplus.pdf) [extract](font-chrome-fot-mplus.txt) | [pdf](font-chrome-fot-line.pdf) [extract](font-chrome-fot-line.txt) | [pdf](font-chrome-fot-bizud.pdf) [extract](font-chrome-fot-bizud.txt) |
+| MS Gochic | [PDF](font-chrome-msg-noto.pdf) [extract](font-chrome-msg-noto.txt) | [pdf](font-chrome-msg-mplus.pdf) [extract](font-chrome-msg-mplus.txt) | [pdf](font-chrome-msg-line.pdf) [extract](font-chrome-msg-line.txt) | [pdf](font-chrome-msg-bizud.pdf) [extract](font-chrome-msg-bizud.txt) |
+| Meiryo | [PDF](font-chrome-meiryo-noto.pdf) [extract](font-chrome-meiryo-noto.txt) | [pdf](font-chrome-meiryo-mplus.pdf) [extract](font-chrome-meiryo-mplus.txt) | [pdf](font-chrome-meiryo-line.pdf) [extract](font-chrome-meiryo-line.txt) | [pdf](font-chrome-meiryo-bizud.pdf) [extract](font-chrome-meiryo-bizud.txt) |
+| Yu Gochic | [PDF](font-chrome-yug-noto.pdf) [extract](font-chrome-yug-noto.txt) | [pdf](font-chrome-yug-mplus.pdf) [extract](font-chrome-yug-mplus.txt) | [pdf](font-chrome-yug-line.pdf) [extract](font-chrome-yug-line.txt) | [pdf](font-chrome-yug-bizud.pdf) [extract](font-chrome-yug-bizud.txt) |
 
