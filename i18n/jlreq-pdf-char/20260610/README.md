@@ -51,7 +51,27 @@
 | M Plus 1P | Firefox (3) | QNFJIJ+Meiryo                    |    CID TrueType   |   Identity-H      | yes | yes | yes     | 44 | 0 |
 
 
-### 結果
+### pdftotextの出力
 
 * FirefoxのNoto Sans JPは文字抽出ができなかった
 * 比較用2文字のグリフが異なったのは、ChromeのBIZ UDPGothicとNoto Sans JP、FirefoxのNoto Sans JPの3つ
+* Chrome
+  * all, limitとも、すべての康煕部首に似た文字はCJK Ideographのコードポイントになっていた、逆も同様
+  * Noto Sans JP以外ではpdftotextの出力結果で文字の並び順がずれていたりという事象が発生している（抜けがあるかどうかの詳細までは未検証）
+* Firefox
+  * 文字の並び順などはすべて問題なかった（一部改行位置が異なったことがあるがプロポーショナルなどの問題もある可能性）
+  * CJK Ideographの領域で康煕部首になっていた文字 (all, limitの双方で差異はなし)
+    * M Plus: ⼹ (U+2F39)、⾭ (U+2FAD)、⿈ (U+2FC8)
+    * LINE: ⼹ (U+2F39)、⽧ (U+2F67)、⽱ (U+2F71)、⾡ (U+2FA1)、⿈ (U+2FC8)
+    * Biz UDP: ⼹ (U+2F39)
+  * BIZ UDP (all)では康煕部首の領域の文字がほかのものになっていた例が出た
+    * CJK Ideographになっていた文字: 卩 (U+5369)、夂 (U+5902)、寸 (U+5BF8)、巛 (U+5DDB)、曰 (U+66F0)、癶 (U+7676)、皿 (U+76BF)、目 (U+76EE)、糸 (U+7CF8)、缶 (U+7F36)、角 (U+89D2)、門 (U+9580)、非 (U+975E)、風 (U+98A8)、骨 (U+9AA8)、鹵 (U+9E75)、黽 (U+9EFD)、龍 (U+9F8D)
+    * CJK Radicalになっていた文字: ⺐ (U+2E90)、⺓ (U+2E93)、⻑ (U+2ED1)、⻤ (U+2EE4)
+
+
+## 考察
+
+* Chromeで読み込むフォントが違っても結果が同じになったのはToUnicode CMapsを生成する際の元データが同じことが原因ではないかとも推察される
+  * ブラウザのデフォルトフォントのデータを利用している可能性？: 他のPDF印刷ドライバを試す、デフォルトフォントを変更して試す、など
+* FirefoxのBIZ UDPで逆向きの置換が出た点について、PDFから文字をコピペして調査しても同様の結果が得られたのでpdftotext依存の問題ではない
+  * Firefoxの結果を見る限りは、ToUnicode CMaps経由で漢字が康煕部首に置換されてしまうのは、フォントが持つ情報起因であることが推察される
