@@ -114,3 +114,8 @@ PDFファイルの作成はallの4フォント向けファイルを利用、PDF�
   * Meiryo:  [PDF](font-chrome-meiryo-def.pdf) [extract](font-chrome-meiryo-def.txt)
   * Yu Gochic:  [PDF](font-chrome-yug-def.pdf) [extract](font-chrome-yug-def.txt)
 * Ahemを指定した際、表示にはNoto Sans JPがRenderingでリストされていた
+
+### 結果・考察
+
+* BIZ UDPGothicにおいてのみ康煕部首の彐 (U+5F50)がCJK Ideographになっていた。ほかはすべて正しい。
+* 「フォントをカスタマイズ」よりも上位（かつ裏側）にいる何らかの既定フォントがChromeにはあって、すべての処理はそれをベースに行われているのではないか (試験に利用したPCではNoto Sans JPになっている)
