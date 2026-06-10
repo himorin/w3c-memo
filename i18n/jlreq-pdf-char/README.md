@@ -1,24 +1,24 @@
 # PDFでの康煕部⾸周りのテスト
 
-## 康煕部⾸と通常の文字両方含む文書
+## 課題
 
-* [サンプルhtml](sample.html)をブラウザ(Windows上)で表示し、印刷から各種ツール経由でPDFにする
-* PDFをリーダーで開いてコピペで文字を抽出したもの、pdftotextでテキストデータにしたものを作成
+* 日本語文字（特に漢字）を含むPDF文書において文字抽出を行った際に康煕部⾸が頻出する問題が報告されている
+* 原因と対応策について検討するための基礎的な状況整理を行う
 
-| browser | Adobe PDF | Microsoft print | PrimoPDF | PDFへ保存 |
-|---------|-----------|-----------------|----------|----------|
-| chrome | [PDF](20260609-chrome-adobepdf.pdf) / [text](20260609-chrome-adobepdf.txt) | [PDF](20260609-chrome-msprint.pdf) / [text](20260609-chrome-msprint.txt) | [PDF](20260609-chrome-primo.pdf) / [text](20260609-chrome-primo.txt) | [PDF](20260609-chrome-savetopdf.pdf) / [text](20260609-chrome-savetopdf.txt) |
-| firefox | [PDF](20260609-firefox-adobepdf.pdf) / [text](20260609-firefox-adobepdf.txt) | [PDF](20260609-firefox-msprint.pdf) / [text](20260609-firefox-msprint.txt) | [PDF](20260609-firefox-primo.pdf) / [text](20260609-firefox-primo.txt) | [PDF](20260609-firefox-savetopdf.pdf) / [text](20260609-firefox-savetopdf.txt) |
+## 調査
 
-## 通常の文字だけの文章
+* [第1弾](20260609/)
+  * 全体的な状態を調べるために、Windows上でFirefoxとChromeを利用し、インストールしていたPDFプリンタドライバを利用して生成したPDFについて調査する
+  * 結果概要
+    * Chromeからの印刷ではPDFへ保存のみテキスト抽出ができており、すべての文字が正常に復元されていた
+    * Firefoxからの印刷ではAdobe PDFのみすべての文字が康煕部⾸に変換されたが、それ以外の3ツールの出力は完全に同一になっており、一部の文字だけ正常に復元されている
+   * ToUnicode CMapの抽出・復元の問題というよりは、フォント依存の処理の問題に見える
+* [第2弾](20260610/)
+  * ブラウザやPDF印刷ドライバによる差異も存在することが判明したため、フォントの影響に絞って調査を行う
+  * 異なるブラウザで利用するフォントの差を減らすために基本的にWeb Fontsを利用することとする
+  * 結果概要
 
-* [サンプル2](sample-ja.html)を利用する、基本的にCJK統合漢字の範囲内の文字のみ
+## 関連文書
 
-| browser | Adobe PDF | Microsoft print | PrimoPDF | PDFへ保存 |
-|---------|-----------|-----------------|----------|----------|
-| chrome | [PDF](20260609b-chrome-adobepdf.pdf) / [text](20260609-chromeb-adobepdf.txt) | [PDF](20260609b-chrome-msprint.pdf) / [text](20260609b-chrome-msprint.txt) | [PDF](20260609b-chrome-primo.pdf) / [text](20260609b-chrome-primo.txt) | [PDF](20260609b-chrome-savetopdf.pdf) / [text](20260609b-chrome-savetopdf.txt) |
-| firefox | [PDF](20260609b-firefox-adobepdf.pdf) / [text](20260609b-firefox-adobepdf.txt) | [PDF](20260609b-firefox-msprint.pdf) / [text](20260609b-firefox-msprint.txt) | [PDF](20260609b-firefox-primo.pdf) / [text](20260609b-firefox-primo.txt) | [PDF](20260609b-firefox-savetopdf.pdf) / [text](20260609b-firefox-savetopdf.txt) |
-
-## 結果
-
-* [結果](20260609-results.md): 両方のサンプルについて通常の文字の領域についてもかなりの文字が康煕部⾸の文字コードで出力された
+* ISO 32000-1:2008, 9.10.2 「Mapping Character Codes to Unicode Values（文字コードからUnicode値へのマッピング）」
+* ISO 32000-2:2020, 9.10.3 「ToUnicode CMaps」
