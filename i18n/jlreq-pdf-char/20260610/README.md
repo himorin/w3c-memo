@@ -12,6 +12,12 @@
 ### ファイルと生成したPDF
 
 * PDF生成はChromeとFirefoxでそれぞれ内蔵のPDFへ保存を利用することとした
+* ベースファイル
+  * all: [比較対象文字両方を含むもの](sample-base-all.html) (こちらのファイルはグリフの差を比較する部分を追加した)
+  * limit: [CJK統合漢字の領域内だけにしたもの](saple-base-limit.html)
 
+
+| フォント | HTML all | HTML limit | Chrome all | Chrome limit | Firefox all | Firefox limit |
+|---|---|---|---|---|---|---|
 
 
