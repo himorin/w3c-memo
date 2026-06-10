@@ -82,6 +82,8 @@
 Chromeでブラウザのデフォルトフォントを切り替えて結果がどうなるかを試してみる。
 PDFファイルの作成はallの4フォント向けファイルを利用、PDFファイルを生成する際にはChromeの設定からフォントの標準・Serif・Sans Serifの3つを変更し再起動してからPDFを生成する。
 
+## 結果
+
 | 既定フォント | Chrome NotoSans | Chrome M Plus | Chrome LINE | Chrome BIZ UDP |
 |---|---|---|---|---|
 | A-OTF UD Reimin Pr6N | [PDF](font-chrome-aotf-noto.pdf) [extract](font-chrome-aotf-noto.txt) | [pdf](font-chrome-aotf-mplus.pdf) [extract](font-chrome-aotf-mplus.txt) | [pdf](font-chrome-aotf-line.pdf) [extract](font-chrome-aotf-line.txt) | [pdf](font-chrome-aotf-bizud.pdf) [extract](font-chrome-aotf-bizud.txt) |
@@ -92,8 +94,23 @@ PDFファイルの作成はallの4フォント向けファイルを利用、PDF�
 | Meiryo | [PDF](font-chrome-meiryo-noto.pdf) [extract](font-chrome-meiryo-noto.txt) | [pdf](font-chrome-meiryo-mplus.pdf) [extract](font-chrome-meiryo-mplus.txt) | [pdf](font-chrome-meiryo-line.pdf) [extract](font-chrome-meiryo-line.txt) | [pdf](font-chrome-meiryo-bizud.pdf) [extract](font-chrome-meiryo-bizud.txt) |
 | Yu Gochic | [PDF](font-chrome-yug-noto.pdf) [extract](font-chrome-yug-noto.txt) | [pdf](font-chrome-yug-mplus.pdf) [extract](font-chrome-yug-mplus.txt) | [pdf](font-chrome-yug-line.pdf) [extract](font-chrome-yug-line.txt) | [pdf](font-chrome-yug-bizud.pdf) [extract](font-chrome-yug-bizud.txt) |
 
-## 結果
-
 * "Chrome NotoSans", "M Plus", "LINE"の行、NotoSansのWeb Fontを指定したhtmlから生成されたPDFは、pdftotextの結果は完全一致、康煕部首についてすべて問題なかった
 * "Chrome BIZ UDP"の行に対し、A-OTF, Ahem, BIZ UDMinchoにおいて、康煕部首の彐 (U+5F50)のみCJK Ideographに置き換わっていた（それ以外はすべて問題なし）
 
+## 考察
+
+* 設定の、"デザイン" -> "フォントをカスタマイズ"の画面において、Ahemを指定した時、サンプルテキストはひらがな・カタカナ・漢字が正常に表示されているので何らかのフォールバックがありそう
+* BIZ UDPでFirefoxでCJK Ideographが康煕部首になっていた文字と同じセット（単一文字ながら）に影響が起こっていたので、何らかの既定フォントの影響はある？
+
+## 追加
+
+* WebFontを入れないで既定のフォントを変更するのをやっていないので追加する
+* ファイル
+  * A-OTF UD Reimin Pr6N: [PDF](font-chrome-aotf-def.pdf) [extract](font-chrome-aotf-def.txt)
+  * Ahem:  [PDF](font-chrome-ahem-def.pdf) [extract](font-chrome-ahem-def.txt)
+  * BIZ UDPGothic:  [PDF](font-chrome-bizud-def.pdf) [extract](font-chrome-bizud-def.txt)
+  * FOT UDMincho Pr6N:  [PDF](font-chrome-fot-def.pdf) [extract](font-chrome-fot-def.txt)
+  * MS Gochic:  [PDF](font-chrome-msg-def.pdf) [extract](font-chrome-msg-def.txt)
+  * Meiryo:  [PDF](font-chrome-meiryo-def.pdf) [extract](font-chrome-meiryo-def.txt)
+  * Yu Gochic:  [PDF](font-chrome-yug-def.pdf) [extract](font-chrome-yug-def.txt)
+* Ahemを指定した際、表示にはNoto Sans JPがRenderingでリストされていた
