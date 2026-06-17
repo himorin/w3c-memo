@@ -1,0 +1,653 @@
+Info: 1 0 R
+Root: 128 0 R
+RootCreationDate: u:D:20260610174455+00'00'
+RootCreator: u:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+RootModDate: u:D:20260610174455+00'00'
+RootProducer: u:Skia/PDF m149
+RootTitle: u:PDF文字抽出テストデータ
+Root-Pages: 89 0 R
+Root-StructTreeRoot: 90 0 R
+Page 1 obj: 2 0 R
+  Font /F10: 10 0 R (/Type3, CIDFont (0 - 54))
+    Encoding: /Encoding-Differences
+    ToUnicode: 298 0 R
+      - <18> <5973>
+      - <1A> <5C71>
+      - <1E> <5FC3>
+      - <24> <6728>
+      - <27> <6B21>
+      - <2B> <7530>
+      - <2D> <7ACB>
+      - <35> <9762>
+      - <36> <98DF>
+  Font /F11: 11 0 R (/Type3, CIDFont (0 - 19))
+    Encoding: /Encoding-Differences
+    ToUnicode: 302 0 R
+      - <13> <5EB7>
+  Font /F12: 12 0 R (/Type3, CIDFont (0 - 217))
+    Encoding: /Encoding-Differences
+    ToUnicode: 306 0 R
+      - <D9> <7155>
+  Font /F13: 13 0 R (/Type3, CIDFont (0 - 49))
+    Encoding: /Encoding-Differences
+    ToUnicode: 314 0 R
+      - <08> <516B>
+      - <20> <6BDB>
+      - <2B> <8D70>
+      - <2E> <91CC>
+      - <31> <9996>
+  Font /F14: 14 0 R (/Type3, CIDFont (0 - 52))
+    Encoding: /Encoding-Differences
+    ToUnicode: 324 0 R
+      - <06> <3080>
+      - <0C> <529B>
+      - <1D> <6210>
+      - <21> <66F8>
+      - <27> <6C34>
+      - <2D> <793A>
+      - <34> <9577>
+  Font /F15: 15 0 R (/Type3, CIDFont (0 - 53))
+    Encoding: /Encoding-Differences
+    ToUnicode: 331 0 R
+      - <0E> <58EB>
+      - <22> <6BD4>
+      - <29> <8C37>
+      - <35> <9ED2>
+  Font /F16: 16 0 R (/Type3, CIDFont (0 - 52))
+    Encoding: /Encoding-Differences
+    ToUnicode: 340 0 R
+      - <0B> <4F3C>
+      - <26> <8001>
+      - <29> <89D2>
+      - <2F> <8F03>
+      - <33> <9E7F>
+      - <34> <9EBB>
+  Font /F17: 17 0 R (/Type3, CIDFont (0 - 50))
+    Encoding: /Encoding-Differences
+    ToUnicode: 348 0 R
+      - <09> <4E8C>
+      - <16> <5DE5>
+      - <1B> <652F>
+      - <2B> <897F>
+      - <32> <98A8>
+  Font /F19: 19 0 R (/Type3, CIDFont (0 - 53))
+    Encoding: /Encoding-Differences
+    ToUnicode: 352 0 R
+      - <35> <9ED2>
+  Font /F20: 20 0 R (/Type3, CIDFont (0 - 214))
+    Encoding: /Encoding-Differences
+    ToUnicode: 356 0 R
+      - <D6> <2FCA>
+  Font /F21: 21 0 R (/Type3, CIDFont (0 - 53))
+    Encoding: /Encoding-Differences
+    ToUnicode: 364 0 R
+      - <0D> <5BF8>
+      - <1A> <6F22>
+      - <20> <7384>
+      - <25> <7ADC>
+      - <35> <9F3B>
+  Font /F22: 22 0 R (/Type3, CIDFont (0 - 151))
+    Encoding: /Encoding-Differences
+    ToUnicode: 372 0 R
+      - <67> <4E28>
+      - <71> <4E36>
+      - <73> <4E3F>
+      - <8C> <4E85>
+      - <97> <4EA0>
+  Font /F23: 23 0 R (/Type3, CIDFont (0 - 5))
+    Encoding: /Encoding-Differences
+    ToUnicode: 376 0 R
+      - <05> <4E59>
+  Font /F24: 24 0 R (/Type3, CIDFont (0 - 162))
+    Encoding: /Encoding-Differences
+    ToUnicode: 385 0 R
+      - <46> <513F>
+      - <63> <5182>
+      - <6F> <5196>
+      - <79> <51AB>
+      - <97> <51E0>
+      - <A2> <51F5>
+  Font /F25: 25 0 R (/Type3, CIDFont (0 - 13))
+    Encoding: /Encoding-Differences
+    ToUnicode: 389 0 R
+      - <0D> <5200>
+  Font /F26: 26 0 R (/Type3, CIDFont (0 - 171))
+    Encoding: /Encoding-Differences
+    ToUnicode: 399 0 R
+      - <45> <52F9>
+      - <56> <5315>
+      - <59> <531A>
+      - <70> <5338>
+      - <84> <5369>
+      - <90> <5382>
+      - <AB> <53B6>
+  Font /F27: 27 0 R (/Type3, CIDFont (0 - 52))
+    Encoding: /Encoding-Differences
+    ToUnicode: 405 0 R
+      - <08> <5341>
+      - <23> <7C73>
+      - <34> <9CE5>
+  Font /F28: 28 0 R (/Type3, CIDFont (0 - 12))
+    Encoding: /Encoding-Differences
+    ToUnicode: 409 0 R
+      - <0C> <535C>
+  Font /F29: 29 0 R (/Type3, CIDFont (0 - 12))
+    Encoding: /Encoding-Differences
+    ToUnicode: 414 0 R
+      - <05> <4E80>
+      - <0C> <53C8>
+  Font /F30: 30 0 R (/Type3, CIDFont (0 - 48))
+    Encoding: /Encoding-Differences
+    ToUnicode: 420 0 R
+      - <10> <53E3>
+      - <29> <8A00>
+      - <30> <8ECA>
+  Font /F31: 31 0 R (/Type3, CIDFont (0 - 109))
+    Encoding: /Encoding-Differences
+    ToUnicode: 424 0 R
+      - <6D> <56D7>
+  Font /F32: 32 0 R (/Type3, CIDFont (0 - 51))
+    Encoding: /Encoding-Differences
+    ToUnicode: 432 0 R
+      - <11> <571F>
+      - <1D> <767D>
+      - <27> <8272>
+      - <2B> <8EAB>
+      - <33> <97F3>
+  Font /F33: 33 0 R (/Type3, CIDFont (0 - 164))
+    Encoding: /Encoding-Differences
+    ToUnicode: 437 0 R
+      - <A1> <5902>
+      - <A4> <590A>
+  Font /F34: 34 0 R (/Type3, CIDFont (0 - 29))
+    Encoding: /Encoding-Differences
+    ToUnicode: 442 0 R
+      - <0E> <5915>
+      - <1D> <76AE>
+  Font /F35: 35 0 R (/Type3, CIDFont (0 - 200))
+    Encoding: /Encoding-Differences
+    ToUnicode: 446 0 R
+      - <C8> <5B80>
+  Font /F36: 36 0 R (/Type3, CIDFont (0 - 91))
+    Encoding: /Encoding-Differences
+    ToUnicode: 452 0 R
+      - <36> <5C22>
+      - <45> <5C38>
+      - <5B> <5C6E>
+  Font /F37: 37 0 R (/Type3, CIDFont (0 - 212))
+    Encoding: /Encoding-Differences
+    ToUnicode: 462 0 R
+      - <25> <5DDB>
+      - <63> <5E7A>
+      - <64> <5E7F>
+      - <9B> <5EF4>
+      - <A0> <5EFE>
+      - <A9> <5F0B>
+      - <D4> <5F50>
+  Font /F38: 38 0 R (/Type3, CIDFont (0 - 39))
+    Encoding: /Encoding-Differences
+    ToUnicode: 468 0 R
+      - <0F> <5DF1>
+      - <1E> <7236>
+      - <27> <7FBD>
+  Font /F39: 39 0 R (/Type3, CIDFont (0 - 38))
+    Encoding: /Encoding-Differences
+    ToUnicode: 473 0 R
+      - <12> <5DFE>
+      - <26> <821F>
+  Font /F4: 4 0 R (/Type3, CIDFont (0 - 54))
+    Encoding: /Encoding-Differences
+    ToUnicode: 142 0 R
+      - <0C> <002B>
+      - <13> <0032>
+      - <1A> <0039>
+      - <22> <0041>
+      - <31> <0050>
+      - <36> <0055>
+      - <24> <27> <0043>
+      - <2B> <2C> <004A>
+  Font /F40: 40 0 R (/Type3, CIDFont (0 - 51))
+    Encoding: /Encoding-Differences
+    ToUnicode: 481 0 R
+      - <13> <5E72>
+      - <21> <725B>
+      - <29> <8033>
+      - <2D> <8F9B>
+      - <33> <9B3C>
+  Font /F41: 41 0 R (/Type3, CIDFont (0 - 50))
+    Encoding: /Encoding-Differences
+    ToUnicode: 486 0 R
+      - <0F> <5F13>
+      - <32> <9F13>
+  Font /F42: 42 0 R (/Type3, CIDFont (0 - 17))
+    Encoding: /Encoding-Differences
+    ToUnicode: 490 0 R
+      - <11> <5F61>
+  Font /F43: 43 0 R (/Type3, CIDFont (0 - 8))
+    Encoding: /Encoding-Differences
+    ToUnicode: 494 0 R
+      - <08> <5F73>
+  Font /F44: 44 0 R (/Type3, CIDFont (0 - 136))
+    Encoding: /Encoding-Differences
+    ToUnicode: 498 0 R
+      - <88> <6208>
+  Font /F45: 45 0 R (/Type3, CIDFont (0 - 53))
+    Encoding: /Encoding-Differences
+    ToUnicode: 505 0 R
+      - <1A> <6238>
+      - <29> <7389>
+      - <31> <8D64>
+      - <35> <99AC>
+  Font /F46: 46 0 R (/Type3, CIDFont (0 - 138))
+    Encoding: /Encoding-Differences
+    ToUnicode: 511 0 R
+      - <3C> <6534>
+      - <6C> <65A4>
+      - <8A> <65E0>
+  Font /F47: 47 0 R (/Type3, CIDFont (0 - 41))
+    Encoding: /Encoding-Differences
+    ToUnicode: 516 0 R
+      - <19> <6597>
+      - <29> <7F36>
+  Font /F48: 48 0 R (/Type3, CIDFont (0 - 137))
+    Encoding: /Encoding-Differences
+    ToUnicode: 521 0 R
+      - <88> <65E5>
+      - <89> <6708>
+  Font /F49: 49 0 R (/Type3, CIDFont (0 - 36))
+    Encoding: /Encoding-Differences
+    ToUnicode: 526 0 R
+      - <16> <66F0>
+      - <24> <74DC>
+  Font /F5: 5 0 R (/Type3, CIDFont (0 - 173))
+    Encoding: /Encoding-Differences
+    ToUnicode: 244 0 R
+      - <07> <3042>
+      - <09> <3044>
+      - <0B> <3046>
+      - <0D> <3048>
+      - <14> <304F>
+      - <16> <3051>
+      - <18> <3053>
+      - <1A> <3055>
+      - <1C> <3057>
+      - <1E> <3059>
+      - <20> <305B>
+      - <22> <305D>
+      - <24> <305F>
+      - <26> <3061>
+      - <29> <3064>
+      - <37> <3072>
+      - <3A> <3075>
+      - <3D> <3078>
+      - <40> <307B>
+      - <48> <3084>
+      - <4A> <3086>
+      - <53> <308F>
+      - <5C> <30A2>
+      - <5E> <30A4>
+      - <60> <30A6>
+      - <62> <30A8>
+      - <67> <30AD>
+      - <69> <30AF>
+      - <6B> <30B1>
+      - <6D> <30B3>
+      - <6F> <30B5>
+      - <71> <30B7>
+      - <73> <30B9>
+      - <75> <30BB>
+      - <77> <30BD>
+      - <79> <30BF>
+      - <7B> <30C1>
+      - <8C> <30D2>
+      - <8F> <30D5>
+      - <9D> <30E4>
+      - <9F> <30E6>
+      - <A7> <30EF>
+      - <AD> <30FC>
+      - <04> <05> <3001>
+      - <0F> <12> <304A>
+      - <2B> <2D> <3066>
+      - <2F> <34> <306A>
+      - <43> <44> <307E>
+      - <45> <46> <3081>
+      - <4C> <51> <3088>
+      - <55> <56> <3092>
+      - <64> <65> <30AA>
+      - <7D> <7E> <30C3>
+      - <80> <82> <30C6>
+      - <84> <89> <30CA>
+      - <91> <92> <30D7>
+      - <95> <96> <30DB>
+      - <98> <9B> <30DE>
+      - <A1> <A6> <30E8>
+      - <A9> <AA> <30F2>
+  Font /F50: 50 0 R (/Type3, CIDFont (0 - 40))
+    Encoding: /Encoding-Differences
+    ToUnicode: 532 0 R
+      - <1A> <6B20>
+      - <23> <7AF9>
+      - <28> <81F3>
+  Font /F51: 51 0 R (/Type3, CIDFont (0 - 50))
+    Encoding: /Encoding-Differences
+    ToUnicode: 539 0 R
+      - <1C> <6B62>
+      - <24> <77F3>
+      - <2D> <8DB3>
+      - <32> <9580>
+  Font /F52: 52 0 R (/Type3, CIDFont (0 - 217))
+    Encoding: /Encoding-Differences
+    ToUnicode: 543 0 R
+      - <D9> <6B79>
+  Font /F53: 53 0 R (/Type3, CIDFont (0 - 74))
+    Encoding: /Encoding-Differences
+    ToUnicode: 549 0 R
+      - <1C> <6BB3>
+      - <2A> <6BCB>
+      - <4A> <6C14>
+  Font /F54: 54 0 R (/Type3, CIDFont (0 - 51))
+    Encoding: /Encoding-Differences
+    ToUnicode: 556 0 R
+      - <07> <52A9>
+      - <16> <6C0F>
+      - <25> <8089>
+      - <33> <98DB>
+  Font /F55: 55 0 R (/Type3, CIDFont (0 - 31))
+    Encoding: /Encoding-Differences
+    ToUnicode: 560 0 R
+      - <1F> <722A>
+  Font /F56: 56 0 R (/Type3, CIDFont (0 - 90))
+    Encoding: /Encoding-Differences
+    ToUnicode: 565 0 R
+      - <57> <723B>
+      - <5A> <723F>
+  Font /F57: 57 0 R (/Type3, CIDFont (0 - 30))
+    Encoding: /Encoding-Differences
+    ToUnicode: 569 0 R
+      - <1E> <7247>
+  Font /F58: 58 0 R (/Type3, CIDFont (0 - 45))
+    Encoding: /Encoding-Differences
+    ToUnicode: 574 0 R
+      - <1C> <7259>
+      - <2D> <8FB0>
+  Font /F59: 59 0 R (/Type3, CIDFont (0 - 49))
+    Encoding: /Encoding-Differences
+    ToUnicode: 583 0 R
+      - <1A> <72AC>
+      - <1C> <77E2>
+      - <1E> <7A74>
+      - <2A> <8C46>
+      - <2F> <9769>
+      - <31> <9AA8>
+  Font /F6: 6 0 R (/Type3, CIDFont (0 - 51))
+    Encoding: /Encoding-Differences
+    ToUnicode: 258 0 R
+      - <07> <30E2>
+      - <0D> <4F5C>
+      - <14> <5B50>
+      - <15> <5C0F>
+      - <17> <624B>
+      - <19> <6587>
+      - <28> <81EA>
+      - <29> <8868>
+      - <2E> <90E8>
+      - <2F> <91D1>
+      - <33> <9AD8>
+  Font /F60: 60 0 R (/Type3, CIDFont (0 - 32))
+    Encoding: /Encoding-Differences
+    ToUnicode: 587 0 R
+      - <20> <74E6>
+  Font /F61: 61 0 R (/Type3, CIDFont (0 - 45))
+    Encoding: /Encoding-Differences
+    ToUnicode: 592 0 R
+      - <21> <7518>
+      - <2D> <961C>
+  Font /F62: 62 0 R (/Type3, CIDFont (0 - 218))
+    Encoding: /Encoding-Differences
+    ToUnicode: 598 0 R
+      - <50> <758B>
+      - <54> <7592>
+      - <DA> <7676>
+  Font /F63: 63 0 R (/Type3, CIDFont (0 - 46))
+    Encoding: /Encoding-Differences
+    ToUnicode: 605 0 R
+      - <22> <77DB>
+      - <27> <81FC>
+      - <29> <8278>
+      - <2E> <9801>
+  Font /F64: 64 0 R (/Type3, CIDFont (0 - 186))
+    Encoding: /Encoding-Differences
+    ToUnicode: 610 0 R
+      - <B5> <79B8>
+      - <BA> <79BE>
+  Font /F65: 65 0 R (/Type3, CIDFont (0 - 36))
+    Encoding: /Encoding-Differences
+    ToUnicode: 614 0 R
+      - <24> <7CF8>
+  Font /F66: 66 0 R (/Type3, CIDFont (0 - 32))
+    Encoding: /Encoding-Differences
+    ToUnicode: 618 0 R
+      - <20> <7F51>
+  Font /F67: 67 0 R (/Type3, CIDFont (0 - 139))
+    Encoding: /Encoding-Differences
+    ToUnicode: 624 0 R
+      - <50> <800C>
+      - <55> <8012>
+      - <8B> <807F>
+  Font /F68: 68 0 R (/Type3, CIDFont (0 - 41))
+    Encoding: /Encoding-Differences
+    ToUnicode: 629 0 R
+      - <28> <81E3>
+      - <29> <820C>
+  Font /F69: 69 0 R (/Type3, CIDFont (0 - 162))
+    Encoding: /Encoding-Differences
+    ToUnicode: 634 0 R
+      - <76> <821B>
+      - <A2> <826E>
+  Font /F7: 7 0 R (/Type3, CIDFont (0 - 49))
+    Encoding: /Encoding-Differences
+    ToUnicode: 266 0 R
+      - <0C> <5B57>
+      - <20> <706B>
+      - <2F> <9752>
+      - <30> <975E>
+      - <31> <9999>
+  Font /F70: 70 0 R (/Type3, CIDFont (0 - 223))
+    Encoding: /Encoding-Differences
+    ToUnicode: 638 0 R
+      - <DF> <864D>
+  Font /F71: 71 0 R (/Type3, CIDFont (0 - 49))
+    Encoding: /Encoding-Differences
+    ToUnicode: 643 0 R
+      - <28> <866B>
+      - <31> <9F8D>
+  Font /F72: 72 0 R (/Type3, CIDFont (0 - 50))
+    Encoding: /Encoding-Differences
+    ToUnicode: 649 0 R
+      - <2D> <8840>
+      - <2F> <96E8>
+      - <32> <9B5A>
+  Font /F73: 73 0 R (/Type3, CIDFont (0 - 45))
+    Encoding: /Encoding-Differences
+    ToUnicode: 654 0 R
+      - <2B> <8863>
+      - <2D> <88DC>
+  Font /F74: 74 0 R (/Type3, CIDFont (0 - 12))
+    Encoding: /Encoding-Differences
+    ToUnicode: 658 0 R
+      - <0C> <897E>
+  Font /F75: 75 0 R (/Type3, CIDFont (0 - 104))
+    Encoding: /Encoding-Differences
+    ToUnicode: 663 0 R
+      - <56> <8C55>
+      - <68> <8C78>
+  Font /F76: 76 0 R (/Type3, CIDFont (0 - 46))
+    Encoding: /Encoding-Differences
+    ToUnicode: 667 0 R
+      - <2E> <8C9D>
+  Font /F77: 77 0 R (/Type3, CIDFont (0 - 34))
+    Encoding: /Encoding-Differences
+    ToUnicode: 671 0 R
+      - <22> <8FB5>
+  Font /F78: 78 0 R (/Type3, CIDFont (0 - 49))
+    Encoding: /Encoding-Differences
+    ToUnicode: 675 0 R
+      - <31> <9091>
+  Font /F79: 79 0 R (/Type3, CIDFont (0 - 78))
+    Encoding: /Encoding-Differences
+    ToUnicode: 680 0 R
+      - <08> <9149>
+      - <4E> <91C6>
+  Font /F8: 8 0 R (/Type3, CIDFont (0 - 39))
+    Encoding: /Encoding-Differences
+    ToUnicode: 272 0 R
+      - <16> <62BD>
+      - <24> <76BF>
+      - <27> <7F8A>
+  Font /F80: 80 0 R (/Type3, CIDFont (0 - 185))
+    Encoding: /Encoding-Differences
+    ToUnicode: 685 0 R
+      - <B7> <96B6>
+      - <B9> <96B9>
+  Font /F81: 81 0 R (/Type3, CIDFont (0 - 123))
+    Encoding: /Encoding-Differences
+    ToUnicode: 691 0 R
+      - <20> <9751>
+      - <69> <97CB>
+      - <7B> <97ED>
+  Font /F82: 82 0 R (/Type3, CIDFont (0 - 222))
+    Encoding: /Encoding-Differences
+    ToUnicode: 695 0 R
+      - <DE> <9ADF>
+  Font /F83: 83 0 R (/Type3, CIDFont (0 - 60))
+    Encoding: /Encoding-Differences
+    ToUnicode: 701 0 R
+      - <31> <9B25>
+      - <3B> <9B2F>
+      - <3C> <9B32>
+  Font /F84: 84 0 R (/Type3, CIDFont (0 - 213))
+    Encoding: /Encoding-Differences
+    ToUnicode: 705 0 R
+      - <D5> <9E75>
+  Font /F85: 85 0 R (/Type3, CIDFont (0 - 204))
+    Encoding: /Encoding-Differences
+    ToUnicode: 719 0 R
+      - <37> <9EA5>
+      - <48> <9EC3>
+      - <4D> <9ECD>
+      - <6A> <9EF9>
+      - <6D> <9EFD>
+      - <75> <9F0E>
+      - <82> <9F20>
+      - <9A> <9F4A>
+      - <9E> <9F52>
+      - <C8> <9F9C>
+      - <CC> <9FA0>
+  Font /F86: 86 0 R (/Type3, CIDFont (0 - 214))
+    Encoding: /Encoding-Differences
+    ToUnicode: 856 0 R
+      - <53> <2E84>
+      - <54> <2E86>
+      - <55> <2E88>
+      - <56> <2E8A>
+      - <57> <2E8C>
+      - <58> <2E91>
+      - <59> <2E95>
+      - <5A> <2E97>
+      - <5D> <2EA2>
+      - <5E> <2EA5>
+      - <5F> <2EA7>
+      - <60> <2EAA>
+      - <61> <2EAC>
+      - <69> <2ECF>
+      - <6A> <2ED7>
+      - <6B> <2EDD>
+      - <6C> <2EB3>
+      - <6D> <2E8B>
+      - <70> <2EA6>
+      - <74> <2E83>
+      - <75> <2E82>
+      - <76> <2EF2>
+      - <7B> <2E85>
+      - <7C> <2F09>
+      - <7D> <2E8E>
+      - <86> <2E89>
+      - <89> <2EE7>
+      - <8A> <2E90>
+      - <8B> <2E8F>
+      - <8F> <2E96>
+      - <92> <2EEB>
+      - <93> <2E9B>
+      - <94> <2EED>
+      - <99> <2EA3>
+      - <9A> <2EA8>
+      - <9B> <2EAD>
+      - <9C> <2EEF>
+      - <9F> <2EAB>
+      - <A0> <2EB1>
+      - <A3> <2EBE>
+      - <A6> <2EC4>
+      - <A7> <2EC3>
+      - <AC> <2ECB>
+      - <B4> <2ED6>
+      - <C4> <2EEC>
+      - <C5> <2EEE>
+      - <C8> <2EF3>
+      - <C9> <2EA4>
+      - <CA> <2EC0>
+      - <CB> <2EBF>
+      - <CC> <2ECC>
+      - <CD> <2E87>
+      - <CE> <2EA9>
+      - <CF> <2EAE>
+      - <D0> <2EBD>
+      - <D1> <2EC7>
+      - <D2> <2ECA>
+      - <D3> <2ED5>
+      - <D4> <2EDE>
+      - <D5> <2EE1>
+      - <D6> <2E8D>
+      - <51> <52> <2E80>
+      - <5B> <5C> <2E9C>
+      - <62> <66> <2EB4>
+      - <67> <68> <2EBB>
+      - <6E> <6F> <2F00>
+      - <71> <73> <2F02>
+      - <77> <7A> <2F05>
+      - <7E> <85> <2F0A>
+      - <87> <88> <2F12>
+      - <8C> <8E> <2E92>
+      - <90> <91> <2E98>
+      - <95> <98> <2E9E>
+      - <9D> <9E> <2EAF>
+      - <A1> <A2> <2EB9>
+      - <A4> <A5> <2EC1>
+      - <A8> <A9> <2EC5>
+      - <AA> <AB> <2EC8>
+      - <AD> <AE> <2ECD>
+      - <AF> <B3> <2ED0>
+      - <B5> <B9> <2ED8>
+      - <BA> <BB> <2EDF>
+      - <BC> <C0> <2EE2>
+      - <C1> <C3> <2EE8>
+      - <C6> <C7> <2EF0>
+  Font /F87: 87 0 R (/Type3, CIDFont (0 - 226))
+    Encoding: /Encoding-Differences
+    ToUnicode: 1053 0 R
+      - <E2> <2F2C>
+      - <21> <38> <2F14>
+      - <39> <E1> <2F2D>
+  Font /F9: 9 0 R (/Type3, CIDFont (0 - 46))
+    Encoding: /Encoding-Differences
+    ToUnicode: 286 0 R
+      - <08> <4E00>
+      - <0C> <4EBA>
+      - <0E> <5165>
+      - <11> <51FA>
+      - <1A> <5927>
+      - <20> <65B9>
+      - <28> <751F>
+      - <29> <7528>
+      - <2B> <76EE>
+      - <2D> <884C>
+      - <2E> <898B>

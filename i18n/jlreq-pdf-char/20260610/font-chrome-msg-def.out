@@ -1,0 +1,765 @@
+Info: 1 0 R
+Root: 93 0 R
+RootCreationDate: u:D:20260610193501+00'00'
+RootCreator: u:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+RootModDate: u:D:20260610193501+00'00'
+RootProducer: u:Skia/PDF m149
+RootTitle: u:PDF文字抽出テストデータ
+Root-Pages: 53 0 R
+Root-StructTreeRoot: 54 0 R
+Page 1 obj: 2 0 R
+  Font /F10: 10 0 R (/Type3, CIDFont (0 - 167))
+    Encoding: /Encoding-Differences
+    ToUnicode: 161 0 R
+      - <0D> <2F14>
+      - <12> <2F15>
+      - <2A> <2F16>
+      - <33> <2F17>
+      - <48> <2F18>
+      - <4D> <2EE7>
+      - <51> <2F19>
+      - <64> <2F1A>
+      - <84> <2F1B>
+      - <90> <2F1C>
+      - <A7> <2F1D>
+  Font /F11: 11 0 R (/Type3, CIDFont (0 - 166))
+    Encoding: /Encoding-Differences
+    ToUnicode: 165 0 R
+      - <71> <2F1E>
+      - <A6> <2F1F>
+  Font /F12: 12 0 R (/Type3, CIDFont (0 - 232))
+    Encoding: /Encoding-Differences
+    ToUnicode: 172 0 R
+      - <BE> <2F20>
+      - <CD> <2F21>
+      - <D1> <2F22>
+      - <DA> <2F23>
+      - <E8> <2F24>
+  Font /F13: 13 0 R (/Type3, CIDFont (0 - 35))
+    Encoding: /Encoding-Differences
+    ToUnicode: 175 0 R
+      - <23> <2F25>
+  Font /F14: 14 0 R (/Type3, CIDFont (0 - 228))
+    Encoding: /Encoding-Differences
+    ToUnicode: 185 0 R
+      - <06> <2F26>
+      - <28> <2F27>
+      - <8B> <2F28>
+      - <9E> <2F29>
+      - <AA> <2E90>
+      - <AB> <2E8F>
+      - <BA> <2F2B>
+      - <E4> <2F2D>
+  Font /F15: 15 0 R (/Type3, CIDFont (0 - 198))
+    Encoding: /Encoding-Differences
+    ToUnicode: 204 0 R
+      - <02> <2FCF>
+      - <10> <2FD0>
+      - <1B> <2FD1>
+      - <1F> <2EEC>
+      - <20> <2FD2>
+      - <41> <2EEE>
+      - <42> <2FD3>
+      - <4B> <2EF0>
+      - <4C> <2FD4>
+      - <4D> <2EF1>
+      - <50> <2EF3>
+      - <51> <2FD5>
+      - <9C> <2F2C>
+      - <A9> <2EA4>
+      - <BD> <2EC0>
+      - <BE> <2EBF>
+      - <C6> <2ECC>
+  Font /F16: 16 0 R (/Type3, CIDFont (0 - 252))
+    Encoding: /Encoding-Differences
+    ToUnicode: 212 0 R
+      - <9F> <2F2E>
+      - <A7> <2F2F>
+      - <AE> <2F30>
+      - <B0> <2E92>
+      - <B8> <2F31>
+      - <FC> <2F32>
+  Font /F17: 17 0 R (/Type3, CIDFont (0 - 249))
+    Encoding: /Encoding-Differences
+    ToUnicode: 226 0 R
+      - <05> <2E93>
+      - <0A> <2F34>
+      - <54> <2F35>
+      - <5D> <2F36>
+      - <69> <2F37>
+      - <70> <2F38>
+      - <A1> <2F39>
+      - <A2> <2E94>
+      - <AD> <2F3A>
+      - <BD> <2F3B>
+      - <F8> <2F3C>
+      - <F9> <2E96>
+  Font /F18: 18 0 R (/Type3, CIDFont (0 - 189))
+    Encoding: /Encoding-Differences
+    ToUnicode: 232 0 R
+      - <89> <2F3D>
+      - <AD> <2F3E>
+      - <BC> <2F3F>
+      - <BD> <2E98>
+  Font /F19: 19 0 R (/Type3, CIDFont (0 - 249))
+    Encoding: /Encoding-Differences
+    ToUnicode: 245 0 R
+      - <7F> <2F40>
+      - <82> <2F41>
+      - <83> <2E99>
+      - <B7> <2F42>
+      - <B9> <2EEB>
+      - <C1> <2F43>
+      - <CB> <2F44>
+      - <DB> <2F45>
+      - <F5> <2F46>
+      - <F6> <2E9B>
+      - <F9> <2F47>
+  Font /F20: 20 0 R (/Type3, CIDFont (0 - 227))
+    Encoding: /Encoding-Differences
+    ToUnicode: 250 0 R
+      - <B9> <2F48>
+      - <CC> <2F49>
+      - <E3> <2F4A>
+  Font /F21: 21 0 R (/Type3, CIDFont (0 - 251))
+    Encoding: /Encoding-Differences
+    ToUnicode: 260 0 R
+      - <83> <2F4B>
+      - <AB> <2F4C>
+      - <B6> <2EED>
+      - <BE> <2F4D>
+      - <BF> <2E9E>
+      - <E5> <2F4E>
+      - <F9> <2F4F>
+      - <FB> <2E9F>
+  Font /F22: 22 0 R (/Type3, CIDFont (0 - 48))
+    Encoding: /Encoding-Differences
+    ToUnicode: 269 0 R
+      - <01> <2F50>
+      - <06> <2F51>
+      - <1D> <2F52>
+      - <1F> <2EA0>
+      - <22> <2F53>
+      - <2F> <2F54>
+      - <30> <2EA1>
+  Font /F23: 23 0 R (/Type3, CIDFont (0 - 186))
+    Encoding: /Encoding-Differences
+    ToUnicode: 273 0 R
+      - <B9> <2F55>
+      - <BA> <2EA3>
+  Font /F24: 24 0 R (/Type3, CIDFont (0 - 213))
+    Encoding: /Encoding-Differences
+    ToUnicode: 284 0 R
+      - <83> <2F56>
+      - <8C> <2F57>
+      - <90> <2F58>
+      - <94> <2F59>
+      - <9B> <2F5A>
+      - <A8> <2F5B>
+      - <AA> <2F5C>
+      - <D4> <2F5D>
+      - <D5> <2EA8>
+  Font /F25: 25 0 R (/Type3, CIDFont (0 - 88))
+    Encoding: /Encoding-Differences
+    ToUnicode: 288 0 R
+      - <54> <2F5E>
+      - <58> <2F5F>
+  Font /F26: 26 0 R (/Type3, CIDFont (0 - 176))
+    Encoding: /Encoding-Differences
+    ToUnicode: 298 0 R
+      - <24> <2F60>
+      - <2B> <2F61>
+      - <4C> <2F62>
+      - <50> <2F63>
+      - <59> <2F64>
+      - <5F> <2F65>
+      - <AA> <2F66>
+      - <B0> <2F67>
+  Font /F27: 27 0 R (/Type3, CIDFont (0 - 160))
+    Encoding: /Encoding-Differences
+    ToUnicode: 305 0 R
+      - <4B> <2F68>
+      - <50> <2F69>
+      - <75> <2F6A>
+      - <7F> <2F6B>
+      - <A0> <2F6C>
+  Font /F28: 28 0 R (/Type3, CIDFont (0 - 235))
+    Encoding: /Encoding-Differences
+    ToUnicode: 312 0 R
+      - <2B> <2F6D>
+      - <30> <2F6E>
+      - <3E> <2F6F>
+      - <EA> <2F70>
+      - <EB> <2EAD>
+  Font /F29: 29 0 R (/Type3, CIDFont (0 - 250))
+    Encoding: /Encoding-Differences
+    ToUnicode: 319 0 R
+      - <3B> <2F71>
+      - <40> <2F72>
+      - <B6> <2F73>
+      - <EE> <2F74>
+      - <FA> <2EEF>
+  Font /F30: 30 0 R (/Type3, CIDFont (0 - 17))
+    Encoding: /Encoding-Differences
+    ToUnicode: 322 0 R
+      - <11> <2F75>
+  Font /F31: 31 0 R (/Type3, CIDFont (0 - 96))
+    Encoding: /Encoding-Differences
+    ToUnicode: 327 0 R
+      - <0B> <2F76>
+      - <5F> <2F77>
+      - <60> <2EAF>
+  Font /F32: 32 0 R (/Type3, CIDFont (0 - 237))
+    Encoding: /Encoding-Differences
+    ToUnicode: 336 0 R
+      - <93> <2EB0>
+      - <94> <2F78>
+      - <A5> <2F79>
+      - <A6> <2EAB>
+      - <A7> <2EB1>
+      - <CD> <2F7A>
+      - <ED> <2F7B>
+  Font /F33: 33 0 R (/Type3, CIDFont (0 - 108))
+    Encoding: /Encoding-Differences
+    ToUnicode: 346 0 R
+      - <15> <2F7C>
+      - <16> <2EB9>
+      - <1F> <2F7D>
+      - <25> <2F7E>
+      - <39> <2F7F>
+      - <64> <2F80>
+      - <65> <2EBA>
+      - <6C> <2F81>
+  Font /F34: 34 0 R (/Type3, CIDFont (0 - 174))
+    Encoding: /Encoding-Differences
+    ToUnicode: 359 0 R
+      - <41> <2F82>
+      - <46> <2F83>
+      - <4E> <2F84>
+      - <56> <2F85>
+      - <65> <2F86>
+      - <72> <2F87>
+      - <76> <2F88>
+      - <A6> <2F89>
+      - <A9> <2F8A>
+      - <AD> <2F8B>
+      - <AE> <2EBE>
+  Font /F35: 35 0 R (/Type3, CIDFont (0 - 27))
+    Encoding: /Encoding-Differences
+    ToUnicode: 364 0 R
+      - <02> <2F8C>
+      - <04> <2EC1>
+      - <1B> <2F8D>
+  Font /F36: 36 0 R (/Type3, CIDFont (0 - 88))
+    Encoding: /Encoding-Differences
+    ToUnicode: 370 0 R
+      - <38> <2F8E>
+      - <43> <2F8F>
+      - <57> <2F90>
+      - <58> <2EC2>
+  Font /F37: 37 0 R (/Type3, CIDFont (0 - 74))
+    Encoding: /Encoding-Differences
+    ToUnicode: 380 0 R
+      - <03> <2F91>
+      - <04> <2EC4>
+      - <05> <2EC3>
+      - <0D> <2F92>
+      - <30> <2EC5>
+      - <31> <2F93>
+      - <32> <2EC6>
+      - <4A> <2F94>
+  Font /F38: 38 0 R (/Type3, CIDFont (0 - 183))
+    Encoding: /Encoding-Differences
+    ToUnicode: 388 0 R
+      - <73> <2EC8>
+      - <74> <2F95>
+      - <7D> <2F96>
+      - <8A> <2F97>
+      - <9F> <2F98>
+      - <B7> <2F99>
+  Font /F39: 39 0 R (/Type3, CIDFont (0 - 238))
+    Encoding: /Encoding-Differences
+    ToUnicode: 396 0 R
+      - <1B> <2EC9>
+      - <1C> <2F9A>
+      - <26> <2F9B>
+      - <42> <2F9C>
+      - <D9> <2F9D>
+      - <EE> <2F9E>
+  Font /F4: 4 0 R (/Type0, BaseFont /AAAAAA+MS-Gothic)
+    Encoding: /Identity-H
+    ToUnicode: 97 0 R
+      - <0003> <0020>
+      - <000E> <002B>
+      - <0015> <0032>
+      - <001C> <0039>
+      - <0024> <0041>
+      - <0033> <0050>
+      - <0038> <0055>
+      - <0836> <3042>
+      - <0838> <3044>
+      - <083A> <3046>
+      - <083C> <3048>
+      - <0843> <304F>
+      - <0845> <3051>
+      - <0847> <3053>
+      - <0849> <3055>
+      - <084B> <3057>
+      - <084D> <3059>
+      - <084F> <305B>
+      - <0851> <305D>
+      - <0853> <305F>
+      - <0855> <3061>
+      - <0858> <3064>
+      - <0866> <3072>
+      - <0869> <3075>
+      - <086C> <3078>
+      - <086F> <307B>
+      - <0878> <3084>
+      - <087A> <3086>
+      - <0883> <308F>
+      - <0894> <30A2>
+      - <0896> <30A4>
+      - <0898> <30A6>
+      - <089A> <30A8>
+      - <089F> <30AD>
+      - <08A1> <30AF>
+      - <08A3> <30B1>
+      - <08A5> <30B3>
+      - <08A7> <30B5>
+      - <08A9> <30B7>
+      - <08AB> <30B9>
+      - <08AD> <30BB>
+      - <08AF> <30BD>
+      - <08B1> <30BF>
+      - <08B3> <30C1>
+      - <08C4> <30D2>
+      - <08C7> <30D5>
+      - <08D6> <30E4>
+      - <08D8> <30E6>
+      - <08E1> <30EF>
+      - <08EE> <30FC>
+      - <0B4D> <4E00>
+      - <0B6B> <4E28>
+      - <0B77> <4E36>
+      - <0B7C> <4E3F>
+      - <0B8E> <4E59>
+      - <0B9F> <4E80>
+      - <0BA1> <4E85>
+      - <0BA7> <4E8C>
+      - <0BB7> <4EA0>
+      - <0BC7> <4EBA>
+      - <0C1D> <4F3C>
+      - <0C38> <4F5C>
+      - <0D92> <513F>
+      - <0DB0> <5165>
+      - <0DB5> <516B>
+      - <0DC3> <5182>
+      - <0DD4> <5196>
+      - <0DE3> <51AB>
+      - <0E0A> <51E0>
+      - <0E1A> <51F5>
+      - <0E1F> <51FA>
+      - <0E22> <5200>
+      - <0E8A> <529B>
+      - <0E93> <52A9>
+      - <0ED6> <52F9>
+      - <0EEB> <5315>
+      - <0EF0> <531A>
+      - <0F08> <5338>
+      - <0F11> <5341>
+      - <0F26> <535C>
+      - <0F2E> <5369>
+      - <0F41> <5382>
+      - <0F60> <53B6>
+      - <0F6A> <53C8>
+      - <0F81> <53E3>
+      - <1140> <56D7>
+      - <1175> <571F>
+      - <1288> <58EB>
+      - <1297> <5902>
+      - <129B> <590A>
+      - <12A4> <5915>
+      - <12B1> <5927>
+      - <12EA> <5973>
+      - <13CA> <5B50>
+      - <13D0> <5B57>
+      - <13EB> <5B80>
+      - <144D> <5BF8>
+      - <1460> <5C0F>
+      - <146A> <5C22>
+      - <1479> <5C38>
+      - <14A0> <5C6E>
+      - <14A3> <5C71>
+      - <155C> <5DDB>
+      - <1564> <5DE5>
+      - <156B> <5DF1>
+      - <1575> <5DFE>
+      - <15B8> <5E72>
+      - <15C0> <5E7A>
+      - <15C5> <5E7F>
+      - <15E3> <5EB7>
+      - <160E> <5EF4>
+      - <1617> <5EFE>
+      - <1623> <5F0B>
+      - <162A> <5F13>
+      - <165A> <5F50>
+      - <1666> <5F61>
+      - <1675> <5F73>
+      - <16B0> <5FC3>
+      - <183C> <6208>
+      - <1842> <6210>
+      - <185E> <6238>
+      - <186D> <624B>
+      - <18B3> <62BD>
+      - <1A2D> <652F>
+      - <1A30> <6534>
+      - <1A65> <6587>
+      - <1A6F> <6597>
+      - <1A79> <65A4>
+      - <1A89> <65B9>
+      - <1AA2> <65E0>
+      - <1AA5> <65E5>
+      - <1B63> <66F0>
+      - <1B69> <66F8>
+      - <1B76> <6708>
+      - <1B8C> <6728>
+      - <1E46> <6B62>
+      - <1E58> <6B79>
+      - <1E7F> <6BB3>
+      - <1E93> <6BCB>
+      - <1E9A> <6BD4>
+      - <1E9F> <6BDB>
+      - <1EB6> <6C0F>
+      - <1EBB> <6C14>
+      - <1EC8> <6C34>
+      - <208E> <6F22>
+      - <2146> <706B>
+      - <21AB> <7155>
+      - <220E> <722A>
+      - <2217> <7236>
+      - <221B> <723B>
+      - <221F> <723F>
+      - <2226> <7247>
+      - <2233> <7259>
+      - <2235> <725B>
+      - <225F> <72AC>
+      - <22DE> <7384>
+      - <22E2> <7389>
+      - <23A9> <74DC>
+      - <23B0> <74E6>
+      - <23D1> <7518>
+      - <23D5> <751F>
+      - <23DD> <7528>
+      - <23E3> <7530>
+      - <242D> <758B>
+      - <2433> <7592>
+      - <24CC> <7676>
+      - <24D1> <767D>
+      - <24F6> <76AE>
+      - <2500> <76BF>
+      - <2520> <76EE>
+      - <25A9> <77DB>
+      - <25AE> <77E2>
+      - <25BC> <77F3>
+      - <2667> <793A>
+      - <26B6> <79B8>
+      - <26BB> <79BE>
+      - <2730> <7A74>
+      - <2767> <7ACB>
+      - <2773> <7ADC>
+      - <2789> <7AF9>
+      - <287F> <7C73>
+      - <28D2> <7CF8>
+      - <2A01> <7F36>
+      - <2A12> <7F51>
+      - <2A3A> <7F8A>
+      - <2A5A> <7FBD>
+      - <2A81> <8001>
+      - <2A8B> <800C>
+      - <2A91> <8012>
+      - <2AA5> <8033>
+      - <2AD0> <807F>
+      - <2AD7> <8089>
+      - <2BA7> <81E3>
+      - <2BAC> <81EA>
+      - <2BB3> <81F3>
+      - <2BBB> <81FC>
+      - <2BC9> <820C>
+      - <2BD6> <821B>
+      - <2BDA> <821F>
+      - <2C0A> <826E>
+      - <2C0D> <8272>
+      - <2C11> <8278>
+      - <2E60> <864D>
+      - <2E78> <866B>
+      - <2F91> <8840>
+      - <2F9C> <884C>
+      - <2FB0> <8863>
+      - <2FB2> <8868>
+      - <2FF5> <88DC>
+      - <3062> <898B>
+      - <3085> <89D2>
+      - <309D> <8A00>
+      - <31C2> <8C37>
+      - <31CB> <8C46>
+      - <31D8> <8C55>
+      - <31ED> <8C78>
+      - <3205> <8C9D>
+      - <3265> <8D64>
+      - <326E> <8D70>
+      - <328A> <8DB3>
+      - <331F> <8EAB>
+      - <3334> <8ECA>
+      - <3351> <8F03>
+      - <339E> <8F9B>
+      - <33AE> <8FB0>
+      - <33B2> <8FB5>
+      - <345A> <9091>
+      - <348A> <90E8>
+      - <34C0> <9149>
+      - <3516> <91C6>
+      - <351B> <91CC>
+      - <3520> <91D1>
+      - <36D7> <9577>
+      - <36DB> <9580>
+      - <3727> <961C>
+      - <3793> <96B6>
+      - <3796> <96B9>
+      - <37B5> <96E8>
+      - <3800> <975E>
+      - <3803> <9762>
+      - <3809> <9769>
+      - <384B> <97CB>
+      - <385D> <97ED>
+      - <3862> <97F3>
+      - <386B> <9801>
+      - <38BC> <98A8>
+      - <38D5> <98DB>
+      - <38D7> <98DF>
+      - <3933> <9996>
+      - <3936> <9999>
+      - <393F> <99AC>
+      - <39B5> <9AA8>
+      - <39D7> <9AD8>
+      - <39DC> <9ADF>
+      - <3A10> <9B25>
+      - <3A19> <9B2F>
+      - <3A1B> <9B32>
+      - <3A23> <9B3C>
+      - <3A36> <9B5A>
+      - <3AFD> <9CE5>
+      - <3BAE> <9E75>
+      - <3BB5> <9E7F>
+      - <3BCE> <9EA5>
+      - <3BDE> <9EBB>
+      - <3BE3> <9EC3>
+      - <3BE9> <9ECD>
+      - <3BEE> <9ED2>
+      - <3C09> <9EF9>
+      - <3C0C> <9EFD>
+      - <3C13> <9F0E>
+      - <3C18> <9F13>
+      - <3C21> <9F20>
+      - <3C2F> <9F3B>
+      - <3C3A> <9F4A>
+      - <3C3E> <9F52>
+      - <3C5F> <9F8D>
+      - <3C68> <9F9C>
+      - <3C6B> <9FA0>
+      - <0026> <0029> <0043>
+      - <002D> <002E> <004A>
+      - <080A> <080B> <3001>
+      - <083E> <0841> <304A>
+      - <085A> <085C> <3066>
+      - <085E> <0863> <306A>
+      - <0872> <0876> <307E>
+      - <087C> <0881> <3088>
+      - <0886> <0887> <3092>
+      - <089C> <089D> <30AA>
+      - <08B5> <08B6> <30C3>
+      - <08B8> <08BA> <30C6>
+      - <08BC> <08C1> <30CA>
+      - <08C9> <08CA> <30D7>
+      - <08CD> <08CE> <30DB>
+      - <08D0> <08D4> <30DE>
+      - <08DA> <08DF> <30E8>
+      - <08E4> <08E5> <30F2>
+      - <1E1E> <1E1F> <6B20>
+      - <3058> <3059> <897E>
+      - <37F6> <37F7> <9751>
+  Font /F40: 40 0 R (/Type3, CIDFont (0 - 113))
+    Encoding: /Encoding-Differences
+    ToUnicode: 404 0 R
+      - <59> <2ECB>
+      - <5A> <2F9F>
+      - <6B> <2FA0>
+      - <6F> <2FA1>
+      - <70> <71> <2ECD>
+  Font /F41: 41 0 R (/Type3, CIDFont (0 - 225))
+    Encoding: /Encoding-Differences
+    ToUnicode: 411 0 R
+      - <1A> <2FA2>
+      - <81> <2FA3>
+      - <D7> <2FA4>
+      - <DC> <2FA5>
+      - <E1> <2FA6>
+  Font /F42: 42 0 R (/Type3, CIDFont (0 - 242))
+    Encoding: /Encoding-Differences
+    ToUnicode: 421 0 R
+      - <A1> <2ED3>
+      - <A2> <2FA8>
+      - <F0> <2ED4>
+      - <F1> <2FA9>
+      - <F2> <2ED6>
+      - <9C> <9E> <2ED0>
+  Font /F43: 43 0 R (/Type3, CIDFont (0 - 212))
+    Encoding: /Encoding-Differences
+    ToUnicode: 431 0 R
+      - <5E> <2FAA>
+      - <61> <2FAB>
+      - <80> <2FAC>
+      - <C1> <2FAD>
+      - <C2> <2ED8>
+      - <CB> <2FAE>
+      - <CE> <2FAF>
+      - <D4> <2FB0>
+  Font /F44: 44 0 R (/Type3, CIDFont (0 - 169))
+    Encoding: /Encoding-Differences
+    ToUnicode: 445 0 R
+      - <17> <2FB1>
+      - <29> <2ED9>
+      - <2A> <2FB2>
+      - <2F> <2FB3>
+      - <38> <2FB4>
+      - <8A> <2EDA>
+      - <8B> <2FB5>
+      - <A4> <2EDB>
+      - <A5> <2FB6>
+      - <A7> <2EDC>
+      - <A8> <2FB7>
+      - <A9> <2EDF>
+  Font /F45: 45 0 R (/Type3, CIDFont (0 - 253))
+    Encoding: /Encoding-Differences
+    ToUnicode: 461 0 R
+      - <05> <2EE0>
+      - <06> <2FB8>
+      - <09> <2FB9>
+      - <12> <2FBA>
+      - <8A> <2EE2>
+      - <8B> <2FBB>
+      - <8C> <2EE3>
+      - <AF> <2FBC>
+      - <B4> <2FBD>
+      - <E8> <2FBE>
+      - <F2> <2FBF>
+      - <F4> <2FC0>
+      - <FC> <2FC1>
+      - <FD> <2EE4>
+  Font /F46: 46 0 R (/Type3, CIDFont (0 - 218))
+    Encoding: /Encoding-Differences
+    ToUnicode: 466 0 R
+      - <11> <2FC2>
+      - <D9> <2EE5>
+      - <DA> <2FC3>
+  Font /F47: 47 0 R (/Type3, CIDFont (0 - 107))
+    Encoding: /Encoding-Differences
+    ToUnicode: 495 0 R
+      - <53> <2E84>
+      - <54> <2E86>
+      - <55> <2E88>
+      - <56> <2E8A>
+      - <57> <2E8C>
+      - <58> <2E91>
+      - <59> <2E95>
+      - <5A> <2E97>
+      - <5D> <2EA2>
+      - <5E> <2EA5>
+      - <5F> <2EA7>
+      - <60> <2EAA>
+      - <61> <2EAC>
+      - <69> <2ECF>
+      - <6A> <2ED7>
+      - <6B> <2EDD>
+      - <51> <52> <2E80>
+      - <5B> <5C> <2E9C>
+      - <62> <66> <2EB4>
+      - <67> <68> <2EBB>
+  Font /F48: 48 0 R (/Type3, CIDFont (0 - 219))
+    Encoding: /Encoding-Differences
+    ToUnicode: 498 0 R
+      - <DB> <2E87>
+  Font /F49: 49 0 R (/Type3, CIDFont (0 - 162))
+    Encoding: /Encoding-Differences
+    ToUnicode: 502 0 R
+      - <9E> <2EB3>
+      - <A2> <2E8B>
+  Font /F50: 50 0 R (/Type3, CIDFont (0 - 64))
+    Encoding: /Encoding-Differences
+    ToUnicode: 507 0 R
+      - <09> <2EDE>
+      - <0D> <2EE1>
+      - <40> <2E8D>
+  Font /F51: 51 0 R (/Type3, CIDFont (0 - 251))
+    Encoding: /Encoding-Differences
+    ToUnicode: 515 0 R
+      - <65> <2EA9>
+      - <86> <2EAE>
+      - <A9> <2EBD>
+      - <CC> <2EC7>
+      - <D8> <2ECA>
+      - <FB> <2ED5>
+  Font /F6: 6 0 R (/Type3, CIDFont (0 - 248))
+    Encoding: /Encoding-Differences
+    ToUnicode: 114 0 R
+      - <8C> <2EE6>
+      - <8D> <2FC4>
+      - <94> <2FC5>
+      - <AD> <2FC6>
+      - <AE> <2EE8>
+      - <BD> <2FC7>
+      - <C2> <2FC8>
+      - <C3> <2EE9>
+      - <C8> <2FC9>
+      - <CC> <2FCA>
+      - <E8> <2FCB>
+      - <EB> <2FCC>
+      - <EC> <2EEA>
+      - <F3> <2FCD>
+      - <F8> <2FCE>
+  Font /F7: 7 0 R (/Type3, CIDFont (0 - 218))
+    Encoding: /Encoding-Differences
+    ToUnicode: 131 0 R
+      - <5D> <2F00>
+      - <7B> <2F01>
+      - <7F> <2EA6>
+      - <87> <2F02>
+      - <8D> <2F03>
+      - <9F> <2F04>
+      - <A0> <2E83>
+      - <A1> <2E82>
+      - <B1> <2EF2>
+      - <B3> <2F05>
+      - <B9> <2F06>
+      - <C9> <2F07>
+      - <D9> <2F08>
+      - <DA> <2E85>
+  Font /F8: 8 0 R (/Type3, CIDFont (0 - 254))
+    Encoding: /Encoding-Differences
+    ToUnicode: 140 0 R
+      - <AA> <2F09>
+      - <AB> <2E8E>
+      - <C8> <2F0A>
+      - <CE> <2F0B>
+      - <DE> <2F0C>
+      - <EF> <2F0D>
+      - <FE> <2F0E>
+  Font /F9: 9 0 R (/Type3, CIDFont (0 - 246))
+    Encoding: /Encoding-Differences
+    ToUnicode: 148 0 R
+      - <28> <2F0F>
+      - <38> <2F10>
+      - <40> <2F11>
+      - <42> <2E89>
+      - <AA> <2F12>
+      - <F6> <2F13>

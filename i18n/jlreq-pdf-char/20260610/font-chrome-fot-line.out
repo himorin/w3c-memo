@@ -1,0 +1,923 @@
+Info: 1 0 R
+Root: 155 0 R
+RootCreationDate: u:D:20260610181156+00'00'
+RootCreator: u:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+RootModDate: u:D:20260610181156+00'00'
+RootProducer: u:Skia/PDF m149
+RootTitle: u:PDF文字抽出テストデータ
+Root-Pages: 115 0 R
+Root-StructTreeRoot: 116 0 R
+Page 1 obj: 2 0 R
+  Font /F10: 10 0 R (/Type0, BaseFont /GAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 183 0 R
+      - <0020> <5C71>
+      - <0023> <6B21>
+      - <0025> <5973>
+      - <0026> <98DF>
+      - <0028> <5FC3>
+      - <002F> <7530>
+      - <0035> <9762>
+      - <0036> <6728>
+      - <003A> <7ACB>
+  Font /F100: 100 0 R (/Type3, CIDFont (0 - 101))
+    Encoding: /Encoding-Differences
+    ToUnicode: 580 0 R
+      - <65> <2EBA>
+  Font /F101: 101 0 R (/Type3, CIDFont (0 - 48))
+    Encoding: /Encoding-Differences
+    ToUnicode: 583 0 R
+      - <30> <2EC5>
+  Font /F102: 102 0 R (/Type3, CIDFont (0 - 251))
+    Encoding: /Encoding-Differences
+    ToUnicode: 587 0 R
+      - <CC> <2EC7>
+      - <FB> <2ED5>
+  Font /F103: 103 0 R (/Type3, CIDFont (0 - 115))
+    Encoding: /Encoding-Differences
+    ToUnicode: 590 0 R
+      - <73> <2EC8>
+  Font /F104: 104 0 R (/Type3, CIDFont (0 - 27))
+    Encoding: /Encoding-Differences
+    ToUnicode: 593 0 R
+      - <1B> <2EC9>
+  Font /F105: 105 0 R (/Type3, CIDFont (0 - 113))
+    Encoding: /Encoding-Differences
+    ToUnicode: 597 0 R
+      - <59> <2ECB>
+      - <71> <2ECE>
+  Font /F106: 106 0 R (/Type3, CIDFont (0 - 240))
+    Encoding: /Encoding-Differences
+    ToUnicode: 602 0 R
+      - <9C> <2ED0>
+      - <A1> <2ED3>
+      - <F0> <2ED4>
+  Font /F107: 107 0 R (/Type3, CIDFont (0 - 167))
+    Encoding: /Encoding-Differences
+    ToUnicode: 608 0 R
+      - <29> <2ED9>
+      - <8A> <2EDA>
+      - <A4> <2EDB>
+      - <A7> <2EDC>
+  Font /F108: 108 0 R (/Type3, CIDFont (0 - 140))
+    Encoding: /Encoding-Differences
+    ToUnicode: 613 0 R
+      - <05> <2EE0>
+      - <8A> <2EE2>
+      - <8C> <2EE3>
+  Font /F109: 109 0 R (/Type3, CIDFont (0 - 13))
+    Encoding: /Encoding-Differences
+    ToUnicode: 616 0 R
+      - <0D> <2EE1>
+  Font /F11: 11 0 R (/Type0, BaseFont /HAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 187 0 R
+      - <001A> <5EB7>
+  Font /F110: 110 0 R (/Type3, CIDFont (0 - 217))
+    Encoding: /Encoding-Differences
+    ToUnicode: 619 0 R
+      - <D9> <2EE5>
+  Font /F111: 111 0 R (/Type3, CIDFont (0 - 236))
+    Encoding: /Encoding-Differences
+    ToUnicode: 623 0 R
+      - <8C> <2EE6>
+      - <EC> <2EEA>
+  Font /F112: 112 0 R (/Type3, CIDFont (0 - 77))
+    Encoding: /Encoding-Differences
+    ToUnicode: 626 0 R
+      - <4D> <2EE7>
+  Font /F113: 113 0 R (/Type3, CIDFont (0 - 80))
+    Encoding: /Encoding-Differences
+    ToUnicode: 633 0 R
+      - <1F> <2EEC>
+      - <41> <2EEE>
+      - <4B> <2EF0>
+      - <4D> <2EF1>
+      - <50> <2EF3>
+  Font /F12: 12 0 R (/Type0, BaseFont /IAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 191 0 R
+      - <004E> <7155>
+  Font /F13: 13 0 R (/Type0, BaseFont /JAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 195 0 R
+      - <0027> <9996>
+      - <002A> <8D70>
+      - <0035> <516B>
+      - <003B> <6BDB>
+      - <003E> <91CC>
+  Font /F14: 14 0 R (/Type0, BaseFont /KAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 199 0 R
+      - <000C> <3080>
+      - <001E> <793A>
+      - <0022> <66F8>
+      - <0024> <6C34>
+      - <0026> <6210>
+      - <002C> <9577>
+      - <003A> <529B>
+  Font /F15: 15 0 R (/Type0, BaseFont /LAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 203 0 R
+      - <0017> <9ED2>
+      - <001D> <58EB>
+      - <002E> <8C37>
+      - <0035> <6BD4>
+  Font /F16: 16 0 R (/Type0, BaseFont /MAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 207 0 R
+      - <0015> <89D2>
+      - <0016> <8F03>
+      - <0023> <4F3C>
+      - <0024> <9E7F>
+      - <0037> <9EBB>
+      - <003D> <8001>
+  Font /F17: 17 0 R (/Type0, BaseFont /NAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 211 0 R
+      - <0023> <5DE5>
+      - <0026> <652F>
+      - <002B> <897F>
+      - <0035> <4E8C>
+      - <0037> <98A8>
+  Font /F19: 19 0 R (/Type0, BaseFont /OAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 215 0 R
+      - <0008> <2F90>
+      - <0009> <2F7B>
+      - <000A> <2FAC>
+      - <000B> <2F85>
+      - <000C> <2F60>
+      - <000D> <2FB3>
+      - <000E> <2F55>
+      - <000F> <2F72>
+      - <0010> <2F5B>
+      - <0011> <2F99>
+      - <0012> <2F93>
+      - <0013> <2FB0>
+      - <0014> <2F61>
+      - <0015> <2F32>
+      - <0016> <2F62>
+      - <0017> <2F78>
+      - <0018> <2FC1>
+      - <0019> <2FC9>
+      - <001A> <2F38>
+      - <001B> <2F5C>
+      - <001C> <2FC2>
+      - <001D> <2F5F>
+      - <001E> <2F31>
+      - <001F> <2F44>
+      - <0020> <2FA6>
+      - <0021> <2F4B>
+      - <0022> <2F73>
+      - <0023> <2F8E>
+      - <0024> <2F49>
+      - <0025> <2F5D>
+      - <0026> <2F92>
+      - <0027> <2F5E>
+      - <0028> <2F94>
+      - <0029> <2F30>
+      - <002A> <2F3E>
+      - <002B> <2FCE>
+      - <002C> <2F1D>
+      - <002D> <2F2F>
+      - <002E> <2F8F>
+      - <002F> <2FB9>
+      - <0030> <2FBC>
+      - <0031> <2FCA>
+      - <0032> <2FBB>
+      - <0033> <2F89>
+      - <0034> <2F6B>
+      - <0035> <2F2D>
+      - <0036> <2F20>
+      - <0037> <2F26>
+      - <0038> <2F40>
+      - <0039> <2F4C>
+      - <003A> <2F52>
+      - <003B> <2F77>
+      - <003C> <2F84>
+      - <003D> <2F70>
+      - <003E> <2F7D>
+      - <003F> <2F7F>
+      - <0040> <2F83>
+      - <0041> <2FC5>
+      - <0042> <2F9E>
+      - <0043> <2F3F>
+      - <0044> <2FB8>
+      - <0045> <2F88>
+      - <0046> <2F17>
+      - <0047> <2F25>
+      - <0048> <2F29>
+      - <0049> <2F8A>
+      - <004A> <2FB7>
+      - <004B> <2F3C>
+      - <004C> <2F82>
+      - <004D> <2F9D>
+      - <004E> <2F9F>
+      - <004F> <2F54>
+      - <0050> <2F28>
+      - <0051> <2F63>
+      - <0052> <2F6F>
+      - <0053> <2F9A>
+      - <0056> <2FCF>
+      - <0059> <2F24>
+      - <005A> <2FA0>
+      - <005B> <2F95>
+      - <005C> <2F75>
+      - <005D> <2F8D>
+      - <005E> <2FA7>
+      - <005F> <2FC3>
+      - <0060> <2F56>
+      - <0061> <2FCD>
+      - <0062> <2F65>
+      - <0063> <2F43>
+      - <0064> <2F1F>
+      - <0065> <2F96>
+      - <0066> <2FA3>
+      - <0067> <2F81>
+      - <0068> <2F47>
+      - <0069> <2FBA>
+      - <006A> <2F69>
+      - <006B> <2FA4>
+      - <006C> <2F50>
+      - <006D> <2F6A>
+      - <006E> <2FAE>
+      - <006F> <2FB6>
+      - <0070> <2FD0>
+      - <0071> <2F66>
+      - <0072> <2F57>
+      - <0073> <2FA9>
+      - <0074> <2FB5>
+      - <0075> <2F42>
+      - <0076> <2F76>
+      - <0077> <2FB4>
+      - <0078> <2F5A>
+      - <0079> <2F45>
+      - <007A> <2F18>
+      - <007B> <2FC7>
+      - <007C> <2F1C>
+      - <007D> <2F6D>
+      - <007E> <2FAF>
+      - <007F> <2F51>
+      - <0080> <2F4A>
+      - <0081> <2F6C>
+      - <0082> <2FA8>
+      - <0083> <2F6E>
+      - <0084> <2FA2>
+      - <0085> <2F23>
+      - <0086> <2F64>
+      - <0087> <2F7A>
+      - <0088> <2FA5>
+      - <0089> <2F74>
+      - <008A> <2FD3>
+      - <008B> <2F7C>
+      - <0092> <2F1E>
+      - <0095> <2F27>
+      - <0099> <2F2E>
+      - <00A1> <2F3D>
+      - <00A2> <2F41>
+      - <00A3> <2F46>
+      - <00A4> <2F48>
+      - <00A8> <2F53>
+      - <00AB> <2F68>
+      - <00AF> <2F79>
+      - <00B0> <2F7E>
+      - <00B1> <2F80>
+      - <00B5> <2F91>
+      - <00C0> <2FC4>
+      - <00C1> <2FC6>
+      - <00CE> <2FAD>
+      - <0054> <0055> <2F86>
+      - <0057> <0058> <2F9B>
+      - <008C> <008E> <2F14>
+      - <008F> <0091> <2F19>
+      - <0093> <0094> <2F21>
+      - <0096> <0098> <2F2A>
+      - <009A> <009E> <2F33>
+      - <009F> <00A0> <2F3A>
+      - <00A5> <00A7> <2F4D>
+      - <00A9> <00AA> <2F58>
+      - <00B2> <00B3> <2F8B>
+      - <00B6> <00B7> <2F97>
+      - <00B8> <00B9> <2FAA>
+      - <00BA> <00BB> <2FB1>
+      - <00BC> <00BF> <2FBD>
+      - <00C2> <00C3> <2FCB>
+      - <00C4> <00C5> <2FD1>
+      - <00C6> <00C7> <2FD4>
+  Font /F20: 20 0 R (/Type0, BaseFont /PAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 219 0 R
+      - <0013> <6F22>
+      - <0017> <7384>
+      - <0020> <5BF8>
+      - <002F> <9F3B>
+      - <0038> <7ADC>
+  Font /F21: 21 0 R (/Type0, BaseFont /QAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 223 0 R
+      - <001A> <4E36>
+      - <001B> <4E3F>
+      - <0020> <4E85>
+      - <0025> <4EA0>
+      - <003A> <4E28>
+  Font /F22: 22 0 R (/Type0, BaseFont /RAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 227 0 R
+      - <0010> <4E59>
+  Font /F23: 23 0 R (/Type0, BaseFont /SAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 231 0 R
+      - <0024> <513F>
+      - <002E> <5182>
+      - <0035> <5196>
+      - <003B> <51AB>
+      - <0044> <51E0>
+      - <0047> <51F5>
+  Font /F24: 24 0 R (/Type0, BaseFont /TAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 235 0 R
+      - <002F> <5200>
+  Font /F25: 25 0 R (/Type0, BaseFont /UAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 239 0 R
+      - <002C> <52F9>
+      - <0032> <5315>
+      - <0033> <531A>
+      - <0038> <5338>
+      - <003E> <5369>
+      - <0042> <5382>
+      - <0049> <53B6>
+  Font /F26: 26 0 R (/Type0, BaseFont /VAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 243 0 R
+      - <0023> <5341>
+      - <002D> <9CE5>
+      - <0036> <7C73>
+  Font /F27: 27 0 R (/Type0, BaseFont /WAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 247 0 R
+      - <0023> <535C>
+  Font /F28: 28 0 R (/Type0, BaseFont /XAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 251 0 R
+      - <001B> <4E80>
+      - <003F> <53C8>
+  Font /F29: 29 0 R (/Type0, BaseFont /YAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 255 0 R
+      - <001B> <8A00>
+      - <001E> <53E3>
+      - <0029> <8ECA>
+  Font /F30: 30 0 R (/Type0, BaseFont /ZAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 259 0 R
+      - <002F> <56D7>
+  Font /F31: 31 0 R (/Type0, BaseFont /ABAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 263 0 R
+      - <000B> <97F3>
+      - <0025> <8272>
+      - <0026> <8EAB>
+      - <0031> <571F>
+      - <0036> <767D>
+  Font /F32: 32 0 R (/Type0, BaseFont /BBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 267 0 R
+      - <0045> <5902>
+      - <0046> <590A>
+  Font /F33: 33 0 R (/Type0, BaseFont /CBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 271 0 R
+      - <0034> <76AE>
+      - <003F> <5915>
+  Font /F34: 34 0 R (/Type0, BaseFont /DBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 275 0 R
+      - <0048> <5B80>
+  Font /F35: 35 0 R (/Type0, BaseFont /EBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 279 0 R
+      - <002B> <5C22>
+      - <002D> <5C38>
+      - <0035> <5C6E>
+  Font /F36: 36 0 R (/Type0, BaseFont /FBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 283 0 R
+      - <0027> <5DDB>
+      - <003D> <5E7A>
+      - <003E> <5E7F>
+      - <0051> <5EF4>
+      - <0053> <5EFE>
+      - <0058> <5F0B>
+  Font /F37: 37 0 R (/Type0, BaseFont /GBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 287 0 R
+      - <0013> <7FBD>
+      - <001E> <5DF1>
+      - <0034> <7236>
+  Font /F38: 38 0 R (/Type0, BaseFont /HBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 291 0 R
+      - <0017> <5DFE>
+      - <0021> <821F>
+  Font /F39: 39 0 R (/Type0, BaseFont /IBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 295 0 R
+      - <001B> <5E72>
+      - <0020> <9B3C>
+      - <0021> <725B>
+      - <0026> <8033>
+      - <0029> <8F9B>
+  Font /F4: 4 0 R (/Type0, BaseFont /AAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 159 0 R
+      - <0001> <0020>
+      - <000C> <002B>
+      - <0013> <0032>
+      - <001A> <0039>
+      - <0022> <0041>
+      - <0031> <0050>
+      - <0036> <0055>
+      - <0024> <0027> <0043>
+      - <002B> <002C> <004A>
+  Font /F40: 40 0 R (/Type0, BaseFont /JBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 299 0 R
+      - <0017> <5F13>
+      - <001B> <9F13>
+  Font /F41: 41 0 R (/Type3, CIDFont (0 - 250))
+    Encoding: /Encoding-Differences
+    ToUnicode: 306 0 R
+      - <19> <2E83>
+      - <4C> <2E89>
+      - <C4> <2E8F>
+      - <F1> <2F39>
+      - <FA> <2E96>
+  Font /F42: 42 0 R (/Type0, BaseFont /LBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 311 0 R
+      - <0035> <5F61>
+  Font /F43: 43 0 R (/Type0, BaseFont /MBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 315 0 R
+      - <0014> <5F73>
+  Font /F44: 44 0 R (/Type0, BaseFont /NBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 319 0 R
+      - <0044> <6208>
+  Font /F45: 45 0 R (/Type0, BaseFont /OBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 323 0 R
+      - <001F> <7389>
+      - <0022> <6238>
+      - <002E> <8D64>
+      - <0037> <99AC>
+  Font /F46: 46 0 R (/Type0, BaseFont /PBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 327 0 R
+      - <0009> <65A4>
+      - <0026> <6534>
+      - <0042> <65E0>
+  Font /F47: 47 0 R (/Type0, BaseFont /QBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 331 0 R
+      - <001C> <7F36>
+      - <0033> <6597>
+  Font /F48: 48 0 R (/Type0, BaseFont /RBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 335 0 R
+      - <00E9> <6708>
+      - <00EB> <65E5>
+  Font /F49: 49 0 R (/Type0, BaseFont /SBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 339 0 R
+      - <0011> <74DC>
+      - <0033> <66F0>
+  Font /F5: 5 0 R (/Type0, BaseFont /BAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 163 0 R
+      - <00B9> <30FC>
+      - <00BB> <3042>
+      - <00BD> <3044>
+      - <00BF> <3046>
+      - <00C1> <3048>
+      - <00C8> <304F>
+      - <00CA> <3051>
+      - <00CC> <3053>
+      - <00CE> <3055>
+      - <00D0> <3057>
+      - <00D2> <3059>
+      - <00D4> <305B>
+      - <00D6> <305D>
+      - <00D8> <305F>
+      - <00DA> <3061>
+      - <00DD> <3064>
+      - <00EB> <3072>
+      - <00EE> <3075>
+      - <00F1> <3078>
+      - <00F4> <307B>
+      - <00FC> <3084>
+      - <00FE> <3086>
+      - <0107> <308F>
+      - <010C> <30A2>
+      - <010E> <30A4>
+      - <0110> <30A6>
+      - <0112> <30A8>
+      - <0117> <30AD>
+      - <0119> <30AF>
+      - <011B> <30B1>
+      - <011D> <30B3>
+      - <011F> <30B5>
+      - <0121> <30B7>
+      - <0123> <30B9>
+      - <0125> <30BB>
+      - <0127> <30BD>
+      - <0129> <30BF>
+      - <012B> <30C1>
+      - <013C> <30D2>
+      - <013F> <30D5>
+      - <014D> <30E4>
+      - <014F> <30E6>
+      - <0157> <30EF>
+      - <00AF> <00B0> <3001>
+      - <00C3> <00C6> <304A>
+      - <00DF> <00E1> <3066>
+      - <00E3> <00E8> <306A>
+      - <00F7> <00F8> <307E>
+      - <00F9> <00FA> <3081>
+      - <0100> <0105> <3088>
+      - <0109> <010A> <3092>
+      - <0114> <0115> <30AA>
+      - <012D> <012E> <30C3>
+      - <0130> <0132> <30C6>
+      - <0134> <0139> <30CA>
+      - <0141> <0142> <30D7>
+      - <0145> <0146> <30DB>
+      - <0148> <014B> <30DE>
+      - <0151> <0156> <30E8>
+      - <0159> <015A> <30F2>
+  Font /F50: 50 0 R (/Type0, BaseFont /TBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 343 0 R
+      - <0022> <6B20>
+      - <0028> <81F3>
+      - <0033> <7AF9>
+  Font /F51: 51 0 R (/Type0, BaseFont /UBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 347 0 R
+      - <0017> <6B62>
+      - <001F> <77F3>
+      - <0022> <8DB3>
+      - <0033> <9580>
+  Font /F52: 52 0 R (/Type0, BaseFont /VBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 351 0 R
+      - <0058> <6B79>
+  Font /F53: 53 0 R (/Type0, BaseFont /WBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 355 0 R
+      - <001C> <6BB3>
+      - <0020> <6BCB>
+      - <0028> <6C14>
+  Font /F54: 54 0 R (/Type0, BaseFont /XBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 359 0 R
+      - <001C> <6C0F>
+      - <0021> <52A9>
+      - <002D> <8089>
+      - <002F> <98DB>
+  Font /F55: 55 0 R (/Type0, BaseFont /YBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 363 0 R
+      - <002C> <722A>
+  Font /F56: 56 0 R (/Type0, BaseFont /ZBAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 367 0 R
+      - <002F> <723B>
+      - <0031> <723F>
+  Font /F57: 57 0 R (/Type0, BaseFont /ACAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 371 0 R
+      - <0030> <7247>
+  Font /F58: 58 0 R (/Type0, BaseFont /BCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 375 0 R
+      - <0010> <7259>
+      - <0027> <8FB0>
+  Font /F59: 59 0 R (/Type0, BaseFont /CCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 379 0 R
+      - <0013> <9769>
+      - <001C> <7A74>
+      - <001D> <72AC>
+      - <001F> <9AA8>
+      - <002D> <8C46>
+      - <0038> <77E2>
+  Font /F6: 6 0 R (/Type0, BaseFont /CAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 167 0 R
+      - <0011> <30E2>
+      - <0016> <91D1>
+      - <0019> <9AD8>
+      - <001B> <4F5C>
+      - <001E> <5B50>
+      - <001F> <81EA>
+      - <0022> <624B>
+      - <0024> <5C0F>
+      - <002F> <8868>
+      - <0032> <90E8>
+      - <0034> <6587>
+  Font /F60: 60 0 R (/Type0, BaseFont /DCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 383 0 R
+      - <0012> <74E6>
+  Font /F61: 61 0 R (/Type0, BaseFont /ECAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 387 0 R
+      - <0019> <7518>
+      - <003A> <961C>
+  Font /F62: 62 0 R (/Type0, BaseFont /FCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 391 0 R
+      - <0010> <758B>
+      - <005F> <7676>
+  Font /F63: 63 0 R (/Type3, CIDFont (0 - 210))
+    Encoding: /Encoding-Differences
+    ToUnicode: 398 0 R
+      - <3A> <2F67>
+      - <73> <2EAD>
+      - <7B> <2F71>
+      - <D1> <2EAB>
+      - <D2> <2EB1>
+  Font /F64: 64 0 R (/Type0, BaseFont /GCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 402 0 R
+      - <000A> <81FC>
+      - <0029> <9801>
+      - <002D> <77DB>
+      - <0038> <8278>
+  Font /F65: 65 0 R (/Type0, BaseFont /HCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 406 0 R
+      - <0009> <79BE>
+  Font /F66: 66 0 R (/Type0, BaseFont /ICAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 410 0 R
+      - <0026> <7CF8>
+  Font /F67: 67 0 R (/Type0, BaseFont /JCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 414 0 R
+      - <003B> <7F51>
+  Font /F68: 68 0 R (/Type0, BaseFont /KCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 418 0 R
+      - <000B> <800C>
+      - <0031> <8012>
+      - <0047> <807F>
+  Font /F69: 69 0 R (/Type0, BaseFont /LCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 422 0 R
+      - <0021> <81E3>
+      - <0023> <820C>
+  Font /F7: 7 0 R (/Type0, BaseFont /DAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 171 0 R
+      - <0013> <706B>
+      - <001F> <9999>
+      - <0022> <5B57>
+      - <0027> <9752>
+      - <0035> <975E>
+  Font /F70: 70 0 R (/Type0, BaseFont /MCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 426 0 R
+      - <000B> <826E>
+      - <000D> <821B>
+  Font /F71: 71 0 R (/Type0, BaseFont /NCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 430 0 R
+      - <0058> <864D>
+  Font /F72: 72 0 R (/Type0, BaseFont /OCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 434 0 R
+      - <0029> <866B>
+      - <0037> <9F8D>
+  Font /F73: 73 0 R (/Type0, BaseFont /PCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 438 0 R
+      - <000F> <96E8>
+      - <0018> <9B5A>
+      - <001C> <8840>
+  Font /F74: 74 0 R (/Type0, BaseFont /QCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 442 0 R
+      - <0011> <8863>
+      - <0037> <88DC>
+  Font /F75: 75 0 R (/Type0, BaseFont /RCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 446 0 R
+      - <0015> <897E>
+  Font /F76: 76 0 R (/Type0, BaseFont /SCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 450 0 R
+      - <002E> <8C55>
+      - <0031> <8C78>
+  Font /F77: 77 0 R (/Type0, BaseFont /TCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 454 0 R
+      - <000D> <8C9D>
+  Font /F78: 78 0 R (/Type3, CIDFont (0 - 217))
+    Encoding: /Encoding-Differences
+    ToUnicode: 461 0 R
+      - <45> <2EC2>
+      - <8A> <2FA1>
+      - <8B> <2ECD>
+      - <D2> <2ED2>
+      - <D9> <2ECF>
+  Font /F79: 79 0 R (/Type0, BaseFont /UCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 465 0 R
+      - <0029> <9091>
+  Font /F8: 8 0 R (/Type0, BaseFont /EAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 175 0 R
+      - <0023> <76BF>
+      - <002E> <62BD>
+      - <003A> <7F8A>
+  Font /F80: 80 0 R (/Type0, BaseFont /VCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 469 0 R
+      - <000E> <9149>
+      - <0010> <91C6>
+  Font /F81: 81 0 R (/Type0, BaseFont /WCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 473 0 R
+      - <0054> <96B6>
+      - <0056> <96B9>
+  Font /F82: 82 0 R (/Type0, BaseFont /XCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 477 0 R
+      - <0035> <97CB>
+      - <0037> <97ED>
+      - <005F> <9751>
+  Font /F83: 83 0 R (/Type0, BaseFont /YCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 481 0 R
+      - <0053> <9ADF>
+  Font /F84: 84 0 R (/Type0, BaseFont /ZCAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 485 0 R
+      - <001F> <9B25>
+      - <0025> <9B2F>
+      - <0026> <9B32>
+  Font /F85: 85 0 R (/Type0, BaseFont /ADAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 489 0 R
+      - <0051> <9E75>
+  Font /F86: 86 0 R (/Type0, BaseFont /BDAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 493 0 R
+      - <0007> <9ECD>
+      - <0008> <9F20>
+      - <000A> <9F0E>
+      - <0018> <9EA5>
+      - <002B> <9EF9>
+      - <002E> <9EFD>
+      - <0035> <9F4A>
+      - <0036> <9F52>
+      - <0044> <9F9C>
+      - <0045> <9FA0>
+  Font /F87: 87 0 R (/Type3, CIDFont (0 - 63))
+    Encoding: /Encoding-Differences
+    ToUnicode: 496 0 R
+      - <3F> <2FC8>
+  Font /F88: 88 0 R (/Type0, BaseFont /CDAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 500 0 R
+      - <0008> <2F00>
+      - <0009> <2EE9>
+      - <000A> <2F04>
+      - <000B> <2EE4>
+      - <000C> <2EF2>
+      - <000D> <2EC1>
+      - <000E> <2EED>
+      - <000F> <2F08>
+      - <0010> <2EC4>
+      - <0011> <2ED8>
+      - <0012> <2EEB>
+      - <0013> <2ED1>
+      - <0014> <2F11>
+      - <0015> <2F06>
+      - <0016> <2F0A>
+      - <0017> <2EE8>
+      - <0018> <2F0B>
+      - <0019> <2E9F>
+      - <001A> <2E92>
+      - <001B> <2EA0>
+      - <001C> <2EEF>
+      - <001E> <2F12>
+      - <0021> <2F05>
+      - <0022> <2F07>
+      - <0023> <2F09>
+      - <0024> <2E8E>
+      - <002A> <2F13>
+      - <002B> <2E90>
+      - <002E> <2E99>
+      - <002F> <2E9B>
+      - <0051> <2F01>
+      - <001F> <0020> <2F02>
+      - <0025> <0029> <2F0C>
+      - <002C> <002D> <2E93>
+  Font /F89: 89 0 R (/Type3, CIDFont (0 - 103))
+    Encoding: /Encoding-Differences
+    ToUnicode: 518 0 R
+      - <53> <2E84>
+      - <54> <2E86>
+      - <55> <2E88>
+      - <56> <2E8A>
+      - <58> <2E91>
+      - <5E> <2EA5>
+      - <5F> <2EA7>
+      - <66> <2EB8>
+      - <67> <2EBB>
+      - <51> <52> <2E80>
+      - <5B> <5C> <2E9C>
+      - <62> <64> <2EB4>
+  Font /F9: 9 0 R (/Type0, BaseFont /FAAAAA+LINESeedJP-Regular)
+    Encoding: /Identity-H
+    ToUnicode: 179 0 R
+      - <0011> <4E00>
+      - <0019> <898B>
+      - <001A> <884C>
+      - <0021> <51FA>
+      - <0026> <4EBA>
+      - <0028> <751F>
+      - <002B> <5927>
+      - <0030> <5165>
+      - <0034> <65B9>
+      - <0037> <76EE>
+      - <0039> <7528>
+  Font /F90: 90 0 R (/Type3, CIDFont (0 - 161))
+    Encoding: /Encoding-Differences
+    ToUnicode: 522 0 R
+      - <A1> <2E82>
+  Font /F91: 91 0 R (/Type3, CIDFont (0 - 225))
+    Encoding: /Encoding-Differences
+    ToUnicode: 535 0 R
+      - <4D> <2EDD>
+      - <4E> <2EDF>
+      - <4F> <2EDE>
+      - <52> <2E97>
+      - <56> <2E85>
+      - <64> <2EC3>
+      - <80> <2ECA>
+      - <98> <2EAE>
+      - <E1> <2EAA>
+      - <3F> <40> <2E8C>
+  Font /F92: 92 0 R (/Type3, CIDFont (0 - 174))
+    Encoding: /Encoding-Differences
+    ToUnicode: 546 0 R
+      - <35> <2EB7>
+      - <4A> <2EB9>
+      - <50> <2E87>
+      - <55> <2E8B>
+      - <84> <2EA6>
+      - <A4> <2EB3>
+      - <AC> <AE> <2EBE>
+  Font /F93: 93 0 R (/Type3, CIDFont (0 - 103))
+    Encoding: /Encoding-Differences
+    ToUnicode: 551 0 R
+      - <5B> <2E95>
+      - <62> <2EA4>
+      - <67> <2ECC>
+  Font /F94: 94 0 R (/Type3, CIDFont (0 - 245))
+    Encoding: /Encoding-Differences
+    ToUnicode: 558 0 R
+      - <1A> <2E98>
+      - <D6> <2EA3>
+      - <F5> <2EA8>
+      - <9A> <9B> <2EA1>
+  Font /F95: 95 0 R (/Type3, CIDFont (0 - 43))
+    Encoding: /Encoding-Differences
+    ToUnicode: 561 0 R
+      - <2B> <2E9E>
+  Font /F96: 96 0 R (/Type3, CIDFont (0 - 232))
+    Encoding: /Encoding-Differences
+    ToUnicode: 568 0 R
+      - <82> <2ED7>
+      - <83> <2EBD>
+      - <A7> <2EC6>
+      - <D6> <2EA9>
+      - <E8> <2EBC>
+  Font /F97: 97 0 R (/Type3, CIDFont (0 - 5))
+    Encoding: /Encoding-Differences
+    ToUnicode: 571 0 R
+      - <05> <2EAC>
+  Font /F98: 98 0 R (/Type3, CIDFont (0 - 96))
+    Encoding: /Encoding-Differences
+    ToUnicode: 574 0 R
+      - <60> <2EAF>
+  Font /F99: 99 0 R (/Type3, CIDFont (0 - 147))
+    Encoding: /Encoding-Differences
+    ToUnicode: 577 0 R
+      - <93> <2EB0>
