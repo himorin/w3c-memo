@@ -17,6 +17,7 @@ def LoadJSON(pdf_json):
     raise Exception("json format parse error for '%s'" % (pdf_json))
   return site_config
 
+# read PDF tree, starting from /trailer, into pointer within /Root node, and /Pages - /Kids
 def LoadOverview(c_dat):
   c_ov = {}
   c_trailer = c_dat["trailer"]
@@ -25,16 +26,21 @@ def LoadOverview(c_dat):
   c_obj = c_dat["obj:" + c_ov['Info']]["value"]
   for c_key in c_obj:
     if c_key.startswith("/"):
-      c_ov['Root' + c_key[1:]] = c_obj[c_key]
+      c_ov['Info-' + c_key[1:]] = c_obj[c_key]
   c_obj = c_dat["obj:" + c_ov['Root']]["value"]
   c_ov['Root-Pages'] = c_obj['/Pages']
   c_ov['Root-StructTreeRoot'] = c_obj['/StructTreeRoot']
   c_ov['Root-Pages-obj'] = c_dat["obj:" + c_ov['Root-Pages']]["value"]["/Kids"]
   return c_ov
 
+# check node for /Pages, return /Resources (hash) /Font (Chrome), or /Resources (node pointer) /Font (Firefox)
 def GetFontsForPage(c_dat, c_obj):
-  return c_dat['obj:' + c_obj]['value']['/Resources']['/Font']
+  c_item = c_dat['obj:' + c_obj]['value']['/Resources']
+  if isinstance(c_item, dict):
+    return c_item['/Font']
+  return c_dat['obj:' + c_item]['value']['/Font']
 
+# return font overview for specified font node
 def GetFontOverview(c_dat, c_obj):
   c_font = c_dat['obj:' + c_obj]['value']
   c_ov = {}
@@ -43,10 +49,12 @@ def GetFontOverview(c_dat, c_obj):
     c_ov['ToUnicode'] = c_font['/ToUnicode']
   if '/BaseFont' in c_font:
     c_ov['BaseFont'] = c_font['/BaseFont']
-    c_ov['DescendantFonts'] = c_font['/DescendantFonts']
     c_ov['name'] = 'BaseFont ' + c_font['/BaseFont']
-  else:
+  if '/DescendantFonts' in c_font:
+    c_ov['DescendantFonts'] = c_font['/DescendantFonts']
+  if '/CIDToGIDMap' in c_font:
     c_ov['CIDToGIDMap'] = c_font['/CIDToGIDMap']
+  if '/FontDescriptor' in c_font:
     c_ov['FontDescriptor'] = c_font['/FontDescriptor']
     c_ov['FirstChar'] = c_font['/FirstChar']
     c_ov['LastChar'] = c_font['/LastChar']
