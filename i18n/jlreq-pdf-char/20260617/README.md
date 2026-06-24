@@ -6,7 +6,7 @@ QPDFが出力するjsonをパースするスクリプト([check_chars.py](../che
 
 * Web Fontsは入っていない、ブラウザの設定はFirefoxはメイリオでChromeはNotoである
 * 以下、`C&P`はPDFをPDF-XChangeで表示して文字ボックスをコピペしたもの
-* Firefoxから出力のQPDF JSONの構造は未対応
+* <del>Firefoxから出力のQPDF JSONの構造は未対応</del> (20260624対応)
 
 | ソース | Chrome PDFを保存 | Firefox PDFを保存 |
 |---|---|---|
