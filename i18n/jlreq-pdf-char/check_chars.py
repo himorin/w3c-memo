@@ -29,7 +29,8 @@ def LoadOverview(c_dat):
       c_ov['Info-' + c_key[1:]] = c_obj[c_key]
   c_obj = c_dat["obj:" + c_ov['Root']]["value"]
   c_ov['Root-Pages'] = c_obj['/Pages']
-  c_ov['Root-StructTreeRoot'] = c_obj['/StructTreeRoot']
+  if '/StructTreeRoot' in c_obj:
+    c_ov['Root-StructTreeRoot'] = c_obj['/StructTreeRoot']
   c_ov['Root-Pages-obj'] = c_dat["obj:" + c_ov['Root-Pages']]["value"]["/Kids"]
   return c_ov
 
